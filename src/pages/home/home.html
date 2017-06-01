@@ -12,21 +12,31 @@
   <ion-scroll scrollX style="height:200px;">
   <div class="ads">
 
+    <ion-slides autoplay="3000" loop="true" speed="300">
+      <div class="scroll-item ad">
+        <ion-slide>
       <img src="img/ad2.jpg">
     <div class="card-title">Win A Galaxy s8</div>
     <div class="card-subtitle">Stand a chance to win by finishing one of our subjects</div>
+    </ion-slide>
+    </div>
 
+    <ion-slide>
     <div class="scroll-item ad">
         <img src="img/smatwach.jpg">
       <div class="card-title"></div>
       <div class="card-subtitle">Smartwaches</div>
       </div>
+    </ion-slide>
 
+    <ion-slide>
     <div class="scroll-item ad">
       <img src="img/Essential-Phone-1.jpg">
       <div class="card-title"></div>
       <div class="card-subtitle">Cutting edge gadgets</div>
     </div>
+    </ion-slide>
+    </ion-slides>
   </div>
 
 </ion-scroll>
@@ -38,7 +48,7 @@
   </div>
 
   <ion-scroll scrollX="true" style="height:200px;">
-    <ion-row nowrap align-items-baseline >
+    <ion-row nowrap align-items-baseline>
     <div class="scroll-item">
         <ion-col col-12>
 
