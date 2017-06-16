@@ -17,6 +17,13 @@
 
 
 <ion-content padding>
+  <div class="card" style="text-align: center">
+      <!-- Advanced: explicity set the icon for each platform -->
+      <ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>
+      <div class="app-name">
+        <b>e-tutor</b>
+      </div>
+  </div>
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
@@ -35,10 +42,23 @@
         </ion-list>
 
         <div padding>
-          <button ion-button color="primary" block>Sign In</button>
+          <button ion-button color="primary" block text-capitalize>Sign In</button>
         </div>
-
       <!--</ion-content>-->
+    </div>
+    <div class="div-center">
+      <button ion-button clear>
+        <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-button clear>
+        <ion-icon class="social-icon" color="danger" name="logo-google"></ion-icon>
+      </button>
+    </div>
+    <div class="card btn-down" >
+      <button ion-button clear text-capitalize>Or Sign Up</button>
+    </div>
+    <div style="text-align: center; align-items: center">
+          <button ion-button clear text-capitalize>Forgot Your Password?</button>
     </div>
   </div>
 

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="card" style="text-align: center">
+    <!-- Advanced: explicity set the icon for each platform -->
+    <ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>
+    <div class="app-name">
+      <b>e-tutor</b>
+    </div>
+  </div>
+  <div class="list card">
+    <div class="item item-body">
+      <!--<ion-content>-->
+      <ion-list>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Phone</ion-label>
+          <ion-input type="tel"id="phone">></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="primary" block text-capitalize>Sign Up</button>
+      </div>
+      <!--</ion-content>-->
+
+      <div class="card btn-down" >
+        <button ion-button clear text-capitalize>Or Sign In</button>
+      </div>
+    </div>
+  </div>
+</ion-content>
