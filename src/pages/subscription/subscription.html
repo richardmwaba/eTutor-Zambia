@@ -1,0 +1,47 @@
+<!--
+  Generated template for the SubscriptionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Subscription</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label>Choose a plan</ion-label>
+      <ion-select >
+        <ion-option value="all">All</ion-option>
+        <ion-option value="allLevel">All Levels</ion-option>
+        <ion-option value="termly">Termly</ion-option>
+        <ion-option value="yearly">Whole year</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Choose a payment method</ion-label>
+      <ion-select>
+        <ion-option value="all">All</ion-option>
+        <ion-option value="airtel">Airtel Money</ion-option>
+        <ion-option value="mtn">MTN Money</ion-option>
+        <ion-option value="zoona">Zoona</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Enter coupon code</ion-label>
+      <ion-input type="text" name="coupon" ngModal></ion-input>
+    </ion-item>
+    <ion-item></ion-item>
+    <button ion-button block>Subscribe</button>
+
+  </form>
+</ion-content>

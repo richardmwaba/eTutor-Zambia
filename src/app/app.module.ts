@@ -2,11 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+// pages imports
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage} from '../pages/signup/signup';
+import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
+import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
+import { SubscriptionPage } from '../pages/subscription/subscription';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +22,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    AllSubjectsPage,
+    MySubjectsPage,
+    SubscriptionPage
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    AllSubjectsPage,
+    MySubjectsPage,
+    SubscriptionPage
   ],
   providers: [
     StatusBar,
