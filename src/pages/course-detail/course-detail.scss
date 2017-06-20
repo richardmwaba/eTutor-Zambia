@@ -1,0 +1,89 @@
+page-course-detail {
+
+  .content{
+    //height: 45px;
+    margin-top: 0px;
+    margin-left: -1px;
+    margin-right: 0px;
+    background-color: #f7f6f6;
+
+  }
+.img{
+  height: 200px;
+  width: 400px;
+  position: relative;
+  margin-left: 0px;
+  margin-bottom: -5%;
+}
+
+ion-img{
+  position: static;
+  height: 200px;
+  width: 100%;
+  margin-left: -20px;
+  margin-bottom: -20%;
+  margin-top: -6%;
+  margin-right: -20px;
+}
+
+  //style for the row jus below the image, btn and the instructor names
+  .btn-instructor{
+    height: 45px;
+    margin-top: 8px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+
+  //the instructor div
+  .instructor{
+    color: #888889;
+    text-color: black;
+    height:50px;
+    width: 230px;
+  }
+
+  //the instructor name,text
+  .instructorName{
+    color: black;
+    text-color: black;
+    font-weight: 400;
+    text-align: left;
+    width: 120px;
+  }
+
+  .resume-btn{
+      width: 100px;
+      height: 45px;
+      border: none;
+      box-shadow: 0px 1.5px 0px 0px #888888;
+      border-color: black;
+    //-moz-box-shadow: 5px 5px 5px;
+      background-color: #f7f6f6;
+      border-radius: 2px;
+  }
+
+  .description-card{
+    //height: 45px;
+    margin-top: 30px;
+    margin-left: -5px;
+    width: 340px;
+
+    .title{
+       font-weight: bold;
+       margin-bottom: -2px;
+     }
+
+    .subtitle{
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 4px;
+    }
+  }
+
+  .contact-icon{
+    //height: 200px;
+    //size: 200px;
+  }
+
+}
