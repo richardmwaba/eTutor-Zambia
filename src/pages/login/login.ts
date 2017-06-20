@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { SignupPage } from "../pages/signup/signup";
+import { SignupPage } from '../signup/signup';
 
 @IonicPage()
 @Component({
@@ -9,7 +9,7 @@ import { SignupPage } from "../pages/signup/signup";
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  sinupPage = 'SignupPage';
+  // sinupPage = 'SignupPage';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -17,7 +17,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  signUp(){
+  signUp(params){
+    if (!params) params = {};
     this.navCtrl.push(SignupPage);
   }
 
