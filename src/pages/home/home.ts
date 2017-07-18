@@ -34,5 +34,5 @@ export class HomePage {
     //navigate to the selected Grade
     this.navCtrl.push(PerGradePagesPage)
   }
-
+c
 }

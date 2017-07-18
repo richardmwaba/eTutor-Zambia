@@ -6,11 +6,14 @@
   </ion-header> -->
 
   <ion-content class="sideMenu">
+
     <ion-item class="profile-image">
       <h1><ion-icon ios="ios-school" md="md-school"></ion-icon> e-tutor</h1><br>
       <img src="assets/img/unza.jpg" alt="background image"/>
       <p>johndoe@gmail.com</p>
     </ion-item>
+
+    <!-- list of menu buttons -->
     <ion-list class="side-menu-item" no-lines>
       <button menuClose ion-item icon-left *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
         <ion-icon ios="ios-{{p.leftIcon}}" md="md-{{p.leftIcon}}"></ion-icon>
@@ -24,6 +27,7 @@
         Sign out
       </button>
     </ion-list>
+
   </ion-content>
 
 </ion-menu>

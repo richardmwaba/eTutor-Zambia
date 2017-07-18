@@ -1,29 +1,29 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { LessonsPage } from '../lessons/lessons';
-
 /**
- * Generated class for the CourseDetailPage page.
+ * Generated class for the LessonContentPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-course-detail',
-  templateUrl: 'course-detail.html',
+  selector: 'page-lesson-content',
+  templateUrl: 'lesson-content.html',
 })
-export class CourseDetailPage {
+export class LessonContentPage {
+
+  // variable
+  lesson: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    // get the parameter that was passed from lessons page
+    this.lesson = navParams.get('lesson');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CourseDetailPage');
+    console.log('ionViewDidLoad LessonContentPage');
   }
 
-  openLessons() {
-    this.navCtrl.push(LessonsPage); // goes to lessons page
-  }
 }
