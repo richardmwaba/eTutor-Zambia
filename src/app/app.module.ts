@@ -4,10 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
+import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
 import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
+import { SignupPage } from '../pages/signup/signup';
 import { SubscriptionPage } from '../pages/subscription/subscription';
+import { CourseDetailPage } from '../pages/course-detail/course-detail';
+import { LessonsPage } from '../pages/lessons/lessons';
+import { LessonContentPage } from '../pages/lesson-content/lesson-content';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,10 +21,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     AllSubjectsPage,
+    ListPage,
+    LoginPage,
     MySubjectsPage,
-    SubscriptionPage
+    SignupPage,
+    SubscriptionPage,
+    CourseDetailPage,
+    LessonsPage,
+    LessonContentPage
   ],
   imports: [
     BrowserModule,
@@ -31,8 +41,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     AllSubjectsPage,
+    ListPage,
+    LoginPage,
     MySubjectsPage,
-    SubscriptionPage
+    SignupPage,
+    SubscriptionPage,
+    CourseDetailPage,
+    LessonsPage,
+    LessonContentPage
   ],
   providers: [
     StatusBar,

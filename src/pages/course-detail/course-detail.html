@@ -1,0 +1,69 @@
+<!--
+  Generated template for the CourseDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chemistry</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="content">
+  <ion-row class="img">
+    <ion-col col-12>
+      <ion-img src="img/chemist-with-vials.jpg"></ion-img>
+    </ion-col>
+  </ion-row>
+    <ion-row>
+      <div class="btn-instructor">
+    <ion-col col-5>
+  <button class="resume-btn" (click)="openLessons()" ion-button icon-left clear>
+    <div>Resume</div>
+  </button>
+    </ion-col>
+      <ion-col col-1>
+        <div class="instructor" ion-button icon-left clear small>
+          <ion-icon name="md-contact" style="zoom: 2.5;"></ion-icon>
+          <div class="instructorName">Instructor<br>
+               Mrs. Chileshe Mumba
+          </div>
+        </div>
+      </ion-col>
+      </div>
+
+      <div class="overviewCards">
+      <ion-card class="description-card">
+        <ion-card-header>
+          <div class="title">Subject overview</div>
+        </ion-card-header>
+        <ion-card-content>
+          Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy
+        </ion-card-content>
+      </ion-card>
+
+        <ion-card class="description-card">
+          <ion-card-header>
+            <div class="title">Syllabus</div>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="subtitle"> Week 1: Introduction to chemistry</div>
+            This an introductory session with little technical terminology
+            <div class="subtitle"> Week 2: Introduction to chemistry</div>
+            This an introductory session with little technical terminology
+            <div class="subtitle"> Week 3: Introduction to chemistry</div>
+            This an introductory session with little technical terminology
+            <div class="subtitle"> Week 4: Introduction to chemistry</div>
+            This an introductory session with little technical terminology
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+  </ion-row>
+  </div>
+</ion-content>
