@@ -26,4 +26,10 @@ export class LessonContentPage {
     console.log('ionViewDidLoad LessonContentPage');
   }
 
+  goToVideo(url){
+    this.navCtrl.push(LessonContentPage, {
+      url  // passing data to LessonContentPage
+    });
+  }
+
 }

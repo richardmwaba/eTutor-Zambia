@@ -10,6 +10,7 @@ import { SignupPage} from '../pages/signup/signup';
 import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
 import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
 import { SubscriptionPage } from '../pages/subscription/subscription';
+import { VideoPlayerPage } from '../pages/video-player/video-player';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +36,8 @@ export class MyApp {
       // { title: 'List', leftIcon: 'list', component: ListPage },
       { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
       { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-      { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage }
+      { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage },
+      { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
     ];
 
     this.activePage = this.pages[0]; // first active item is HomePage

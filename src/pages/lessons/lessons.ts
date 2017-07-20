@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 // page import
 import { LessonContentPage } from '../lesson-content/lesson-content';
+import {VideoPlayerPage} from "../video-player/video-player";
 
 /**
  * Generated class for the LessonsPage page.
@@ -37,7 +38,7 @@ export class LessonsPage {
   }
 
   goToContent(lesson) {
-    this.navCtrl.push(LessonContentPage, {
+    this.navCtrl.push(VideoPlayerPage, {
       lesson: lesson  // passing data to LessonContentPage
     });
   }

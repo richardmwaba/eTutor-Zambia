@@ -16,6 +16,7 @@ import { ALevelExamsPage } from '../pages/a-level-exams/a-level-exams';
 import { PerGradePagesPage } from '../pages/per-grade-pages/per-grade-pages';
 import { LessonsPage } from '../pages/lessons/lessons';
 import { LessonContentPage } from '../pages/lesson-content/lesson-content';
+import { VideoPlayerPage } from '../pages/video-player/video-player';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -34,7 +35,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ALevelExamsPage,
     PerGradePagesPage,
     LessonsPage,
-    LessonContentPage
+    LessonContentPage,
+    VideoPlayerPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ALevelExamsPage,
     PerGradePagesPage,
     LessonsPage,
-    LessonContentPage
+    LessonContentPage,
+    VideoPlayerPage
   ],
   providers: [
     StatusBar,
