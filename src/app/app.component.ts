@@ -3,6 +3,9 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//Import AngularFire AuthProvider
+import { AngularFireAuth } from 'angularfire2/auth';
+
 // page imports
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -24,7 +27,7 @@ export class MyApp {
   // leftIcon is the name of the button's icon
   pages: Array<{title: string, leftIcon: string,component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private afAuth: AngularFireAuth) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation

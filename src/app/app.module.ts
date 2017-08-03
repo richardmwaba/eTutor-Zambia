@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+// Importing AF2 Module
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
@@ -19,6 +23,17 @@ import { LessonContentPage } from '../pages/lesson-content/lesson-content';
 import { VideoPlayerPage } from '../pages/video-player/video-player';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthProvider } from '../providers/auth/auth';
+
+//AngularFire Settings
+const firebaseConfig = {
+  apiKey: "AIzaSyBLeMLPSueCBV8Nxo1esz-sl3xYJp5HJPE",
+    authDomain: "e-tutor-d5360.firebaseapp.com",
+    databaseURL: "https://e-tutor-d5360.firebaseio.com",
+    projectId: "e-tutor-d5360",
+    storageBucket: "e-tutor-d5360.appspot.com",
+    messagingSenderId: "102847060269"
+};
 
 @NgModule({
   declarations: [
@@ -41,6 +56,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +81,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
