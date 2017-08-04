@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { LoginPageModule } from '../pages/login/login.module';
 
 // Importing AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -41,7 +42,6 @@ const firebaseConfig = {
     HomePage,
     AllSubjectsPage,
     ListPage,
-    LoginPage,
     MySubjectsPage,
     SignupPage,
     SubscriptionPage,
@@ -56,6 +56,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    LoginPageModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
   ],

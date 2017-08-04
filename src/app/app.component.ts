@@ -21,7 +21,7 @@ import { VideoPlayerPage } from '../pages/video-player/video-player';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any;
   activePage : any; // the currently active page
 
   // leftIcon is the name of the button's icon
@@ -29,6 +29,17 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private afAuth: AngularFireAuth) {
     this.initializeApp();
+
+    //Listen for user authentication: Subscribe to auth changes
+    const authObserver = afAuth.authState.subscribe( user => {
+       if (user) {
+         this.rootPage = MySubjectsPage;
+         authObserver.unsubscribe();
+       } else {
+         this.rootPage = HomePage;
+         authObserver.unsubscribe();
+       }
+     });
 
     // used for an example of ngFor and navigation
     this.pages = [
