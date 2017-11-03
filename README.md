@@ -2,14 +2,12 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
 
 New app file structure that includes that new CMS site to be powered by the MEAN stack. The folder <em>app</em> holds the 
 mobile app source code and is the same as the last commit that was made.
 
 <strong>etutor-CMS</strong>, holds all the source code to that deals with the CMS.
 
-### How do I get set up? ###
 <h3>Setup</h3>
 We all know the way to set up ionic. PS: there is an update to the ionic Cli better update it.
 
@@ -24,11 +22,4 @@ We are using Angular 4 for dev in this project so make sure to update your angul
 
 Happy Coding.
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
 <h3>Code4cus</h3>
