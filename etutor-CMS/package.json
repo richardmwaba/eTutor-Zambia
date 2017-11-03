@@ -1,0 +1,30 @@
+{
+  "name": "etutor-cms",
+  "version": "1.0.0",
+  "description": "This is the CMS for the etutor mobile app, will enable the management of content for the app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Alick_chinga@bitbucket.org/code4cus/e-tutor.git"
+  },
+  "keywords": [
+    "etutor-cms",
+    "cms"
+  ],
+  "author": "code4cus",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/code4cus/e-tutor#readme"
+}

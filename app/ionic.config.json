@@ -1,0 +1,8 @@
+{
+  "name": "E-Tutor",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
