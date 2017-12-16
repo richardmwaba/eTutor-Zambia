@@ -7,5 +7,6 @@
     <orderEntry type="module" module-name="unza-aps" />
     <orderEntry type="module" module-name="UCS_loan_management" />
     <orderEntry type="module" module-name="Homestead" />
+    <orderEntry type="module" module-name="reviewApp" />
   </component>
 </module>

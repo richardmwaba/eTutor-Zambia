@@ -11,8 +11,10 @@ const User = require('../models/user');
 
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
-    let newUser = new User({
-        name: req.body.name,
+    let newUser = new User.getModel({
+        f_name: req.body.f_name,
+        l_name: req.body.l_name,
+        title: req.body.title,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,

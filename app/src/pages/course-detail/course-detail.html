@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Chemistry</ion-title>
+    <ion-title>{{subject.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,21 +17,21 @@
   <div class="content">
   <ion-row class="img">
     <ion-col col-12>
-      <ion-img src="../../assets/img/chemist-with-vials.jpg"></ion-img>
+      <ion-img src="../../assets/img/{{subject.icon}}"></ion-img>
     </ion-col>
   </ion-row>
     <ion-row>
       <div class="btn-instructor">
     <ion-col col-5>
-  <button class="resume-btn" (click)="openLessons()" ion-button icon-left clear>
+  <button class="resume-btn" (click)="openLessons(subject)" ion-button icon-left clear>
     <div>Resume</div>
   </button>
     </ion-col>
       <ion-col col-1>
         <div class="instructor" ion-button icon-left clear small>
           <ion-icon name="md-contact" style="zoom: 2.5;"></ion-icon>
-          <div class="instructorName">Instructor<br>
-               Mrs. Chileshe Mumba
+          <div class="instructorName" *ngFor="let instructor of subject.instructors">Instructor<br>
+               {{instructor.title}} {{instructor.f_name}} {{instructor.l_name}}
           </div>
         </div>
       </ion-col>
@@ -43,7 +43,8 @@
           <div class="title">Subject overview</div>
         </ion-card-header>
         <ion-card-content>
-          Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          {{subject.description}}
         </ion-card-content>
       </ion-card>
 
@@ -51,15 +52,15 @@
           <ion-card-header>
             <div class="title">Syllabus</div>
           </ion-card-header>
-          <ion-card-content>
-            <div class="subtitle"> Week 1: Introduction to chemistry</div>
-            This an introductory session with little technical terminology
-            <div class="subtitle"> Week 2: Introduction to chemistry</div>
-            This an introductory session with little technical terminology
-            <div class="subtitle"> Week 3: Introduction to chemistry</div>
-            This an introductory session with little technical terminology
-            <div class="subtitle"> Week 4: Introduction to chemistry</div>
-            This an introductory session with little technical terminology
+          <ion-card-content *ngFor="let topic of subject.topics">
+            <div class="subtitle"> {{topic.duration}}: {{topic.topic_name}}</div>
+            {{topic.description}}
+            <!--<div class="subtitle"> Week 2: Introduction to chemistry</div>-->
+            <!--This an introductory session with little technical terminology-->
+            <!--<div class="subtitle"> Week 3: Introduction to chemistry</div>-->
+            <!--This an introductory session with little technical terminology-->
+            <!--<div class="subtitle"> Week 4: Introduction to chemistry</div>-->
+            <!--This an introductory session with little technical terminology-->
           </ion-card-content>
         </ion-card>
       </div>

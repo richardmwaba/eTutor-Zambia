@@ -3,22 +3,25 @@
 const mongoose = require('mongoose');
 const config = require('../config/database');
 const topic_schema = require('../models/topic');
+const UserSchema = require('../models/user');
 
 // subject schema
 const SubjectSchema =  mongoose.Schema({
     _id                     :   {type: mongoose.Schema.Types.ObjectId},
     name                    :   String,
-    grade                   :   {type: mongoose.Schema.Types.ObjectId, ref: 'Grade'},
-    instructor              :   {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    subject_description     :   String,
+    grade                   :   String,
+    instructors              :   [UserSchema],
+    description             :   String,
+    category                :   String,
+    icon                     :   String,
     topics                  :   [topic_schema]
 });
 
 const Subject = module.exports = mongoose.model('Subject', SubjectSchema);
 
-// gets subject by the id
-module.exports.getAllSubjects = function(id, callback) {
-    Subject.findById(id, callback);
+// get all subjects
+module.exports.getAllSubjects = function(callback) {
+    Subject.find({}, callback);
 };
 
 // gets subject by the id
@@ -29,6 +32,12 @@ module.exports.getSubjectById = function(id, callback) {
 // gets user by the email
 module.exports.getSubjectByName = function(name, callback) {
     const query = {name: name}; // query to equate name to db subject name
+    Subject.findOne(query, callback);
+};
+
+// gets user by the email
+module.exports.getBySubjectByGrade = function(grade, callback) {
+    const query = {grade: grade}; // query to equate name to db subject name
     Subject.findOne(query, callback);
 };
 

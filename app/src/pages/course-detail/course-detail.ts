@@ -15,15 +15,17 @@ import { LessonsPage } from '../lessons/lessons';
   templateUrl: 'course-detail.html',
 })
 export class CourseDetailPage {
+  public subject;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.subject = navParams.get("subject");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourseDetailPage');
   }
 
-  openLessons() {
-    this.navCtrl.push(LessonsPage); // goes to lessons page
+  openLessons(subject) {
+    this.navCtrl.push(LessonsPage, {subject}); // goes to lessons page
   }
 }

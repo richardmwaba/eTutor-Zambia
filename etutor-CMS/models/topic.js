@@ -8,6 +8,8 @@ const sub_topic_schema = require('../models/sub_topic');
 const TopicSchema = module.exports = mongoose.Schema({
         _id                     :   {type: mongoose.Schema.Types.ObjectId},
         topic_name              :   String,
+        description              :   String,
+        duration                :   String,
         sub_topics              :   [sub_topic_schema]
 });
 

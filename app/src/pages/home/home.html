@@ -44,22 +44,22 @@
 <div class="categories">
 
   <div class="category-title">
-    A-Levels <div class="category-subtitle">5 subjects</div>
+    A-Levels <div class="category-subtitle"> subjects</div>
   </div>
 
   <ion-scroll scrollX="true" style="height:200px;">
     <ion-row nowrap align-items-baseline>
-    <div class="scroll-item">
+    <div class="scroll-item" *ngFor="let subject of subjects | category :'category' : 'A-Levels' ">
         <ion-col col-12>
 
-          <ion-card (click)="courseDetail()">
-            <img src="../../assets/../../assets/img/chemist-with-vials.jpg"/>
+          <ion-card (click)="courseDetail(subject)">
+            <img src="../../assets/../../assets/img/{{subject.icon}}"/>
             <ion-card-content>
               <ion-row>
                 <ion-col>
                   <button class="card-title" ion-button icon-left clear small>
                     <ion-icon name="open"></ion-icon>
-                    <div>Chemistry</div>
+                    <div>{{subject.name}}</div>
                   </button>
                 </ion-col>
               </ion-row>
@@ -68,79 +68,79 @@
         </ion-col>
     </div>
 
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/../../assets/img/1449041701-hd-biology-widescreen.jpg"/>
-            <ion-card-content>
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/../../assets/img/1449041701-hd-biology-widescreen.jpg"/>-->
+            <!--<ion-card-content>-->
 
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Biology</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Biology</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
 
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/img/mathematics.jpg"/>
-            <ion-card-content>
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/img/mathematics.jpg"/>-->
+            <!--<ion-card-content>-->
 
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Mathematics</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Mathematics</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
 
-    <div class="scroll-item">
-        <ion-col col-12>
-      <ion-card>
-        <img src="../../assets/img/physics.jpg"/>
-        <ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button class="card-title" ion-button icon-left clear small>
-                <ion-icon name="open"></ion-icon>
-                <div>Physics</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-        </ion-col>
-    </div>
+    <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+      <!--<ion-card>-->
+        <!--<img src="../../assets/img/physics.jpg"/>-->
+        <!--<ion-card-content>-->
+          <!--<ion-row>-->
+            <!--<ion-col>-->
+              <!--<button class="card-title" ion-button icon-left clear small>-->
+                <!--<ion-icon name="open"></ion-icon>-->
+                <!--<div>Physics</div>-->
+              <!--</button>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+        <!--</ion-card-content>-->
+      <!--</ion-card>-->
+        <!--</ion-col>-->
+    <!--</div>-->
 
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/img/programming.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Programming</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/img/programming.jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Programming</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
     </ion-row>
   </ion-scroll>
 
@@ -149,89 +149,18 @@
   </div>
 
   <ion-scroll scrollX="true" style="height:200px;">
-    <ion-row nowrap align-items-baseline >
-      <div class="scroll-item">
+    <ion-row nowrap align-items-baseline>
+      <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Junior/Senior Secondary'">
         <ion-col col-12>
-          <ion-card (click)="grade()">
-            <img src="../../assets/img/chemist.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Grade 8</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
 
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/img/g8.gif"/>
+          <ion-card (click)="courseDetail(subject)">
+            <img src="../../assets/../../assets/img/chemist-with-vials.jpg"/>
             <ion-card-content>
               <ion-row>
                 <ion-col>
                   <button class="card-title" ion-button icon-left clear small>
                     <ion-icon name="open"></ion-icon>
-                    <div>Grade 9</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
-
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/img/Geography-Banner.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Grade 10</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
-
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/img/physics.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Grade 11</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
-
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card>
-            <img src="../../assets/../../assets/img/mathematics (1).jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Grade 12</div>
+                    <div>{{subject.name}}</div>
                   </button>
                 </ion-col>
               </ion-row>
@@ -242,48 +171,144 @@
     </ion-row>
   </ion-scroll>
 
+  <!--<ion-scroll scrollX="true" style="height:200px;">-->
+    <!--<ion-row nowrap align-items-baseline >-->
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card (click)="grade()">-->
+            <!--<img src="../../assets/img/chemist.jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade 8</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/img/g8.gif"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade 9</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/img/Geography-Banner.jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade 10</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/img/physics.jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade 11</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card>-->
+            <!--<img src="../../assets/../../assets/img/mathematics (1).jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade 12</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+    <!--</ion-row>-->
+
+
   <div class="category-title">
     Tests & Exams Revision <div class="category-subtitle">2 Categories</div>
   </div>
   <ion-scroll scrollX="true" style="height:200px;">
-    <ion-row nowrap align-items-baseline >
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card (click)="ALevelExams()">
-            <img src="../../assets/../../assets/img/math-help.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>A-Levels</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
+      <ion-row nowrap align-items-baseline>
+        <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams Revision'">
+          <ion-col col-12>
 
-      <div class="scroll-item">
-        <ion-col col-12>
-          <ion-card (click)="jnrSecExams()">
-            <img src="../../assets/../../assets/img/shutterstock_127915121.jpg"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Junior/Senior Secondary</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
+            <ion-card (click)="courseDetail(subject)">
+              <img src="../../assets/../../assets/img/chemist-with-vials.jpg"/>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col>
+                    <button class="card-title" ion-button icon-left clear small>
+                      <ion-icon name="open"></ion-icon>
+                      <div>{{subject.name}}</div>
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </div>
+      </ion-row>
 
-    </ion-row>
+      <!--<div class="scroll-item">-->
+        <!--<ion-col col-12>-->
+          <!--<ion-card (click)="jnrSecExams()">-->
+            <!--<img src="../../assets/../../assets/img/shutterstock_127915121.jpg"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Junior/Senior Secondary</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+
+    <!--</ion-row>-->
   </ion-scroll>
 
   </div>
