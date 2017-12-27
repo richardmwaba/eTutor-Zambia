@@ -49,9 +49,9 @@ export class HomePage {
     this.navCtrl.push(ALevelExamsPage)
 }
 
-  grade(){
+  grade(subjects, grade){
     //navigate to the selected Grade
-    this.navCtrl.push(PerGradePagesPage)
+    this.navCtrl.push(PerGradePagesPage, {subjects, grade});
   }
 c
 }

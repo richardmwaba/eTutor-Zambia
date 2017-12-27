@@ -44,7 +44,7 @@
 <div class="categories">
 
   <div class="category-title">
-    A-Levels <div class="category-subtitle"> subjects</div>
+    A-Levels <div class="category-subtitle">4 subjects</div>
   </div>
 
   <ion-scroll scrollX="true" style="height:200px;">
@@ -153,14 +153,14 @@
       <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Junior/Senior Secondary'">
         <ion-col col-12>
 
-          <ion-card (click)="courseDetail(subject)">
-            <img src="../../assets/../../assets/img/chemist-with-vials.jpg"/>
+          <ion-card (click)="grade(subjects, subject.grade)">
+            <img src="../../assets/img/{{subject.icon}}"/>
             <ion-card-content>
               <ion-row>
                 <ion-col>
                   <button class="card-title" ion-button icon-left clear small>
                     <ion-icon name="open"></ion-icon>
-                    <div>{{subject.name}}</div>
+                    <div>Grade {{subject.grade}}</div>
                   </button>
                 </ion-col>
               </ion-row>
@@ -190,6 +190,7 @@
           <!--</ion-card>-->
         <!--</ion-col>-->
       <!--</div>-->
+      <!--</ion-row>-->
 
       <!--<div class="scroll-item">-->
         <!--<ion-col col-12>-->
@@ -266,21 +267,21 @@
 
 
   <div class="category-title">
-    Tests & Exams Revision <div class="category-subtitle">2 Categories</div>
+    Tests & Exams Revision <div class="category-subtitle">3 Categories</div>
   </div>
   <ion-scroll scrollX="true" style="height:200px;">
       <ion-row nowrap align-items-baseline>
         <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams Revision'">
           <ion-col col-12>
 
-            <ion-card (click)="courseDetail(subject)">
-              <img src="../../assets/../../assets/img/chemist-with-vials.jpg"/>
+            <ion-card (click)="grade(subjects, subject.grade)">
+              <img src="../../assets/../../assets/img/{{subject.icon}}"/>
               <ion-card-content>
                 <ion-row>
                   <ion-col>
                     <button class="card-title" ion-button icon-left clear small>
                       <ion-icon name="open"></ion-icon>
-                      <div>{{subject.name}}</div>
+                      <div>{{subject.grade}}</div>
                     </button>
                   </ion-col>
                 </ion-row>

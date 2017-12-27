@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Generated class for the VideoPlayerPage page.
@@ -14,9 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VideoPlayerPage {
   public video;
+  public videoUrl;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.video = navParams.get('video')
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
+    this.video = navParams.get('video');
+      this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
   }
 
   ionViewDidLoad() {
