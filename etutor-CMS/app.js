@@ -29,6 +29,7 @@ const app = express();
 
 // Route files
 const users = require('./routes/userRoutes');
+const subjects = require('./routes/subjectRoutes');
 
 // default port variable
 const port = 3000;
@@ -49,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // route paths
 app.use('/users', users);
+app.use('/subjects', subjects);
 
 // handles listening to the specified port and starts server
 app.listen(port, () => {

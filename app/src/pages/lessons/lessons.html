@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Chemistry lessons</ion-title>
+    <ion-title>{{subject.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -21,12 +21,11 @@
     <ion-item>Subject syllabus</ion-item>
   </ion-item-group>
 
-  <ion-item-group *ngFor="let lesson of lessons">
-    <ion-item-divider color="light">{{lesson.title}}</ion-item-divider>
-    <button ion-item (click)="goToContent(lesson)">
-      {{lesson.subTopic}}
+  <ion-item-group *ngFor="let topic of subject.topics">
+    <ion-item-divider color="light">{{topic.topic_name}}</ion-item-divider>
+    <button *ngFor="let subTopic of topic.sub_topics" ion-item (click)="goToContent(subTopic)">
+      {{subTopic.name}}
     </button>
-    <ion-item>{{lesson.topic}}</ion-item>
   </ion-item-group>
 
 

@@ -7,87 +7,87 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Grade 8</ion-title>
+    <ion-title>{{grade}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="card-background-page">
+<ion-content class="card-background-page" *ngFor="let subject of subjects  | category :'grade' : grade">
 
-      <ion-card>
-        <img src="../../assets/img/chemist.jpg"/>
+      <ion-card (click)="courseDetail(subject)">
+        <img src="../../assets/img/{{subject.icon}}"/>
         <ion-card-content>
           <ion-row>
             <ion-col>
               <button class="card-title" ion-button icon-left clear small>
                 <ion-icon name="open"></ion-icon>
-                <div>Science</div>
+                <div>{{subject.name}}</div>
               </button>
             </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
 
-      <ion-card>
-        <img src="../../assets/img/g8.gif"/>
-        <ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button class="card-title" ion-button icon-left clear small>
-                <ion-icon name="open"></ion-icon>
-                <div>History</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
+      <!--<ion-card>-->
+        <!--<img src="../../assets/img/g8.gif"/>-->
+        <!--<ion-card-content>-->
+          <!--<ion-row>-->
+            <!--<ion-col>-->
+              <!--<button class="card-title" ion-button icon-left clear small>-->
+                <!--<ion-icon name="open"></ion-icon>-->
+                <!--<div>History</div>-->
+              <!--</button>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+        <!--</ion-card-content>-->
+      <!--</ion-card>-->
 
 
-      <ion-card>
-        <img src="../../assets/img/Geography-Banner.jpg"/>
-        <ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button class="card-title" ion-button icon-left clear small>
-                <ion-icon name="open"></ion-icon>
-                <div>Geography</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
+      <!--<ion-card>-->
+        <!--<img src="../../assets/img/Geography-Banner.jpg"/>-->
+        <!--<ion-card-content>-->
+          <!--<ion-row>-->
+            <!--<ion-col>-->
+              <!--<button class="card-title" ion-button icon-left clear small>-->
+                <!--<ion-icon name="open"></ion-icon>-->
+                <!--<div>Geography</div>-->
+              <!--</button>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+        <!--</ion-card-content>-->
+      <!--</ion-card>-->
 
 
-      <ion-card>
-        <img src="../../assets/img/physics.jpg"/>
-        <ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button class="card-title" ion-button icon-left clear small>
-                <ion-icon name="open"></ion-icon>
-                <div>Civics</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
+      <!--<ion-card>-->
+        <!--<img src="../../assets/img/physics.jpg"/>-->
+        <!--<ion-card-content>-->
+          <!--<ion-row>-->
+            <!--<ion-col>-->
+              <!--<button class="card-title" ion-button icon-left clear small>-->
+                <!--<ion-icon name="open"></ion-icon>-->
+                <!--<div>Civics</div>-->
+              <!--</button>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+        <!--</ion-card-content>-->
+      <!--</ion-card>-->
 
 
 
-      <ion-card>
-        <img src="../../assets/img/mathematics (1).jpg"/>
-        <ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button class="card-title" ion-button icon-left clear small>
-                <ion-icon name="open"></ion-icon>
-                <div>Mathematics</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
+      <!--<ion-card>-->
+        <!--<img src="../../assets/img/mathematics (1).jpg"/>-->
+        <!--<ion-card-content>-->
+          <!--<ion-row>-->
+            <!--<ion-col>-->
+              <!--<button class="card-title" ion-button icon-left clear small>-->
+                <!--<ion-icon name="open"></ion-icon>-->
+                <!--<div>Mathematics</div>-->
+              <!--</button>-->
+            <!--</ion-col>-->
+          <!--</ion-row>-->
+        <!--</ion-card-content>-->
+      <!--</ion-card>-->
 
 
 </ion-content>
