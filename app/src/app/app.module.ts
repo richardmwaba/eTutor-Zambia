@@ -3,8 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 // Importing AF2 Module
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -26,14 +26,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 
 //AngularFire Settings
-const firebaseConfig = {
-  apiKey: "AIzaSyBLeMLPSueCBV8Nxo1esz-sl3xYJp5HJPE",
-    authDomain: "e-tutor-d5360.firebaseapp.com",
-    databaseURL: "https://e-tutor-d5360.firebaseio.com",
-    projectId: "e-tutor-d5360",
-    storageBucket: "e-tutor-d5360.appspot.com",
-    messagingSenderId: "102847060269"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBLeMLPSueCBV8Nxo1esz-sl3xYJp5HJPE",
+//     authDomain: "e-tutor-d5360.firebaseapp.com",
+//     databaseURL: "https://e-tutor-d5360.firebaseio.com",
+//     projectId: "e-tutor-d5360",
+//     storageBucket: "e-tutor-d5360.appspot.com",
+//     messagingSenderId: "102847060269"
+// };
 
 @NgModule({
   declarations: [
@@ -56,8 +56,8 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    // AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
