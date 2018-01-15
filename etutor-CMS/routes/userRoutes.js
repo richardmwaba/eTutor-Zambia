@@ -12,13 +12,13 @@ const User = require('../models/user');
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
     let newUser = new User.getModel({
-        f_name: req.body.f_name,
-        l_name: req.body.l_name,
+        name: req.body.name,
         title: req.body.title,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        phone: req.body.phone
+        phone: req.body.phone,
+        subscription_status: req.body.status
     }); 
     // add to db
     User.addUser(newUser, (err, user) => {
@@ -40,7 +40,7 @@ router.post('/authenticate', (req, res, next) => {
     User.getUserByEmail(email, (err, user) => {
         if(err) throw err;
         if(!user) {
-            return res.json({success: false, msg: 'User does not exist'}); // use new status 
+            return res.json({success: false, msg: 'User does not exist, please sign up.'}); // use new status 
         }
 
         User.comparePassword(password, user.password, (err, isMatch) => {

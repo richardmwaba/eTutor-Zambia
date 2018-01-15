@@ -27,23 +27,26 @@
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
-        <ion-list>
-
-          <ion-item>
-            <ion-label style="color: #488aff" stacked>Username</ion-label>
-            <ion-input type="text"></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label style="color: #488aff" stacked>Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-
-        </ion-list>
-
-        <div padding>
-          <button ion-button color="primary" block text-capitalize>Sign In</button>
-        </div>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+          <ion-list>
+          
+            <ion-item>
+              <ion-label style="color: #488aff" stacked>Email</ion-label>
+              <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label style="color: #488aff" stacked>Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+          
+          </ion-list>
+          
+          <div padding>
+            <button ion-button color="primary" block text-capitalize type="submit">Sign In</button>
+          </div>
+        </form>
+        
       <!--</ion-content>-->
     </div>
     <div class="div-center">

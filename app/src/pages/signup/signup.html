@@ -27,38 +27,57 @@
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
-      <ion-list>
+      <form #f="ngForm" (ngSubmit)="signIn(f.value)" novalidate>
+        <ion-list>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Full name</ion-label>
+            <ion-input type="text" name="name" [(ngModel)]="name" required></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Username</ion-label>
+            <ion-input type="text" name="username" [(ngModel)]="username" required></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Username</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Phone</ion-label>
-          <ion-input type="tel"id="phone">></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-
-      </ion-list>
-
-      <div padding>
-        <button ion-button color="primary" block text-capitalize>Sign Up</button>
-      </div>
+          <ion-item>
+              <ion-label style="color: #488aff" stacked>Email</ion-label>
+              <ion-input type="email" name="email" [(ngModel)]="email" #mail="ngModel"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" required></ion-input>
+              <small [hidden]="mail.valid || (mail.pristine && !f.submitted)" >
+                Email is required and formt should be <i>john@doe.com</i>.
+              </small>
+            </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Phone</ion-label>
+            <ion-input type="tel" id="phone" name="phone" [(ngModel)]="phone" required>></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Password</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="password" #pswd="ngModel" required></ion-input>
+            <small [hidden]="pswd.valid || (pswd.pristine && !f.submitted)" >
+              Password is required
+            </small>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
+            <ion-input type="password" name="confirmpswd" [(ngModel)]="confirmpswd" #confirmpass="ngModel"
+              validateEqual="password" required ></ion-input>
+              <small [hidden]="confirmpass.valid || (confirmpass.pristine && !f.submitted)">
+                Password mismatch.
+              </small>
+          </ion-item>
+        
+        </ion-list> 
+        
+        <div padding>
+          <button ion-button color="primary" type="submit" block text-capitalize>Sign Up</button>
+        </div>
+      </form>
+      
       <!--</ion-content>-->
 
       <div class="card btn-down" >

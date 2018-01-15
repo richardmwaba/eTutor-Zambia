@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
@@ -24,6 +24,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthProvider} from '../providers/auth/auth';
 import {SubjectsProvider} from '../providers/subjects/subjects';
 import {VideosPage} from "../pages/videos/videos";
+import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 
 @NgModule({
     declarations: [
@@ -43,7 +44,8 @@ import {VideosPage} from "../pages/videos/videos";
         LessonContentPage,
         VideoPlayerPage,
         Category,
-        VideosPage
+        VideosPage,
+        EqualValidatorDirective
     ],
     imports: [
         BrowserModule,
