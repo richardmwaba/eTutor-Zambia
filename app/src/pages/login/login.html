@@ -27,17 +27,25 @@
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <form [formGroup]="logForm" (ngSubmit)="login()">
           <ion-list>
           
             <ion-item>
               <ion-label style="color: #488aff" stacked>Email</ion-label>
-              <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+              <ion-input type="text" formControlName="email" required></ion-input>
             </ion-item>
           
+            <ion-item *ngIf="!logForm.controls.email.valid && (logForm.controls.email.dirty || submitAttempt)" >
+              <p class="error">Email is required and format should be <i>john@doe.com</i>.</p>
+            </ion-item>
+
             <ion-item>
               <ion-label style="color: #488aff" stacked>Password</ion-label>
-              <ion-input type="password" name="password" [(ngModel)]="password"></ion-input>
+              <ion-input type="password" formControlName="password" required></ion-input>
+            </ion-item>
+
+            <ion-item *ngIf="!logForm.controls.password.valid && (logForm.controls.password.dirty || submitAttempt)" >
+              <p class="error">Password must be 6 or more characters.</p>
             </ion-item>
           
           </ion-list>

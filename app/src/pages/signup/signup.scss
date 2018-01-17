@@ -17,11 +17,17 @@ page-signup {
     align-items: center;
     text-align: center;
   }
+
   log-font{
     font-size: 1.5rem;
   }
   .social-icon{
     font-size: 35px;
+  }
+
+  .error {
+    font-size: 0.5rem;
+    color: #f15645;
   }
 
   //sass for telephone input
