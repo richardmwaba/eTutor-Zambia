@@ -27,10 +27,10 @@
           url: '/ui',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'UI Features',
+          title: 'Lessons',
           sidebarMeta: {
             icon: 'ion-android-laptop',
-            order: 200,
+            order: 100,
           },
         });
   }

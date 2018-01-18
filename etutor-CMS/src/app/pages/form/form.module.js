@@ -15,27 +15,27 @@
           url: '/form',
           template : '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'Form Elements',
-          sidebarMeta: {
-            icon: 'ion-compose',
-            order: 250,
-          },
+          title: 'Form Elements'// ,
+          // sidebarMeta: {
+          //   icon: 'ion-compose',
+          //   order: 250,
+          //},
         })
         .state('form.inputs', {
           url: '/inputs',
           templateUrl: 'app/pages/form/inputs/inputs.html',
-          title: 'Form Inputs',
+          title: 'Form Inputs'/*,
           sidebarMeta: {
             order: 0,
-          },
+          },*/
         })
         .state('form.layouts', {
           url: '/layouts',
           templateUrl: 'app/pages/form/layouts/layouts.html',
-          title: 'Form Layouts',
+          title: 'Form Layouts'/*,
           sidebarMeta: {
             order: 100,
-          },
+          },*/
         })
         .state('form.wizard',
         {
@@ -43,10 +43,10 @@
           templateUrl: 'app/pages/form/wizard/wizard.html',
           controller: 'WizardCtrl',
           controllerAs: 'vm',
-          title: 'Form Wizard',
+          title: 'Form Wizard'/*,
           sidebarMeta: {
             order: 200,
-          },
+          },*/
         });
   }
 })();

@@ -18,9 +18,9 @@
 
       dataProvider: {
         map: 'worldLow',
-        zoomLevel: 3.5,
-        zoomLongitude: 10,
-        zoomLatitude: 52,
+        zoomLevel: 20.5,
+        zoomLongitude: 28,
+        zoomLatitude: -13,
         areas: [
           { title: 'Austria', id: 'AT', color: layoutColors.primary, customData: '1 244', groupId: '1'},
           { title: 'Ireland', id: 'IE', color: layoutColors.primary, customData: '1 342', groupId: '1'},
@@ -49,7 +49,8 @@
           { title: 'Romania', id: 'RO', color: layoutColors.success, customData: '302', groupId: '3'},
           { title: 'Bulgaria', id: 'BG', color: layoutColors.success, customData: '102', groupId: '3'},
           { title: 'Slovenia', id: 'SI', color: layoutColors.danger, customData: '23', groupId: '4'},
-          { title: 'Croatia', id: 'HR', color: layoutColors.danger, customData: '96', groupId: '4'}
+          { title: 'Croatia', id: 'HR', color: layoutColors.danger, customData: '96', groupId: '4'},
+          { title: 'Zambia', id: 'ZM', color: layoutColors.primaryLight, customData: '3 000', groupId: '5'}
         ]
       },
 

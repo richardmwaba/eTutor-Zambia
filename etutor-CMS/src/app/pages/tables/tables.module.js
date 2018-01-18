@@ -16,10 +16,10 @@
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           controller: 'TablesPageCtrl',
-          title: 'Tables',
+          title: 'Users',
           sidebarMeta: {
             icon: 'ion-grid',
-            order: 300,
+            order: 150,
           },
         }).state('tables.basic', {
           url: '/basic',

@@ -19,10 +19,10 @@
           url: '/components',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'Components',
+          title: 'App Settings',
           sidebarMeta: {
             icon: 'ion-gear-a',
-            order: 100,
+            order: 200,
           },
         });
   }
