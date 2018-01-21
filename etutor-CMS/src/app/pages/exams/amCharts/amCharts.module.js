@@ -5,15 +5,15 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.charts.amCharts', [])
+  angular.module('BlurAdmin.pages.exams.amCharts', [])
       .config(routeConfig).config(amChartConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('charts.amCharts', {
+        .state('exams.amCharts', {
           url: '/amCharts',
-          templateUrl: 'app/pages/charts/amCharts/charts.html',
+          templateUrl: 'app/pages/exams/amCharts/charts.html',
           title: 'amCharts',
           sidebarMeta: {
             order: 0,

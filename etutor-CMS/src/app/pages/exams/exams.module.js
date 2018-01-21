@@ -5,19 +5,18 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.charts', [
-      'BlurAdmin.pages.charts.amCharts',
-      'BlurAdmin.pages.charts.chartJs',
-      'BlurAdmin.pages.charts.chartist',
-      'BlurAdmin.pages.charts.morris'
+  angular.module('BlurAdmin.pages.exams', [ 
+    'BlurAdmin.pages.exams.junior',
+    'BlurAdmin.pages.exams.senior',
+    'BlurAdmin.pages.exams.aLevel'
   ])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('charts', {
-          url: '/charts',
+        .state('exams', {
+          url: '/exams',
           abstract: true,
           template: '<div ui-view  autoscroll="true" autoscroll-body-top></div>',
           title: 'Exams',
