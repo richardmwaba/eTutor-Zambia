@@ -1,15 +1,15 @@
 (function () {
     'use strict';
   
-    angular.module('BlurAdmin.pages.exams.aLevel', [])
+    angular.module('BlurAdmin.pages.lessons.aLevel', [])
         .config(routeConfig);
   
     /** @ngInject */
     function routeConfig($stateProvider) {
       $stateProvider
-          .state('exams.aLevel', {
+          .state('lessons.aLevel', {
             url: '/a-level',
-            templateUrl: 'app/pages/exams/aLevel/a-level.html',
+            templateUrl: 'app/pages/lessons/aLevel/a-level.html',
             title: 'A-level',
             sidebarMeta: {
               order: 0,

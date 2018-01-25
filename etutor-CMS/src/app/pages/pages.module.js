@@ -9,12 +9,10 @@
     'ui.router',
 
     'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
+    'BlurAdmin.pages.lessons',
     'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.users',
     'BlurAdmin.pages.exams',
-    'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
   ])
       .config(routeConfig);

@@ -7,8 +7,8 @@
 
   angular.module('BlurAdmin.pages.exams', [ 
     'BlurAdmin.pages.exams.junior',
-    'BlurAdmin.pages.exams.senior',
-    'BlurAdmin.pages.exams.aLevel'
+    'BlurAdmin.pages.exams.aLevel',
+    'BlurAdmin.pages.exams.senior'
   ])
       .config(routeConfig);
 
