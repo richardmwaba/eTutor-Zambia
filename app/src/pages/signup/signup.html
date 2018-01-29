@@ -27,38 +27,66 @@
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
-      <ion-list>
+      <form [formGroup]="theForm" (ngSubmit)="signIn()" novalidate>
+        <ion-list>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Full name</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
+          <ion-item *ngIf="!theForm.controls.name.valid && (theForm.controls.name.dirty || submitAcepted)" >
+            <p class="error">Please enter a valid name.</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Username</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Username</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
+          <ion-item *ngIf="!theForm.controls.username.valid && (theForm.controls.username.dirty || theForm.controls.username.touched)" >
+            <p class="error">Please enter a valid username.</p>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Phone</ion-label>
-          <ion-input type="tel"id="phone">></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
+          <ion-item *ngIf="!theForm.controls.email.valid && (theForm.controls.email.dirty || submitAcepted)" >
+            <p class="error">Email is required and format should be <i>john@doe.com</i>.</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Phone</ion-label>
+            <ion-input type="tel" formControlName="phone" ></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
+          <ion-item *ngIf="!theForm.controls.phone.valid && (theForm.controls.phone.dirty || theForm.controls.phone.touched)" >
+            <p class="error">Phone field is required.</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Password</ion-label>
+            <ion-input type="password" formControlName="password" ></ion-input>
+          </ion-item>
 
-      </ion-list>
-
-      <div padding>
-        <button ion-button color="primary" block text-capitalize>Sign Up</button>
-      </div>
+          <ion-item *ngIf="!theForm.controls.password.valid && (theForm.controls.password.dirty || submitAcepted)" >
+            <p class="error">Password should be 6 or more characters.</p>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        
+        </ion-list> 
+        
+        <div padding>
+          <button ion-button color="primary" type="submit" block text-capitalize>Sign Up</button>
+        </div>
+      </form>
+      
       <!--</ion-content>-->
 
       <div class="card btn-down" >

@@ -6,14 +6,11 @@ const config = require('../config/database');
 
 // user schema
 const UserSchema = module.exports= mongoose.Schema({
-    f_name: {
-        type: String, required: true
-    },
-    l_name: {
+    name: {
         type: String, required: true
     },
     title: {
-        type: String, required: true
+        type: String // changed to not required
     },
     email: {
         type: String, required: true
@@ -26,6 +23,9 @@ const UserSchema = module.exports= mongoose.Schema({
     },
     phone: {
         type: String, required: true
+    },
+    subscription_status: {
+        type: String // e.g. student can have either an 'active' or 'inactive' status 
     }
 });
 

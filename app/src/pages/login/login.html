@@ -27,23 +27,34 @@
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
-        <ion-list>
+        <form [formGroup]="logForm" (ngSubmit)="login()">
+          <ion-list>
+          
+            <ion-item>
+              <ion-label style="color: #488aff" stacked>Email</ion-label>
+              <ion-input type="text" formControlName="email" required></ion-input>
+            </ion-item>
+          
+            <ion-item *ngIf="!logForm.controls.email.valid && (logForm.controls.email.dirty || submitAttempt)" >
+              <p class="error">Email is required and format should be <i>john@doe.com</i>.</p>
+            </ion-item>
 
-          <ion-item>
-            <ion-label style="color: #488aff" stacked>Username</ion-label>
-            <ion-input type="text"></ion-input>
-          </ion-item>
+            <ion-item>
+              <ion-label style="color: #488aff" stacked>Password</ion-label>
+              <ion-input type="password" formControlName="password" required></ion-input>
+            </ion-item>
 
-          <ion-item>
-            <ion-label style="color: #488aff" stacked>Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-
-        </ion-list>
-
-        <div padding>
-          <button ion-button color="primary" block text-capitalize>Sign In</button>
-        </div>
+            <ion-item *ngIf="!logForm.controls.password.valid && (logForm.controls.password.dirty || submitAttempt)" >
+              <p class="error">Password must be 6 or more characters.</p>
+            </ion-item>
+          
+          </ion-list>
+          
+          <div padding>
+            <button ion-button color="primary" block text-capitalize type="submit">Sign In</button>
+          </div>
+        </form>
+        
       <!--</ion-content>-->
     </div>
     <div class="div-center">

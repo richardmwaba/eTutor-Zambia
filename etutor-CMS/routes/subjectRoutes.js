@@ -126,21 +126,21 @@ router.post('/add/topic/:subId', (req, res, next) =>{
 
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
         // check for errors
-        if(err) {
-            res.json({success: false, msg: 'Failed to get subject'});
+        if (err) {
+            res.json({ success: false, msg: 'Failed to get subject' });
         } else {
             // if success
-            Subject.addTopic(subject, newTopic, (err, topic) =>{
-            // check for errors
-            if(err) {
-                res.json({success: false, msg: 'Failed to get subject'});
-            } else {
-                res.json(topic);
-                    }
-                                                                });
+            Subject.addTopic(subject, newTopic, (err, topic) => {
+                // check for errors
+                if (err) {
+                    res.json({ success: false, msg: 'Failed to get subject' });
+                } else {
+                    res.json(topic);
+                }
+            });
                 // res.json(subject);
-}
-});
+        }
+    });
 });
 
 
