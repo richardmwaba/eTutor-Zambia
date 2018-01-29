@@ -608,7 +608,7 @@
         email: 'mdo@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '4'
+        group: 4
       },
       {
         id: 2,
@@ -618,7 +618,7 @@
         email: 'fat@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '4'
+        group: 4
       },
       {
         id: 3,
@@ -628,7 +628,7 @@
         email: 'twitter@outlook.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '3'
+        group: 3
       },
       {
         id: 4,
@@ -638,7 +638,7 @@
         email: 'snow@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '3'
+        group: 3
       },
       {
         id: 5,
@@ -648,7 +648,7 @@
         email: 'jack@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '3'
+        group: 3
       },
       {
         id: 6,
@@ -658,7 +658,7 @@
         email: 'ann@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '2'
+        group: 2
       },
       {
         id: 7,
@@ -668,7 +668,7 @@
         email: 'barbara@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '2'
+        group: 2
       },
       {
         id: 8,
@@ -678,7 +678,7 @@
         email: 'sevan@outlook.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '2'
+        group: 2
       },
       {
         id: 9,
@@ -688,7 +688,7 @@
         email: 'ruben@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '2'
+        group: 2
       },
       {
         id: 10,
@@ -698,7 +698,7 @@
         email: 'karen@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       },
       {
         id: 11,
@@ -708,7 +708,7 @@
         email: 'mark@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       },
       {
         id: 12,
@@ -718,7 +718,7 @@
         email: 'jacob@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       },
       {
         id: 13,
@@ -728,7 +728,7 @@
         email: 'haik@outlook.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       },
       {
         id: 14,
@@ -738,7 +738,7 @@
         email: 'garegin@gmail.com',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       },
       {
         id: 15,
@@ -748,7 +748,7 @@
         email: 'krikor@yandex.ru',
         phoneNumber: '+260977123456',
         address: '37HC, Ibex Hill, Lusaka',
-        group: '1'
+        group: 1
       }
     ];
 
