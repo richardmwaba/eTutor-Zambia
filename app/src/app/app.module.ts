@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
@@ -25,6 +25,7 @@ import {AuthProvider} from '../providers/auth/auth';
 import {SubjectsProvider} from '../providers/subjects/subjects';
 import {VideosPage} from "../pages/videos/videos";
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
         LessonContentPage,
         VideoPlayerPage,
         Category,
-        VideosPage
+        VideosPage,
+        EqualValidatorDirective
     ],
     imports: [
         BrowserModule,

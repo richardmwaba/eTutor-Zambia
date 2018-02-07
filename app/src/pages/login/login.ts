@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+ 
 import { SignupPage } from '../signup/signup';
+import { AuthProvider } from './../../providers/auth/auth';
+import { HomePage } from '../home/home';
+
 
 @IonicPage()
 @Component({
@@ -9,8 +13,25 @@ import { SignupPage } from '../signup/signup';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  // sinupPage = 'SignupPage';
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // variable
+  logForm: FormGroup;
+  submitAttempt: boolean = false;
+
+  token: string;
+  user: any;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private auth: AuthProvider,
+    public toastCtrl: ToastController,
+    public formBuilder: FormBuilder
+  ) {
+
+    this.logForm = formBuilder.group({
+      email: ['', Validators.compose( [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*')] )],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+    })
   }
 
   ionViewDidLoad() {
@@ -20,6 +41,59 @@ export class LoginPage {
   signUp(params){
     if (!params) params = {};
     this.navCtrl.push(SignupPage);
+  }
+
+  /**
+   * Logs a user into the app
+   */
+  login() {
+    this.submitAttempt = true; 
+    
+    console.log('credentials: ' + this.logForm.value);
+
+    // this.auth.authenticateUser(this.logForm.value).subscribe(data => {
+
+    //   if (data['success'] === true) {
+    //     // get token and user from returned data
+    //     this.token = data['token'];
+    //     this.user = data['user'];
+
+    //     // store token and user dits in local storage
+    //     //TODO: may need to user secure storage for this data
+    //     this.auth.storeData(this.token, this.user);
+        
+    //     // show success toast
+    //     this.presentToast();
+
+    //     // redirect to home page
+    //     this.navCtrl.setRoot(HomePage);
+
+    //   } else {
+    //     // show error alert
+    //     let toastWarn = this.toastCtrl.create({
+    //       message: data['msg'],
+    //       duration: 3000,
+    //       position: 'top',
+    //       cssClass: 'warning'
+    //     });
+
+    //     toastWarn.present();
+    //   }
+
+    // });
+  }
+
+  /**
+   * Presents a success toast on log in
+   */
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You have successfully logged in...',
+      duration: 3000,
+      //position, cssCLass
+    });
+
+    toast.present(); // shows the toaster
   }
 
 }
