@@ -43,30 +43,30 @@
 
 <div class="categories">
 
-  <div class="category-title">
-    A-Levels <div class="category-subtitle">4 subjects</div>
-  </div>
+  <!--<div class="category-title">-->
+    <!--A-Levels <div class="category-subtitle">4 subjects</div>-->
+  <!--</div>-->
 
-  <ion-scroll scrollX="true" style="height:200px;">
-    <ion-row nowrap align-items-baseline>
-    <div class="scroll-item" *ngFor="let subject of subjects | category :'category' : 'A-Levels' ">
-        <ion-col col-12>
+  <!--<ion-scroll scrollX="true" style="height:200px;">-->
+    <!--<ion-row nowrap align-items-baseline>-->
+    <!--<div class="scroll-item" *ngFor="let subject of subjects | category :'category' : 'A-Levels' ">-->
+        <!--<ion-col col-12>-->
 
-          <ion-card (click)="courseDetail(subject)">
-            <img src="../../assets/../../assets/img/{{subject.icon}}"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>{{subject.name}}</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-    </div>
+          <!--<ion-card (click)="courseDetail(subject)">-->
+            <!--<img src="../../assets/../../assets/img/{{subject.icon}}"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>{{subject.name}}</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+    <!--</div>-->
 
       <!--<div class="scroll-item">-->
         <!--<ion-col col-12>-->
@@ -141,35 +141,35 @@
           <!--</ion-card>-->
         <!--</ion-col>-->
       <!--</div>-->
-    </ion-row>
-  </ion-scroll>
+    <!--</ion-row>-->
+  <!--</ion-scroll>-->
 
-  <div class="category-title">
-    Junior/Senior Secondary <div class="category-subtitle">5 subjects</div>
-  </div>
+  <!--<div class="category-title">-->
+    <!--Junior/Senior Secondary <div class="category-subtitle">5 subjects</div>-->
+  <!--</div>-->
 
-  <ion-scroll scrollX="true" style="height:200px;">
-    <ion-row nowrap align-items-baseline>
-      <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Junior/Senior Secondary'">
-        <ion-col col-12>
+  <!--<ion-scroll scrollX="true" style="height:200px;">-->
+    <!--<ion-row nowrap align-items-baseline>-->
+      <!--<div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Junior/Senior Secondary'">-->
+        <!--<ion-col col-12>-->
 
-          <ion-card (click)="grade(subjects, subject.grade)">
-            <img src="../../assets/img/{{subject.icon}}"/>
-            <ion-card-content>
-              <ion-row>
-                <ion-col>
-                  <button class="card-title" ion-button icon-left clear small>
-                    <ion-icon name="open"></ion-icon>
-                    <div>Grade {{subject.grade}}</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </div>
-    </ion-row>
-  </ion-scroll>
+          <!--<ion-card (click)="grade(subjects, subject.grade)">-->
+            <!--<img src="../../assets/img/{{subject.icon}}"/>-->
+            <!--<ion-card-content>-->
+              <!--<ion-row>-->
+                <!--<ion-col>-->
+                  <!--<button class="card-title" ion-button icon-left clear small>-->
+                    <!--<ion-icon name="open"></ion-icon>-->
+                    <!--<div>Grade {{subject.grade}}</div>-->
+                  <!--</button>-->
+                <!--</ion-col>-->
+              <!--</ion-row>-->
+            <!--</ion-card-content>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</div>-->
+    <!--</ion-row>-->
+  <!--</ion-scroll>-->
 
   <!--<ion-scroll scrollX="true" style="height:200px;">-->
     <!--<ion-row nowrap align-items-baseline >-->
@@ -267,14 +267,14 @@
 
 
   <div class="category-title">
-    Tests & Exams Revision <div class="category-subtitle">3 Categories</div>
+    Tests & Exams Revision <div class="category-subtitle">1 Category</div>
   </div>
   <ion-scroll scrollX="true" style="height:200px;">
       <ion-row nowrap align-items-baseline>
         <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams Revision'">
           <ion-col col-12>
 
-            <ion-card (click)="grade(subjects, subject.grade)">
+            <ion-card (click)="courseDetail(subject)">
               <img src="../../assets/../../assets/img/{{subject.icon}}"/>
               <ion-card-content>
                 <ion-row>

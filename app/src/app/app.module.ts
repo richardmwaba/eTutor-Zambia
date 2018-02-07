@@ -24,6 +24,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthProvider} from '../providers/auth/auth';
 import {SubjectsProvider} from '../providers/subjects/subjects';
 import {VideosPage} from "../pages/videos/videos";
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
 @NgModule({
     declarations: [
@@ -68,7 +69,7 @@ import {VideosPage} from "../pages/videos/videos";
         LessonsPage,
         LessonContentPage,
         VideoPlayerPage,
-        VideosPage
+        VideosPage,
     ],
     providers: [
         StatusBar,
@@ -76,7 +77,8 @@ import {VideosPage} from "../pages/videos/videos";
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
         SubjectsProvider,
-        HttpClientModule
+        HttpClientModule,
+        StreamingMedia
     ]
 })
 export class AppModule {
