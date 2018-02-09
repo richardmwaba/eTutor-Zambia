@@ -24,6 +24,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthProvider} from '../providers/auth/auth';
 import {SubjectsProvider} from '../providers/subjects/subjects';
 import {VideosPage} from "../pages/videos/videos";
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 
 @NgModule({
@@ -70,7 +71,7 @@ import { EqualValidatorDirective } from '../directives/equal-validator/equal-val
         LessonsPage,
         LessonContentPage,
         VideoPlayerPage,
-        VideosPage
+        VideosPage,
     ],
     providers: [
         StatusBar,
@@ -78,7 +79,8 @@ import { EqualValidatorDirective } from '../directives/equal-validator/equal-val
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
         SubjectsProvider,
-        HttpClientModule
+        HttpClientModule,
+        StreamingMedia
     ]
 })
 export class AppModule {

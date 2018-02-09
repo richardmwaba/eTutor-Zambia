@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 // page import
-import { LessonContentPage } from '../lesson-content/lesson-content';
-import {VideosPage} from "../videos/videos";
+import {VideoPlayerPage} from "../video-player/video-player";
 
 /**
  * Generated class for the LessonsPage page.
@@ -40,7 +39,7 @@ export class LessonsPage {
   }
 
   goToContent(subTopic) {
-    this.navCtrl.push(VideosPage, {
+    this.navCtrl.push(VideoPlayerPage, {
       subTopic: subTopic  // passing data to LessonContentPage
     });
   }

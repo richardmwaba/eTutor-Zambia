@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
-  <iframe class="e2e-iframe-trusted-src" [src]="novideoUrl" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe [src]="videoUrl" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <p><a href={{videoUrl}}>Introducing e-tutor</a> from <a href="https://vimeo.com/user60491054">Martin Mumba</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  <p>An introduction to the new mobile learning platform based on ECZ standards</p>
+    <div *ngFor="let video of subTopic.videos">
+        <ion-list>
+            <button  (click)="play(video.url)">
+                {{video.url}}
+            </button>
+        </ion-list>
+    </div>
+
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
 /**
  * Generated class for the VideoPlayerPage page.
@@ -14,16 +15,35 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: 'video-player.html',
 })
 export class VideoPlayerPage {
-  public video;
+  public subTopic;
   public videoUrl;
+  public video;
+  public options: StreamingVideoOptions = {
+        successCallback: () => { console.log('Video played') },
+        errorCallback: (e) => { console.log('Error streaming') },
+        orientation: 'landscape'
+    };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
-    this.video = navParams.get('video');
-      this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
+  constructor(private streamingMedia: StreamingMedia, public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
+    this.subTopic = navParams.get('subTopic');
+    this.video = this.subTopic.videos[0];
+      this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
   }
+
+
+
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VideoPlayerPage');
+
+      this.streamingMedia.playVideo( this.videoUrl, this.options);
   }
+
+  play(url){
+      this.streamingMedia.playVideo( url, this.options);
+  }
+
+    goToVideo(url){
+        this.streamingMedia.playVideo( this.videoUrl, this.options);
+    }
 
 }
