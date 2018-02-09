@@ -4,8 +4,10 @@
   "description": "This is the CMS for the etutor mobile app, will enable the management of content for the app.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
   },
+
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
@@ -15,8 +17,10 @@
     "mongoose": "^5.0.3",
     "passport": "*",
     "passport-jwt": "*"
-  "name": "blur_admin",
-  "version": "1.3.1",
+    "name": "blur_admin",
+    "version": "1.3.1"
+  },
+
   "devDependencies": {
     "browser-sync": "~2.18.2",
     "browser-sync-spa": "~1.0.3",
@@ -57,8 +61,5 @@
     "uglify-save-license": "~0.4.1",
     "wiredep": "~4.0.0",
     "wrench": "~1.5.8"
-  },
-  "scripts": {
-    "postinstall": "bower install"
   }
 }
