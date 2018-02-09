@@ -20,8 +20,8 @@ module.exports = {
     //     replicaSet: 'Mycluster0-shard-0'
     // };
 
-    database: "mongodb://martin:XfCognXbMQFIAqMP@etutor-shard-00-00-blwdi.mongodb.net:27017,etutor-shard-00-01-blwdi.mongodb.net:27017,etutor-shard-00-02-blwdi.mongodb.net:27017/test?ssl=true&replicaSet=etutor-shard-0&authSource=admin",
-               mongodb://martin:XfCognXbMQFIAqMP@etutor-shard-00-00-blwdi.mongodb.net:27017,etutor-shard-00-01-blwdi.mongodb.net:27017,etutor-shard-00-02-blwdi.mongodb.net:27017/test?ssl=true&replicaSet=etutor-shard-0&authSource=admin
+    database: "mongodb://martin:XfCognXbMQFIAqMP@etutor-shard-00-00-blwdi.mongodb.net:27017,etutor-shard-00-01-blwdi.mongodb.net:27017,etutor-shard-00-02-blwdi.mongodb.net:27017/etutorDB?ssl=true&replicaSet=etutor-shard-0&authSource=admin",
+               // mongodb://martin:XfCognXbMQFIAqMP@etutor-shard-00-00-blwdi.mongodb.net:27017,etutor-shard-00-01-blwdi.mongodb.net:27017,etutor-shard-00-02-blwdi.mongodb.net:27017/test?ssl=true&replicaSet=etutor-shard-0&authSource=admin
 
     secret: 'appsecret' // used for token auth
 }

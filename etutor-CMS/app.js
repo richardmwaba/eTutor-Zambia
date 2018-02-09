@@ -23,7 +23,7 @@ mongoose.Promise = global.Promise;
 // };
 
 mongoose.connect(config.database).then(() => {
-    return server.start();
+    // return server.start();
 }).catch(err => { //handle mongoose connect error
     console.error('App starting error:', err.stack);
     // setTimeout(connectWithRetry, 5000);

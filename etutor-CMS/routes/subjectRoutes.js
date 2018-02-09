@@ -66,8 +66,8 @@ router.post('/add', (req, res, next) => {
         category: req.body.category,
         icon: req.body.icon,
         instructors: {
-            f_name: req.body.instructors.f_name,
-            l_name: req.body.instructors.l_name,
+            name: req.body.instructors.name,
+            // l_name: req.body.instructors.l_name,
             title: req.body.instructors.title,
             username: req.body.instructors.username,
             email: req.body.instructors.email,
@@ -97,7 +97,7 @@ router.post('/add', (req, res, next) => {
 Subject.addSubject(newSubject, (err, subject) => {
     // check for errors
     if (err) {
-        res.json({success: false, msg: 'Failed to add subject'});
+        res.json({success: false, msg: err.stack});
     } else {
         // if success
         res.json(subject);
