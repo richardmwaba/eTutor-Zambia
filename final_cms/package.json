@@ -16,7 +16,6 @@
     "body-parser": "*",
     "passport": "*",
     "passport-jwt": "*"
-
   },
   "author": "Richard Mwaba",
   "license": "ISC"

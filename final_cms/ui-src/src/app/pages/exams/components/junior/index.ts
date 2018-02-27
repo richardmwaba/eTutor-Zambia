@@ -1,1 +1,0 @@
-export * from './junior_exams.component';
