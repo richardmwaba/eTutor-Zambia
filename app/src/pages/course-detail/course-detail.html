@@ -52,7 +52,7 @@
           <ion-card-header>
             <div class="title">Syllabus</div>
           </ion-card-header>
-          <ion-card-content *ngFor="let topic of subject.topics">
+          <ion-card-content *ngFor="let topic of subject.topics" (click)="openLessons(subject)">
             <div class="subtitle"> {{topic.duration}}: {{topic.topic_name}}</div>
             {{topic.description}}
             <!--<div class="subtitle"> Week 2: Introduction to chemistry</div>-->
