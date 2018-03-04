@@ -1,3 +1,96 @@
-<p>
-  sidemenu works!
-</p>
+<!-- Side-Nav-->
+<aside class="main-sidebar hidden-print ">
+  <section class="sidebar" id="sidebar-scroll">
+    <!-- Sidebar Menu-->
+    <ul class="sidebar-menu">
+      <li class="nav-level"></li>
+      <li class="active treeview">
+        <a class="waves-effect waves-dark" routerLink="" routerLinkActive="active">
+          <i class="fa fa-home"></i>
+          <span> Dashboard</span>
+        </a>
+      </li>
+
+      <li class="treeview">
+        <a class="waves-effect waves-dark" href="#!">
+          <i class="fa fa-pencil"></i>
+          <span>Exams</span>
+          <i class="icon-arrow-down"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/exams/a-level" routerLinkActive="active">
+              <i class="fa fa-plus"></i>A-level
+              </a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark"  routerLink="/exams/junior" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Junior</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark"  routerLink="/exams/senior" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Senior</a>
+          </li>
+          
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a class="waves-effect waves-dark" href="#!">
+          <i class="fa fa-book"></i>
+          <span> Lessons</span>
+          <i class="icon-arrow-down"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/lessons/eight" routerLinkActive="active">
+              <i class="fa fa-plus"></i>Eight</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/lessons/nine" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Nine</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/lessons/ten" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Ten</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/lessons/eleven" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Eleven</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark" routerLink="/lessons/twelve" routerLinkActive="active">
+              <i class="fa fa-plus"></i> Twelve</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a class="waves-effect waves-dark" routerLink="/clients" routerLinkActive="active">
+          <i class="fa fa-users"></i>
+          <span> Clients</span>
+        </a>
+      </li>
+
+
+      <li class="treeview">
+        <a class="waves-effect waves-dark" routerLink="/users" routerLinkActive="active">
+          <i class="fa fa-users"></i>
+          <span> Users</span>
+        </a>
+      </li>
+
+
+      <li class="nav-level">Admin Panel</li>
+
+      <li class="treeview">
+        <a class="waves-effect waves-dark" href="basic-table.html">
+          <i class="fa fa-cogs"></i>
+          <span> Settings</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+</aside>
+<!-- ./Side-Nav-->

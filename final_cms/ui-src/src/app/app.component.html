@@ -1,4 +1,30 @@
-<div class="container-fluid">
-  App works!!!
+<div class="sidebar-mini fixed">
+  <div class="wrapper">
+    <div class="loader-bg">
+      <div class="loader-bar">
+      </div>
+    </div>
+
+    <app-navbar></app-navbar>
+    <app-sidemenu></app-sidemenu>
+    <div class="content-wrapper">
+        <!-- Container-fluid starts -->
+       <div class="container-fluid">
+		<!-- Main content starts -->
+		<div>
+
+  </div>
   <router-outlet></router-outlet>
 </div>
+<script>
+  var $window = $(window);
+  var nav = $('.fixed-button');
+  $window.scroll(function () {
+    if ($window.scrollTop() >= 200) {
+      nav.addClass('active');
+    }
+    else {
+      nav.removeClass('active');
+    }
+  });
+</script>
