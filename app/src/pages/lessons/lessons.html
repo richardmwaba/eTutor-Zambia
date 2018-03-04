@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{subject.name}}</ion-title>
+    <ion-title>{{topic.topic_name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,17 +16,14 @@
 <ion-content>
 
   <ion-item-group>
-    <ion-item-divider color="light">Getting started</ion-item-divider>
-    <ion-item>Welcome Announcement</ion-item>
-    <ion-item>Subject syllabus</ion-item>
+    <ion-item>Contents</ion-item>
   </ion-item-group>
 
-  <ion-item-group *ngFor="let topic of subject.topics">
-    <ion-item-divider color="light">{{topic.topic_name}}</ion-item-divider>
-    <button *ngFor="let subTopic of topic.sub_topics" ion-item (click)="goToContent(subTopic)">
-      {{subTopic.name}}
+  <ion-item-group *ngFor="let sub_topic of topic.sub_topics">
+    <ion-item-divider color="light">{{sub_topic.name}}</ion-item-divider>
+    <button *ngFor="let video of sub_topic.videos" ion-item (click)="goToContent(video)">
+      {{video.name}}
     </button>
   </ion-item-group>
-
 
 </ion-content>
