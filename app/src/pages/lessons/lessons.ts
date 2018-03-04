@@ -19,10 +19,12 @@ export class LessonsPage {
 
   // lessons array
   // lessons: Array<{title: string, subTopic: string, topic: string}>;
-  public subject;
+  public topic: any;
+  public video: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-      this.subject = navParams.get("subject");
+      this.topic = navParams.get("topic");
+      // this.subject = navParams.get("subject");
     // adding values to array
     // this.lessons = [];
     // for (let i = 1; i < 4; i++) {
@@ -38,9 +40,10 @@ export class LessonsPage {
     console.log('ionViewDidLoad LessonsPage');
   }
 
-  goToContent(subTopic) {
+  goToContent(video) {
+    this.video = video;
     this.navCtrl.push(VideoPlayerPage, {
-      subTopic: subTopic  // passing data to LessonContentPage
+      video  // passing data to LessonContentPage
     });
   }
 

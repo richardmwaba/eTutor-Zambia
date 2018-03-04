@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { LessonsPage } from '../lessons/lessons';
+import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -16,6 +17,7 @@ import { LessonsPage } from '../lessons/lessons';
 })
 export class CourseDetailPage {
   public subject;
+  public topic;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.subject = navParams.get("subject");
@@ -25,7 +27,14 @@ export class CourseDetailPage {
     console.log('ionViewDidLoad CourseDetailPage');
   }
 
-  openLessons(subject) {
-    this.navCtrl.push(LessonsPage, {subject}); // goes to lessons page
+  openLessons(topic) {
+    this.topic = topic
+    this.navCtrl.push(LessonsPage, {topic}); // goes to lessons page
   }
+
+  goToSignUpPage(subject) {
+    this.subject = subject
+    this.navCtrl.push(SignupPage, {subject}); // goes to lessons page
+  }
+
 }
