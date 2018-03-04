@@ -23,24 +23,11 @@ import { TwelveComponent } from './pages/lessons/twelve/twelve.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UsersComponent } from './pages/users/users.component';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
+import { LoginLayoutComponent } from './_layout/login-layout/login-layout.component';
 
+import { routing } from './app.routing';
 
-const appRoutes: Routes = [
-{ path:'', component: DashboardComponent },
-{ path:'login', component: LoginComponent },
-{ path:'register', component: RegisterComponent },
-{ path:'exams/junior', component: JuniorComponent },
-{ path:'exams/senior', component: SeniorComponent },
-{ path:'exams/a-level', component: AlevelComponent },
-{ path:'lessons/eight', component: EightComponent },
-{ path:'lessons/nine', component: NineComponent },
-{ path:'lessons/ten', component: TenComponent },
-{ path:'lessons/eleven', component: ElevenComponent },
-{ path:'lessons/twelve', component: TwelveComponent },
-{ path:'profile', component: ProfileComponent },
-{ path:'users', component: UsersComponent },
-{ path:'clients', component: ClientsComponent }
-]
 
 @NgModule({
   declarations: [
@@ -61,12 +48,14 @@ const appRoutes: Routes = [
     TwelveComponent,
     ProfileComponent,
     UsersComponent,
-    ClientsComponent
+    ClientsComponent,
+    AppLayoutComponent,
+    LoginLayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
