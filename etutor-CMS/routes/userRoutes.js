@@ -6,12 +6,14 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
+var mongoose = require('mongoose');                     // mongoose for mongodb
 
 const User = require('../models/user');
 
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
     let newUser = new User.getModel({
+        _id: mongoose.Types.ObjectId(),
         name: req.body.name,
         title: req.body.title,
         username: req.body.username,

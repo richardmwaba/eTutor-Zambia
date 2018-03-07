@@ -8,6 +8,7 @@ var mongoose = require('mongoose');                     // mongoose for mongodb
 var coupon = require("coupon");
 
 const Coupon = require('../models/coupon');
+const Subscription = require('../models/subscription');
 
 //get all coupons
 router.get('/all', (req, res, next) => {
@@ -26,7 +27,7 @@ router.get('/all', (req, res, next) => {
 //get all active coupons
 router.get('/active', (req, res, next) => {
 // add to db
-    Coupon.getCouponByGrade(req.params.grade, (err, coupon) => {
+    Coupon.getCouponByKey(req.params.key, (err, coupon) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get Coupon'});
@@ -98,6 +99,37 @@ router.delete('/delete/:couponId', function(req, res) {
         }
 
     });
+});
+
+//subscribe user to this subject
+router.post('/subscribeUser', (req, res, next) => {
+
+    //check if this coupon is valid
+        Coupon.getCouponByKey(req.params.key, (err, coupon) => {
+            // check for errors
+            if (err) {
+                res.json({success: false, msg: 'Invalid coupon'});
+            } else {
+                // if success
+                let newSubscription = new Subscription({
+                    _id: mongoose.Types.ObjectId(),
+                    expirationDate: coupon.expirationDate,
+                    couponKey: coupon.key,
+                    subjectId: req.body.subjectId,
+                    userId:   req.body.userId
+                });
+                //create subscription entry
+                Subscription.addSubscription(newSubscription, (err, subscription) => {
+                    // check for errors
+                    if (err) {
+                        res.json({success: false, msg: 'Failed to get Coupon'});
+                    } else {
+                        // if success
+                        res.json({success: true, msg: 'Subscribed to '+req.body.subject});
+                    }
+                });
+            }
+        });
 });
 
 module.exports = router;

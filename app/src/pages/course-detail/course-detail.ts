@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { LessonsPage } from '../lessons/lessons';
 import { SignupPage } from '../signup/signup';
+import {provideAuth} from "angular2-jwt";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -27,14 +29,15 @@ export class CourseDetailPage {
     console.log('ionViewDidLoad CourseDetailPage');
   }
 
-  openLessons(topic) {
+  openLessons(topic, subject) {
     this.topic = topic
-    this.navCtrl.push(LessonsPage, {topic}); // goes to lessons page
+    this.navCtrl.push(LessonsPage, {topic, subject}); // goes to lessons page
   }
 
-  goToSignUpPage(subject) {
+  goToSignInPage(subject) {
     this.subject = subject
-    this.navCtrl.push(SignupPage, {subject}); // goes to lessons page
+    if(provideAuth())
+    this.navCtrl.push(LoginPage, {subject}); // goes to lessons page
   }
 
 }

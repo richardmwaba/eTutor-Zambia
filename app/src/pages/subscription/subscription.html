@@ -17,32 +17,40 @@
 
 
 <ion-content padding>
-  <form>
+  <form [formGroup]="theForm" (ngSubmit)="subscribeUser()" novalidate>
     <ion-item>
-      <ion-label>Choose a plan</ion-label>
-      <ion-select >
+      <ion-label>Subject</ion-label>
+      <ion-select type="text" formControlName="subjectId" multiple="false">
+        <ion-option value="{{subject._id}}">{{subject.name}}</ion-option>
+      </ion-select >
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Subscription plan</ion-label>
+      <ion-select type="text" formControlName="plan">
         <!--<ion-option value="daily">Daily</ion-option>-->
         <!--<ion-option value="weekly">Weekly</ion-option>-->
-        <ion-option value="weekly">Monthly</ion-option>
+        <ion-option value="monthly">Monthly</ion-option>
         <!--<ion-option value="termly">Termly</ion-option>-->
         <!--<ion-option value="yearly">yearly</ion-option>-->
-      </ion-select>
+      </ion-select >
     </ion-item>
     <ion-item>
       <ion-label>Choose a payment method</ion-label>
-      <ion-select>
-        <ion-option value="airtel">Airtel Money</ion-option>
+      <ion-select type="text" formControlName="method">
+        <!--<ion-option value="airtel">Airtel Money</ion-option>-->
         <ion-option value="broadpay">Broadpay</ion-option>
-        <ion-option value="mtn">MTN Money</ion-option>
-        <ion-option value="zamttel">Zamtel Kwacha</ion-option>
-        <ion-option value="zoona">Zoona</ion-option>
+        <ion-option value="cigret">Cigret</ion-option>
+        <!--<ion-option value="mtn">MTN Money</ion-option>-->
+        <!--<ion-option value="zamttel">Zamtel Kwacha</ion-option>-->
+        <!--<ion-option value="zoona">Zoona</ion-option>-->
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label floating>Enter coupon code</ion-label>
-      <ion-input type="text" name="coupon" ngModal></ion-input>
+      <ion-input type="text" formControlName="couponKey"></ion-input>
+      <ion-input type="hidden" value="{{user._id}}" formControlName="userId" ngModal></ion-input>
     </ion-item>
-    <ion-item></ion-item>
     <button ion-button block>Subscribe</button>
 
   </form>

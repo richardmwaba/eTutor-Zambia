@@ -34,10 +34,10 @@ export class MyApp {
       { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
       { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
       // { title: 'List', leftIcon: 'list', component: ListPage },
-      { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
+      // { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
       { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-      { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage },
-      { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
+      { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage }
+      // { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
     ];
 
     this.activePage = this.pages[0]; // first active item is HomePage

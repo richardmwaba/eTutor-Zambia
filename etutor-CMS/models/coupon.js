@@ -17,22 +17,23 @@ const CouponSchema =  mongoose.Schema({
     expirationDate                     :   Date,
 });
 
-const Coupon = module.exports = mongoose.model('Coupon', CouponSchema);
+const model = mongoose.model('Coupon', CouponSchema);
+module.exports.getModel = model;
 
 // get all Coupons
 module.exports.getAllCoupons = function(callback) {
-    Coupon.find({}, callback);
+    model.find({}, callback);
 };
 
 // gets Coupon by the id
 module.exports.getCouponById = function(id, callback) {
-    Coupon.findById(id, callback);
+    model.findById(id, callback);
 };
 
-// gets user by the email
-module.exports.getCouponByName = function(name, callback) {
-    const query = {name: name}; // query to equate name to db Coupon name
-    Coupon.findOne(query, callback);
+// gets coupon by key
+module.exports.getCouponByKey = function(key, callback) {
+    const query = {key: key}; // query to equate key to db Coupon key
+    model.findOne(query, callback);
 };
 
 // creates Coupon

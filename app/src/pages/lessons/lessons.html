@@ -21,7 +21,7 @@
 
   <ion-item-group *ngFor="let sub_topic of topic.sub_topics">
     <ion-item-divider color="light">{{sub_topic.name}}</ion-item-divider>
-    <button *ngFor="let video of sub_topic.videos" ion-item (click)="goToContent(video)">
+    <button *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
       {{video.name}}
     </button>
   </ion-item-group>

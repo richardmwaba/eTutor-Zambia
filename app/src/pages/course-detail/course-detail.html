@@ -23,7 +23,7 @@
     <ion-row>
       <div class="btn-instructor">
     <ion-col col-5>
-  <button class="resume-btn" (click)="goToSignUpPage(subject)" ion-button icon-left clear>
+  <button class="resume-btn" (click)="goToSignInPage(subject)" ion-button icon-left clear>
     <div>Enroll</div>
   </button>
     </ion-col>
@@ -49,7 +49,7 @@
       </ion-card>
 
         <div *ngFor="let topic of subject.topics" >
-        <ion-card class="description-card" (click)="openLessons(topic)">
+        <ion-card class="description-card" (click)="openLessons(topic, subject)">
           <ion-card-header>
             <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
           </ion-card-header>
