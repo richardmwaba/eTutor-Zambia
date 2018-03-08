@@ -19,14 +19,17 @@
 <ion-content padding>
   <form [formGroup]="theForm" (ngSubmit)="subscribeUser()" novalidate>
     <ion-item>
-      <ion-label>Subject</ion-label>
+      <ion-label style="color: #488aff" stacked>Subject</ion-label>
       <ion-select type="text" formControlName="subjectId" multiple="false">
         <ion-option value="{{subject._id}}">{{subject.name}}</ion-option>
       </ion-select >
     </ion-item>
+    <ion-item *ngIf="!theForm.controls.subjectId.valid && (theForm.controls.subjectId.dirty || submitAcepted)" >
+      <p class="error">Please select a subject.</p>
+    </ion-item>
 
     <ion-item>
-      <ion-label>Subscription plan</ion-label>
+      <ion-label style="color: #488aff" stacked>Subscription plan</ion-label>
       <ion-select type="text" formControlName="plan">
         <!--<ion-option value="daily">Daily</ion-option>-->
         <!--<ion-option value="weekly">Weekly</ion-option>-->
@@ -35,8 +38,12 @@
         <!--<ion-option value="yearly">yearly</ion-option>-->
       </ion-select >
     </ion-item>
+    <ion-item *ngIf="!theForm.controls.plan.valid && (theForm.controls.plan.dirty || submitAcepted)" >
+      <p class="error">Please select a subscription plan.</p>
+    </ion-item>
+
     <ion-item>
-      <ion-label>Choose a payment method</ion-label>
+      <ion-label style="color: #488aff" stacked>Choose a payment method</ion-label>
       <ion-select type="text" formControlName="method">
         <!--<ion-option value="airtel">Airtel Money</ion-option>-->
         <ion-option value="broadpay">Broadpay</ion-option>
@@ -46,9 +53,16 @@
         <!--<ion-option value="zoona">Zoona</ion-option>-->
       </ion-select>
     </ion-item>
+    <ion-item *ngIf="!theForm.controls.method.valid && (theForm.controls.method.dirty || submitAcepted)" >
+      <p class="error">Please select a payment method.</p>
+    </ion-item>
+
     <ion-item>
-      <ion-label floating>Enter coupon code</ion-label>
+      <ion-label style="color: #488aff" floating>Enter coupon code</ion-label>
       <ion-input type="text" formControlName="couponKey"></ion-input>
+      <ion-item *ngIf="!theForm.controls.couponKey.valid && (theForm.controls.couponKey.dirty || submitAcepted)" >
+        <p class="error">Please enter the coupon code here.</p>
+      </ion-item>
       <ion-input type="hidden" value="{{user._id}}" formControlName="userId" ngModal></ion-input>
     </ion-item>
     <button ion-button block>Subscribe</button>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { CouponProvider } from '../../providers/coupon/coupon';
+import { SubscriptionsProvider } from '../../providers/subscriptions/subscriptions';
 import {AuthProvider} from '../../providers/auth/auth';
 import {VideoPlayerPage} from '../video-player/video-player';
 /**
@@ -26,7 +26,7 @@ export class SubscriptionPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public coupon: CouponProvider,
+    public subscription: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public formBuilder: FormBuilder,
     public authService: AuthProvider
@@ -62,16 +62,18 @@ export class SubscriptionPage {
 
     //console.log(this.theForm.value);
 
-    this.coupon.subscribeUser(this.theForm.value).subscribe(
+    this.subscription.subscribeUser(this.theForm.value).subscribe(
       data => {
         if (data['success']) {
           // show success msg
-          this.presentToast();
+          this.presentToast(data['msg']);
 
           // redirect to the video player
           this.playVideo(this.video);
         }else{
           //if subscription failed
+          // show fail message
+          this.presentToast(data['msg']);
         }
       },
       // error handling
@@ -82,9 +84,9 @@ export class SubscriptionPage {
   /**
    * Presents a success toast on sign up
    */
-  presentToast() {
+  presentToast(msg) {
     let toast = this.toastCtrl.create({
-      message: 'You have successfully subscribed...',
+      message: msg+ this.subject.name,
       duration: 3000,
       //position, cssCLass
     });
