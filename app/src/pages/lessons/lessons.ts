@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 
 // page import
 import {VideoPlayerPage} from "../video-player/video-player";
@@ -7,6 +7,7 @@ import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
 import {LoginPage} from "../login/login";
 import {provideAuth} from "angular2-jwt";
+import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 
 /**
  * Generated class for the LessonsPage page.
@@ -27,48 +28,79 @@ export class LessonsPage {
   public video: any;
   public subject: any;
   public user: any;
+  public data: any;
+  public msg: any;
+  public isAuthenticated: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthProvider) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public authService: AuthProvider,
+    public subscriptionService: SubscriptionsProvider,
+    private toastCtrl: ToastController) {
+
       this.topic = navParams.get("topic");
       this.subject = navParams.get("subject");
-
-      // this.subject = navParams.get("subject");
-    // adding values to array
-    // this.lessons = [];
-    // for (let i = 1; i < 4; i++) {
-    //   this.lessons.push({
-    //     title: 'Lesson ' + i,
-    //     subTopic: 'Sub topic' + i,
-    //     topic: 'Topic' + i
-    //   });
-    // }
+    this.user = this.authService.user;
+    this.isAuthenticated = ( this.user ==  null); //returns false if user has been authenticated
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LessonsPage');
   }
 
+  /**check if this user has an active subscription for this subject then play the video
+   * otherwise redirect to subscription page
+   * @param video
+   * @param subject
+   */
   checkSubscription(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
-    this.subject = subject;
-    this.video = video;
-    //if user is not signed in redirect to sign in page
-    if(this.authService.user == null){
+    if(this.isAuthenticated){
       // redirect to log in
       this.navCtrl.push(LoginPage);
-
     }else {
-      this.navCtrl.push(SubscriptionPage, {
-        video, subject  // passing data to subscription page
+      this.subject = subject;
+      this.video = video;
+
+      this.subscriptionService.verifySubscription(this.subject, this.user).then((data) => {
+        console.log(data);
+        this.data = data;
+        //if success store the record locally
+        if (this.data['success']) {
+          this.playVideo(this.video);
+
+        } else {
+          this.presentToast(this.data['msg']);
+          this.navCtrl.push(SubscriptionPage, {
+                video, subject  // passing data to subscription page
+              });
+        }
       });
     }
   }
 
+  /**
+   * @param video
+   */
   playVideo(video){
     this.video = video;
     this.navCtrl.push(VideoPlayerPage, {
       video  // passing data to LessonContentPage
     });
+  }
+
+  /**
+   * Presents a success toast on sign up
+   */
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      //position, cssCLass
+    });
+
+    toast.present(); // shows the toaster
   }
 
 }

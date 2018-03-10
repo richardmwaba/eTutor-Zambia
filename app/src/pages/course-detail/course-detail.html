@@ -49,7 +49,7 @@
       </ion-card>
 
         <div *ngFor="let topic of subject.topics" >
-        <ion-card class="description-card" (click)="openLessons(topic, subject)">
+        <ion-card class="description-card">
           <ion-card-header>
             <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
           </ion-card-header>
@@ -57,6 +57,24 @@
             <div class="subtitle"> </div>
             {{topic.description}}
           </ion-card-content>
+
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small item-left>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>12 Likes</div>
+              </button>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Reviews</div>
+              </button>
+              <button ion-button icon-left clear item-end (click)="openLessons(topic, subject)" item-right>
+                <ion-icon name="paper-plane"></ion-icon>
+                Start
+              </button>
+            </ion-col>
+          </ion-row>
+
         </ion-card>
         </div>
 

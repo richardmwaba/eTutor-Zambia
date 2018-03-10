@@ -32,7 +32,7 @@ module.exports.getCouponById = function(id, callback) {
 
 // gets coupon by key
 module.exports.getCouponByKey = function(key, callback) {
-    const query = {key: key}; // query to equate key to db Coupon key
+    const query = {'key': key}; // query to equate key to db Coupon key
     model.findOne(query, callback);
 };
 
@@ -40,4 +40,10 @@ module.exports.getCouponByKey = function(key, callback) {
 module.exports.addCoupon = function(newCoupon, callback) {
 
     newCoupon.save(callback); // saves to the db
+};
+
+//removes a subscription
+module.exports.remove = function(key, callback) {
+
+    model.remove({ 'key': key }, callback)
 };

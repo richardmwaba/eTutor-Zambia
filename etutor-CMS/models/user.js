@@ -6,6 +6,9 @@ const config = require('../config/database');
 
 // user schema
 const UserSchema = module.exports= mongoose.Schema({
+    _id: {
+        type: mongoose.Schema.Types.ObjectId
+    },
     name: {
         type: String, required: true
     },
@@ -64,7 +67,12 @@ module.exports.addUser = function(newUser, callback) {
             newUser.save(callback); // saves to the sb
         });
     });
-}
+};
+
+// get all Coupons
+module.exports.getAllUsers = function(callback) {
+    User.find({}, callback);
+};
 
 // compares passwords
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
@@ -73,4 +81,4 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
 
         callback(null, isMatch);
     });
-}
+};

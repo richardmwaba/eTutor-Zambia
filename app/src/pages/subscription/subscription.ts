@@ -20,6 +20,7 @@ export class SubscriptionPage {
   theForm: FormGroup;
   public video: any;
   public subject: any;
+  public subjectName: any;
   public user: any;
   submitAcepted: boolean = false;
 
@@ -36,13 +37,14 @@ export class SubscriptionPage {
     //get the subject and video to subscribe for
     this.video = navParams.get("video");
     this.subject = navParams.get("subject");
+    this.subjectName = this.subject.name;
 
     // setting up form builber
     this.theForm = formBuilder.group({
       plan: ['', Validators.compose( [Validators.required] )],
       subjectId: ['', Validators.compose( [Validators.required] )],
       method: ['', Validators.compose([Validators.required] )],
-      userId: ['', Validators.compose([Validators.required] )],
+      userEmail: ['', Validators.compose([Validators.required] )],
       // email is required and follows the pattern < john@doecom >
       couponKey: ['', Validators.compose([Validators.required]) ],
       status: 'inactive'

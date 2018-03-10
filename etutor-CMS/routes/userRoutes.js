@@ -77,5 +77,18 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res
     res.json({user: req.user});
 });
 
+// retrieve all users
+router.get('/all', (req, res, users) => {
+    User.getAllUsers((err, users) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: 'Failed to get users'});
+        } else {
+            // if success
+            res.json(users);
+        }
+    });
+});
+
 module.exports = router;
 

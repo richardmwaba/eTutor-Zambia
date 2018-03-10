@@ -55,7 +55,7 @@ export class LoginPage {
 
     this.auth.authenticateUser(this.logForm.value).subscribe(data => {
 
-      if (data['success'] === true) {
+      if (data['success']) {
         // get token and user from returned data
         this.token = data['token'];
         this.user = data['user'];

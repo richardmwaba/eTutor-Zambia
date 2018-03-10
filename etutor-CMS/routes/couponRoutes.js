@@ -41,13 +41,13 @@ router.get('/active', (req, res, next) => {
 //get Coupon
 router.get('/pending', (req, res, next) => {
 // add to db
-    Coupon.getCouponById(req.params.id, (err, Coupon) => {
+    Coupon.getCouponById(req.params.id, (err, coupon) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get Coupon'});
         } else {
             // if success
-            res.json(Coupon);
+            res.json(coupon);
         }
     });
 });
@@ -56,12 +56,12 @@ router.get('/pending', (req, res, next) => {
 router.get('/generate/:numberOfCoupons', (req, res, next) => {
     let i = req.params.numberOfCoupons;
     while(i>0) {
-        let newCoupon = new Coupon(
+        let newCoupon = new Coupon.getModel(
             coupon("eTutor")
             .give("free")
             .limit(1)
-            .person("Mr. Fetus")
-            .only("Banana")
+            .person("Cigret")
+            .only("Subjects")
             .expire(new Date(2015, 0, 1))
     );
 // add to db
@@ -69,9 +69,6 @@ router.get('/generate/:numberOfCoupons', (req, res, next) => {
             // check for errors
             if (err) {
                 res.json({success: false, msg: err.stack});
-            } else {
-                // if success
-               // res.json(coupon);
             }
         });
         i--;
@@ -99,37 +96,6 @@ router.delete('/delete/:couponId', function(req, res) {
         }
 
     });
-});
-
-//subscribe user to this subject
-router.post('/subscribeUser', (req, res, next) => {
-
-    //check if this coupon is valid
-        Coupon.getCouponByKey(req.params.key, (err, coupon) => {
-            // check for errors
-            if (err) {
-                res.json({success: false, msg: 'Invalid coupon'});
-            } else {
-                // if success
-                let newSubscription = new Subscription({
-                    _id: mongoose.Types.ObjectId(),
-                    expirationDate: coupon.expirationDate,
-                    couponKey: coupon.key,
-                    subjectId: req.body.subjectId,
-                    userId:   req.body.userId
-                });
-                //create subscription entry
-                Subscription.addSubscription(newSubscription, (err, subscription) => {
-                    // check for errors
-                    if (err) {
-                        res.json({success: false, msg: 'Failed to get Coupon'});
-                    } else {
-                        // if success
-                        res.json({success: true, msg: 'Subscribed to '+req.body.subject});
-                    }
-                });
-            }
-        });
 });
 
 module.exports = router;

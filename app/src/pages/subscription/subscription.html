@@ -63,7 +63,7 @@
       <ion-item *ngIf="!theForm.controls.couponKey.valid && (theForm.controls.couponKey.dirty || submitAcepted)" >
         <p class="error">Please enter the coupon code here.</p>
       </ion-item>
-      <ion-input type="hidden" value="{{user._id}}" formControlName="userId" ngModal></ion-input>
+      <ion-input type="hidden" value="{{user.email}}" formControlName="userEail" ngModal></ion-input>
     </ion-item>
     <button ion-button block>Subscribe</button>
 
