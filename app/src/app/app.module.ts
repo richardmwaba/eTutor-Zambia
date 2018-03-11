@@ -28,6 +28,7 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 import { CouponProvider } from '../providers/coupon/coupon';
 import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
+import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 
 @NgModule({
     declarations: [
@@ -83,7 +84,8 @@ import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions'
         SubjectsProvider,
         HttpClientModule,
         StreamingMedia,
-    SubscriptionsProvider
+    SubscriptionsProvider,
+    MySubjectsProvider
     ]
 })
 export class AppModule {
