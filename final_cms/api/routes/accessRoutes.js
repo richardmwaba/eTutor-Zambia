@@ -74,7 +74,7 @@ router.delete('/remove-access/:id', (req, res, next) => {
         if(err) {
             res.json({success: false, msg: 'Could not delete'});
         } else {
-            res.json({success: true: msg: 'Deleted successfully'});
+            res.json({success: true, msg: 'Deleted successfully'});
         }
     });
 });
