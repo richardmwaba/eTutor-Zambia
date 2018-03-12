@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const subject = require('../models/subject');
 
 // user schema
 const UserSchema = module.exports= mongoose.Schema({
@@ -27,8 +28,8 @@ const UserSchema = module.exports= mongoose.Schema({
     phone: {
         type: String, required: true
     },
-    subscription_status: {
-        type: String // e.g. student can have either an 'active' or 'inactive' status 
+    mySubjects: {
+        type: [subject.getSchema] // e.g. student can have either an 'active' or 'inactive' status
     }
 });
 
@@ -81,4 +82,12 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
 
         callback(null, isMatch);
     });
+};
+
+module.exports.addToMySubjects = function (updatedUser, callback) {
+    updatedUser.save(callback);
+};
+
+module.exports.removeFromMySubjects = function (updatedUser, callback) {
+    updatedUser.save(callback);
 };

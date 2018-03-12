@@ -20,7 +20,7 @@ router.post('/register', (req, res, next) => {
         email: req.body.email,
         password: req.body.password,
         phone: req.body.phone,
-        subscription_status: req.body.status
+        mySubjects: []
     }); 
     // add to db
     User.addUser(newUser, (err, user) => {
@@ -86,6 +86,61 @@ router.get('/all', (req, res, users) => {
         } else {
             // if success
             res.json(users);
+        }
+    });
+});
+
+// add subject to my subjects subdocument
+router.post('/mySubjects/enroll/:Email', (req, res, users) => {
+    User.getUserByEmail(req.params.Email, (err, user) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: 'Failed to get your subjects'});
+        } else {
+            // if success
+            user.mySubjects.push(req.body);
+            //save the updated user
+            User.addToMySubjects(user, (err,updatedUser)=>{
+                if(err){
+                    res.json({success: false, msg: "Failed to save"})
+                }else {
+                    res.json({success: true, mySubjects: updatedUser.mySubjects});
+                }
+            })
+        }
+    });
+});
+
+// add subject to my subjects subdocument
+router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
+    User.getUserByEmail(req.params.Email, (err, user) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: 'Failed to get your subjects'});
+        } else {
+            // if success
+            user.mySubjects.id(req.params.id).remove();
+            //save the updated user
+            User.removeFromMySubjects(user, (err,updatedUser)=>{
+                if(err){
+                    res.json({success: false, msg: "Failed to save"})
+                }else {
+                    res.json({success: true, mySubjects: updatedUser.mySubjects});
+                }
+            })
+        }
+    });
+});
+
+// retrieve give user and return only the subjects they have enrolled for
+router.get('/mySubjects/find/:email', (req, res, users) => {
+    User.getUserByEmail((err, users) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: 'Failed to get your subjects'});
+        } else {
+            // if success
+            res.json(users.mySubjects);
         }
     });
 });
