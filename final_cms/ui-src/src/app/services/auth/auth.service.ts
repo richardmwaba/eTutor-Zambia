@@ -9,6 +9,7 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
+  //Post: Register User
   registerSuperUser(superUser){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -16,6 +17,7 @@ export class AuthService {
     .map(res => res.json());
   }
 
+  //Post: Authenticate User
   authenticateSuperUser(superUser){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -23,6 +25,17 @@ export class AuthService {
     .map(res => res.json());
   }
 
+  //Get: User Profile
+  getProfile(){
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+    .map(res => res.json());
+  }
+
+  //Post: Store User
   storeSuperUserData(token, superUser){
     localStorage.setItem('id_token', token);
     localStorage.setItem('superUser', JSON.stringify(superUser));
@@ -30,10 +43,17 @@ export class AuthService {
     this.superUser = superUser;
   }
 
+  //Logout User
   logout(){
     this.authToken = null;
     this.superUser = null;
     localStorage.clear();
+  }
+
+  //Get: Load Token From Local Storage
+  loadToken(){
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
   }
 
 }

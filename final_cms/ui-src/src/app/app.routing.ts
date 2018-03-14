@@ -56,7 +56,7 @@ const appRoutes: Routes = [
     
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '/dashboard' }
 
     ]
 
