@@ -28,6 +28,7 @@ const app = express();
 const users = require('./routes/users');
 const customers = require('./routes/userRoutes');
 const lessons = require('./routes/lessons');
+const videos = require('./routes/videoRoutes');
 
 //Port Number
 const port = 3000;
@@ -49,6 +50,7 @@ require('./config/passport')(passport);
 
 
 app.use('/users', users);
+app.use('/videos', videos);
 
 //Start Server
 app.listen(port, () => {
