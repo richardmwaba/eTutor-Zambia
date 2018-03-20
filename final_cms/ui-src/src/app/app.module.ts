@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ValidateService } from './services/validate/validate.service';
+import { AuthService } from './services/auth/auth.service';
+import { FlashMessagesModule } from 'ngx-flash-messages';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -54,10 +56,12 @@ import { routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
-    routing
+    routing,
+    FlashMessagesModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ValidateService, AuthService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

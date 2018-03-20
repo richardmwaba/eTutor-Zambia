@@ -1,6 +1,6 @@
 <!-- Navbar-->
 <header class="main-header-top hidden-print">
-  <a href="index.html" class="logo">
+  <a  routerLink="/dashboard" class="logo">
     <img class="img-fluid able-logo" src="assets/images/logo.png" alt="Theme-logo">
     <!-- <h3>eTutor</h3> -->
   </a>
@@ -112,7 +112,7 @@
                 <i class="icon-lock"></i> Lock Screen</a>
             </li>
             <li>
-              <a href="#!">
+              <a href="#!" (click)="onLogoutClick()">
                 <i class="icon-logout"></i> Logout</a>
             </li>
 

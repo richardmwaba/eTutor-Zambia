@@ -47,7 +47,8 @@
         "assets/pages/dashboard.js",
         "assets/pages/elements.js",
         "assets/js/menu.min.js",
-        "assets/plugins/charts/echarts/js/echarts-all.js"
+        "assets/plugins/charts/echarts/js/echarts-all.js",
+        "assets/pages/profile.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
