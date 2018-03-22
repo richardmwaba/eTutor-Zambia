@@ -42,7 +42,7 @@ export class LessonsPage {
       this.topic = navParams.get("topic");
       this.subject = navParams.get("subject");
     this.user = this.authService.user;
-    this.isAuthenticated = ( this.user ==  null); //returns false if user has been authenticated
+    this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
   }
 
   ionViewDidLoad() {
@@ -57,9 +57,6 @@ export class LessonsPage {
   checkSubscription(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
     if(this.isAuthenticated){
-      // redirect to log in
-      this.navCtrl.push(LoginPage);
-    }else {
       this.subject = subject;
       this.video = video;
 
@@ -73,10 +70,14 @@ export class LessonsPage {
         } else {
           this.presentToast(this.data['msg']);
           this.navCtrl.push(SubscriptionPage, {
-                video, subject  // passing data to subscription page
-              });
+            video, subject  // passing data to subscription page
+          });
         }
       });
+
+    }else {
+      // redirect to log in
+      this.navCtrl.push(LoginPage);
     }
   }
 

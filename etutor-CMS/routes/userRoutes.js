@@ -95,18 +95,24 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to get your subjects'});
-        } else {
-            // if success
+            res.json({success: false, msg: 'Failed to enroll. Please make sure that you have signed it.'});
+
+            // if success, check if user has not already enrolled for this subject
+        } else if(user.mySubjects.id(req.body._id==null)) {
             user.mySubjects.push(req.body);
             //save the updated user
             User.addToMySubjects(user, (err,updatedUser)=>{
                 if(err){
-                    res.json({success: false, msg: "Failed to save"})
+                    res.json({success: false, msg: "Failed to enroll. Please try again."})
                 }else {
-                    res.json({success: true, mySubjects: updatedUser.mySubjects});
+                    res.json({success: true,
+                        msg: "you have successfully enrolled for "+req.body.name,
+                        mySubjects: updatedUser.mySubjects});
                 }
-            })
+            });
+            
+        }else{
+            res.json({success: false, msg: "You have already enrolled for this subject!"});
         }
     });
 });
@@ -132,15 +138,36 @@ router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
     });
 });
 
-// retrieve give user and return only the subjects they have enrolled for
-router.get('/mySubjects/find/:email', (req, res, users) => {
-    User.getUserByEmail((err, users) => {
+// retrieve given user and return only the subjects they have enrolled for
+router.get('/mySubjects/all/:email', (req, res, users) => {
+    User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to get your subjects'});
+            res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json(users.mySubjects);
+            res.json(user.mySubjects);
+        }
+    });
+});
+
+// check if user has enrolled for this subject
+router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
+    User.getUserByEmail(req.params.email, (err, user) => {
+        // check for errors
+        if (err) {
+            res.json({success: false});
+        } else {
+            // if success
+            if(user.mySubjects.id(req.params.subjectId)==null){
+
+                //not enrolled
+            res.json({success: false});
+
+            //is enrolled
+            }else{
+            res.json({success: true});
+            }
         }
     });
 });
