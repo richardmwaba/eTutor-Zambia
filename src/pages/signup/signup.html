@@ -1,0 +1,87 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="card" style="text-align: center">
+    <!-- Advanced: explicity set the icon for each platform -->
+    <ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>
+    <div class="app-name">
+      <b>e-tutor</b>
+    </div>
+  </div>
+  <div class="list card">
+    <div class="item item-body">
+      <!--<ion-content>-->
+      <!-- <ion-list>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Phone</ion-label>
+          <ion-input type="tel"id="phone">></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+      </ion-list> -->
+
+      <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Email</ion-label>
+            <ion-input formControlName="email" type="email" placeholder="Your email address"
+              [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+          </ion-item>
+          <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+            <p>Please enter a valid email.</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Password</ion-label>
+            <ion-input formControlName="password" type="password"  placeholder="Your password"
+              [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+          </ion-item>
+          <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+            <p>Your password needs more than 6 characters.</p>
+          </ion-item>
+
+          <div padding>
+            <button ion-button color="primary" type="submit" block text-capitalize>Sign Up</button>
+          </div>
+
+      </form>
+
+      <!--</ion-content>-->
+
+      <div class="card btn-down" >
+        <button ion-button clear text-capitalize>Or Sign In</button>
+      </div>
+    </div>
+  </div>
+</ion-content>
