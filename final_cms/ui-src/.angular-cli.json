@@ -1,0 +1,88 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "ui-src"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "../public",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "assets/icon/icofont/css/icofont.css",
+        "assets/icon/simple-line-icons/css/simple-line-icons.css",
+        "assets/plugins/bootstrap/css/bootstrap.min.css",
+        "assets/css/svg-weather.css",
+        "assets/css/main.css",
+        "assets/css/font-awesome.min.css",
+        "assets/css/responsive.css",
+        "assets/css/color/color-1.min.css"
+      ],
+      "scripts": [
+        "assets/plugins/jquery/dist/jquery.min.js", 
+        "assets/plugins/jquery-ui/jquery-ui.min.js", 
+        "assets/plugins/tether/dist/js/tether.min.js",
+        "assets/plugins/bootstrap/js/bootstrap.min.js",
+        "assets/plugins/Waves/waves.min.js",
+        "assets/plugins/jquery-slimscroll/jquery.slimscroll.js",
+        "assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js",
+        "assets/plugins/classie/classie.js",
+        "assets/plugins/notification/js/bootstrap-growl.min.js",
+        "assets/plugins/d3/d3.js",
+        "assets/plugins/rickshaw/rickshaw.js",
+        "assets/plugins/jquery-sparkline/dist/jquery.sparkline.js",
+        "assets/plugins/waypoints/jquery.waypoints.min.js",
+        "assets/plugins/countdown/js/jquery.counterup.js",
+        "assets/js/main.min.js",
+        "assets/pages/dashboard.js",
+        "assets/pages/elements.js",
+        "assets/js/menu.min.js",
+        "assets/plugins/charts/echarts/js/echarts-all.js",
+        "assets/pages/profile.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

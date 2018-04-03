@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/app/node_modules/cordova-android/spec/e2e/fixtures/cordova-plugin-fake/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/app/www" />
     </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
