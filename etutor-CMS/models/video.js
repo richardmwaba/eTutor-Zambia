@@ -6,6 +6,7 @@ const config = require('../config/database');
 // topic schema
 const VideoSchema= module.exports = mongoose.Schema({
         _id                     :   {type: mongoose.Schema.Types.ObjectId},
+        name                     :   String,
         url                     :   String
 });
 

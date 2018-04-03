@@ -11,6 +11,7 @@ import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
 import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
 import { SubscriptionPage } from '../pages/subscription/subscription';
 import { VideoPlayerPage } from '../pages/video-player/video-player';
+import {AuthProvider} from "../providers/auth/auth";
 
 @Component({
   templateUrl: 'app.html'
@@ -20,12 +21,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
   activePage : any; // the currently active page
+  public isAuthenticated: any;
+  public user: any;
 
   // leftIcon is the name of the button's icon
   pages: Array<{title: string, leftIcon: string,component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public authService: AuthProvider) {
     this.initializeApp();
+    this.user = this.authService.user;
+    this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -34,10 +43,12 @@ export class MyApp {
       { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
       { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
       // { title: 'List', leftIcon: 'list', component: ListPage },
-      { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
-      { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-      { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage },
-      { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
+      // { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
+      // if (this.isAuthenticated)
+       { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
+
+      // { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage }
+      // { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
     ];
 
     this.activePage = this.pages[0]; // first active item is HomePage

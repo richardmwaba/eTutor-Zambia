@@ -23,8 +23,8 @@
     <ion-row>
       <div class="btn-instructor">
     <ion-col col-5>
-  <button class="resume-btn" (click)="openLessons(subject)" ion-button icon-left clear>
-    <div>Resume</div>
+  <button class="resume-btn" (click)="enroll()" ion-button icon-left clear>
+    <div>{{buttonText}}</div>
   </button>
     </ion-col>
       <ion-col col-1>
@@ -48,21 +48,36 @@
         </ion-card-content>
       </ion-card>
 
+        <div *ngFor="let topic of subject.topics" >
         <ion-card class="description-card">
           <ion-card-header>
-            <div class="title">Syllabus</div>
+            <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
           </ion-card-header>
-          <ion-card-content *ngFor="let topic of subject.topics">
-            <div class="subtitle"> {{topic.duration}}: {{topic.topic_name}}</div>
+          <ion-card-content >
+            <div class="subtitle"> </div>
             {{topic.description}}
-            <!--<div class="subtitle"> Week 2: Introduction to chemistry</div>-->
-            <!--This an introductory session with little technical terminology-->
-            <!--<div class="subtitle"> Week 3: Introduction to chemistry</div>-->
-            <!--This an introductory session with little technical terminology-->
-            <!--<div class="subtitle"> Week 4: Introduction to chemistry</div>-->
-            <!--This an introductory session with little technical terminology-->
           </ion-card-content>
+
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small item-left>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>12 Likes</div>
+              </button>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Reviews</div>
+              </button>
+              <button ion-button icon-left clear item-end (click)="openLessons(topic, subject)" item-right>
+                <ion-icon name="paper-plane"></ion-icon>
+                Start
+              </button>
+            </ion-col>
+          </ion-row>
+
         </ion-card>
+        </div>
+
       </div>
 
   </ion-row>

@@ -17,7 +17,7 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 export class VideoPlayerPage {
   public subTopic;
   public videoUrl;
-  public video;
+  public video : any;
   public options: StreamingVideoOptions = {
         successCallback: () => { console.log('Video played') },
         errorCallback: (e) => { console.log('Error streaming') },
@@ -25,8 +25,7 @@ export class VideoPlayerPage {
     };
 
   constructor(private streamingMedia: StreamingMedia, public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
-    this.subTopic = navParams.get('subTopic');
-    this.video = this.subTopic.videos[0];
+    this.video = navParams.get('video');
       this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
   }
 

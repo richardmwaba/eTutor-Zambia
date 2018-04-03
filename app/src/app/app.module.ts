@@ -26,6 +26,9 @@ import {SubjectsProvider} from '../providers/subjects/subjects';
 import {VideosPage} from "../pages/videos/videos";
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
+import { CouponProvider } from '../providers/coupon/coupon';
+import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
+import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 
 @NgModule({
     declarations: [
@@ -80,7 +83,9 @@ import { EqualValidatorDirective } from '../directives/equal-validator/equal-val
         AuthProvider,
         SubjectsProvider,
         HttpClientModule,
-        StreamingMedia
+        StreamingMedia,
+    SubscriptionsProvider,
+    MySubjectsProvider
     ]
 })
 export class AppModule {

@@ -16,6 +16,18 @@
 </ion-header>
 
 
-<ion-content padding>
-  <p>Your Subjects</p>
+<ion-content class="card-background-page" *ngFor="let subject of mySubjects">
+  <ion-card (click)="courseDetail(subject)">
+    <img src="../../assets/img/{{subject.icon}}"/>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button class="card-title" ion-button icon-left clear small>
+            <ion-icon name="open"></ion-icon>
+            <div>{{subject.name}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

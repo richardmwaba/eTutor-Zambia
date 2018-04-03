@@ -18,6 +18,7 @@ const SubjectSchema =  mongoose.Schema({
 });
 
 const Subject = module.exports = mongoose.model('Subject', SubjectSchema);
+module.exports.getSchema = SubjectSchema;
 
 // get all subjects
 module.exports.getAllSubjects = function(callback) {
