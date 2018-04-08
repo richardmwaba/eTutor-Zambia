@@ -43,6 +43,26 @@ export class AuthService {
     this.superUser = superUser;
   }
 
+  //Get: Super users
+  getSuperUsers() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    const uri = 'http://localhost:3000/users/all';
+    return this
+            .http
+            .get(uri)
+            .map(res => res.json());
+  }
+
+  addSuperUser(superUser){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/users/add', superUser, { headers: headers })
+    .map(res => res.json());
+  }
+
   //Logout User
   logout(){
     this.authToken = null;

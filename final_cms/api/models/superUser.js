@@ -36,6 +36,8 @@ const SuperUserSchema = mongoose.Schema({
     group: {
         type: Number
     } 
+},{
+    collection: 'superusers'
 });
 
 //Export Module
