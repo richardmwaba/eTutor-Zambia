@@ -15,7 +15,8 @@ router.post('/register', (req, res, next) => {
         lastname: req.body.lastname,
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        group: req.body.group
     });
 
     SuperUser.addSuperUser(newSuperUser, (err, superUser) => {
@@ -98,12 +99,22 @@ router.get('/:id', (req, res, next) => {
 
 //Add User
 router.post('/add', (req, res, next) => {
-    SuperUser.create(req.body, (err, post) => {
+    let newSuperUser = new SuperUser({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        group: req.body.group
+    });
+
+    SuperUser.addSuperUser(newSuperUser, (err, superUser) => {
         if (err) {
-            console.log(err);
-        } //return next(err);
+            res.json({ success: false, msg: 'Failed to add user' });
+            console.log(err)
+        }
         else {
-            res.json(post);
+            res.json({ success: true, msg: 'User added successfully' });
         }
     });
 });

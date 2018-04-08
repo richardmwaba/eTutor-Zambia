@@ -16,8 +16,28 @@ export class AddSuperUserComponent implements OnInit {
   email: String;
   username: String;
   password: String;
+  group:any;
+  selectedGroup: any;
 
-  groups = [ 'Tutor', 'Developer', 'Content Admin', 'System Admin'];
+  groups = [ 
+    {    
+      "id": 1,    
+      "name": "Tutor"    
+    },    
+    {    
+      "id": 2,    
+      "name": "Developer"    
+    },    
+    {    
+      "id": 3,    
+      "name": "Content Admin"    
+    },    
+    {    
+      "id": 4,    
+      "name": "System Admin"    
+    }  
+  
+];
 
   constructor(
     private validateService: ValidateService, 
@@ -35,7 +55,8 @@ export class AddSuperUserComponent implements OnInit {
       lastname: this.lastname,
       email: this.email,
       username: this.firstname,
-      password: this.password
+      password: this.password,
+      group: this.group
     }
 
      //Validate required fields
@@ -62,6 +83,11 @@ export class AddSuperUserComponent implements OnInit {
         }
     });
 
+  }
+
+  //Select User group
+  selectGroup (){
+    this.group = this.selectedGroup;
   }
 
 }
