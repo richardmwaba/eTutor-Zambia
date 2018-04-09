@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="md-float-material" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <ngx-flash-messages></ngx-flash-messages>
+        <div class="col-md-6">
+          <div class="md-input-wrapper">
+            <input type="text" class="md-form-control md-static" [(ngModel)]="firstname" name="firstname" id="firstname">
+            <label for="firstname">First Name</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="md-input-wrapper">
+            <input type="text" class="md-form-control md-static" [(ngModel)]="lastname" name="lastname" id="lastname">
+            <label for="lastname">Last Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="md-input-wrapper">
+        <input type="email" class="md-form-control md-static" [(ngModel)]="email" name="email" id="email">
+        <label for="email">Email Address</label>
+      </div>
+      <div class=" md-input-wrapper ">
+        <select class="md-form-control md-static materialSelect inline empty w-100" [(ngModel)]="selectedGroup" id="group" name="group"(change)="selectGroup()">
+            <option>...</option>
+            <option *ngFor="let group of groups" [value]="group.name">{{ group.name }}</option>
+        </select>
+        <label for="group">Choose a position</label>
+    </div>
+      <!-- <div class="md-form-group">
+        <div class="materialSelect md-input-wrapper inline empty w-100">
+            <ul class="md-select md-form-control">
+                <li data-selected="true">Choose something...</li>
+                <li data-value="0">First option</li>
+                <li data-value="1">Second option</li>
+                <li data-value="2">Third option</li>
+            </ul>
+            <div class="message">Please select something</div>
+        </div>
+    </div> -->
+      <div class="md-input-wrapper">
+        <input type="password" class="md-form-control md-static" [(ngModel)]="password" name="password" id="password">
+        <label for="password">Password</label>
+      </div>
+      <div class="md-input-wrapper">
+        <input type="password" class="md-form-control md-static" required="">
+        <label>Confirm Password</label>
+      </div>
+      <div class="col-xs-10 offset-xs-1">
+        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light m-b-20">Create
+        </button>
+      </div>
+    </form>
+    <!-- end of form -->
+  </div>
+  <!-- end of col-sm-12 -->
+</div>
+<!-- end of row-->

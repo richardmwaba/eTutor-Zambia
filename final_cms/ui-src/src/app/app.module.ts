@@ -29,6 +29,7 @@ import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { LoginLayoutComponent } from './_layout/login-layout/login-layout.component';
 
 import { routing } from './app.routing';
+import { AddSuperUserComponent } from './components/add-super-user/add-super-user.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { routing } from './app.routing';
     UsersComponent,
     ClientsComponent,
     AppLayoutComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    AddSuperUserComponent
   ],
   imports: [
     BrowserModule,
