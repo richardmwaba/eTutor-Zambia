@@ -13,73 +13,91 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div class="content">
-  <ion-row class="img">
-    <ion-col col-12>
-      <ion-img src="../../assets/img/{{subject.icon}}"></ion-img>
-    </ion-col>
-  </ion-row>
-    <ion-row>
-      <div class="btn-instructor">
-    <ion-col col-5>
-  <button class="resume-btn" (click)="enroll()" ion-button icon-left clear>
-    <div>{{buttonText}}</div>
-  </button>
-    </ion-col>
-      <ion-col col-1>
-        <div class="instructor" ion-button icon-left clear small>
-          <ion-icon name="md-contact" style="zoom: 2.5;"></ion-icon>
-          <div class="instructorName" *ngFor="let instructor of subject.instructors">Instructor<br>
-               {{instructor.title}} {{instructor.f_name}} {{instructor.l_name}}
-          </div>
-        </div>
-      </ion-col>
-      </div>
+<ion-content class="card-background-page" padding>
+  <div class="top-content">
+  <!--<ion-row class="img">-->
+    <!--<ion-col col-12>-->
+      <ion-img class="top-img" src="../../assets/img/{{subject.icon}}"></ion-img>
+    <!--</ion-col>-->
+  <!--</ion-row>-->
 
-      <div class="overviewCards">
-      <ion-card class="description-card">
-        <ion-card-header>
-          <div class="title">Subject overview</div>
-        </ion-card-header>
-        <ion-card-content>
-          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
-          {{subject.description}}
-        </ion-card-content>
-      </ion-card>
 
-        <div *ngFor="let topic of subject.topics" >
-        <ion-card class="description-card">
-          <ion-card-header>
-            <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
-          </ion-card-header>
-          <ion-card-content >
-            <div class="subtitle"> </div>
-            {{topic.description}}
-          </ion-card-content>
+        <ion-toolbar class="toolbar">
+          <ion-buttons start>
+            <button ion-button icon-only color="secondary">
+              <ion-icon name="share"></ion-icon>
+            </button>
+          </ion-buttons>
+          <ion-segment class="ion-segment" color="secondary" [(ngModel)]="data">
+            <ion-segment-button value="content" >
+              Content
+            </ion-segment-button>
+            <ion-segment-button value="overview">
+              Overview
+            </ion-segment-button >
+            <ion-segment-button value="reviews" >
+              Reviews
+            </ion-segment-button>
+          </ion-segment>
 
-          <ion-row>
-            <ion-col>
-              <button ion-button icon-left clear small item-left>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>12 Likes</div>
-              </button>
-              <button ion-button icon-left clear small>
-                <ion-icon name="text"></ion-icon>
-                <div>4 Reviews</div>
-              </button>
-              <button ion-button icon-left clear item-end (click)="openLessons(topic, subject)" item-right>
-                <ion-icon name="paper-plane"></ion-icon>
-                Start
-              </button>
-            </ion-col>
-          </ion-row>
+          <div [ngSwitch]="data"   class="body-content">
 
-        </ion-card>
-        </div>
-
-      </div>
-
-  </ion-row>
+            <ion-list *ngSwitchCase="'content'">
+<div *ngFor="let topic of subject.topics">
+  <ion-item-divider color="light">{{topic.name}}</ion-item-divider>
+  <div *ngFor="let sub_topic of topic.sub_topics">
+              <ion-item-group *ngFor="let video of sub_topic.videos">
+                <button *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
+                  <ion-icon name="videocam"></ion-icon>
+                  {{video.name}}
+                </button>
+              </ion-item-group>
   </div>
+          </div>
+            </ion-list>
+
+            <div class="body-content" *ngSwitchCase="'overview'">
+              <ion-row>
+                <div class="overviewCards">
+                  <ion-card class="description-card">
+                    <ion-card-header>
+                      <div class="title">Subject overview</div>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+                      <p>{{subject.description}}</p>
+                    </ion-card-content>
+                  </ion-card>
+
+                  <div *ngFor="let topic of subject.topics" >
+                    <ion-card class="description-card">
+                      <ion-card-header>
+                        <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
+                      </ion-card-header>
+                      <ion-card-content>
+                        <p>{{topic.description}}</p>
+                      </ion-card-content>
+
+                    </ion-card>
+                  </div>
+
+                </div>
+
+              </ion-row>
+
+
+
+            </div>
+
+          </div>
+
+          <ion-buttons end>
+            <button ion-button icon-only color="secondary">
+              <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </div>
+
+
 </ion-content>

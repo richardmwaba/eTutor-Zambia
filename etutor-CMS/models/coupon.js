@@ -4,9 +4,7 @@
 
 const mongoose = require('mongoose');
 const config = require('../config/database');
-const mongoose = require('mongoose');
 var coupon = require("coupon");
-const config = require('../config/database');
 const topic_schema = require('../models/topic');
 
 // Coupon schema

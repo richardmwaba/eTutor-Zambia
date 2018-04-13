@@ -18,5 +18,9 @@
     "passport-jwt": "*"
   },
   "author": "Richard Mwaba",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.7.3",
+    "@angular/core": "*"
+  }
 }

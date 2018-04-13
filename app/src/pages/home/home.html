@@ -267,25 +267,54 @@
 
 
   <div class="category-title">
-    Tests & Exams Revision <div class="category-subtitle">1 Category</div>
+    Tests & Exams (2) <!-- <div class="category-subtitle">1 Category</div>-->
   </div>
-  <ion-scroll scrollX="true" style="height:200px;">
+  <ion-scroll class="ion-scroll" scrollX="true">
       <ion-row nowrap align-items-baseline>
         <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams Revision'">
           <ion-col col-12>
 
-            <ion-card (click)="courseDetail(subject)">
-              <img src="../../assets/../../assets/img/{{subject.icon}}"/>
-              <ion-card-content>
-                <ion-row>
-                  <ion-col>
-                    <button class="card-title" ion-button icon-left clear small>
-                      <ion-icon name="open"></ion-icon>
-                      <div>{{subject.grade}}</div>
-                    </button>
-                  </ion-col>
-                </ion-row>
-              </ion-card-content>
+            <!--<ion-card (click)="courseDetail(subject)">-->
+              <!--<img src="../../assets/../../assets/img/{{subject.icon}}"/>-->
+              <!--<ion-card-content>-->
+                <!--<ion-row>-->
+                  <!--<ion-col>-->
+                    <!--<button class="card-title" ion-button icon-left clear small>-->
+                      <!--<ion-icon name="open"></ion-icon>-->
+                      <!--<div>{{subject.grade}}</div>-->
+                    <!--</button>-->
+                  <!--</ion-col>-->
+                <!--</ion-row>-->
+              <!--</ion-card-content>-->
+            <!--</ion-card>-->
+
+
+            <ion-card class="categories-card" (click)="courseDetail(subject)">
+
+              <ion-item class="card-title-row">
+                <ion-icon class="card-title-icon" item-start name="book" style="color: grey;"></ion-icon>
+                <h2 class="card-title" style=" font-weight: bold;font-family: Roboto, 'Helvetica Neue', sans-serif;">{{subject.name}}</h2>
+                <!--<p>November 5, 1955</p>-->
+              </ion-item>
+
+              <img class="card-image" src="../../assets/../../assets/img/{{subject.icon}}"/>
+
+              <!--<ion-card-content>-->
+                <!--<p>{{subject.grade}}</p>-->
+              <!--</ion-card-content>-->
+
+              <ion-row class="card-subtitle-row">
+                <ion-col>
+                <h2 class="card-subtitle-text" style=" font-weight: bold;font-family: Roboto, 'Helvetica Neue', sans-serif;">{{subject.grade}}</h2>
+                </ion-col>
+                <ion-col>
+                  <button class="card-subtitle-button" ion-button icon-left clear small>
+                    <ion-icon name="paper-plane"></ion-icon>
+                    <div>Open</div>
+                  </button>
+                </ion-col>
+              </ion-row>
+
             </ion-card>
           </ion-col>
         </div>
