@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxCarousel } from 'ngx-carousel';
 
 @Component({
   selector: 'app-alevel',
