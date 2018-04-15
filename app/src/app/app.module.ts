@@ -29,6 +29,8 @@ import { EqualValidatorDirective } from '../directives/equal-validator/equal-val
 import { CouponProvider } from '../providers/coupon/coupon';
 import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
 import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
+import {DiscussionForumPage } from "../pages/discussion-forum/discussion-forum";
+import {PopoverPage} from "../pages/popover/popover"
 
 @NgModule({
     declarations: [
@@ -49,6 +51,8 @@ import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
         VideoPlayerPage,
         Category,
         VideosPage,
+      DiscussionForumPage,
+      PopoverPage,
         EqualValidatorDirective
     ],
     imports: [
@@ -75,6 +79,8 @@ import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
         LessonContentPage,
         VideoPlayerPage,
         VideosPage,
+      PopoverPage,
+      DiscussionForumPage
     ],
     providers: [
         StatusBar,

@@ -22,82 +22,48 @@
   <!--</ion-row>-->
 
 
-        <ion-toolbar class="toolbar">
+        <ion-toolbar class="myToolbar">
           <ion-buttons start>
-            <button ion-button icon-only color="secondary">
-              <ion-icon name="share"></ion-icon>
-            </button>
+            <!--<button ion-button icon-only color="secondary">-->
+              <!--<ion-icon name="share"></ion-icon>-->
+            <!--</button>-->
           </ion-buttons>
-          <ion-segment class="ion-segment" color="secondary" [(ngModel)]="data">
-            <ion-segment-button value="content" >
-              Content
+          <ion-segment class="ion-segment" color="secondary" [(ngModel)]="content">
+            <ion-segment-button value="videos" (click)="setCurrent()">
+              <ion-icon name="videocam"></ion-icon>
+              Videos
             </ion-segment-button>
-            <ion-segment-button value="overview">
-              Overview
-            </ion-segment-button >
-            <ion-segment-button value="reviews" >
+            <ion-segment-button value="more" (click)="openLessons(subject)">
+              <ion-icon name="information-circle"></ion-icon>
+              More
+            </ion-segment-button>
+            <ion-segment-button value="reviews" (click)="goToForum(subject)">
+              <ion-icon name="create"></ion-icon>
               Reviews
             </ion-segment-button>
+            <ion-segment-button value="share">
+              <ion-icon name="share"></ion-icon>
+              Share
+            </ion-segment-button >
           </ion-segment>
 
-          <div [ngSwitch]="data"   class="body-content">
-
-            <ion-list *ngSwitchCase="'content'">
-<div *ngFor="let topic of subject.topics">
-  <ion-item-divider color="light">{{topic.name}}</ion-item-divider>
-  <div *ngFor="let sub_topic of topic.sub_topics">
-              <ion-item-group *ngFor="let video of sub_topic.videos">
-                <button *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
-                  <ion-icon name="videocam"></ion-icon>
-                  {{video.name}}
-                </button>
-              </ion-item-group>
-  </div>
-          </div>
-            </ion-list>
-
-            <div class="body-content" *ngSwitchCase="'overview'">
-              <ion-row>
-                <div class="overviewCards">
-                  <ion-card class="description-card">
-                    <ion-card-header>
-                      <div class="title">Subject overview</div>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
-                      <p>{{subject.description}}</p>
-                    </ion-card-content>
-                  </ion-card>
-
-                  <div *ngFor="let topic of subject.topics" >
-                    <ion-card class="description-card">
-                      <ion-card-header>
-                        <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
-                      </ion-card-header>
-                      <ion-card-content>
-                        <p>{{topic.description}}</p>
-                      </ion-card-content>
-
-                    </ion-card>
-                  </div>
-
-                </div>
-
-              </ion-row>
-
-
-
-            </div>
-
-          </div>
-
-          <ion-buttons end>
-            <button ion-button icon-only color="secondary">
-              <ion-icon name="more"></ion-icon>
-            </button>
-          </ion-buttons>
+          <!--<ion-buttons end>-->
+            <!--<button ion-button icon-only color="secondary">-->
+              <!--<ion-icon name="more"></ion-icon>-->
+            <!--</button>-->
+          <!--</ion-buttons>-->
         </ion-toolbar>
       </div>
 
-
+  <div class="body-content">
+    <div *ngFor="let topic of subject.topics">
+      <ion-item-group *ngFor="let sub_topic of topic.sub_topics">
+        <ion-item-divider color="light">{{sub_topic.name}}</ion-item-divider>
+        <button *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
+          <ion-icon name="videocam"></ion-icon>
+          {{video.name}}
+        </button>
+      </ion-item-group>
+    </div>
+  </div>
 </ion-content>

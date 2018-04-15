@@ -7,12 +7,90 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>discussionForum</ion-title>
+    <ion-title>{{subject.name}}</ion-title>
+    <ion-buttons id="searchToggle" end>
+      <button>
+        <ion-icon id="searchIcon" name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div class="body-content">
+    <div class="section">
+      <ion-card class="message-card">
+        <ion-card-header>
+          <ion-icon name="contact"></ion-icon>
+          Martin
+        </ion-card-header>
+        <ion-card-content class="message">
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{subject.description}}</p>
+        </ion-card-content>
+        <div class="buttons">
 
+        3 <ion-icon name="thumbs-down" style="margin: 0% 20% 0% 0%;"></ion-icon>
+          10 <ion-icon name="thumbs-up"></ion-icon>
+
+        </div>
+      </ion-card>
+
+      <ion-card class="message-card">
+        <ion-card-header>
+          <ion-icon name="contact"></ion-icon>
+          Brian
+        </ion-card-header>
+        <ion-card-content class="message">
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{subject.description}}</p>
+        </ion-card-content>
+        <div class="buttons">
+
+          1 <ion-icon name="thumbs-down" style="margin: 0% 20% 0% 0%;"></ion-icon>
+          20 <ion-icon name="thumbs-up"></ion-icon>
+
+        </div>
+      </ion-card>
+      <ion-card class="message-card">
+        <ion-card-header>
+          <ion-icon name="contact"></ion-icon>
+          Brian
+        </ion-card-header>
+        <ion-card-content class="message">
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{subject.description}}</p>
+        </ion-card-content>
+        <div class="buttons">
+
+          1 <ion-icon name="thumbs-down" style="margin: 0% 20% 0% 0%;"></ion-icon>
+          20 <ion-icon name="thumbs-up"></ion-icon>
+
+        </div>
+      </ion-card>
+      <ion-card class="message-card">
+        <ion-card-header>
+          <ion-icon name="contact"></ion-icon>
+          Brian
+        </ion-card-header>
+        <ion-card-content class="message">
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{subject.description}}</p>
+        </ion-card-content>
+        <div class="buttons">
+
+          1 <ion-icon name="thumbs-down" style="margin: 0% 20% 0% 0%;"></ion-icon>
+          20 <ion-icon name="thumbs-up"></ion-icon>
+
+        </div>
+      </ion-card>
+  </div>
+  </div>
+  <div color="primary" class="addComment">
+      <button>
+        <ion-icon  name="add" style="margin: 0% 5% 0% 0%;"></ion-icon>Add comment
+      </button>
+  </div>
 </ion-content>

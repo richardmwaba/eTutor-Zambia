@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 // $IMPORTSTATEMENT
 
 /**
@@ -9,13 +9,15 @@ import { NavController, NavParams} from 'ionic-angular';
  * Ionic pages and navigation.
  */
 // $IONICPAGE
+@IonicPage()
 @Component({
   selector: 'page-discussion-forum',
   templateUrl: 'discussion-forum.html',
 })
 export class DiscussionForumPage {
-
+public subject:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.subject = this.navParams.get('subject')
   }
 
   ionViewDidLoad() {

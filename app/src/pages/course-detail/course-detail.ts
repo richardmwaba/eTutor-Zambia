@@ -3,11 +3,14 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 
 import { LessonsPage } from '../lessons/lessons';
 import {MySubjectsPage} from '../my-subjects/my-subjects';
+import { SignupPage } from '../signup/signup';
 import {provideAuth} from "angular2-jwt";
 import {LoginPage} from "../login/login";
 import {MySubjectsProvider} from "../../providers/my-subjects/my-subjects";
 import {AuthProvider} from "../../providers/auth/auth";
 import {SubscriptionPage} from "../subscription/subscription";
+import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
+
 import {VideoPlayerPage} from "../video-player/video-player";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 
@@ -32,6 +35,7 @@ export class CourseDetailPage {
   public isAuthenticated: any;
   public user: any;
   public video: any;
+  public content: any;
 
   constructor(
     public navCtrl: NavController,
@@ -43,14 +47,18 @@ export class CourseDetailPage {
   ) {
     this.enrollSatus = this.mySubjects;
     this.subject = navParams.get("subject");
-    this.topic = this.subject.topic;
     this.buttonText = this.getButtonText();
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
   }
 
   ionViewDidLoad() {
+    this.content = "videos";
     console.log('ionViewDidLoad CourseDetailPage');
+  }
+
+  setCurrent() {
+    this.content = "videos";
   }
 
   /**check if this user has an active subscription for this subject then play the video
@@ -95,9 +103,17 @@ export class CourseDetailPage {
     });
   }
 
-  openLessons(topic, subject) {
-    this.topic = topic;
-    this.navCtrl.push(LessonsPage, {topic, subject}); // goes to lessons page
+  /**
+   * @param subject
+   */
+  openLessons(subject) {
+    this.subject = subject;
+    this.navCtrl.push(LessonsPage, {subject}); // goes to lessons page
+  }
+
+  goToForum(subject){
+    this.subject = subject;
+    this.navCtrl.push(DiscussionForumPage, {subject});
   }
 
   goToSignInPage(subject) {

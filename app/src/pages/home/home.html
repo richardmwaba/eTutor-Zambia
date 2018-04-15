@@ -4,6 +4,12 @@
       <ion-icon color="primary" name="menu"></ion-icon>
     </button>
     <ion-title class="page-title">E-Tutor</ion-title>
+
+    <ion-buttons id="searchToggle" end>
+      <button (click)="presentPopover($event)">
+        <ion-icon id="searchIcon" name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

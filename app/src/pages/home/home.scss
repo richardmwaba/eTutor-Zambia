@@ -1,5 +1,14 @@
 page-home {
-
+  ion-navbar button{
+    background-color: white;
+  }
+  ion-buttons ion-icon {
+    font-size: 300%;
+    color: #0a0a0a;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+  }
   .page-title{
     color: #00a4d3;
   }
@@ -47,6 +56,13 @@ page-home {
     }
 
     }
+
+  #searchToggle{
+  }
+
+  #searchIcon{
+    //height: 400px;
+  }
 
 
 

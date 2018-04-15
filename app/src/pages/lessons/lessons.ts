@@ -39,7 +39,7 @@ export class LessonsPage {
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController) {
 
-      this.topic = navParams.get("topic");
+      // this.topic = navParams.get("topic");
       this.subject = navParams.get("subject");
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated

@@ -5,6 +5,8 @@ import { CourseDetailPage } from '../course-detail/course-detail';
 import { ALevelExamsPage } from '../a-level-exams/a-level-exams';
 import {PerGradePagesPage} from "../per-grade-pages/per-grade-pages";
 import {SubjectsProvider} from "../../providers/subjects/subjects";
+import { PopoverController } from 'ionic-angular';
+import {PopoverPage} from '../popover/popover'
 
 @Component({
   selector: 'page-home',
@@ -14,7 +16,10 @@ export class HomePage {
 
     subjects: any;
 
-  constructor(public navCtrl: NavController, public subjectsService: SubjectsProvider) {
+  constructor(
+    public navCtrl: NavController,
+    public subjectsService: SubjectsProvider,
+    public popoverCtrl: PopoverController) {
       this.subjectsService.getSubjects().then((data) => {
           console.log(data);
           this.subjects = data;
@@ -30,9 +35,12 @@ export class HomePage {
     //     });
     //
     // }
-    getNumberOfSubjects(grade){
-        return this.subjects.length();
-    }
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
+  }
 
     jnrSecExams() {
     //navigate to the junior secondary page

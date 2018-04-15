@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{topic.topic_name}}</ion-title>
+    <ion-title>{{subject.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,16 +15,59 @@
 
 <ion-content>
 
-  <ion-item-group>
-    <ion-item>Contents</ion-item>
-  </ion-item-group>
+  <!--<ion-item-group>-->
+    <!--<ion-item>Contents</ion-item>-->
+  <!--</ion-item-group>-->
 
-  <ion-item-group *ngFor="let sub_topic of topic.sub_topics">
-    <ion-item-divider color="light">{{sub_topic.name}}</ion-item-divider>
-    <button *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
-      <ion-icon name="videocam"></ion-icon>
-      {{video.name}}
-    </button>
-  </ion-item-group>
+  <ion-row>
+    <div class="overviewCards">
+
+      <ion-card class="description-card">
+        <ion-card-header>
+          <div class="title">Subject overview</div>
+        </ion-card-header>
+        <ion-card-content>
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{subject.description}}</p>
+        </ion-card-content>
+      </ion-card>
+
+      <div *ngFor="let topic of subject.topics" >
+        <ion-card class="description-card">
+          <ion-card-header>
+            <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{topic.description}}</p>
+          </ion-card-content>
+
+        </ion-card>
+      </div>
+      <ion-card class="description-card">
+        <ion-card-header>
+          <ion-icon name="contact"></ion-icon>
+          Instructors
+        </ion-card-header>
+        <ion-card-content *ngFor="let instructor of subject.instructors">
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>{{instructor.title}} {{instructor.name}}</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="description-card">
+        <ion-card-header>
+          <ion-icon name="pricetags"></ion-icon>
+          Subscription
+        </ion-card-header>
+        <ion-card-content>
+          <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
+          <p>To view all subject material, kindly purchase a subscription
+            bundle from your nearest Kazang seller and ask for etutor coupons</p>
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+  </ion-row>
 
 </ion-content>
