@@ -2,31 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>eTutor</title>
-  <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <meta charset="utf-8">
+    <title>eTutor</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <base href="/">
+    <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
 
-  <!-- Styles Imports Imports Done in .angular-cli.json -->
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-   <!-- Scripts Imports Done in .angular-cli.json -->
+    <!-- JQuery -->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Owl Carousel.Js -->
+    <script src="./assets/plugins/owlcarousel/dist/owl.carousel.min.js"></script>
 
 </head>
 
 <body>
 
-  <app-root></app-root>
-<!-- Warning Section Starts -->
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
+    <app-root></app-root>
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
 <div class="ie-warning">
     <h1>Warning!!</h1>
     <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
@@ -67,7 +72,26 @@
     <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-<!-- Warning Section Ends -->
+    <!-- Warning Section Ends -->
+
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel();
+        });
+    </script>
+
+    <script>
+        var $window = $(window);
+        var nav = $('.fixed-button');
+        $window.scroll(function () {
+            if ($window.scrollTop() >= 200) {
+                nav.addClass('active');
+            }
+            else {
+                nav.removeClass('active');
+            }
+        });
+    </script>
 </body>
 
 </html>

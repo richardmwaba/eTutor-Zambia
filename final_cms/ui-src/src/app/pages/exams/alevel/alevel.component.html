@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="breadcrumb-item">
-        <a href="#!">Lessons</a>
+        <a href="#!">Exams</a>
       </li>
       <li class="breadcrumb-item">
         <a routeLink="/exams/alevel">A-Level</a>
@@ -23,10 +23,10 @@
   <!-- Nav tabs -->
   <div class="tab-header">
     <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#revision_videos" role="tab">Revision Videos</a>
-            <div class="slide"></div>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#revision_videos" role="tab">Revision Videos</a>
+        <div class="slide"></div>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#exam_material" role="tab">Exam Material</a>
         <div class="slide"></div>
@@ -38,274 +38,91 @@
   <div class="tab-content">
     <div class="tab-pane active" id="revision_videos" role="tabpanel">
       <div class="card">
-        <div class="card-header">
-          <h5 class="card-header-text">About Me</h5>
-          <button id="edit-btn" type="button" class="btn btn-primary waves-effect waves-light f-right">
-            <i class="icofont icofont-edit"></i>
-          </button>
-        </div>
         <div class="card-block">
           <div class="view-info">
             <div class="row">
               <div class="col-lg-12">
-                <div class="general-info">
-                  <div class="row">
-                    <div class="col-lg-12 col-xl-6">
-                      <table class="table m-0">
-                        <tbody>
-                          <tr>
-                            <th scope="row">Full Name</th>
-                            <td>Josephine Villa</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Gender</th>
-                            <td>Female</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Birth Date</th>
-                            <td>October 25th, 1990</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Marital Status</th>
-                            <td>Single</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Location</th>
-                            <td>New York, USA</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- end of table col-lg-6 -->
-
-                    <div class="col-lg-12 col-xl-6">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <th scope="row">Email</th>
-                            <td>
-                              <a href="#!">Demo@phenix.com</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Mobile Number</th>
-                            <td>(0123) - 4567891</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Twitter</th>
-                            <td>@phoenixcoded</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Skype</th>
-                            <td>phoenixcoded.demo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Website</th>
-                            <td>
-                              <a href="#!">www.demo.com</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- end of table col-lg-6 -->
-                  </div>
-                  <!-- end of row -->
-                </div>
-                <!-- end of general info -->
+                <h4>Biology</h4>
+                <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+                    <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+                        <div class="wBg">
+                            <div class="tile" [style.background]="'url(' + tile + ')'">
+                                <h1>{{i}}</h1>
+                            </div>
+                            <h5>Video Title</h5>
+                            <p>Description</p>
+                        </div>
+                    </ngx-tile>
+                    <button NgxCarouselPrev class="leftRs">&lt;</button>
+                    <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>
               </div>
               <!-- end of col-lg-12 -->
             </div>
             <!-- end of row -->
-          </div>
-          <!-- end of view-info -->
-
-          <div class="edit-info">
+            <br>
             <div class="row">
               <div class="col-lg-12">
-                <div class="general-info">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-ui-user"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="text" class="md-form-control">
-                                  <label>Full Name</label>
-                                </div>
-                              </div>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-
-                              <div class="form-radio">
-                                <form>
-                                  <div class="md-group-add-on">
-                                    <span class="md-add-on">
-                                      <i class="icofont icofont-group-students"></i>
-                                    </span>
-                                    <div class="radio radiofill radio-inline">
-                                      <label>
-                                        <input type="radio" name="radio">
-                                        <i class="helper"></i> Male
-                                      </label>
-                                    </div>
-                                    <div class="radio radiofill radio-inline">
-                                      <label>
-                                        <input type="radio" name="radio">
-                                        <i class="helper"></i> Female
-                                      </label>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-ui-calendar"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="text" id="date" class="md-form-control">
-                                  <label>Birthday Date</label>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-users-alt-4"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <select class="md-form-control">
-                                    <option>Select Marital Status</option>
-                                    <option>Married</option>
-                                    <option>Unmarried</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-location-pin"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <textarea class="md-form-control" cols="2" rows="4"></textarea>
-                                  <label>Address</label>
-
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- end of table col-lg-6 -->
-
-                    <div class="col-lg-6">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-email"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="email" class="md-form-control">
-                                  <label>Email</label>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-mobile-phone"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="number" class="md-form-control">
-                                  <label>Mobile Number</label>
-                                </div>
-                              </div>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-social-twitter"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="email" class="md-form-control">
-                                  <label>Twitter Id</label>
-                                </div>
-                              </div>
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-social-skype"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="email" class="md-form-control">
-                                  <label>Skype Id</label>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="md-group-add-on">
-                                <span class="md-add-on">
-                                  <i class="icofont icofont-web"></i>
-                                </span>
-                                <div class="md-input-wrapper">
-                                  <input type="text" class="md-form-control">
-                                  <label>Website</label>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                    </div>
-
-                    <!-- end of table col-lg-6 -->
-                  </div>
-                  <!-- end of row -->
-                  <div class="text-center">
-                    <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
-                    <a href="#!" id="edit-cancel" class="btn btn-default waves-effect">Cancel</a>
-                  </div>
-                </div>
-                <!-- end of edit info -->
+                <h4>Chemistry</h4>
+                <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+                    <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+                        <div class="wBg">
+                            <div class="tile" [style.background]="'url(' + tile + ')'">
+                                <h1>{{i}}</h1>
+                            </div>
+                            <h5>Video Title</h5>
+                            <p>Description</p>
+                        </div>
+                    </ngx-tile>
+                    <button NgxCarouselPrev class="leftRs">&lt;</button>
+                    <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>
               </div>
               <!-- end of col-lg-12 -->
             </div>
             <!-- end of row -->
-
+            <br>
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>Math</h4>
+                <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+                    <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+                        <div class="wBg">
+                            <div class="tile" [style.background]="'url(' + tile + ')'">
+                                <h1>{{i}}</h1>
+                            </div>
+                            <h5>Video Title</h5>
+                            <p>Description</p>
+                        </div>
+                    </ngx-tile>
+                    <button NgxCarouselPrev class="leftRs">&lt;</button>
+                    <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>
+              </div>
+              <!-- end of col-lg-12 -->
+            </div>
+            <!-- end of row -->
+            <br>
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>Physics</h4>
+                <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+                    <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+                        <div class="wBg">
+                            <div class="tile" [style.background]="'url(' + tile + ')'">
+                                <h1>{{i}}</h1>
+                            </div>
+                            <h5>Video Title</h5>
+                            <p>Description</p>
+                        </div>
+                    </ngx-tile>
+                    <button NgxCarouselPrev class="leftRs">&lt;</button>
+                    <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>
+              </div>
+              <!-- end of col-lg-12 -->
+            </div>
+            <!-- end of row -->
           </div>
           <!-- end of view-info -->
         </div>
@@ -320,276 +137,14 @@
     <div class="tab-pane" id="exam_material" role="tabpanel">
       <div class="card">
         <div class="card-header">
-          <h5 class="card-header-text">Project Details</h5>
+          <h5 class="card-header-text">Material Details</h5>
           <button type="button" class="btn btn-primary waves-effect waves-light f-right">
-            + ADD PROJECTS</button>
+            + Add Material</button>
         </div>
         <!-- end of card-header  -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="project-table">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th class="text-center txt-primary pro-pic">Photo</th>
-                      <th class="text-center txt-primary">Client</th>
-                      <th class="text-center txt-primary">Start Date</th>
-                      <th class="text-center txt-primary">End Date</th>
-                      <th class="text-center txt-primary">Status</th>
-                      <th class="text-center txt-primary">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success m-t-20">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-warning">Pending</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-danger">cancel</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-warning">Pending</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success m-t-20">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success m-t-20">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-warning">Pending</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-success m-t-20">Finish</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="assets/images/avatar-2.png" class="img-circle" alt="tbl">
-                      </td>
-                      <td>Web Consultant</td>
-                      <td>Oct 25th, 2014</td>
-                      <td>Oct 25th, 2015</td>
-                      <td class="text-center">
-                        <span class="label label-warning">Pending</span>
-                      </td>
-                      <td class="faq-table-btn">
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit">
-                          <i class="icofont icofont-ui-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="View">
-                          <i class="icofont icofont-eye-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete">
-                          <i class="icofont icofont-ui-delete"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- end of table -->
-              </div>
-              <!-- end of table responsive -->
-            </div>
-            <!-- end of project table -->
+
           </div>
           <!-- end of col-lg-12 -->
         </div>
