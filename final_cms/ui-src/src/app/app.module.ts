@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ValidateService } from './services/validate/validate.service';
 import { AuthService } from './services/auth/auth.service';
 import { FlashMessagesModule } from 'ngx-flash-messages';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -61,7 +63,8 @@ import { AddSuperUserComponent } from './components/add-super-user/add-super-use
     HttpModule,
     FormsModule,
     routing,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgxCarouselModule
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],

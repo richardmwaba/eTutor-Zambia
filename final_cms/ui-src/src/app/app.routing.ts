@@ -43,6 +43,7 @@ const appRoutes: Routes = [
             { path:'exams/junior', component: JuniorComponent },
             { path:'exams/senior', component: SeniorComponent },
             { path:'exams/a-level', component: AlevelComponent },
+            { path:'lessons/a-level', component: EightComponent },
             { path:'lessons/eight', component: EightComponent },
             { path:'lessons/nine', component: NineComponent },
             { path:'lessons/ten', component: TenComponent },
