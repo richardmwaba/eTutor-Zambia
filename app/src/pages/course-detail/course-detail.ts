@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 
 import { LessonsPage } from '../lessons/lessons';
 import {MySubjectsPage} from '../my-subjects/my-subjects';
@@ -13,6 +13,7 @@ import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 
 import {VideoPlayerPage} from "../video-player/video-player";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
+import {PopoverPage} from "../popover/popover";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -41,6 +42,7 @@ export class CourseDetailPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public mySubjectsService: MySubjectsProvider,
+    public modalCtrl: ModalController,
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public authService: AuthProvider
@@ -81,16 +83,27 @@ export class CourseDetailPage {
 
         } else {
           this.presentToast(this.data['msg']);
-          this.navCtrl.push(SubscriptionPage, {
-            video, subject  // passing data to subscription page
-          });
+          // this.navCtrl.push(SubscriptionPage, {
+          //   video, subject  // passing data to subscription page
+          // });
+          this.presentModal(video, subject, SubscriptionPage);
         }
       });
 
     }else {
       // redirect to log in
-      this.navCtrl.push(LoginPage);
+      // this.navCtrl.push(LoginPage);
+      this.presentModal(video, subject, LoginPage);
     }
+  }
+
+  /**
+   * presents a modal
+   */
+  presentModal(video, subject, page) {
+    let modal = this.modalCtrl.create(page,
+      {video, subject });
+    modal.present();
   }
 
   /**

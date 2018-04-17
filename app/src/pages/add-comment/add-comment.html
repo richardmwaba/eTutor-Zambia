@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AddCommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><button  ion-button icon-left (click)="dismissModal()"><ion-icon name="close"></ion-icon></button></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--<div class="card" style="text-align: center">-->
+    <!--&lt;!&ndash; Advanced: explicity set the icon for each platform &ndash;&gt;-->
+    <!--<ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>-->
+    <!--<div class="app-name">-->
+      <!--<b>e-tutor</b>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="list card">
+    <div class="item item-body">
+      <!--<ion-content>-->
+      <form [formGroup]="commentForm" (ngSubmit)="submit()">
+        <ion-list>
+
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Title</ion-label>
+            <ion-input type="text" formControlName="title" required></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!commentForm.controls.title.valid && (commentForm.controls.title.dirty || submitAttempt)" >
+            <p class="error">The title of your comment is required!</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #488aff" stacked>Message</ion-label>
+            <ion-textarea type="text" formControlName="message" required></ion-textarea>
+          </ion-item>
+
+          <ion-item *ngIf="!commentForm.controls.message.valid && (commentForm.controls.message.dirty || submitAttempt)" >
+            <p class="error">Please enter a comment/message.</p>
+          </ion-item>
+
+        </ion-list>
+
+        <div padding>
+          <button ion-button color="primary" block text-capitalize type="submit">Submit</button>
+        </div>
+      </form>
+
+      <!--</ion-content>-->
+    </div>
+  </div>
+
+</ion-content>

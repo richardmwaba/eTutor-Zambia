@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
+import { AddCommentPage } from "../add-comment/add-comment";
 // $IMPORTSTATEMENT
 
 /**
@@ -16,12 +17,20 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class DiscussionForumPage {
 public subject:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public navParams: NavParams) {
     this.subject = this.navParams.get('subject')
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiscussionForumPage');
+  }
+
+  presentModal() {
+    let modal = this.modalCtrl.create(AddCommentPage);
+    modal.present();
   }
 
 }

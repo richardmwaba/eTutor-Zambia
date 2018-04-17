@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {SubjectsProvider} from "../../providers/subjects/subjects";
+import {CourseDetailPage} from "../course-detail/course-detail";
 // $IMPORTSTATEMENT
 
 /**
@@ -16,8 +17,8 @@ import {SubjectsProvider} from "../../providers/subjects/subjects";
 })
 export class PopoverPage {
   searchQuery: string = '';
-  items: string[];
-  subjects: any;
+  items: Array<any>;
+  subjects:Array<any>;
   constructor(
     public navCtrl: NavController,
     public subjectsService: SubjectsProvider,
@@ -47,9 +48,14 @@ export class PopoverPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  courseDetail(subject) {
+    //navigate to the selected course detail page
+    this.navCtrl.push(CourseDetailPage, {subject});
   }
 
 }

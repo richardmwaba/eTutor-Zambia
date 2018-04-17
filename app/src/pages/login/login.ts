@@ -68,7 +68,8 @@ export class LoginPage {
         this.presentToast();
 
         // redirect to home page
-        this.navCtrl.setRoot(HomePage);
+        // this.navCtrl.setRoot(HomePage);
+        this.navCtrl.pop();
 
       } else {
         // show error alert

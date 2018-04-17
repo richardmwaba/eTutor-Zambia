@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, LoadingController, PopoverController, ModalController} from 'ionic-angular';
 import { JuniorSecondaryPage } from '../junior-secondary/junior-secondary';
 import { CourseDetailPage } from '../course-detail/course-detail';
 import { ALevelExamsPage } from '../a-level-exams/a-level-exams';
 import {PerGradePagesPage} from "../per-grade-pages/per-grade-pages";
 import {SubjectsProvider} from "../../providers/subjects/subjects";
-import { PopoverController } from 'ionic-angular';
 import {PopoverPage} from '../popover/popover'
+import {AddCommentPage} from "../add-comment/add-comment";
 
 @Component({
   selector: 'page-home',
@@ -14,27 +14,40 @@ import {PopoverPage} from '../popover/popover'
 })
 export class HomePage {
 
-    subjects: any;
+    public subjects: Array<any>;
 
   constructor(
     public navCtrl: NavController,
     public subjectsService: SubjectsProvider,
-    public popoverCtrl: PopoverController) {
+    public popoverCtrl: PopoverController,
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController) {
       this.subjectsService.getSubjects().then((data) => {
           console.log(data);
           this.subjects = data;
+        // this.presentLoading();
       });
 
   }
 
-    // ionViewDidLoad(){
-    //
-    //     this.subjectsService.getSubjects().then((data) => {
-    //         console.log(data);
-    //         this.subjects = data;
-    //     });
-    //
-    // }
+    ionViewDidLoad(){
+
+
+
+    }
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+  }
+
+  presentModal() {
+    let modal = this.modalCtrl.create(PopoverPage);
+    modal.present();
+  }
+
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(PopoverPage);
     popover.present({

@@ -31,6 +31,7 @@ import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions'
 import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 import {DiscussionForumPage } from "../pages/discussion-forum/discussion-forum";
 import {PopoverPage} from "../pages/popover/popover"
+import { AddCommentPage } from "../pages/add-comment/add-comment";
 
 @NgModule({
     declarations: [
@@ -53,6 +54,7 @@ import {PopoverPage} from "../pages/popover/popover"
         VideosPage,
       DiscussionForumPage,
       PopoverPage,
+      AddCommentPage,
         EqualValidatorDirective
     ],
     imports: [
@@ -79,6 +81,7 @@ import {PopoverPage} from "../pages/popover/popover"
         LessonContentPage,
         VideoPlayerPage,
         VideosPage,
+      AddCommentPage,
       PopoverPage,
       DiscussionForumPage
     ],
