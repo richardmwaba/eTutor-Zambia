@@ -27,4 +27,32 @@ router.get('/albums', (req, res, next) => {
     })
 });
 
+router.post('/upload', (req,res, next) => {
+    Videos.uploadVideo((err, video, status_code, headers) => {
+        if(err) {
+            res.send(err);
+        } else {
+            res.json(video);
+        }
+    });
+});
+
+// testing upload
+router.post('/testupload', (req,res, next) => {
+    Videos.uploadV((err, uri, bUplaoded, bTotal) => {
+        if(err) {
+            res.send(err);
+        } 
+
+        if (bUploaded != bTotal) {
+            res.send('still uploading');
+        } else {
+            res.json({
+                URI: uri,
+                status: 'Complete ' + bTotal + ' uploaded',
+            });
+        }
+    })
+})
+
 module.exports = router; // ensures that methods can be used outside this file
