@@ -6,7 +6,7 @@ import { NgxCarousel } from 'ngx-carousel';
   templateUrl: './alevel.component.html',
   styleUrls: ['./alevel.component.css']
 })
-export class AlevelComponent implements OnInit {
+export class AlevelLessonsComponent implements OnInit {
 
 
   public carouselTileOneItems: Array<any> = [];

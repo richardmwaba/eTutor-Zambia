@@ -16,10 +16,7 @@ export class TwelveComponent implements OnInit {
 
   ngOnInit() {
     this.images = [
-      'assets/images/bg.jpg',
-      'assets/images/car.png',
-      'assets/images/canberra.jpg',
-      'assets/images/holi.jpg'
+      'assets/images/test.mp4'
     ];
     
     this.carouselTileOne = {
