@@ -60,6 +60,7 @@ const users = require('./routes/userRoutes');
 const subjects = require('./routes/subjectRoutes');
 const coupons = require('./routes/couponRoutes');
 const subscriptions = require('./routes/subscriptionRoutes');
+const discussions = require('./routes/dicussionRoutes');
 
 // default port variable
 const port = 3000;
@@ -83,6 +84,7 @@ app.use('/users', users);
 app.use('/subjects', subjects);
 app.use('/coupons', coupons);
 app.use('/subscriptions', subscriptions);
+app.use('/discussions', discussions);
 
 // handles listening to the specified port and starts server
 app.listen(port, () => {

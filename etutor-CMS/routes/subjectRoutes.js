@@ -128,7 +128,7 @@ router.post('/add/topic/:subId', (req, res, next) =>{
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
         // check for errors
         if (err) {
-            res.json({ success: false, msg: 'Failed to get subject' });
+            res.json({ success: false, msg: 'Failed to find this subject' });
         } else {
             // if success
             Subject.addTopic(subject, newTopic, (err, topic) => {

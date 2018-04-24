@@ -25,6 +25,11 @@ export class AuthProvider {
     private http: HttpClient
   ) { }
 
+  isAuthenticated(){
+
+    return this.user;
+  }
+
   /**
    * Signs a new user into the app
    * @param data useer's sign up data
@@ -44,7 +49,7 @@ export class AuthProvider {
   /**
    * Stores the user's profile info on the app
    * @param token generated after log in process
-   * @param user the user data that's returned to the app 
+   * @param user the user data that's returned to the app
    */
   storeData(token, user) {
     localStorage.setItem('id_token', token);

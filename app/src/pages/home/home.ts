@@ -22,6 +22,7 @@ export class HomePage {
     public popoverCtrl: PopoverController,
     public modalCtrl: ModalController,
     public loadingCtrl: LoadingController) {
+    // this.presentLoading();
       this.subjectsService.getSubjects().then((data) => {
           console.log(data);
           this.subjects = data;

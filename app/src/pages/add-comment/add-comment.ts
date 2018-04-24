@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import {HomePage} from "../home/home";
-import {PopoverPage} from "../popover/popover";
+import {DiscussionsProvider} from "../../providers/discussions/discussions";
+import {AuthProvider} from "../../providers/auth/auth";
+
 // $IMPORTSTATEMENT
 
 /**
@@ -23,7 +24,7 @@ export class AddCommentPage {
 
   token: string;
   user: any;
-  public subject: any;
+  public topic: any;
 
 
   constructor(
@@ -31,11 +32,16 @@ export class AddCommentPage {
     public navParams: NavParams,
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
+    public discussionService: DiscussionsProvider,
+    public authervice: AuthProvider,
     public formBuilder: FormBuilder) {
-    this.subject = navParams.get("subject");
+    this.topic = navParams.get("topic");
+    this.user = this.authervice.user;
     this.commentForm = formBuilder.group({
       title: ['', Validators.compose( [Validators.required])],
-      message: ['', Validators.compose([Validators.required])]
+      message: ['', Validators.compose([Validators.required])],
+      topic_id: ['', Validators.compose([Validators.required])],
+      username: ['', Validators.compose([Validators.required])]
     })
   }
 
@@ -51,48 +57,41 @@ export class AddCommentPage {
    * submits a user comment
    */
   submit() {
-    // this.submitAttempt = true;
-    //
-    // console.log('credentials: ' + this.commentForm.value);
-    //
-    // this.auth.authenticateUser(this.commentForm.value).subscribe(data => {
-    //
-    //   if (data['success']) {
-    //     // get token and user from returned data
-    //     this.token = data['token'];
-    //     this.user = data['user'];
-    //
-    //     // store token and user dits in local storage
-    //     //TODO: may need to user secure storage for this data
-    //     this.auth.storeData(this.token, this.user);
-    //
-    //     // show success toast
-    //     this.presentToast();
-    //
-    //     // redirect to home page
-    //     this.navCtrl.setRoot(HomePage);
-    //
-    //   } else {
-    //     // show error alert
-    //     let toastWarn = this.toastCtrl.create({
-    //       message: data['msg'],
-    //       duration: 3000,
-    //       position: 'top',
-    //       cssClass: 'warning'
-    //     });
-    //
-    //     toastWarn.present();
-    //   }
-    //
-    // });
+    this.submitAttempt = true;
+
+    console.log('discussion: ' + this.commentForm.value);
+
+    this.discussionService.addComment(this.commentForm.value).subscribe(data => {
+
+      if (data['success']) {
+
+        // show success toast
+        this.presentToast(data['msg']);
+
+        // dismiss the modal
+        this.navCtrl.pop()
+
+      } else {
+        // show error alert
+        let toastWarn = this.toastCtrl.create({
+          message: data['msg'],
+          duration: 3000,
+          position: 'top',
+          cssClass: 'warning'
+        });
+
+        toastWarn.present();
+      }
+
+    });
   }
 
   /**
    * Presents a success toast on log in
    */
-  presentToast() {
+  presentToast(msg) {
     let toast = this.toastCtrl.create({
-      message: 'You have successfully logged in...',
+      message: msg,
       duration: 3000,
       //position, cssCLass
     });

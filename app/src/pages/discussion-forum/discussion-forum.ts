@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
-import { AddCommentPage } from "../add-comment/add-comment";
+import { CommentsPage} from "../comments/comments";
 // $IMPORTSTATEMENT
 
 /**
@@ -16,10 +16,9 @@ import { AddCommentPage } from "../add-comment/add-comment";
   templateUrl: 'discussion-forum.html',
 })
 export class DiscussionForumPage {
-public subject:any;
+public subject:Array<any>;
   constructor(
     public navCtrl: NavController,
-    public modalCtrl: ModalController,
     public navParams: NavParams) {
     this.subject = this.navParams.get('subject')
   }
@@ -27,10 +26,7 @@ public subject:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiscussionForumPage');
   }
-
-  presentModal() {
-    let modal = this.modalCtrl.create(AddCommentPage);
-    modal.present();
+  openComments(topic){
+    this.navCtrl.push(CommentsPage, {topic});
   }
-
 }

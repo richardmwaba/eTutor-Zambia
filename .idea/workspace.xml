@@ -4,21 +4,19 @@
     <list default="true" id="ff26f2fd-c748-4de2-b074-0ff819025693" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/providers/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etutor-CMS/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/etutor-CMS/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etutor-CMS/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/etutor-CMS/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etutor-CMS/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/etutor-CMS/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etutor-CMS/routes/subjectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/etutor-CMS/routes/subjectRoutes.js" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/final_cms/api/node_modules/" />
-    <ignored path="$PROJECT_DIR$/app/node_modules/cordova-android/spec/e2e/fixtures/cordova-plugin-fake/platforms/" />
-    <ignored path="$PROJECT_DIR$/app/www/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,26 +24,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-comment.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html">
+      <file leaf-file-name="comments.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="9" column="91" selection-start-line="9" selection-start-column="91" selection-end-line="9" selection-end-column="91" />
-              <folding>
-                <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#ion-list#0;n#form#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ion-label#0;n#ion-item#2;n#ion-list#0;n#form#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course-detail.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
+            <state relative-caret-position="-753">
+              <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -53,76 +49,95 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.scss">
+      <file leaf-file-name="comment.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etutor-CMS/models/comment.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-comment.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts">
+      <file leaf-file-name="like.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etutor-CMS/models/like.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="151">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
+      <file leaf-file-name="dicussionRoutes.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/dicussionRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="183">
+              <caret line="57" column="107" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subscription.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.ts">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1425">
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="93">
+              <caret line="282" selection-start-line="282" selection-end-line="294" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.ts">
+      <file leaf-file-name="course-detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="45" column="4" selection-start-line="45" selection-start-column="2" selection-end-line="48" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="229">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comments.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discussion.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etutor-CMS/models/discussion.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discussions.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/providers/discussions/discussions.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>topic_</find>
-      <find>v</find>
-      <find>radi</find>
       <find>subject</find>
-      <find>message</find>
+      <find>hi</find>
+      <find>userEmail</find>
     </findStrings>
     <replaceStrings>
-      <replace>Title</replace>
-      <replace>title</replace>
-      <replace>comment</replace>
+      <replace>topic</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -131,28 +146,32 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/final_cms/api/package.json" />
-        <option value="$PROJECT_DIR$/app/src/theme/variables.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.scss" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/dicussion.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/feedback.js" />
+        <option value="$PROJECT_DIR$/app/src/pages/comments/comments.scss" />
         <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html" />
         <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts" />
         <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html" />
+        <option value="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" />
         <option value="$PROJECT_DIR$/app/src/pages/home/home.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.html" />
+        <option value="$PROJECT_DIR$/etutor-CMS/routes/subjectRoutes.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/app.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/config/database.js" />
+        <option value="$PROJECT_DIR$/app/src/providers/auth/auth.ts" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/dislike.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/reaction.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/user.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/discussion.js" />
         <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.scss" />
         <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/login/login.ts" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/like.js" />
+        <option value="$PROJECT_DIR$/etutor-CMS/models/comment.js" />
+        <option value="$PROJECT_DIR$/app/src/pages/comments/comments.html" />
+        <option value="$PROJECT_DIR$/app/src/providers/discussions/discussions.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/comments/comments.ts" />
+        <option value="$PROJECT_DIR$/etutor-CMS/routes/dicussionRoutes.js" />
       </list>
     </option>
   </component>
@@ -170,6 +189,9 @@
     <handled-path value="$PROJECT_DIR$/final_cms/api/node_modules" />
     <handled-path value="$PROJECT_DIR$/final_cms/ui-src/node_modules" />
     <handled-path value="$PROJECT_DIR$/test/etutor/node_modules" />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -209,13 +231,6 @@
               <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -240,15 +255,69 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="discussion-forum" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
               <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="subscription" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="discussions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="subjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="etutor-CMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="etutor-CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="etutor-CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="etutor-CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -258,18 +327,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Homestead" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/final_cms/ui-src/node_modules/typescript/lib" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -283,75 +346,52 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.app">
-    <configuration name="app" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/etutor-CMS" />
-    <configuration name="mobile" type="PhoneGap" factoryName="PhoneGap/Cordova">
-      <option name="myExecutable" value="C:\Users\Martin\AppData\Roaming\npm\ionic.cmd" />
-      <option name="myWorkDir" value="E:\Documents\Projects\e-tutor\app" />
-      <option name="myCommand" value="serve" />
-      <option name="myPassParent" value="true" />
-      <option name="myPlatform" value="browser" />
-      <option name="myExtraArgs" value="" />
-      <option name="hasTarget" value="false" />
-      <option name="target" value="" />
-    </configuration>
-    <list>
-      <item itemvalue="Node.js.app" />
-      <item itemvalue="PhoneGap/Cordova.mobile" />
-    </list>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ff26f2fd-c748-4de2-b074-0ff819025693" name="Default" comment="" />
-      <created>1523358380873</created>
+      <created>1517228080601</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1523358380873</updated>
-      <workItem from="1523358386811" duration="1873000" />
-      <workItem from="1523362267134" duration="738000" />
-      <workItem from="1523367406511" duration="3462000" />
-      <workItem from="1523428459547" duration="98888000" />
+      <updated>1517228080601</updated>
+      <workItem from="1517228091272" duration="2099000" />
+      <workItem from="1517813324461" duration="1916000" />
+      <workItem from="1523998728447" duration="1491000" />
+      <workItem from="1524072614459" duration="1225000" />
+      <workItem from="1524114361553" duration="495000" />
+      <workItem from="1524115516157" duration="67074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109175000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="81179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.49582636" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17885533" />
+      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32876712" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06200318" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32876712" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32975295" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
@@ -359,10 +399,10 @@
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/app/app.component.js" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.js.map" />
         <option value="$PROJECT_DIR$/app/src/app/app.module.js" />
         <option value="$PROJECT_DIR$/app/src/app/app.module.js.map" />
+        <option value="$PROJECT_DIR$/app/src/app/app.component.js" />
+        <option value="$PROJECT_DIR$/app/src/app/app.component.js.map" />
         <option value="$PROJECT_DIR$/app/src/app/main.js" />
         <option value="$PROJECT_DIR$/app/src/app/main.js.map" />
         <option value="$PROJECT_DIR$/app/src/pages/home/home.js" />
@@ -392,31 +432,6 @@
         <option value="$PROJECT_DIR$/app/node_modules/reflect-metadata/test/reflect-deletemetadata.js.map" />
         <option value="$PROJECT_DIR$/app/node_modules/reflect-metadata/test/reflect-hasmetadata.js" />
         <option value="$PROJECT_DIR$/app/node_modules/reflect-metadata/test/reflect-hasmetadata.js.map" />
-        <option value="$PROJECT_DIR$/final_cms/ui-src/node_modules/karma/config.tpl.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/karma/config.tpl.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/Reflect.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/Reflect.d.ts" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/Reflect.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-definemetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-definemetadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getmetadatakeys.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getmetadatakeys.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-metadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-metadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getmetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getmetadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getownmetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getownmetadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getownmetadatakeys.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-getownmetadatakeys.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-hasownmetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-hasownmetadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-decorate.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-decorate.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-deletemetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-deletemetadata.js.map" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-hasmetadata.js" />
-        <option value="$PROJECT_DIR$/etutor-CMS/angular-src/node_modules/reflect-metadata/test/reflect-hasmetadata.js.map" />
       </list>
     </option>
   </component>
@@ -424,155 +439,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16975">
-          <caret line="679" column="8" selection-start-line="679" selection-start-column="8" selection-end-line="679" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11543">
-          <caret line="679" column="8" selection-start-line="679" selection-start-column="8" selection-end-line="679" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11543">
-          <caret line="679" column="8" selection-start-line="679" selection-start-column="8" selection-end-line="679" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/etutor-CMS/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lesson-content/lesson-content.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lesson-content/lesson-content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lesson-content/lesson-content.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/theme/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-100">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <element signature="e#154#215#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -616,78 +479,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#ion-icon#0;n#div#0;n#ion-card#0;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#div#0;n#ion-card#1;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#div#0;n#ion-card#2;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#div#0;n#ion-card#3;n#div#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-icon#0;n#button#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1327">
-          <caret line="96" column="22" lean-forward="true" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="51" column="10" lean-forward="true" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="3" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="33" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7625">
-          <caret line="305" column="90" selection-start-line="305" selection-start-column="43" selection-end-line="305" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#ion-icon#0;n#ion-item#0;n#ion-card#0;n#ion-col#0;n#div#0;n#ion-row#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#ion-item#0;n#ion-card#0;n#ion-col#0;n#div#0;n#ion-row#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#ion-col#0;n#ion-row#0;n#ion-card#0;n#ion-col#0;n#div#0;n#ion-row#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,9 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-644">
           <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,94 +500,321 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.html">
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/topic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="93" />
+        <state relative-caret-position="-67">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/feedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="85" selection-start-line="1" selection-end-line="1" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="7" selection-start-line="1" selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="425">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html">
+    <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="9" column="91" selection-start-line="9" selection-start-column="91" selection-end-line="9" selection-end-column="91" />
+        <state relative-caret-position="-31">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#0;n#ion-list#0;n#form#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-label#0;n#ion-item#2;n#ion-list#0;n#form#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="45" column="4" selection-start-line="45" selection-start-column="2" selection-end-line="48" selection-end-column="3" />
+        <state relative-caret-position="249">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/userRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/couponRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
+          <caret line="6" column="31" lean-forward="true" selection-end-line="99" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/subjectRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="130" column="64" selection-start-line="130" selection-start-column="64" selection-end-line="130" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/subscriptions/subscriptions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1575">
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts">
+    <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="227">
+          <caret line="65" column="89" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425">
+        <state relative-caret-position="154">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="15" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/auth/auth.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/config/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/dislike">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/reaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/dislike.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="282" selection-start-line="282" selection-end-line="294" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="92" column="5" lean-forward="true" selection-start-line="86" selection-start-column="3" selection-end-line="92" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/coupon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="66" lean-forward="true" selection-start-line="64" selection-end-line="68" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/subject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1724">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/subscription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/subscriptionRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/like.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/discussion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/models/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/discussions/discussions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-753">
+          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etutor-CMS/routes/dicussionRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="57" column="107" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

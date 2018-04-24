@@ -49,6 +49,8 @@
         </ion-list>
 
         <div padding>
+          <ion-input type="hidden" formControlName="topic_id" value="{{topic._id}}" ngModal></ion-input>
+          <ion-input type="hidden" formControlName="username" value="{{user.username}}" ngModal></ion-input>
           <button ion-button color="primary" block text-capitalize type="submit">Submit</button>
         </div>
       </form>

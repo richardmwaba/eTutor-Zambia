@@ -84,10 +84,10 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
     });
 };
 
-module.exports.addToMySubjects = function (updatedUser, callback) {
-    updatedUser.save(callback);
-};
-
-module.exports.removeFromMySubjects = function (updatedUser, callback) {
-    updatedUser.save(callback);
-};
+// module.exports.addToMySubjects = function (updatedUser, callback) {
+//     updatedUser.save(callback);
+// };
+//
+// module.exports.removeFromMySubjects = function (updatedUser, callback) {
+//     updatedUser.save(callback);
+// };

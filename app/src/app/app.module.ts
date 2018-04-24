@@ -32,6 +32,8 @@ import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 import {DiscussionForumPage } from "../pages/discussion-forum/discussion-forum";
 import {PopoverPage} from "../pages/popover/popover"
 import { AddCommentPage } from "../pages/add-comment/add-comment";
+import { CommentsPage } from "../pages/comments/comments";
+import { DiscussionsProvider } from '../providers/discussions/discussions';
 
 @NgModule({
     declarations: [
@@ -55,6 +57,7 @@ import { AddCommentPage } from "../pages/add-comment/add-comment";
       DiscussionForumPage,
       PopoverPage,
       AddCommentPage,
+      CommentsPage,
         EqualValidatorDirective
     ],
     imports: [
@@ -83,6 +86,7 @@ import { AddCommentPage } from "../pages/add-comment/add-comment";
         VideosPage,
       AddCommentPage,
       PopoverPage,
+      CommentsPage,
       DiscussionForumPage
     ],
     providers: [
@@ -94,7 +98,8 @@ import { AddCommentPage } from "../pages/add-comment/add-comment";
         HttpClientModule,
         StreamingMedia,
     SubscriptionsProvider,
-    MySubjectsProvider
+    MySubjectsProvider,
+    DiscussionsProvider
     ]
 })
 export class AppModule {
