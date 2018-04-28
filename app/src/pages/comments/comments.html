@@ -32,15 +32,16 @@
         </ion-card-content>
         <div class="buttons">
 
-          {{comment.dislikes}} <ion-icon name="thumbs-down" style="margin: 0% 20% 0% 0%;" (click)="dislike(comment)"></ion-icon>
-           {{comment.likes}}<ion-icon name="thumbs-up" (click)="like(comment)"></ion-icon>
+          <ion-icon name="thumbs-up" style="margin: 0% 5% 0% 0%;" (click)="like(comment)"></ion-icon>{{comment.likes}}
+           <ion-icon name="thumbs-down" style="margin: 0% 5% 0% 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
+
 
         </div>
       </ion-card>
     </div>
   </div>
   <div  class="addComment">
-    <button (click)="presentModal(topic)">
+    <button (click)="showAddCommentModal(topic)">
       <ion-icon color="primary" name="add" style="margin: 0% 5% 0% 0%;"></ion-icon>Add comment
     </button>
   </div>

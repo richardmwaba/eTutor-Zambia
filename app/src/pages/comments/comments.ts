@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {AddCommentPage} from "../add-comment/add-comment";
 import {DiscussionsProvider} from "../../providers/discussions/discussions";
 import {AuthProvider} from "../../providers/auth/auth";
+
 // $IMPORTSTATEMENT
 
 /**
@@ -17,14 +18,14 @@ import {AuthProvider} from "../../providers/auth/auth";
   templateUrl: 'comments.html',
 })
 export class CommentsPage {
-  public topic:any;
-  public comments:any;
-  public likes=0;
-  public hasLiked:Boolean;
-  public dislikes=0;
-  public hasDisliked:Boolean;
-  public data=[];
-  public user:any;
+  public topic: any;
+  public comments: any;
+  public likes = 0;
+  public hasLiked: Boolean;
+  public dislikes = 0;
+  public hasDisliked: Boolean;
+  public data = [];
+  public user: any;
 
   constructor(
     public navCtrl: NavController,
@@ -40,43 +41,54 @@ export class CommentsPage {
     this.user = this.AuthService.user;
 
     //initialise this class with data from the database
-    this.AuthService.isAuthenticated() ? this.initialiseWithAuth() : this.initialiseWithNoAuth();
+    this.initialise();
 
 
   }
 
   ionViewDidLoad() {
 
-      this.presentToast(this.data['msg']);
+    // this.presentToast(this.data['msg']);
 
     console.log('ionViewDidLoad CommentsPage');
   }
 
 
-  initialiseWithNoAuth(){
-    this.discussionsService.getDiscussionNoAuth(this.topic._id).then(data=>{
+  /**
+   * initialises this class with values from the db
+   * checking which comments the logged in user or has not liked
+   */
+  initialise() {
+    let user_id = null;
+    if (this.user) {
+      user_id = this.user.id;
+    }
+    this.discussionsService.getDiscussion(this.topic._id, user_id).then(data => {
       this.data = data;
       this.comments = data['comments'];
     });
   }
 
-  initialiseWithAuth(){
-    this.discussionsService.getDiscussion(this.topic._id, this.user.username).then(data=>{
-      this.data = data;
-      this.comments = data['comments'];
-    });
+  /**
+   * set the hasLiked and hasDisliked variables to those retrieved form the the db
+   * @param reviewer, information about this user to tell weather this user has already liked or is liking the first time
+   */
+  setHasLikedHasDisliked(reviewer) {
+    this.hasLiked = reviewer.hasLiked;
+    this.hasDisliked = reviewer.hasDisliked;
   }
-
 
   /**
    * controls what happens when a click event is generated
    * @param comment,  a comment object representing the disliked comment
    */
-  like(comment){
-
-    if(this.AuthService.isAuthenticated()) {
+  like(comment) {
+    if (this.AuthService.isAuthenticated()) {
+      let reviewer = comment.reviewers.find(x => x._id === this.user.id);
+      this.setHasLikedHasDisliked(reviewer);
       this.hasLiked ? this.neutralState(comment) : this.likedState(comment);
-    }else{
+      this.saveLike(comment); //update records in db
+    } else {
       this.presentToast("Your are not signed in!");
     }
   }
@@ -85,63 +97,115 @@ export class CommentsPage {
    * controls what happens when a click event is generated
    * @param comment , a comment object representing the disliked comment
    */
-  dislike(comment){
-    if(this.AuthService.isAuthenticated()) {
+  dislike(comment) {
+    if (this.AuthService.isAuthenticated()) {
+      let reviewer = comment.reviewers.find(x => x._id === this.user.id);
+      this.setHasLikedHasDisliked(reviewer);
       this.hasDisliked ? this.neutralState(comment) : this.dislikedState(comment);
-    }else {
-        this.presentToast("Your are not signed in!");
+      this.saveDislike(comment); //update records in db
+    } else {
+      this.presentToast("Your are not signed in!");
     }
-    }
+  }
 
   /**
-   *
+   * goes to the liked state
    * @param comment
    */
-  likedState(comment){
+  likedState(comment) {
     comment.likes++;
-    this.hasLiked=true;
-      if(this.hasDisliked){
-        comment.dislikes--;
-        this.hasDisliked=false;
+    this.hasLiked = true;
+    this.checkForDislike(comment);
+  }
+
+  /**
+   * goes to the disliked state
+   * @param comment
+   */
+  dislikedState(comment) {
+    comment.dislikes++;
+    this.hasDisliked = true;
+    this.checkForLike(comment);
+  }
+
+  /**
+   * goes to the neutral state
+   * @param comment
+   */
+  neutralState(comment) {
+    this.checkForLike(comment);
+      this.checkForDislike(comment);
+  }
+
+  /**
+   * checks if this user already has a dislike count for this comment
+   * @param comment
+   */
+  checkForDislike(comment) {
+    if (this.hasDisliked) {
+      comment.dislikes--;
+      this.hasDisliked = false;
     }
   }
 
   /**
-   *
+   * checks if this user already has a like count for this comment
    * @param comment
    */
-  dislikedState(comment){
-      comment.dislikes++;
-      this.hasDisliked=true;
-      if(this.hasLiked) {
-        comment.likes--;
-        this.hasLiked = false;
-      }
-  }
-
-  /**
-   *
-   * @param comment
-   */
-  neutralState(comment){
+  checkForLike(comment) {
     if (this.hasLiked) {
       comment.likes--;
       this.hasLiked = false;
-    }else if(this.hasDisliked){
-        comment.dislikes--;
-        this.hasDisliked=false;
-      }
     }
+  }
+
+  /**
+   * updates the comment attributes the db
+   * @param comment
+   */
+  saveLike(comment) {
+    this.discussionsService.updateReactions(comment, this.hasLiked, this.hasDisliked, this.user.id, this.topic._id).subscribe(data => {
+      if (data['success']) {
+        this.comments = data['comments'];
+        this.presentToast(data['msg']);
+      } else {
+        this.presentToast(data['msg']);
+        this.like(comment);
+      }
+    })
+  }
+
+  /**
+   * updates the comment attributes in the db
+   * @param comment, the comment this user is reacting to
+   */
+  saveDislike(comment) {
+    this.discussionsService.updateReactions(comment, this.hasLiked, this.hasDisliked, this.user.id, this.topic._id).subscribe(data => {
+      if (data['success']) {
+        this.comments = data['comments'];
+        this.presentToast(data['msg']);
+      } else {
+        this.presentToast(data['msg']);
+        this.dislike(comment);
+      }
+    })
+  }
 
   /**
    *
    * @param topic
    */
-  presentModal(topic) {
-    if(this.AuthService.isAuthenticated()) {
-    let modal = this.modalCtrl.create(AddCommentPage, {topic});
-    modal.present();
-    }else {
+  showAddCommentModal(topic) {
+    if (this.AuthService.isAuthenticated()) {
+      let modal = this.modalCtrl.create(AddCommentPage, {topic, hasDiscussion: this.data['success']});
+      modal.present();
+      modal.onDidDismiss(data=>{
+        if(data){
+          // this.comments = data['comments'];
+          this.comments = data;
+        }
+      })
+    } else {
       this.presentToast("Your are not signed in!");
     }
   }

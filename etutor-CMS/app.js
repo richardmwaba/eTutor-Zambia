@@ -11,17 +11,6 @@ const config = require('./config/database');  // database config file
 // Connect to database
 mongoose.Promise = global.Promise;
 
-// var uri = 'mongodb://martin:{Tw3ntyS3v3nt33nAtl@$}@'+
-// 'mycluster0-shard-00-00.mongodb.net:27017,'+
-// 'mycluster0-shard-00-01.mongodb.net:27017,'+
-// 'mycluster0-shard-00-02.mongodb.net:27017/admin?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin';
-    // mongo "mongodb://etutor-shard-00-00-blwdi.mongodb.net:27017,etutor-shard-00-01-blwdi.mongodb.net:27017,etutor-shard-00-02-blwdi.mongodb.net:27017/test?replicaSet=etutor-shard-0" --ssl --authenticationDatabase admin --username martin --password {Tw3ntyS3v3nt33nAtl@$}"
-//     var options = {
-//     ssl: true,
-//         authSource: 'admin',
-//         replicaSet: 'Mycluster0-shard-0'
-// };
-
 mongoose.connect(config.database).then(() => {
     // return server.start();
 }).catch(err => { //handle mongoose connect error
@@ -30,16 +19,6 @@ mongoose.connect(config.database).then(() => {
     // connectWithRetry();
     process.exit(1);
 });
-
-// var connectWithRetry = function() {
-//     return mongoose.connect(config.database, function(err) {
-//         if (err) {
-//             console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
-//             setTimeout(connectWithRetry, 5000);
-//         }
-//     });
-// };
-// connectWithRetry();
 
 
 // On connection, if successful

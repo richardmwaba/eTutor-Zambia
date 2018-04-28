@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {ModalController, ViewController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import {DiscussionsProvider} from "../../providers/discussions/discussions";
 import {AuthProvider} from "../../providers/auth/auth";
@@ -23,7 +23,8 @@ export class AddCommentPage {
   submitAttempt: boolean = false;
 
   token: string;
-  user: any;
+  public user: any;
+  public hasDiscussion: boolean = false;
   public topic: any;
 
 
@@ -33,15 +34,19 @@ export class AddCommentPage {
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
     public discussionService: DiscussionsProvider,
-    public authervice: AuthProvider,
+    public authservice: AuthProvider,
+    public viwCtrl: ViewController,
     public formBuilder: FormBuilder) {
     this.topic = navParams.get("topic");
-    this.user = this.authervice.user;
+    this.hasDiscussion = navParams.get("hasDiscussion");
+    this.user = this.authservice.user;
     this.commentForm = formBuilder.group({
       title: ['', Validators.compose( [Validators.required])],
       message: ['', Validators.compose([Validators.required])],
       topic_id: ['', Validators.compose([Validators.required])],
-      username: ['', Validators.compose([Validators.required])]
+      user_id: ['', Validators.compose([Validators.required])],
+      username: ['', Validators.compose([Validators.required])],
+      hasDiscussion: ['', Validators.compose([Validators.required])]
     })
   }
 
@@ -59,7 +64,6 @@ export class AddCommentPage {
   submit() {
     this.submitAttempt = true;
 
-    console.log('discussion: ' + this.commentForm.value);
 
     this.discussionService.addComment(this.commentForm.value).subscribe(data => {
 
@@ -69,10 +73,11 @@ export class AddCommentPage {
         this.presentToast(data['msg']);
 
         // dismiss the modal
-        this.navCtrl.pop()
+        this.viwCtrl.dismiss(data['comments']);
 
       } else {
         // show error alert
+        console.log(data['msg']);
         let toastWarn = this.toastCtrl.create({
           message: data['msg'],
           duration: 3000,

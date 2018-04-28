@@ -13,7 +13,6 @@ import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 
 import {VideoPlayerPage} from "../video-player/video-player";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
-import {PopoverPage} from "../popover/popover";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -50,8 +49,6 @@ export class CourseDetailPage {
     this.enrollSatus = this.mySubjects;
     this.subject = navParams.get("subject");
     this.buttonText = this.getButtonText();
-    this.user = this.authService.user;
-    this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
   }
 
   ionViewDidLoad() {
@@ -70,11 +67,11 @@ export class CourseDetailPage {
    */
   checkSubscription(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
-    if(this.isAuthenticated){
+    if(this.authService.isAuthenticated()){
       this.subject = subject;
       this.video = video;
 
-      this.subscriptionService.verifySubscription(this.subject, this.user).then((data) => {
+      this.subscriptionService.verifySubscription(this.subject, this.authService.user).then((data) => {
         console.log(data);
         this.data = data;
         //if success store the record locally
@@ -83,16 +80,12 @@ export class CourseDetailPage {
 
         } else {
           this.presentToast(this.data['msg']);
-          // this.navCtrl.push(SubscriptionPage, {
-          //   video, subject  // passing data to subscription page
-          // });
           this.presentModal(video, subject, SubscriptionPage);
         }
       });
 
     }else {
       // redirect to log in
-      // this.navCtrl.push(LoginPage);
       this.presentModal(video, subject, LoginPage);
     }
   }
@@ -136,10 +129,10 @@ export class CourseDetailPage {
   }
 
   enroll() {
-    let user = this.user;
-    if (this.isAuthenticated) {
+    let user = this.authService.user;
+    if (this.authService.isAuthenticated()) {
 
-      this.mySubjectsService.enroll(this.subject, this.user).subscribe(data => {
+      this.mySubjectsService.enroll(this.subject, user).subscribe(data => {
         if (data['success']) {
           // show success toast
           this.presentToast(data['msg']);
@@ -162,7 +155,7 @@ export class CourseDetailPage {
 
 getButtonText() {
   if (this.isAuthenticated) {
-    this.mySubjectsService.isEnrolled(this.subject._id, this.user).then(data => {
+    this.mySubjectsService.isEnrolled(this.subject._id, this.authService.user).then(data => {
       this.data = data;
       if (this.data['success'])
         return "Enrolled";

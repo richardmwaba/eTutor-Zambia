@@ -2,7 +2,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {ToastController} from 'ionic-angular';
 import {AuthProvider} from "../auth/auth";
-import {LoginPage} from "../../pages/login/login";
 
 /*
   Generated class for the SubscriptionsProvider provider.

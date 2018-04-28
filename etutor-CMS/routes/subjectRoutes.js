@@ -7,7 +7,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
-var mongoose = require('mongoose');                     // mongoose for mongodb
+let mongoose = require('mongoose');                     // mongoose for mongodb
 
 const Subject = require('../models/subject');
 const Topic = require('../models/topic');
