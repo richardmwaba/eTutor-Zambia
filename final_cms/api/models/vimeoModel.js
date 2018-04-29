@@ -15,22 +15,55 @@ const client = new Vimeo(vimeo_config.id, vimeo_config.secret, vimeo_config.toke
 
 /* Vimeo API requests */
 // upload a video comind soon (provide upload quote check)
-module.exports.uploadVideo = (callback) => {
+module.exports.uploadVideo = (data, callback) => {
+    // extract the data
+    const filePath = data.path;  // the full path of the video
+    const params = {  // the video title adn description
+        name : data.name,
+        description : data.description
+    };
+
+    // upload to vimeo
     client.upload(
-        'E:/vimeo test.mp4',
+        filePath,
+        params,
         function (uri) {
-          console.log('File upload completed. Your Vimeo URI is:', uri)
-        //   callback(uri);
+            // Get metadata response
+            client.request(uri + '?fields=link', (error, body, statusCode, headers) => {
+                if (error) {
+                  console.log('There was an error making the request.')
+                  console.log('Server reported: ' + error)
+                  return
+                }
+
+                console.log('"' + filePath + '" has been uploaded to ' + body.link);
+
+                // Make an API call to edit the title and description of the video.
+                client.request({
+                    method: 'PATCH',
+                    path: uri,
+                    params,
+                }, (error, body, statusCode, headers) => {
+                    if (error) {
+                    console.log('There was an error making the request.')
+                    console.log('Server reported: ' + error)
+                    return
+                    }
+
+                    console.log('The title and description for ' + uri + ' has been edited.');
+                    callback(body); // trying to get the body object to output in postman
+                });
+            });
+
         },
         function (bytesUploaded, bytesTotal) {
           var percentage = (bytesUploaded / bytesTotal * 100).toFixed(2)
           console.log(bytesUploaded, bytesTotal, percentage + '%')
-        },
-        function (error) {
+        }, function (error) {
           console.log('Failed because: ' + error)
         }
-    )
-}
+    ); // end upload
+} // end function
 
 // add video to album
 module.exports.addVideoToAlbum = (album_id, video_id, callback) => {
@@ -103,11 +136,10 @@ module.exports.getVideos = (callback) => {
         //   console.log(body);
         callback(body, status_code, headers);
         }
-      
-        console.log('status code');
-        console.log(status_code);
-        console.log('headers');
-        console.log(headers);
+        // console.log('status code');
+        // console.log(status_code);
+        // console.log('headers');
+        // console.log(headers);
       }
     );
     

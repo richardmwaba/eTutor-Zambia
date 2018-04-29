@@ -30,31 +30,22 @@ router.get('/albums', (req, res, next) => {
 });
 
 router.post('/upload', (req,res, next) => {
-    Vimeos.uploadVideo((err, video, status_code, headers) => {
+    const data = req.body; // data from 
+
+    Vimeos.uploadVideo(data, (err, video, status_code, headers) => {
         if(err) {
             res.send(err);
         } else {
-            res.json(video);
+            res.json(// send back this object
+                {
+                    uri: video.uri,
+                    name: video.name,
+                    description: video.description,
+                    link: video.link
+                }
+            );
         }
     });
 });
-
-// testing upload
-router.post('/testupload', (req,res, next) => {
-    Vimeos.uploadV((err, uri, bUplaoded, bTotal) => {
-        if(err) {
-            res.send(err);
-        } 
-
-        if (bUploaded != bTotal) {
-            res.send('still uploading');
-        } else {
-            res.json({
-                URI: uri,
-                status: 'Complete ' + bTotal + ' uploaded',
-            });
-        }
-    })
-})
 
 module.exports = router; // ensures that methods can be used outside this file

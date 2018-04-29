@@ -10,12 +10,35 @@ const config = require('../config/database');
 const VideoSchema= module.exports = mongoose.Schema({
     _id: {type: mongoose.Schema.Types.ObjectId},
     url: String,
-    album: String  // hold the album the videos is in
+    name: String,
 });
 
-const model = mongoose.model('Video', VideoSchema);
-module.exports.getModel = model;
+const Video_model = mongoose.model('Video', VideoSchema);
+module.exports.getModel = Video_model;
 
 /* local database functions (get, post, edit, delete,) */
 
-// gets all video records from the db
+// creates an new video record
+ module.exports.AddVideo = (data, callback) => {
+    const access_level = {
+        name: data.name,
+        url: data.uri,
+    };
+
+    Video_model.create(callback);
+ }
+
+ // gets all the videos from the db
+ module.exports.getVideos = (limit, callback) => {
+     Video_model.find(callback).limit(limit);
+ }
+
+ // get a particular video from the db
+ module.exports.getAVideo = (id, callback) => {
+     Video_model.findById(id, callback);
+ }
+
+ // deletes an video record from db
+ module.exports.removeVideo = (id, callback) => {
+    Video_model.remove({_id: id}, callback);
+}
