@@ -6,9 +6,10 @@ const router = express.Router();
 const config = require('../config/database');
 
 const Videos = require('../models/video');
-
+const Vimeos = require('../models/vimeoModel');
+ 
 router.get('/', (req, res, next) => {
-    Videos.getVideos((err, videos, status_code, headers) => {
+    Vimeos.getVideos((err, videos, status_code, headers) => {
         if(err) {
             res.send(err);
         } else {
@@ -18,17 +19,18 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/albums', (req, res, next) => {
-    Videos.getAlbums((err, albums, status_code, headers) => {
+    Vimeos.getAlbums((err, albums, status_code, headers) => {
         if(err) {
             res.send(err);
         } else {
+            // todo: Get data-<object> from albums
             res.json(albums, status_code, headers);  // returns all the records
         }
     })
 });
 
 router.post('/upload', (req,res, next) => {
-    Videos.uploadVideo((err, video, status_code, headers) => {
+    Vimeos.uploadVideo((err, video, status_code, headers) => {
         if(err) {
             res.send(err);
         } else {
@@ -39,7 +41,7 @@ router.post('/upload', (req,res, next) => {
 
 // testing upload
 router.post('/testupload', (req,res, next) => {
-    Videos.uploadV((err, uri, bUplaoded, bTotal) => {
+    Vimeos.uploadV((err, uri, bUplaoded, bTotal) => {
         if(err) {
             res.send(err);
         } 
