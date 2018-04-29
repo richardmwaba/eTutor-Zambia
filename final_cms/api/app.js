@@ -25,9 +25,14 @@ mongoose.connection.on('error', () => {
 const app = express();
 
 //Initiate Routes
-const users = require('./routes/users');
-const customers = require('./routes/userRoutes');
-const lessons = require('./routes/lessons');
+const users = require('./routes/userRoutes');
+const superusers = require('./routes/users');
+// const customers = require('./routes/userRoutes');
+const subjects = require('./routes/subjectRoutes');
+const videos = require('./routes/videoRoutes');
+const coupons = require('./routes/couponRoutes');
+const subscriptions = require('./routes/subscriptionRoutes');
+const discussions = require('./routes/dicussionRoutes');
 
 //Port Number
 const port = 3000;
@@ -49,6 +54,12 @@ require('./config/passport')(passport);
 
 
 app.use('/users', users);
+app.use('/videos', videos);
+app.use('/coupons', coupons);
+app.use('/subscriptions', subscriptions);
+app.use('/discussions', discussions);
+app.use('/subjects', subjects);
+app.use('/superusers', superusers);
 
 //Start Server
 app.listen(port, () => {

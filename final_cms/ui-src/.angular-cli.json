@@ -42,7 +42,8 @@
         "assets/plugins/owlcarousel/dist/assets/owl.carousel.min.css",
         "assets/plugins/owlcarousel/dist/assets/owl.theme.default.min.css",
         "assets/css/responsive.css",
-        "assets/css/color/color-1.min.css"
+        "assets/css/color/color-1.min.css",
+        "assets/pages/accordion.js"
       ],
       "scripts": [
         "assets/js/jquery-3.3.1.min.js",

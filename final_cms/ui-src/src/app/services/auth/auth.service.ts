@@ -13,7 +13,7 @@ export class AuthService {
   registerSuperUser(superUser){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/register', superUser, { headers: headers })
+    return this.http.post('http://localhost:3000/superusers/register', superUser, { headers: headers })
     .map(res => res.json());
   }
 
@@ -21,7 +21,7 @@ export class AuthService {
   authenticateSuperUser(superUser){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', superUser, { headers: headers })
+    return this.http.post('http://localhost:3000/superusers/authenticate', superUser, { headers: headers })
     .map(res => res.json());
   }
 
@@ -31,7 +31,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+    return this.http.get('http://localhost:3000/superusers/profile', { headers: headers })
     .map(res => res.json());
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    const uri = 'http://localhost:3000/users/all';
+    const uri = 'http://localhost:3000/superusers/all';
     return this
             .http
             .get(uri)
@@ -59,7 +59,7 @@ export class AuthService {
   addSuperUser(superUser){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/add', superUser, { headers: headers })
+    return this.http.post('http://localhost:3000/superusers/add', superUser, { headers: headers })
     .map(res => res.json());
   }
 

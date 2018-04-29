@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AlevelComponent } from './pages/exams/alevel/alevel.component';
 import { JuniorComponent } from './pages/exams/junior/junior.component';
 import { SeniorComponent } from './pages/exams/senior/senior.component';
+import { AlevelLessonsComponent } from './pages/lessons/alevel/alevel.component';
 import { EightComponent } from './pages/lessons/eight/eight.component';
 import { NineComponent } from './pages/lessons/nine/nine.component';
 import { TenComponent } from './pages/lessons/ten/ten.component';
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
             { path:'exams/junior', component: JuniorComponent },
             { path:'exams/senior', component: SeniorComponent },
             { path:'exams/a-level', component: AlevelComponent },
-            { path:'lessons/a-level', component: EightComponent },
+            { path:'lessons/a-level', component: AlevelLessonsComponent },
             { path:'lessons/eight', component: EightComponent },
             { path:'lessons/nine', component: NineComponent },
             { path:'lessons/ten', component: TenComponent },

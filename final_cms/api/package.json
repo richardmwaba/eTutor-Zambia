@@ -8,14 +8,16 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "coupon": "^0.4.0",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "vimeo": "^2.0.1"
   },
   "author": "Richard Mwaba",
   "license": "ISC",

@@ -7,7 +7,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
-var mongoose = require('mongoose');                     // mongoose for mongodb
+let mongoose = require('mongoose');                     // mongoose for mongodb
 
 const Subject = require('../models/subject');
 const Topic = require('../models/topic');
@@ -65,16 +65,15 @@ router.post('/add', (req, res, next) => {
         grade: req.body.grade,
         category: req.body.category,
         icon: req.body.icon,
-        instructors: {
-            f_name: req.body.instructors.f_name,
-            l_name: req.body.instructors.l_name,
+        instructors: [{
+            name: req.body.instructors.name,
             title: req.body.instructors.title,
             username: req.body.instructors.username,
             email: req.body.instructors.email,
             password: req.body.instructors.password,
             phone: req.body.instructors.phone,
-        },
-        topics: {
+        }],
+        topics: [{
             _id: mongoose.Types.ObjectId(),
             topic_name: req.body.topics.topic_name,
             description: req.body.topics.description,
@@ -85,19 +84,20 @@ router.post('/add', (req, res, next) => {
                 name: req.body.topics.sub_topics.name,
                 videos: [
                     {
+                        name:req.body.topics.sub_topics.videos.name,
                     _id: mongoose.Types.ObjectId(),
                     url: req.body.topics.sub_topics.videos.url
                 }
                 ]
             }
             ]
-        }
+        }]
     });
 // add to db
 Subject.addSubject(newSubject, (err, subject) => {
     // check for errors
     if (err) {
-        res.json({success: false, msg: 'Failed to add subject'});
+        res.json({success: false, msg: err.stack});
     } else {
         // if success
         res.json(subject);
@@ -119,6 +119,7 @@ router.post('/add/topic/:subId', (req, res, next) =>{
                 videos:
                     {
                         _id: mongoose.Types.ObjectId(),
+                        name: req.body.sub_topics.videos.name,
                         url: req.body.sub_topics.videos.url
                     }
             }
@@ -127,7 +128,7 @@ router.post('/add/topic/:subId', (req, res, next) =>{
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
         // check for errors
         if (err) {
-            res.json({ success: false, msg: 'Failed to get subject' });
+            res.json({ success: false, msg: 'Failed to find this subject' });
         } else {
             // if success
             Subject.addTopic(subject, newTopic, (err, topic) => {
@@ -152,6 +153,7 @@ router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
                 videos:
                     {
                         _id: mongoose.Types.ObjectId(),
+                        name: req.body.videos.name,
                         url: req.body.videos.url
                     }
     });
@@ -186,6 +188,7 @@ router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
 router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
     let newVideo = new Video.getModel({
         _id: mongoose.Types.ObjectId(),
+        name: req.body.name,
         url: req.body.url
     });
 

@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AlevelComponent } from './pages/exams/alevel/alevel.component';
 import { JuniorComponent } from './pages/exams/junior/junior.component';
 import { SeniorComponent } from './pages/exams/senior/senior.component';
+import { AlevelLessonsComponent } from './pages/lessons/alevel/alevel.component';
 import { EightComponent } from './pages/lessons/eight/eight.component';
 import { NineComponent } from './pages/lessons/nine/nine.component';
 import { TenComponent } from './pages/lessons/ten/ten.component';
@@ -32,6 +33,10 @@ import { LoginLayoutComponent } from './_layout/login-layout/login-layout.compon
 
 import { routing } from './app.routing';
 import { AddSuperUserComponent } from './components/add-super-user/add-super-user.component';
+import { AddJuniorExamMaterialComponent } from './components/add-junior-exam-material/add-junior-exam-material.component';
+import { AddSeniorExamMaterialComponent } from './components/add-senior-exam-material/add-senior-exam-material.component';
+import { AddSeniorMaterialComponent } from './components/add-senior-material/add-senior-material.component';
+import { AddJuniorMaterialComponent } from './components/add-junior-material/add-junior-material.component';
 
 
 @NgModule({
@@ -46,6 +51,7 @@ import { AddSuperUserComponent } from './components/add-super-user/add-super-use
     AlevelComponent,
     JuniorComponent,
     SeniorComponent,
+    AlevelLessonsComponent,
     EightComponent,
     NineComponent,
     TenComponent,
@@ -56,7 +62,11 @@ import { AddSuperUserComponent } from './components/add-super-user/add-super-use
     ClientsComponent,
     AppLayoutComponent,
     LoginLayoutComponent,
-    AddSuperUserComponent
+    AddSuperUserComponent,
+    AddJuniorExamMaterialComponent,
+    AddSeniorExamMaterialComponent,
+    AddSeniorMaterialComponent,
+    AddJuniorMaterialComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
 module.exports = {
-    database: 'mongodb://localhost:27017/etutor',
+    database: 'mongodb://localhost:27017/etutorCMS',
     secret: 'yoursecret'
 }
