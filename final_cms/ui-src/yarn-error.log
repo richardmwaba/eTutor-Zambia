@@ -1,0 +1,81 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @ng-select/ng-select
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\Wbem;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\GTK2-Runtime\lib;C:\Users\Ricchard\AppData\Roaming\Composer\vendor\bin;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Java\jre1.8.0_144\bin;C:\Program Files\JetBrains\WebStorm 2017.2.1\bin;C:\Program Files\JetBrains\PhpStorm 2017.2\bin;C:\Program Files\Sublime Text 3;C:\Program Files\nodejs;C:\Users\Ricchard\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Ricchard\AppData\Local\Programs\Python\Python36-32\;C:\Users\Ricchard\AppData\Local\atom\bin;C:\Users\Ricchard\AppData\Roaming\npm;C:\Users\Ricchard\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\3.4\bin;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\LibreSSL\;C:\WINDOWS\System32\OpenSSH\;C:\wamp64\bin\php\php7.1.9;C:\wamp64\bin\mysql\mysql5.7.19\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\Ricchard\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Ricchard\AppData\Local\Programs\Python\Python36-32\;C:\Users\Ricchard\AppData\Local\atom\bin;C:\Users\Ricchard\AppData\Roaming\Composer\vendor\bin;C:\Users\Ricchard\AppData\Roaming\npm;C:\Users\Ricchard\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Ricchard\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  6.11.1
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "ui-src",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build --prod",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "^5.2.0",
+      "@angular/common": "^5.2.0",
+      "@angular/compiler": "^5.2.0",
+      "@angular/core": "^5.2.0",
+      "@angular/forms": "^5.2.0",
+      "@angular/http": "^5.2.0",
+      "@angular/platform-browser": "^5.2.0",
+      "@angular/platform-browser-dynamic": "^5.2.0",
+      "@angular/router": "^5.2.0",
+      "core-js": "^2.4.1",
+      "ngx-flash-messages": "^1.0.4",
+      "rxjs": "^5.5.6",
+      "zone.js": "^0.8.19"
+    },
+    "devDependencies": {
+      "@angular/cli": "~1.7.0",
+      "@angular/compiler-cli": "^5.2.0",
+      "@angular/language-service": "^5.2.0",
+      "@types/jasmine": "~2.8.3",
+      "@types/jasminewd2": "~2.0.2",
+      "@types/node": "~6.0.60",
+      "codelyzer": "^4.0.1",
+      "jasmine-core": "~2.8.0",
+      "jasmine-spec-reporter": "~4.2.1",
+      "karma": "~2.0.0",
+      "karma-chrome-launcher": "~2.2.0",
+      "karma-coverage-istanbul-reporter": "^1.2.1",
+      "karma-jasmine": "~1.1.0",
+      "karma-jasmine-html-reporter": "^0.2.2",
+      "protractor": "~5.1.2",
+      "ts-node": "~4.1.0",
+      "tslint": "~5.9.1",
+      "typescript": "~2.5.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Couldn't find package "@angular/cli" on the "npm" registry.
+      at MessageError.Error (native)
+      at new MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at NpmResolver.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:51625:15)
+      at next (native)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
+      at process._tickCallback (internal/process/next_tick.js:109:7)
