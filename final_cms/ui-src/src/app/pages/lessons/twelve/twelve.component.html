@@ -88,8 +88,11 @@
                 <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
                   <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
                     <div class="wBg">
-                      <div class="tile" [style.background]="'url(' + tile + ')'">
-                        <h1>{{i}}</h1>
+                      <div class="tile" >
+                        <video  height="100%" width="100%" controls>
+                          <source src="{{ tile }}" type="video/mp4">
+                        </video>
+                        <!-- <h1>{{i}}</h1> -->
                       </div>
                       <h5>Video Title</h5>
                       <p>Description</p>
