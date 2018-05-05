@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidateService } from './services/validate/validate.service';
 import { AuthService } from './services/auth/auth.service';
+import { SettingsService } from './services/settings/settings.service';
 import { FlashMessagesModule } from 'ngx-flash-messages';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
@@ -37,6 +38,8 @@ import { AddJuniorExamMaterialComponent } from './components/add-junior-exam-mat
 import { AddSeniorExamMaterialComponent } from './components/add-senior-exam-material/add-senior-exam-material.component';
 import { AddSeniorMaterialComponent } from './components/add-senior-material/add-senior-material.component';
 import { AddJuniorMaterialComponent } from './components/add-junior-material/add-junior-material.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { AddSubjectComponent } from './components/add-subject/add-subject.component';
 
 
 @NgModule({
@@ -66,7 +69,9 @@ import { AddJuniorMaterialComponent } from './components/add-junior-material/add
     AddJuniorExamMaterialComponent,
     AddSeniorExamMaterialComponent,
     AddSeniorMaterialComponent,
-    AddJuniorMaterialComponent
+    AddJuniorMaterialComponent,
+    SettingsComponent,
+    AddSubjectComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,7 @@ import { AddJuniorMaterialComponent } from './components/add-junior-material/add
     FlashMessagesModule,
     NgxCarouselModule
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, SettingsService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

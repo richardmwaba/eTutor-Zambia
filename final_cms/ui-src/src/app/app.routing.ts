@@ -22,6 +22,7 @@ import { TwelveComponent } from './pages/lessons/twelve/twelve.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UsersComponent } from './pages/users/users.component';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 const appRoutes: Routes = [
 
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
             { path:'lessons/twelve', component: TwelveComponent },
             { path:'profile', component: ProfileComponent },
             { path:'users', component: UsersComponent },
-            { path:'clients', component: ClientsComponent }
+            { path:'clients', component: ClientsComponent },
+            { path:'settings', component: SettingsComponent }
         ]
     },
     

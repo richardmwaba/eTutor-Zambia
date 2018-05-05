@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "9434e9a2-e4c6-10c8-86bd-babb3dfed9bc",
+		"name": "subjects",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/subjects/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/add/topic/5a32a78fc33a3164f8ac0731",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \t\t\t\t\"topic_name\" : \"Ecology\",\n        \t\t\t\t\"description\" : \"Ecology and it's impact on life\",\n        \t\t\t\t\"duration\" : \"3 weeks\",\n        \t\t\t\t\"sub_topics\" : {\n    \t    \t\t\t\t\t\t\t\t\"name\" : \"Ecology\",\n    \t    \t\t\t\t\t\t\t\t\"videos\" : {\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"url\" : \"http://kmvdmomdfovm\"\n    \t    \t}\n        \t}\n        }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add/topic/5a32a78fc33a3164f8ac0731",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add",
+						"topic",
+						"5a32a78fc33a3164f8ac0731"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/add/video/5a1722eff01ee631fc8580b3/5a1722eff01ee631fc8580b6/5a1969f373080b23501f8bc5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \t    \t\"url\" : \"http://advancedMultiplication.vid\"\r\n    \t    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add/video/5a1722eff01ee631fc8580b3/5a1722eff01ee631fc8580b6/5a1969f373080b23501f8bc5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add",
+						"video",
+						"5a1722eff01ee631fc8580b3",
+						"5a1722eff01ee631fc8580b6",
+						"5a1969f373080b23501f8bc5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/delete/5a43d4bc7d5ffd17b4302f79",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/subjects/delete/5acc9370736aff17acd8bdb3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"delete",
+						"5acc9370736aff17acd8bdb3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/add/subTopic/5a1722eff01ee631fc8580b3/5a1722eff01ee631fc8580b6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" : \"Multiplication\",\r\n \"videos\" : {\r\n    \t    \t\"url\" : \"http://subtraction.vid\"\r\n    \t    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add/subTopic/5a1722eff01ee631fc8580b3/5a1722eff01ee631fc8580b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add",
+						"subTopic",
+						"5a1722eff01ee631fc8580b3",
+						"5a1722eff01ee631fc8580b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/find/5a1722eff01ee631fc8580b3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "       {\r\n        \t\"topic_name\" : \"Algebra\",\r\n        \t\"sub_topics\" :\r\n        \t\t{\r\n    \t    \t\"name\" : \"Equations\",\r\n    \t    \t\"videos\" :\r\n    \t    \t\t{\r\n    \t    \t\t\"url\" : \"vimeo.com/242593921\"\r\n    \t    \t\t}\r\n    \t    \t\t\t\t\r\n    \t    \t}\r\n    \t    \t\t\t\r\n    \t    }\r\n    \t    \t"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/find/5a1722eff01ee631fc8580b3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"find",
+						"5a1722eff01ee631fc8580b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/users/find/5a09a271e4ca1963a723fb39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"find",
+						"5a09a271e4ca1963a723fb39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"password\": \"qwerty\",\n\t\"email\": \"martin@example.com\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/subjects",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\" : \"Chemistry\",\r\n        \"grade\" : \"Grade 9\",\r\n        \"category\" : \"Tests & Exams Revision\",\r\n        \"icon\" : \"chemist.jpg\",\r\n        \"description\" : \"Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy.\",\r\n        \"instructors\" :{\r\n\t\t\t\t\t\t\"name\": \"Martin Chileshe\",\r\n\t\t\t\t\t\t\"title\": \"Dr.\",\r\n\t\t\t\t\t\t\"username\": \"Apps\",\r\n\t\t\t\t\t\t\"password\": \"qwerty\",\r\n\t\t\t\t\t\t\"email\": \"martin@example.com\",\r\n\t\t\t\t\t\t\"phone\": \"0971223456\"\r\n\r\n        },\r\n        \"topics\" :\r\n        \t{\r\n        \t\t\t\t\"topic_name\" : \"Reproduction\",\r\n        \t\t\t\t\"description\" : \"Reproduction is a fundamental feature of all known life; each individual organism exists as the result of reproduction. There are two forms of reproduction: asexual and sexual.\",\r\n        \t\t\t\t\"duration\" : \"2 Week(s)\",\r\n        \t\t\t\t\"sub_topics\" : {\r\n    \t    \t\t\t\t\t\t\t\t\"name\" : \"Asexual reproduction\",\r\n    \t    \t\t\t\t\t\t\t\t\"videos\" : {\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"url\" : \"https://player.vimeo.com/video/250601657\",\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"name\":  \"Introduction\"\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t}\r\n        \t\t\t\t}\r\n        }\r\n        \r\n        \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/add/topic/5a9bb9de9bd0a225fc52cfaf",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                \"topic_name\": \"Amphibians\",\r\n                \"description\": \"In this topic, we will dicusss amphibians, how they began and their common characteristics\",\r\n                \"duration\": \"2 Week(s)\",\r\n                \"sub_topics\":\r\n                    {\r\n                        \"name\": \"Classes of amphibians\",\r\n                        \"videos\":\r\n                            {\r\n                              \"name\": \"intro\",\r\n                                \"url\": \"https://player.vimeo.com/video/226009263\"\r\n                            }\r\n                        \r\n                    }\r\n            }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add/topic/5a9bb9de9bd0a225fc52cfaf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add",
+						"topic",
+						"5a9bb9de9bd0a225fc52cfaf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/delete/5a8716ac58bcc04a38889f71",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/subjects/delete/5a8716ac58bcc04a38889f71",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"delete",
+						"5a8716ac58bcc04a38889f71"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/subjects/add/topic/5a32a78fc33a3164f8ac0731",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \t\t\t\t\"topic_name\" : \"Diseases\",\n        \t\t\t\t\"description\" : \"Study of common infectious diseases\",\n        \t\t\t\t\"duration\" : \"1 Week(s)\",\n        \t\t\t\t\"sub_topics\" : {\n    \t    \t\t\t\t\t\t\t\t\"name\" : \"Cholera\",\n    \t    \t\t\t\t\t\t\t\t\"videos\" : {\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"url\" : \"http://kmvdmomdfovm\",\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"What is cholera\"\n    \t    \t}\n        \t}\n        }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add/topic/5acc94d9736aff17acd8bdb4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add",
+						"topic",
+						"5acc94d9736aff17acd8bdb4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/subjects",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\" : \"Mathematics\",\r\n        \"grade\" : \"Grade 9\",\r\n        \"category\" : \"Tests & Exams Revision\",\r\n        \"icon\" : \"Webpage background.jpg\",\r\n        \"description\" : \"Based on the ECZ maths syllubus covering nearly all exams questions with our experienced instructors.\",\r\n        \"instructors\" :{\r\n\t\t\t\t\t\t\"name\": \"Martin Chileshe\",\r\n\t\t\t\t\t\t\"title\": \"Dr.\",\r\n\t\t\t\t\t\t\"username\": \"Apps\",\r\n\t\t\t\t\t\t\"password\": \"qwerty\",\r\n\t\t\t\t\t\t\"email\": \"martin@example.com\",\r\n\t\t\t\t\t\t\"phone\": \"0971223456\"\r\n\r\n        },\r\n        \"topics\" :\r\n        \t{\r\n        \t\t\t\t\"topic_name\" : \"Arithmetic\",\r\n        \t\t\t\t\"description\" : \"Simple arithmetics including (+,-,/,*) and more..\",\r\n        \t\t\t\t\"duration\" : \"1 Week(s)\",\r\n        \t\t\t\t\"sub_topics\" : {\r\n    \t    \t\t\t\t\t\t\t\t\"name\" : \"Multiplication\",\r\n    \t    \t\t\t\t\t\t\t\t\"videos\" : {\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"url\" : \"https://player.vimeo.com/video/250601657\",\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t\t\"name\":  \"Multiplying negative numbers\"\r\n    \t    \t\t\t\t\t\t\t\t\t\t\t}\r\n        \t\t\t\t}\r\n        }\r\n        \r\n        \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/subjects/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"subjects",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Martin Cjileshe\",\n  \"title\": \"Dr.\",\n  \"username\": \"Apps\",\n  \"password\": \"qwerty\",\n  \"email\": \"chileshemartin@gmail.com\",\n  \"phone\": \"0971223456\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

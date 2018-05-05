@@ -15,6 +15,8 @@ const SubjectSchema =  mongoose.Schema({
     category                :   String,
     icon                     :   String,
     topics                  :   [topic_schema]
+},{
+    collection: 'subjects'
 });
 
 const Subject = module.exports = mongoose.model('Subject', SubjectSchema);

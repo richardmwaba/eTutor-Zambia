@@ -34,7 +34,7 @@ const SuperUserSchema = mongoose.Schema({
         type: String
     },
     group: {
-        type: Number,
+        type: String,
         required: true
     } 
 },{

@@ -97,7 +97,9 @@ router.post('/add', (req, res, next) => {
 Subject.addSubject(newSubject, (err, subject) => {
     // check for errors
     if (err) {
+        //res.json({ success: false, msg: 'Failed to add subject' });
         res.json({success: false, msg: err.stack});
+        console.log(err)
     } else {
         // if success
         res.json(subject);

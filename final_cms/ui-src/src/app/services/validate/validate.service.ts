@@ -32,4 +32,15 @@ export class ValidateService {
     return re.test(String(email).toLowerCase());
   }
 
+  validateSubject(subject){
+    if(subject.name == undefined || subject.grade == undefined || subject.description == undefined || subject.category == undefined)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+
 }
