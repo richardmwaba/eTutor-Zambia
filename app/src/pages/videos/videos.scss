@@ -1,3 +1,23 @@
 page-videos {
+  ion-navbar button{
+    background-color: inherit;
+  }
+  ion-buttons ion-icon {
+    font-size: 200%;
+    //color: #0a0a0a;
+    //background-color: black;
+    border: none;
+    box-shadow: none;
+    margin-right: 15px;
+  }
+.body-content{
+  position: relative;
+  align-content: stretch;
+  margin-top: -4%;
+}
 
+  ion-item-group{
+    margin-right: -40%;
+    margin-left: -5%;
+  }
 }

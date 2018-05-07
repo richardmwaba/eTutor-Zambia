@@ -12,7 +12,7 @@ import {AuthProvider} from "../auth/auth";
 @Injectable()
 export class SubscriptionsProvider {
   data: any;
-  private baseURL: string = "http://localhost:3000/subscriptions";
+  private baseURL: string = "https://zedtutor.herokuapp.com/subscriptions";
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
   error: string;

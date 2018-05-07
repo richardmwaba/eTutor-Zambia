@@ -6,53 +6,53 @@ page-course-detail {
   ion-icon {
     font-size: 170%;
   }
-  .top-content {
-    height: 30%;
-    position: fixed;
-    width: 100%;
-    margin-top: -4%;
-    margin-left: -4%;
-  }
-  .top-img {
-    float: top;
-    position: relative;
-    height: 90%;
-    width: 100%;
-  }
-  .myToolbar {
-    position: relative;
-    width: 100%;
-    //height: ;
-    margin-top: 0%;
-    //padding-top: -40px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.20), 0 2px 2px rgba(0,0,0,0.18);
-  }
-  .body-content {
-    position: absolute;
-    //float: bottom;
-    width: 100%;
-    margin-left: -5%;
-    margin-top:60%;
-    z-index: -50;
-  }
-    .ion-segment{
-      bottom: -6px;
-      position: relative;
-      font-family: Roboto, "Helvetica Neue", sans-serif;
-    }
-  .description-card{
-    margin-right: -1%;
-    margin-bottom: 4%;
-    margin-left: -2%;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.20), 0 1px 1px rgba(0,0,0,0.18);
-    border-radius: 5% 5% 5% 5%;
-    overflow: hidden;
-  }
-  .title{
-    font-weight: bold;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    margin-bottom: 0px;
-  }
+  //.top-content {
+  //  height: 30%;
+  //  position: fixed;
+  //  width: 100%;
+  //  margin-top: -4%;
+  //  margin-left: -4%;
+  //}
+  //.top-img {
+  //  float: top;
+  //  position: relative;
+  //  height: 90%;
+  //  width: 100%;
+  //}
+  //.myToolbar {
+  //  position: relative;
+  //  width: 100%;
+  //  //height: ;
+  //  margin-top: 0%;
+  //  //padding-top: -40px;
+  //  box-shadow: 0 5px 12px rgba(0,0,0,0.20), 0 2px 2px rgba(0,0,0,0.18);
+  //}
+  //.body-content {
+  //  position: absolute;
+  //  //float: bottom;
+  //  width: 100%;
+  //  margin-left: -5%;
+  //  margin-top:60%;
+  //  z-index: -50;
+  //}
+  //  .ion-segment{
+  //    bottom: -6px;
+  //    position: relative;
+  //    font-family: Roboto, "Helvetica Neue", sans-serif;
+  //  }
+  //.description-card{
+  //  margin-right: -1%;
+  //  margin-bottom: 4%;
+  //  margin-left: -2%;
+  //  width: 100%;
+  //  box-shadow: 0 2px 5px rgba(0,0,0,0.20), 0 1px 1px rgba(0,0,0,0.18);
+  //  border-radius: 5% 5% 5% 5%;
+  //  overflow: hidden;
+  //}
+  //.title{
+  //  font-weight: bold;
+  //  font-family: Roboto, "Helvetica Neue", sans-serif;
+  //  margin-bottom: 0px;
+  //}
 
 }

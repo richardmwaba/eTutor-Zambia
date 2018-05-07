@@ -11,7 +11,7 @@ import {AuthProvider} from "../auth/auth"
 @Injectable()
 export class MySubjectsProvider {
 
-  private baseURL: string = "http://localhost:3000/users";
+  private baseURL: string = "https://zedtutor.herokuapp.com/users";
   data: any;
   public user: any;
   public  mySubjects: any;

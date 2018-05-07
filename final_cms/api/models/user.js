@@ -2,8 +2,9 @@
 
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const config = require('../config/database');
 const subject = require('../models/subject');
+const validator = require('validator');
+const uniqueValidator = require('mongoose-unique-validator');
 
 // user schema
 const UserSchema = module.exports= mongoose.Schema({
@@ -17,10 +18,13 @@ const UserSchema = module.exports= mongoose.Schema({
         type: String // changed to not required
     },
     email: {
-        type: String, required: true
+        type: String, required: true,
+        unique: true,
+        validate: [ validator.isEmail, 'invalid email' ]
     },
     username: {
-        type: String, required: true // may need to make this unique
+        type: String, required: true,
+        unique: true// may need to make this unique
     },
     password: {
         type: String, required: true
@@ -33,19 +37,21 @@ const UserSchema = module.exports= mongoose.Schema({
     }
 });
 
+UserSchema.plugin(uniqueValidator, { message: '{VALUE} has been taken.' });
+
 const User = mongoose.model('User', UserSchema);
 module.exports.getModel = User;
 
 // gets user by the id
 module.exports.getUserById = function(id, callback) {
     User.findById(id, callback);
-}
+};
 
 // gets user by the email
 module.exports.getUserByEmail = function(email, callback) {
     const query = {email: email}; // query to equate email to db username
     User.findOne(query, callback);
-}
+};
 
 // gets user by username
 module.exports.getUserByUsername = function(username, callback) {
@@ -53,7 +59,7 @@ module.exports.getUserByUsername = function(username, callback) {
 
     // finds user in db
     User.findOne(query, callback);
-}
+};
 
 // creates user
 module.exports.addUser = function(newUser, callback) {
@@ -82,6 +88,12 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
 
         callback(null, isMatch);
     });
+};
+
+//removes a user
+module.exports.remove = function(_id, callback) {
+
+    User.remove({ '_id': _id }, callback)
 };
 
 // module.exports.addToMySubjects = function (updatedUser, callback) {

@@ -8,6 +8,7 @@ import {AuthProvider} from "../../providers/auth/auth";
 import {LoginPage} from "../login/login";
 import {provideAuth} from "angular2-jwt";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the LessonsPage page.
@@ -39,8 +40,7 @@ export class LessonsPage {
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController) {
 
-      // this.topic = navParams.get("topic");
-      this.subject = navParams.get("subject");
+    this.subject = navParams.get("subject");
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
   }
@@ -79,6 +79,10 @@ export class LessonsPage {
       // redirect to log in
       this.navCtrl.push(LoginPage);
     }
+  }
+
+  dismissModal(){
+    this.navCtrl.setRoot(HomePage);
   }
 
   /**

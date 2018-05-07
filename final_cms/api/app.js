@@ -7,6 +7,7 @@ const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+// const compression = require('compression');
 
 //Connect to MongoDB Database
 mongoose.connect(config.database);
@@ -36,6 +37,8 @@ const discussions = require('./routes/dicussionRoutes');
 
 //Port Number
 const port = 3000;
+
+// app.use(compression()); //Compress all routes
 
 //CORS Middleware
 app.use(cors());

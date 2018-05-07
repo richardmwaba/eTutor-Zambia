@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { CommentsPage} from "../comments/comments";
+import {HomePage} from "../home/home";
 // $IMPORTSTATEMENT
 
 /**
@@ -26,6 +27,11 @@ public subject:Array<any>;
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiscussionForumPage');
   }
+
+  dismissModal(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
   openComments(topic){
     this.navCtrl.push(CommentsPage, {topic});
   }

@@ -40,8 +40,8 @@ export class MyApp {
     this.pages = [
 
       { title: 'Home', leftIcon: 'home', component: HomePage },
-      { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
-      { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
+      // { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
+      // { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
       // { title: 'List', leftIcon: 'list', component: ListPage },
       // { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
       // if (this.isAuthenticated)

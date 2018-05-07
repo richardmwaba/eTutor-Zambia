@@ -6,7 +6,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
-var mongoose = require('mongoose');                     // mongoose for mongodb
+const mongoose = require('mongoose');                     // mongoose for mongodb
 
 const User = require('../models/user');
 
@@ -26,7 +26,7 @@ router.post('/register', (req, res, next) => {
     User.addUser(newUser, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to register user'});
+            res.json({success: false, msg: err.message});
         } else {
             // if success
             res.json({success: true, msg: 'User registered!'});
@@ -168,6 +168,18 @@ router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
             }else{
             res.json({success: true});
             }
+        }
+    });
+});
+
+// delete User
+router.delete('/delete/:id', function (req, res, next) {
+    User.remove(req.params.id, function (err, post) {
+        if (err) {
+            console.log(err);
+        } //return next(err);
+        else {
+            res.json(post);
         }
     });
 });

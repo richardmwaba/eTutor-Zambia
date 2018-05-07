@@ -24,7 +24,7 @@ export class SubjectsProvider {
 
         return new Promise(resolve => {
 
-            this.http.get('http://localhost:3000/subjects/all')
+            this.http.get('https://zedtutor.herokuapp.com/subjects/all')
                 .subscribe(data => {
                     this.data = data;
                     resolve(this.data);

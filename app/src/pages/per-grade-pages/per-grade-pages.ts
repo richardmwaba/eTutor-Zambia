@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {CourseDetailPage} from "../course-detail/course-detail";
+import { Category } from "../../pipes/Category";
 
 /**
  * Generated class for the PerGradePagesPage page.
@@ -17,7 +18,7 @@ export class PerGradePagesPage {
   public subjects;
   public grade;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public category : Category) {
     this.subjects = this.navParams.get("subjects");
     this.grade = this.navParams.get("grade");
   }

@@ -7,16 +7,34 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Videos</ion-title>
+    <ion-buttons id="searchToggle" end>
+      <button>
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+      <button>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-<ion-list>
-  <button *ngFor="let video of subTopic.videos" ion-item (click)="goToContent(video)">
-    Video {{count}}
-  </button>
-</ion-list>
+  <div class="body-content">
+  <div *ngFor="let topic of subject.topics">
+  <ion-item-group *ngFor="let sub_topic of topic.sub_topics">
+  <ion-item-divider class="divider" color="light">{{sub_topic.name}}</ion-item-divider>
+  <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
+  <ion-icon name="videocam"></ion-icon>
+  {{video.name}}
+  </ion-item>
+  </ion-item-group>
+  </div>
+  </div>
 </ion-content>

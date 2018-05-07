@@ -9,5 +9,8 @@ import { AddCommentPage } from './add-comment';
   imports: [
     IonicPageModule.forChild(AddCommentPage),
   ],
+  exports: [
+    AddCommentPage
+  ]
 })
 export class AddCommentPageModule {}

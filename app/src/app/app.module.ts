@@ -4,90 +4,67 @@ import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import {MyApp} from './app.component';
+import { AddCommentPageModule } from '../pages/add-comment/add-comment.module';
 import {HomePage} from '../pages/home/home';
 import {Category} from '../pipes/Category';
-import {AllSubjectsPage} from '../pages/all-subjects/all-subjects';
 import {ListPage} from '../pages/list/list';
-import {LoginPage} from '../pages/login/login';
-import {MySubjectsPage} from '../pages/my-subjects/my-subjects';
-import {SignupPage} from '../pages/signup/signup';
-import {SubscriptionPage} from '../pages/subscription/subscription';
-import {CourseDetailPage} from '../pages/course-detail/course-detail';
-import {JuniorSecondaryPage} from '../pages/junior-secondary/junior-secondary';
-import {ALevelExamsPage} from '../pages/a-level-exams/a-level-exams';
-import {PerGradePagesPage} from '../pages/per-grade-pages/per-grade-pages';
-import {LessonsPage} from '../pages/lessons/lessons';
-import {LessonContentPage} from '../pages/lesson-content/lesson-content';
-import {VideoPlayerPage} from '../pages/video-player/video-player';
+import {LoginPageModule} from '../pages/login/login.module';
+import {MySubjectsPageModule} from '../pages/my-subjects/my-subjects.module';
+import {SignupPageModule} from '../pages/signup/signup.module';
+import {SubscriptionPageModule} from '../pages/subscription/subscription.module';
+import {CourseDetailPageModule} from '../pages/course-detail/course-detail.module';
+import {JuniorSecondaryPageModule} from '../pages/junior-secondary/junior-secondary.module';
+import {PerGradePagesPageModule} from '../pages/per-grade-pages/per-grade-pages.module';
+import {LessonsPageModule} from '../pages/lessons/lessons.module';
+import {VideoPlayerPageModule} from '../pages/video-player/video-player.module';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthProvider} from '../providers/auth/auth';
 import {SubjectsProvider} from '../providers/subjects/subjects';
-import {VideosPage} from "../pages/videos/videos";
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import {VideosPageModule} from "../pages/videos/videos.module";
 import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
-import { CouponProvider } from '../providers/coupon/coupon';
 import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
 import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
-import {DiscussionForumPage } from "../pages/discussion-forum/discussion-forum";
-import {PopoverPage} from "../pages/popover/popover"
-import { AddCommentPage } from "../pages/add-comment/add-comment";
-import { CommentsPage } from "../pages/comments/comments";
+import {DiscussionForumPageModule } from "../pages/discussion-forum/discussion-forum.module";
+import {PopoverPageModule} from "../pages/popover/popover.module"
+import { CommentsPageModule } from "../pages/comments/comments.module";
 import { DiscussionsProvider } from '../providers/discussions/discussions';
+import { Grade } from '../app/pipes/grade';
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
-        AllSubjectsPage,
         ListPage,
-        LoginPage,
-        MySubjectsPage,
-        SignupPage,
-        SubscriptionPage,
-        CourseDetailPage,
-        JuniorSecondaryPage,
-        ALevelExamsPage,
-        PerGradePagesPage,
-        LessonsPage,
-        LessonContentPage,
-        VideoPlayerPage,
+      Grade,
         Category,
-        VideosPage,
-      DiscussionForumPage,
-      PopoverPage,
-      AddCommentPage,
-      CommentsPage,
         EqualValidatorDirective
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
-        IonicModule.forRoot(MyApp)
+      CourseDetailPageModule,
+        IonicModule.forRoot(MyApp),
+      MySubjectsPageModule,
+      LoginPageModule,
+      SignupPageModule,
+      JuniorSecondaryPageModule,
+      PerGradePagesPageModule,
+      LessonsPageModule,
+      SubscriptionPageModule,
+      VideoPlayerPageModule,
+      VideosPageModule,
+      DiscussionForumPageModule,
+      PopoverPageModule,
+      CommentsPageModule,
+      AddCommentPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
         HomePage,
         ListPage,
-        AllSubjectsPage,
         ListPage,
-        LoginPage,
-        MySubjectsPage,
-        SignupPage,
-        SubscriptionPage,
-        CourseDetailPage,
-        JuniorSecondaryPage,
-        ALevelExamsPage,
-        PerGradePagesPage,
-        LessonsPage,
-        LessonContentPage,
-        VideoPlayerPage,
-        VideosPage,
-      AddCommentPage,
-      PopoverPage,
-      CommentsPage,
-      DiscussionForumPage
     ],
     providers: [
         StatusBar,
@@ -96,10 +73,10 @@ import { DiscussionsProvider } from '../providers/discussions/discussions';
         AuthProvider,
         SubjectsProvider,
         HttpClientModule,
-        StreamingMedia,
     SubscriptionsProvider,
     MySubjectsProvider,
-    DiscussionsProvider
+    DiscussionsProvider,
+      Category
     ]
 })
 export class AppModule {

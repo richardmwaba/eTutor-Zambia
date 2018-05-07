@@ -34,12 +34,12 @@ export class AddCommentPage {
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
     public discussionService: DiscussionsProvider,
-    public authservice: AuthProvider,
+    public authService: AuthProvider,
     public viwCtrl: ViewController,
     public formBuilder: FormBuilder) {
     this.topic = navParams.get("topic");
     this.hasDiscussion = navParams.get("hasDiscussion");
-    this.user = this.authservice.user;
+    this.user = this.authService.user;
     this.commentForm = formBuilder.group({
       title: ['', Validators.compose( [Validators.required])],
       message: ['', Validators.compose([Validators.required])],

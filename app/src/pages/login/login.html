@@ -7,9 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Sign In</ion-title>
   </ion-navbar>
 
@@ -29,12 +31,12 @@
       <!--<ion-content>-->
         <form [formGroup]="logForm" (ngSubmit)="login()">
           <ion-list>
-          
+
             <ion-item>
               <ion-label style="color: #488aff" stacked>Email</ion-label>
               <ion-input type="text" formControlName="email" required></ion-input>
             </ion-item>
-          
+
             <ion-item *ngIf="!logForm.controls.email.valid && (logForm.controls.email.dirty || submitAttempt)" >
               <p class="error">Email is required and format should be <i>john@doe.com</i>.</p>
             </ion-item>
@@ -47,14 +49,14 @@
             <ion-item *ngIf="!logForm.controls.password.valid && (logForm.controls.password.dirty || submitAttempt)" >
               <p class="error">Password must be 6 or more characters.</p>
             </ion-item>
-          
+
           </ion-list>
-          
+
           <div padding>
             <button ion-button color="primary" block text-capitalize type="submit">Sign In</button>
           </div>
         </form>
-        
+
       <!--</ion-content>-->
     </div>
     <div class="div-center">

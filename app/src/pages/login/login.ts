@@ -45,6 +45,10 @@ export class LoginPage {
     this.navCtrl.push(SignupPage, {subject: this.subject});
   }
 
+  dismissModal(){
+    this.navCtrl.pop();
+  }
+
   /**
    * Logs a user into the app
    */

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {ModalController, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import {AddCommentPage} from "../add-comment/add-comment";
 import {DiscussionsProvider} from "../../providers/discussions/discussions";
 import {AuthProvider} from "../../providers/auth/auth";
@@ -24,12 +24,14 @@ export class CommentsPage {
   public hasLiked: Boolean;
   public dislikes = 0;
   public hasDisliked: Boolean;
-  public data = [];
+  public data:any;
   public user: any;
+  public didReact=0;
 
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController,
     public discussionsService: DiscussionsProvider,
     private toastCtrl: ToastController,
     public AuthService: AuthProvider,
@@ -41,13 +43,13 @@ export class CommentsPage {
     this.user = this.AuthService.user;
 
     //initialise this class with data from the database
-    this.initialise();
 
 
   }
 
   ionViewDidLoad() {
-
+    this.presentLoading();
+    this.initialise();
     // this.presentToast(this.data['msg']);
 
     console.log('ionViewDidLoad CommentsPage');
@@ -76,6 +78,7 @@ export class CommentsPage {
   setHasLikedHasDisliked(reviewer) {
     this.hasLiked = reviewer.hasLiked;
     this.hasDisliked = reviewer.hasDisliked;
+    this.didReact = 1;
   }
 
   /**
@@ -84,9 +87,9 @@ export class CommentsPage {
    */
   like(comment) {
     if (this.AuthService.isAuthenticated()) {
-      let reviewer = comment.reviewers.find(x => x._id === this.user.id);
-      this.setHasLikedHasDisliked(reviewer);
-      this.hasLiked ? this.neutralState(comment) : this.likedState(comment);
+      let reviewer = comment.reviewers.find(x => x._id === this.user.id);  // we check if this user reacted to this comment earlier.
+      if(reviewer) {this.setHasLikedHasDisliked(reviewer);} //if this user did react earlier, set the hasLiked and disliked attributes accordingly else set the didReact to null or false
+      this.hasLiked ? this.neutralState(comment) : this.likedState(comment); //set the current state for this comment
       this.saveLike(comment); //update records in db
     } else {
       this.presentToast("Your are not signed in!");
@@ -99,9 +102,9 @@ export class CommentsPage {
    */
   dislike(comment) {
     if (this.AuthService.isAuthenticated()) {
-      let reviewer = comment.reviewers.find(x => x._id === this.user.id);
-      this.setHasLikedHasDisliked(reviewer);
-      this.hasDisliked ? this.neutralState(comment) : this.dislikedState(comment);
+      let reviewer = comment.reviewers.find(x => x._id === this.user.id);// we check if this user reacted to this comment earlier.
+      if(reviewer){this.setHasLikedHasDisliked(reviewer);}//if this user reacted, set the hasLiked and disliked attributes accordingly
+      this.hasDisliked ? this.neutralState(comment) : this.dislikedState(comment); //set the current state for this comment
       this.saveDislike(comment); //update records in db
     } else {
       this.presentToast("Your are not signed in!");
@@ -164,13 +167,13 @@ export class CommentsPage {
    * @param comment
    */
   saveLike(comment) {
-    this.discussionsService.updateReactions(comment, this.hasLiked, this.hasDisliked, this.user.id, this.topic._id).subscribe(data => {
+    this.discussionsService.updateReactions(this.topic._id, comment._id, this.hasLiked, this.hasDisliked, this.user.id, comment.likes, comment.dislikes, this.didReact).subscribe(data => {
       if (data['success']) {
         this.comments = data['comments'];
         this.presentToast(data['msg']);
       } else {
         this.presentToast(data['msg']);
-        this.like(comment);
+        // this.like(comment);
       }
     })
   }
@@ -180,13 +183,13 @@ export class CommentsPage {
    * @param comment, the comment this user is reacting to
    */
   saveDislike(comment) {
-    this.discussionsService.updateReactions(comment, this.hasLiked, this.hasDisliked, this.user.id, this.topic._id).subscribe(data => {
+    this.discussionsService.updateReactions(this.topic._id, comment._id, this.hasLiked, this.hasDisliked, this.user.id, comment.likes, comment.dislikes, this.didReact).subscribe(data => {
       if (data['success']) {
         this.comments = data['comments'];
         this.presentToast(data['msg']);
       } else {
         this.presentToast(data['msg']);
-        this.dislike(comment);
+        // this.dislike(comment);
       }
     })
   }
@@ -221,6 +224,14 @@ export class CommentsPage {
     });
 
     toast.present(); // shows the toaster
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 6000
+    });
+    loader.present();
   }
 
 }

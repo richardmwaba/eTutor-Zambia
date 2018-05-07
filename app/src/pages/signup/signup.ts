@@ -17,7 +17,7 @@ export class SignupPage {
   submitAcepted: boolean = false;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public auth: AuthProvider,
     private toastCtrl: ToastController,
@@ -30,7 +30,7 @@ export class SignupPage {
       username: ['', Validators.compose( [Validators.maxLength(30),, Validators.required] )],
       // email is required and follows the pattern < john@doecom >
       email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*')]) ],
-      phone: ['', Validators.required],
+      phone: ['', Validators.compose( [Validators.required, Validators.pattern('^(?:\\(\\d{3}\\)|\\d{3})[- ]?\\d{3}[- ]?\\d{4}$')])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
       status: 'inactive'
     });
@@ -46,30 +46,42 @@ export class SignupPage {
   signIn() {
 
     this.submitAcepted = true;
-  
+
     //console.log(this.theForm.value);
+    if(this.theForm.valid){
 
     this.auth.signup(this.theForm.value).subscribe(
       data => {
         if (data['success']) {
           // show success msg
-          this.presentToast();
+          this.presentToast(data['msg']);
 
           // redirect to log in
           this.navCtrl.push(LoginPage);
+        }else{
+          // error handling
+          this.presentToast(data['msg']);
+          console.log(data['msg']);
         }
       },
-      // error handling
-      err => { console.log(err); }
+
+      // err => { console.log(err); }
     );
+  }else{
+      this.presentToast("Cannot not submit because you still have errors");
+    }
+  }
+
+  dismissModal(){
+    this.navCtrl.pop();
   }
 
   /**
    * Presents a success toast on sign up
    */
-  presentToast() {
+  presentToast(msg) {
     let toast = this.toastCtrl.create({
-      message: 'You have successfully created an account...',
+      message: msg,
       duration: 3000,
       //position, cssCLass
     });

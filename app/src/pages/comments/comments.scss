@@ -1,13 +1,14 @@
 page-comments {
   ion-navbar button{
-    background-color: white;
+    background-color: inherit;
   }
   ion-buttons ion-icon {
-    font-size: 300%;
-    color: #0a0a0a;
-    background-color: white;
+    font-size: 200%;
+    //color: #0a0a0a;
+    //background-color: black;
     border: none;
     box-shadow: none;
+    margin-right: 15px;
   }
   .body-content{
     height: 100%;

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class DiscussionsProvider {
-  private baseURL: string = "http://localhost:3000/discussions/";
+  private baseURL: string = "https://zedtutor.herokuapp.com/discussions/";
   private discussion:any;
 
   // content header for the server
@@ -27,9 +27,9 @@ export class DiscussionsProvider {
    * @returns {Promise<any>}
    */
   getDiscussion(topic_id, user_id){
-    if(this.discussion){
-      return Promise.resolve(this.discussion);
-  }
+  //   if(this.discussion){
+  //     return Promise.resolve(this.discussion);
+  // }
 
     return new Promise(resolve => {
       this.http.get(this.baseURL+'find/'+topic_id+'/'+user_id, {headers: this.contentHeader}).subscribe(
@@ -50,8 +50,21 @@ export class DiscussionsProvider {
     return this.http.post(this.baseURL+'add/', data, { headers: this.contentHeader });
   }
 
-  updateReactions(comment, hasLiked, hasDisliked, user_id, topic_id){
-    return this.http.patch(this.baseURL+'updateReactions/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+topic_id, comment, { headers: this.contentHeader });
+
+  /**
+   *
+   * @param comment_id
+   * @param topic_id
+   * @param hasLiked
+   * @param hasDisliked
+   * @param user_id
+   * @param likes
+   * @param dislikes
+   * @param didReact
+   * @returns {Observable<Object>}
+   */
+  updateReactions(topic_id, comment_id, hasLiked, hasDisliked, user_id, likes,dislikes, didReact){
+    return this.http.patch(this.baseURL+'updateReactions/'+topic_id+'/'+comment_id+'/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+likes+'/'+dislikes+'/'+didReact, null, { headers: this.contentHeader });
   }
 
   deleteComment(comment){

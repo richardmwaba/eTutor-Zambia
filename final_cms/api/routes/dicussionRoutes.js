@@ -6,6 +6,7 @@ const router = express.Router();
 let mongoose = require('mongoose');
 const Comment = require('../models/comment');// mongoose for mongodb
 const Discussion = require('../models/discussion');
+const Reviewer = require('../models/reviewers');
 
 
 router.get('/all', (req, res, next) => {
@@ -44,6 +45,10 @@ function findDiscussion(req, res, next){
             }
         }
     });
+}
+
+function findReviewer(req, res, next){
+
 }
 
 /**
@@ -138,24 +143,36 @@ function addNewDiscussion(req, res, next){
 }
 
 //update reactions like or dislikes on comments
-router.patch('/updateReactions/:hasLiked/:hasDisliked/:user_id/:topic_id', updateReactions);
+router.patch('/updateReactions/:topic_id/:comment_id/:hasLiked/:hasDisliked/:user_id/:likes/:dislikes/:didReact*?', updateReactions);
 
 //the function to perform the actual attribute updates
 function updateReactions(req, res, next){
+    let reviewer;
+    let comment;
     // find the discussion
     Discussion.findMatch(req.params.topic_id, (err, discussion) => {
         if (err) {
             res.json({success: null, msg: 'This discussion does not exist'});
         } else {
             //if found, update the reactions or create a new one
-            let comment = discussion.comments.id(req.body._id);
-            let reviewer = comment.reviewers.id(req.params.user_id);
+            comment = discussion.comments.id(req.params.comment_id);
+            reviewer = comment.reviewers.id(req.params.user_id);
+            //check if this user has reacted earlier else create a new entry
+            if(reviewer){
+                // reviewer = comment.reviewers.id(req.params.user_id);
+                 comment.reviewers.pull(req.params.user_id);
+            }else {
+                reviewer = Reviewer.getModel({
+                    _id: req.params.user_id,
+                        hasLiked: false,
+                        hasDisliked: false
+                });
+            }
             reviewer.hasLiked = req.params.hasLiked;
             reviewer.hasDisliked = req.params.hasDisliked;
-            comment.reviewers.id(req.params.user_id).remove();
             comment.reviewers.push(reviewer);
-            discussion.comments.id(req.body._id).likes = req.body.likes;
-            discussion.comments.id(req.body._id).dislikes = req.body.dislikes;
+            discussion.comments.id(req.params.comment_id).likes = req.params.likes;
+            discussion.comments.id(req.params.comment_id).dislikes = req.params.dislikes;
             discussion.save();
             res.json({
                 success: true,

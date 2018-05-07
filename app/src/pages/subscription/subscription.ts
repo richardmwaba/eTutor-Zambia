@@ -84,6 +84,13 @@ export class SubscriptionPage {
   }
 
   /**
+   *
+   */
+  dismissModal(){
+    this.navCtrl.pop();
+  }
+
+  /**
    * Presents a success toast on sign up
    */
   presentToast(msg) {

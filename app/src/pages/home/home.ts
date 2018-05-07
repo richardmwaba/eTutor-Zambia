@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, PopoverController, ModalController} from 'ionic-angular';
+import { NavController, LoadingController, ModalController} from 'ionic-angular';
 import { JuniorSecondaryPage } from '../junior-secondary/junior-secondary';
 import { CourseDetailPage } from '../course-detail/course-detail';
-import { ALevelExamsPage } from '../a-level-exams/a-level-exams';
 import {PerGradePagesPage} from "../per-grade-pages/per-grade-pages";
 import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {PopoverPage} from '../popover/popover'
-import {AddCommentPage} from "../add-comment/add-comment";
+import { Category } from "../../pipes/Category";
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'page-home',
@@ -19,27 +19,27 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public subjectsService: SubjectsProvider,
-    public popoverCtrl: PopoverController,
     public modalCtrl: ModalController,
+    public category : Category,
+    public statusBar : StatusBar,
     public loadingCtrl: LoadingController) {
-    // this.presentLoading();
+    this.statusBar.overlaysWebView(false);
+    this.statusBar.backgroundColorByHexString('#ffffff');
+
       this.subjectsService.getSubjects().then((data) => {
           console.log(data);
           this.subjects = data;
-        // this.presentLoading();
       });
+    this.presentLoading();
 
   }
 
     ionViewDidLoad(){
-
-
-
     }
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      duration: 6000
     });
     loader.present();
   }
@@ -49,12 +49,6 @@ export class HomePage {
     modal.present();
   }
 
-  presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
-    popover.present({
-      ev: myEvent
-    });
-  }
 
     jnrSecExams() {
     //navigate to the junior secondary page
@@ -65,11 +59,6 @@ export class HomePage {
     //navigate to the selected course detail page
     this.navCtrl.push(CourseDetailPage, {subject});
   }
-
-  ALevelExams(){
-  //navigate to the selected ALevelExams page
-    this.navCtrl.push(ALevelExamsPage)
-}
 
   grade(subjects, grade){
     //navigate to the selected Grade

@@ -9,8 +9,11 @@
   <ion-navbar>
     <ion-title>{{topic.name}} Comments</ion-title>
     <ion-buttons id="searchToggle" end>
+      <button (click)="showAddCommentModal(topic)">
+        <ion-icon id="" name="md-create"></ion-icon>
+      </button>
       <button>
-        <ion-icon id="searchIcon" name="search"></ion-icon>
+        <ion-icon id="searchIcon" name="md-search"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -39,10 +42,5 @@
         </div>
       </ion-card>
     </div>
-  </div>
-  <div  class="addComment">
-    <button (click)="showAddCommentModal(topic)">
-      <ion-icon color="primary" name="add" style="margin: 0% 5% 0% 0%;"></ion-icon>Add comment
-    </button>
   </div>
 </ion-content>

@@ -10,7 +10,7 @@ const ReviewerSchema = module.exports =  mongoose.Schema({
 });
 
 const model = mongoose.model('Reviewer', ReviewerSchema);
-module.exports.model = ReviewerSchema;
+module.exports.getModel = model;
 
 // get all Reviewers
 module.exports.getAllReviewers = function(callback) {
