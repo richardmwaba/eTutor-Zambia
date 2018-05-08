@@ -7,21 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><button  ion-button icon-left (click)="dismissModal()"><ion-icon name="close"></ion-icon></button></ion-title>
+    <ion-buttons left>
+    <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
+    <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>Add your comment</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-  <!--<div class="card" style="text-align: center">-->
-    <!--&lt;!&ndash; Advanced: explicity set the icon for each platform &ndash;&gt;-->
-    <!--<ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>-->
-    <!--<div class="app-name">-->
-      <!--<b>e-tutor</b>-->
-    <!--</div>-->
-  <!--</div>-->
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->

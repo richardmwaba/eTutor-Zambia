@@ -1,6 +1,6 @@
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { LoginPage } from '../login/login';
 
@@ -21,7 +21,8 @@ export class SignupPage {
     public navParams: NavParams,
     public auth: AuthProvider,
     private toastCtrl: ToastController,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public loadingCtrl: LoadingController
   ) {
     // setting up form builber
     this.theForm = formBuilder.group({
@@ -49,7 +50,7 @@ export class SignupPage {
 
     //console.log(this.theForm.value);
     if(this.theForm.valid){
-
+      this.presentLoading();
     this.auth.signup(this.theForm.value).subscribe(
       data => {
         if (data['success']) {
@@ -57,7 +58,7 @@ export class SignupPage {
           this.presentToast(data['msg']);
 
           // redirect to log in
-          this.navCtrl.push(LoginPage);
+          this.navCtrl.pop();
         }else{
           // error handling
           this.presentToast(data['msg']);
@@ -65,7 +66,6 @@ export class SignupPage {
         }
       },
 
-      // err => { console.log(err); }
     );
   }else{
       this.presentToast("Cannot not submit because you still have errors");
@@ -87,6 +87,14 @@ export class SignupPage {
     });
 
     toast.present(); // shows the toaster
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
   }
 
 }

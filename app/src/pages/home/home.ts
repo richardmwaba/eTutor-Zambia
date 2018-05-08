@@ -23,8 +23,6 @@ export class HomePage {
     public category : Category,
     public statusBar : StatusBar,
     public loadingCtrl: LoadingController) {
-    this.statusBar.overlaysWebView(false);
-    this.statusBar.backgroundColorByHexString('#ffffff');
 
       this.subjectsService.getSubjects().then((data) => {
           console.log(data);
@@ -35,6 +33,8 @@ export class HomePage {
   }
 
     ionViewDidLoad(){
+      this.statusBar.overlaysWebView(false);
+      this.statusBar.backgroundColorByHexString('#ffffff');
     }
   presentLoading() {
     let loader = this.loadingCtrl.create({

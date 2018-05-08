@@ -1,4 +1,5 @@
 //Dependancies
+// const cool = require('cool-ascii-faces');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -21,7 +22,7 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', () => {
     console.log('Database error: '+err);
 });
- 
+
 //Initiate app variable with express
 const app = express();
 
@@ -36,7 +37,7 @@ const subscriptions = require('./routes/subscriptionRoutes');
 const discussions = require('./routes/dicussionRoutes');
 
 //Port Number
-const port = 3000;
+const port = 5000;
 
 // app.use(compression()); //Compress all routes
 
@@ -63,8 +64,9 @@ app.use('/subscriptions', subscriptions);
 app.use('/discussions', discussions);
 app.use('/subjects', subjects);
 app.use('/superusers', superusers);
+// app.get('/cool', (req, res) => res.send(cool()));
 
 //Start Server
-app.listen(port, () => {
-    console.log('Server started on port '+port )
+app.listen(process.env.PORT || port, () => {
+    console.log("Express server listening on port %d in %s mode", process.env.PORT, app.settings.env);
 });

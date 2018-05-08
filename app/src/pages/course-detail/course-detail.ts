@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import { LessonsPage } from '../lessons/lessons';
 import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 import {VideosPage} from "../videos/videos";
+import {StatusBar} from "@ionic-native/status-bar";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -23,7 +24,8 @@ export class CourseDetailPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public statusBar : StatusBar
   ) {
     this.subject = navParams.data;
 
@@ -34,7 +36,10 @@ export class CourseDetailPage {
   }
 
   ionViewDidLoad() {
+    this.statusBar.overlaysWebView(false);
+    this.statusBar.backgroundColorByHexString('#ffffff');
     console.log('ionViewDidLoad CourseDetailPage');
+    console.log(this.subject);
   }
 
 }

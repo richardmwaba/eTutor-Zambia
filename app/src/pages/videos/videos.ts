@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {VideoPlayerPage} from "../video-player/video-player";
-import {NavController, NavParams,ModalController, ToastController} from "ionic-angular";
+import {NavController, ViewController, NavParams,ModalController, ToastController} from "ionic-angular";
 import {LoginPage} from "../login/login";
 import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
@@ -28,12 +28,14 @@ export class VideosPage {
     private authService: AuthProvider,
     private subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public viewCtrl: ViewController) {
     this.subject = navParams.get("subject");
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VideosPage');
+    this.viewCtrl.showBackButton(true);
+    console.log(this.viewCtrl.enableBack());
   }
 
   /**
@@ -86,8 +88,8 @@ export class VideosPage {
     modal.present();
   }
 
-  dismissModal(){
-    this.navCtrl.setRoot(HomePage);
+  dismiss(){
+    this.navCtrl.getPrevious();
   }
 
   /**

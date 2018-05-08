@@ -213,6 +213,10 @@ export class CommentsPage {
     }
   }
 
+  dismissModal(){
+    this.navCtrl.pop();
+  }
+
   /**
    * Presents a success toast on sign up
    */
@@ -229,7 +233,7 @@ export class CommentsPage {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 6000
+      duration: 4000
     });
     loader.present();
   }
