@@ -13,7 +13,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthProvider {
 
-  private baseURL: string = "https://zedtutor.herokuapp.com/users";
+  private baseURL: string = "http://localhost:5000/users";
 
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});

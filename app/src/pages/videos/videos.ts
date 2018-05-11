@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import {VideoPlayerPage} from "../video-player/video-player";
 import {NavController, ViewController, NavParams,ModalController, ToastController} from "ionic-angular";
-import {LoginPage} from "../login/login";
 import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
-import {HomePage } from "../../pages/home/home";
+import {LoginModalPage} from "../login-modal/login-modal";
 
 /**
  * Generated class for the VideosPage page.
@@ -47,11 +46,11 @@ export class VideosPage {
   checkSubscription(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
     if((AuthProvider.isAuthenticated())){
-      console.log("You are signed in");
+      console.log("You are signed in as "+localStorage.getItem('user'));
       this.subject = subject;
       this.video = video;
 
-      this.subscriptionService.verifySubscription(this.subject, this.authService.user).then((data) => {
+      this.subscriptionService.verifySubscription(this.subject, localStorage.getItem('user')).then((data) => {
         console.log(data);
         this.data = data;
         //if success store the record locally
@@ -66,7 +65,8 @@ export class VideosPage {
 
     }else {
       // redirect to log in
-      this.presentModal(video, subject, LoginPage);
+      console.log("You are not signed in");
+      this.presentModal(video, subject, LoginModalPage);
     }
   }
 

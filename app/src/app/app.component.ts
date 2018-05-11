@@ -14,6 +14,7 @@ import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
 import { SubscriptionPage } from '../pages/subscription/subscription';
 import { VideoPlayerPage } from '../pages/video-player/video-player';
 import {AuthProvider} from "../providers/auth/auth";
+import {SubjectsProvider} from "../providers/subjects/subjects";
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +24,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
   activePage : any; // the currently active page
-  public username: string=null;
+  public username:any;
 
   // leftIcon is the name of the button's icon
   pages: Array<{title: string, leftIcon: string,component: any}>;
@@ -37,39 +38,16 @@ export class MyApp {
     public loadingCtrl: LoadingController) {
     events.subscribe('user:authenticated', (user, username, time) => {
       // user and time are the same arguments passed in `events.publish(user, time)`
-      this.username = username;
-      this.pages = [
-        { title: 'Home', leftIcon: 'home', component: HomePage },
-        { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-        { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
-      ];
+      this.pages = this.setSideMenuItems();
       console.log('Welcome', user, 'at', time);
     });
     events.subscribe('user:unauthenticated', (username, time) => {
       // user and time are the same arguments passed in `events.publish(user, time)`
-      this.username =this.username=null;
-      this.pages = [
-        { title: 'Home', leftIcon: 'home', component: HomePage },
-        { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
-        { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
-      ];
+      this.pages = this.setSideMenuItems();
     });
     this.initializeApp();
     // used for an example of ngFor and navigation
-    this.pages = [
-
-      { title: 'Home', leftIcon: 'home', component: HomePage },
-      { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
-      { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
-      // { title: 'List', leftIcon: 'list', component: ListPage },
-      // { title: 'All Subjects', leftIcon: 'list', component: AllSubjectsPage },
-      // if (this.isAuthenticated)
-      //  { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-
-      // { title: 'Subscription', leftIcon: 'subscription', component: SubscriptionPage }
-      // { title: 'VideoPlayer', leftIcon: 'subscription', component: VideoPlayerPage }
-    ];
-
+    this.pages = this.setSideMenuItems();
     this.activePage = this.pages[0]; // first active item is HomePage
 
   }
@@ -83,12 +61,34 @@ export class MyApp {
     });
   }
 
+   setSideMenuItems(){
+
+    if((AuthProvider.isAuthenticated())){
+    let user  = JSON.parse(localStorage.getItem('user'));
+    console.log("Signed in user is "+ user.username);
+      this.username = user.username;
+
+      return [
+        { title: 'Home', leftIcon: 'home', component: HomePage },
+        { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
+        { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
+      ];
+    }else {
+      this.username =null;
+      return [
+        { title: 'Home', leftIcon: 'home', component: HomePage },
+        { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
+        { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
+      ];
+    }
+  }
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component);
     this.activePage = page; // sets the active page color
-    this.nav.push(page.component);
+    // this.nav.push(page.component);
   }
 
   logout(){

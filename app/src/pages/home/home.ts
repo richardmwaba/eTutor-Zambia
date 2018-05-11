@@ -23,18 +23,32 @@ export class HomePage {
     public category : Category,
     public statusBar : StatusBar,
     public loadingCtrl: LoadingController) {
-
-      this.subjectsService.getSubjects().then((data) => {
-          console.log(data);
-          this.subjects = data;
-      });
-    this.presentLoading();
+    this.initializeSubjects();
 
   }
 
     ionViewDidLoad(){
       // this.statusBar.overlaysWebView(false);
       // this.statusBar.backgroundColorByHexString('#ffffff');
+    }
+
+    initializeSubjects(){
+      // this.subjects = JSON.parse(localStorage.getItem('subjects'));
+      // console.log("current subjects are "+this.subjects);
+    if(this.subjects){
+      this.subjects = JSON.parse(localStorage.getItem('subjects'));
+      console.log("Subjects on local storage are "+this.subjects);
+    }else {
+      this.getSubjectsFromServer();
+    }
+    }
+
+    getSubjectsFromServer(){
+      this.presentLoading();
+      this.subjectsService.getSubjects().then((data) => {
+        console.log(data);
+        this.subjects = data;
+      });
     }
   presentLoading() {
     let loader = this.loadingCtrl.create({

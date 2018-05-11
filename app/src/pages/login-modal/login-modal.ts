@@ -4,16 +4,22 @@ import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 
 import {SignupPage} from '../signup/signup';
 import {AuthProvider} from './../../providers/auth/auth';
-import {HomePage} from '../home/home';
 import {Events} from 'ionic-angular';
 
+/**
+ * Generated class for the LoginModalPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-login-modal',
+  templateUrl: 'login-modal.html',
 })
-export class LoginPage {
+export class LoginModalPage {
+
   // variable
   logForm: FormGroup;
   submitAttempt: boolean = false;
@@ -30,18 +36,18 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public events: Events,
     public formBuilder: FormBuilder,
-    public loadingCtrl: LoadingController
-  ) {
+    public loadingCtrl: LoadingController) {
 
     this.subject = navParams.get("subject");
     this.logForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*')])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
-    })
+    });
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad LoginModalPage');
   }
 
   signUp(params) {
@@ -79,8 +85,7 @@ export class LoginPage {
         this.events.publish('user:authenticated', this.user, this.username, Date.now());
 
         // redirect to home page
-        this.navCtrl.setRoot(HomePage);
-        // this.navCtrl.pop();
+        this.navCtrl.pop();
 
       } else {
         // show error alert

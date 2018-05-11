@@ -18,19 +18,21 @@ export class SubjectsProvider {
 
     getSubjects(){
 
-        if (this.data) {
-            return Promise.resolve(this.data);
-        }
-
         return new Promise(resolve => {
 
-            this.http.get('https://zedtutor.herokuapp.com/subjects/all')
+            this.http.get('http://localhost:5000/subjects/all')
                 .subscribe(data => {
                     this.data = data;
+                  SubjectsProvider.storeData(this.data);
                     resolve(this.data);
                     console.log(this.data);
                 });
         });
     }
+
+    static storeData(subjects) {
+    localStorage.setItem('subjects', JSON.stringify(subjects));
+  }
+
 
 }
