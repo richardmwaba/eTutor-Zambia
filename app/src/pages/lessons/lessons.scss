@@ -10,6 +10,13 @@ page-lessons {
     box-shadow: none;
     margin-right: 15px;
   }
+  .ion-scroll[scrollX] {
+    white-space: nowrap;
+    .scroll-item {
+      display: inline-list-item;
+
+    }
+  }
   .description-card{
     border-radius: 4% 4% 4% 4%;
     overflow: hidden;

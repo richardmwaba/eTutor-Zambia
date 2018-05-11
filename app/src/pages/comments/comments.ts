@@ -86,7 +86,7 @@ export class CommentsPage {
    * @param comment,  a comment object representing the disliked comment
    */
   like(comment) {
-    if (this.AuthService.isAuthenticated()) {
+    if (AuthProvider.isAuthenticated()) {
       let reviewer = comment.reviewers.find(x => x._id === this.user.id);  // we check if this user reacted to this comment earlier.
       if(reviewer) {this.setHasLikedHasDisliked(reviewer);} //if this user did react earlier, set the hasLiked and disliked attributes accordingly else set the didReact to null or false
       this.hasLiked ? this.neutralState(comment) : this.likedState(comment); //set the current state for this comment
@@ -101,7 +101,7 @@ export class CommentsPage {
    * @param comment , a comment object representing the disliked comment
    */
   dislike(comment) {
-    if (this.AuthService.isAuthenticated()) {
+    if (AuthProvider.isAuthenticated()) {
       let reviewer = comment.reviewers.find(x => x._id === this.user.id);// we check if this user reacted to this comment earlier.
       if(reviewer){this.setHasLikedHasDisliked(reviewer);}//if this user reacted, set the hasLiked and disliked attributes accordingly
       this.hasDisliked ? this.neutralState(comment) : this.dislikedState(comment); //set the current state for this comment
@@ -199,7 +199,7 @@ export class CommentsPage {
    * @param topic
    */
   showAddCommentModal(topic) {
-    if (this.AuthService.isAuthenticated()) {
+    if (AuthProvider.isAuthenticated()) {
       let modal = this.modalCtrl.create(AddCommentPage, {topic, hasDiscussion: this.data['success']});
       modal.present();
       modal.onDidDismiss(data=>{
@@ -232,7 +232,7 @@ export class CommentsPage {
 
   presentLoading() {
     let loader = this.loadingCtrl.create({
-      content: "Please wait...",
+      content: "Loading comments...",
       duration: 4000
     });
     loader.present();

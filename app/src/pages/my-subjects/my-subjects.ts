@@ -25,11 +25,11 @@ export class MySubjectsPage {
     public mySubjectsService: MySubjectsProvider,
               public authService: AuthProvider
   ) {
-    //this.user = this.authService.user;
-    this.user = this.navParams.get("user");
-    this.mySubjectsService.getMySubjects(this.user).then(data=>{
-      this.mySubjects = data;
-    });
+    // //this.user = this.authService.user;
+    // this.user = this.navParams.get("user");
+    // this.mySubjectsService.getMySubjects(this.user).then(data=>{
+    //   this.mySubjects = data;
+    // });
   }
 
   ionViewDidLoad() {

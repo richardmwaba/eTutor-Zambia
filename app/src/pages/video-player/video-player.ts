@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
+
 
 /**
  * Generated class for the VideoPlayerPage page.
@@ -18,25 +20,24 @@ export class VideoPlayerPage {
   public videoUrl;
   public video : any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private sanitizer: DomSanitizer,
+    private androidFullScreen: AndroidFullScreen) {
     this.video = navParams.get('video');
       this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
   }
 
-
-
-
   ionViewDidLoad() {
-
+    this.androidFullScreen.isImmersiveModeSupported()
+      .then(() => console.log('Immersive mode supported'))
+      .catch(err => console.log(err));
 
   }
 
-  play(url){
-      // this.streamingMedia.playVideo( url, this.options);
+  dismissModal(){
+    this.navCtrl.pop();
   }
-
-    goToVideo(url){
-        // this.streamingMedia.playVideo( this.videoUrl, this.options);
-    }
 
 }

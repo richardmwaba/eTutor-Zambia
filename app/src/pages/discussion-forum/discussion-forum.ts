@@ -45,11 +45,5 @@ public subject:Array<any>;
   openComments(topic) {
       let modal = this.modalCtrl.create(CommentsPage, {topic});
       modal.present();
-      // modal.onDidDismiss(data=>{
-      //   if(data){
-      //     // this.comments = data['comments'];
-      //     this.comments = data;
-      //   }
-      // });
   }
 }

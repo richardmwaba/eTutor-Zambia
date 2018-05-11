@@ -29,7 +29,9 @@ import {DiscussionForumPageModule } from "../pages/discussion-forum/discussion-f
 import {PopoverPageModule} from "../pages/popover/popover.module"
 import { CommentsPageModule } from "../pages/comments/comments.module";
 import { DiscussionsProvider } from '../providers/discussions/discussions';
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 import { Grade } from '../app/pipes/grade';
+import { Keyboard } from '@ionic-native/keyboard';
 
 @NgModule({
     declarations: [
@@ -68,6 +70,7 @@ import { Grade } from '../app/pipes/grade';
     ],
     providers: [
         StatusBar,
+      AndroidFullScreen,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
@@ -76,6 +79,7 @@ import { Grade } from '../app/pipes/grade';
     SubscriptionsProvider,
     MySubjectsProvider,
     DiscussionsProvider,
+      Keyboard,
       Category
     ]
 })

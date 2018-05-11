@@ -7,10 +7,13 @@
 
   <ion-content class="sideMenu">
 
+
     <ion-item class="profile-image">
       <h1><ion-icon ios="ios-school" md="md-school"></ion-icon> e-tutor</h1><br>
+      <div *ngIf="username">
       <img src="assets/img/unza.jpg" alt="background image"/>
-      <p>johndoe@gmail.com</p>
+      <p>{{username}}</p>
+      </div>
     </ion-item>
 
     <!-- list of menu buttons -->
@@ -22,10 +25,12 @@
       <!-- used as a spacer -->
       <ion-item></ion-item>
       <!-- sign out button -->
-      <button menuClose ion-item icon-left [class.activeHighlight]="checkActive(p)">
+      <div *ngIf="username">
+      <button (click)="logout()" menuClose ion-item icon-left [class.activeHighlight]="checkActive(p)">
         <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
         Sign out
       </button>
+      </div>
     </ion-list>
 
   </ion-content>

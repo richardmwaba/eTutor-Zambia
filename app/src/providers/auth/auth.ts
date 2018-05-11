@@ -25,9 +25,12 @@ export class AuthProvider {
     private http: HttpClient
   ) { }
 
-  isAuthenticated(){
+  /**
+   * Checks whether the user is still logged in
+   */
+  static isAuthenticated(){
 
-    return this.user;
+    return tokenNotExpired('token');
   }
 
   /**
@@ -52,7 +55,7 @@ export class AuthProvider {
    * @param user the user data that's returned to the app
    */
   storeData(token, user) {
-    localStorage.setItem('id_token', token);
+    localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
 
     this.authToken = token;
@@ -73,6 +76,6 @@ export class AuthProvider {
    * Checks whether the user is still logged in
    */
   isLoggedIn() {
-    return tokenNotExpired('id_token');
+    return tokenNotExpired('token');
   }
 }

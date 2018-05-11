@@ -46,7 +46,8 @@ export class VideosPage {
    */
   checkSubscription(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
-    if(this.authService.isAuthenticated()){
+    if((AuthProvider.isAuthenticated())){
+      console.log("You are signed in");
       this.subject = subject;
       this.video = video;
 
@@ -73,10 +74,7 @@ export class VideosPage {
    * @param video
    */
   playVideo(video){
-    this.video = video;
-    this.navCtrl.push(VideoPlayerPage, {
-      video  // passing data to LessonContentPage
-    });
+    this.presentModal(video, null, VideoPlayerPage);
   }
 
   /**

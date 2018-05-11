@@ -7,9 +7,13 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()"  #input class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
-      <!--<button ion-button icon-left><ion-icon name="arrow-round-back"></ion-icon></button>-->
-      <ion-searchbar (ionInput)="getItems($event)" autofocus></ion-searchbar></ion-title>
+      <ion-searchbar [showCancelButton]="true" cancelButtonText="cancel" (ionInput)="getItems($event)" autocomplete="true" autocorrect="true"></ion-searchbar></ion-title>
   </ion-navbar>
 
 </ion-header>

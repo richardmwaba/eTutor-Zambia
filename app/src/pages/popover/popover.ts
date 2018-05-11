@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, Input , ViewChild} from '@angular/core';
+import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {CourseDetailPage} from "../course-detail/course-detail";
+import { Keyboard } from '@ionic-native/keyboard';
 // $IMPORTSTATEMENT
 
 /**
@@ -22,6 +23,8 @@ export class PopoverPage {
   constructor(
     public navCtrl: NavController,
     public subjectsService: SubjectsProvider,
+    private keyboard: Keyboard,
+    public viewCtrl: ViewController,
     public navParams: NavParams) {
     this.subjectsService.getSubjects().then((data) => {
       console.log(data);
@@ -31,6 +34,7 @@ export class PopoverPage {
   }
 
   ionViewDidLoad() {
+    this.keyboard.show();
     console.log('ionViewDidLoad PopoverPage');
   }
 
@@ -56,6 +60,11 @@ export class PopoverPage {
   courseDetail(subject) {
     //navigate to the selected course detail page
     this.navCtrl.push(CourseDetailPage, {subject});
+  }
+
+  dismiss(){
+    this.keyboard.close();
+    this.viewCtrl.dismiss();
   }
 
 }

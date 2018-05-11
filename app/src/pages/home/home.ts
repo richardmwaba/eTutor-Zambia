@@ -33,12 +33,12 @@ export class HomePage {
   }
 
     ionViewDidLoad(){
-      this.statusBar.overlaysWebView(false);
-      this.statusBar.backgroundColorByHexString('#ffffff');
+      // this.statusBar.overlaysWebView(false);
+      // this.statusBar.backgroundColorByHexString('#ffffff');
     }
   presentLoading() {
     let loader = this.loadingCtrl.create({
-      content: "Please wait...",
+      content: "Loading subjects...",
       duration: 6000
     });
     loader.present();

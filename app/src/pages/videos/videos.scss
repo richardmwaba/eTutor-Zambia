@@ -10,6 +10,16 @@ page-videos {
     box-shadow: none;
     margin-right: 15px;
   }
+
+  details{
+    margin-left: 10px;
+    display: flow;
+    font-size: 16px;
+  }
+
+  details list{
+    background-color: blue;
+  }
 .body-content{
   position: relative;
   align-content: stretch;

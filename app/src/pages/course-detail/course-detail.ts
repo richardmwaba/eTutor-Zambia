@@ -36,8 +36,8 @@ export class CourseDetailPage {
   }
 
   ionViewDidLoad() {
-    this.statusBar.overlaysWebView(false);
-    this.statusBar.backgroundColorByHexString('#ffffff');
+    // this.statusBar.overlaysWebView(false);
+    // this.statusBar.backgroundColorByHexString('#ffffff');
     console.log('ionViewDidLoad CourseDetailPage');
     console.log(this.subject);
   }

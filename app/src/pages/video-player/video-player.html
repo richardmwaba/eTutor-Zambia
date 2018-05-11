@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>VideoPlayer</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Playing</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +20,6 @@
 
 <ion-content padding>
   <iframe [src]="videoUrl" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <!--<div *ngFor="let video of subTopic.videos">-->
-        <!--<ion-list>-->
-            <!--<button  (click)="play(video.url)">-->
-                <!--{{video.url}}-->
-            <!--</button>-->
-        <!--</ion-list>-->
-    <!--</div>-->
+
 
 </ion-content>

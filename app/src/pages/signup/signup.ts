@@ -2,7 +2,6 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { LoginPage } from '../login/login';
 
 
 @IonicPage()
