@@ -19,17 +19,14 @@ import { Keyboard } from '@ionic-native/keyboard';
 export class PopoverPage {
   searchQuery: string = '';
   items: Array<any>;
-  subjects:Array<any>;
+  subjects: Array<any>;
   constructor(
     public navCtrl: NavController,
     public subjectsService: SubjectsProvider,
     private keyboard: Keyboard,
     public viewCtrl: ViewController,
     public navParams: NavParams) {
-    this.subjectsService.getSubjects().then((data) => {
-      console.log(data);
-      this.subjects = data;
-    });
+    this.getSubjects();
     this.initializeItems();
   }
 
@@ -40,6 +37,18 @@ export class PopoverPage {
 
   initializeItems() {
     this.items = this.subjects;
+  }
+
+  getSubjects(){
+    this.subjects = JSON.parse(localStorage.getItem('subjects'));
+    if(this.subjects){
+      console.log("loaded subjects are "+this.subjects);
+    }else {
+      this.subjectsService.getSubjects().then((data) => {
+        console.log(data);
+        this.subjects = JSON.parse(localStorage.getItem('subjects'));
+      });
+    }
   }
 
   getItems(ev: any) {
@@ -59,6 +68,7 @@ export class PopoverPage {
 
   courseDetail(subject) {
     //navigate to the selected course detail page
+    this.keyboard.close();
     this.navCtrl.push(CourseDetailPage, {subject});
   }
 

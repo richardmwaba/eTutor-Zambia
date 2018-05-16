@@ -10,24 +10,78 @@ page-lessons {
     box-shadow: none;
     margin-right: 15px;
   }
+
+  .overviewCards{
+    position: relative;
+    border-radius: 2% 2% 2% 2%;
+  }
+
+  .inner-list{
+    margin-left: -10%;
+  }
+
+  ion-scroll{
+    height:40%;
+  }
   .ion-scroll[scrollX] {
     white-space: nowrap;
     .scroll-item {
       display: inline-list-item;
-
     }
   }
+
+  .ios, .md {
+
+    page-home {
+
+      button {
+        align-items: baseline;
+      }
+
+    }
+
+  }
+
+  .instructors-card {
+    position: relative;
+    margin-right: 35px;
+    margin-left: 5px;
+    margin-top: -10%;
+    width: 210px;
+    height: 100%;
+    text-align: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    //border-radius: 1% 1% 1% 1%;
+    //box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+   details summary{
+    margin-left: 80%;
+  }
+
+  .instructor-image{
+    height: 100%;
+    margin-bottom: 10%;
+    //width: 100%;
+    //size: 200px;
+    position: relative;
+  }
+
   .description-card{
-    border-radius: 4% 4% 4% 4%;
+    position: relative;
+    border-radius: 2% 2% 2% 2%;
     overflow: hidden;
     margin-top: -1%;
     margin-bottom: 10%;
     padding: 2%;
-
   }
+
   .title{
+    position: relative;
     font-weight: bold;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     margin-bottom: 0px;
   }
+
+
 }

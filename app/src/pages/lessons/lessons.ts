@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { ExpandableComponent } from "../../components/expandable/expandable";
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 
 // page import
@@ -31,14 +32,17 @@ export class LessonsPage {
   public user: any;
   public data: any;
   public msg: any;
+  public expanded: boolean=false;
   public isAuthenticated: any;
-
+  showLevel1 = null;
+  showLevel2 = null;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public authService: AuthProvider,
     public subscriptionService: SubscriptionsProvider,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,
+    public expandableComp: ExpandableComponent) {
 
     this.subject = navParams.get("subject");
     this.user = this.authService.user;
@@ -46,8 +50,35 @@ export class LessonsPage {
   }
 
   ionViewDidLoad() {
+    this.expandableComp.ngAfterViewInit();
     console.log('ionViewDidLoad LessonsPage');
   }
+
+  toggleLevel1(idx) {
+    if (this.isLevel1Shown(idx)) {
+      this.showLevel1 = null;
+    } else {
+      this.showLevel1 = idx;
+    }
+  }
+
+  toggleLevel2(idx) {
+    if (this.isLevel2Shown(idx)) {
+      this.showLevel1 = null;
+      this.showLevel2 = null;
+    } else {
+      this.showLevel1 = idx;
+      this.showLevel2 = idx;
+    }
+  };
+
+  isLevel1Shown(idx) {
+    return this.showLevel1 === idx;
+  };
+
+  isLevel2Shown(idx) {
+    return this.showLevel2 === idx;
+  };
 
   /**check if this user has an active subscription for this subject then play the video
    * otherwise redirect to subscription page
@@ -102,7 +133,6 @@ export class LessonsPage {
     let toast = this.toastCtrl.create({
       message: msg,
       duration: 3000,
-      //position, cssCLass
     });
 
     toast.present(); // shows the toaster

@@ -32,6 +32,10 @@ import { DiscussionsProvider } from '../providers/discussions/discussions';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 import { Grade } from '../app/pipes/grade';
 import { Keyboard } from '@ionic-native/keyboard';
+import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
+import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
+import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
+import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
     declarations: [
@@ -40,13 +44,13 @@ import { Keyboard } from '@ionic-native/keyboard';
         ListPage,
       Grade,
         Category,
-        EqualValidatorDirective
+        EqualValidatorDirective,
     ],
     imports: [
-        BrowserModule,
-        HttpClientModule,
+      BrowserModule,
+      HttpClientModule,
       CourseDetailPageModule,
-        IonicModule.forRoot(MyApp),
+      IonicModule.forRoot(MyApp),
       MySubjectsPageModule,
       LoginPageModule,
       SignupPageModule,
@@ -59,7 +63,11 @@ import { Keyboard } from '@ionic-native/keyboard';
       DiscussionForumPageModule,
       PopoverPageModule,
       CommentsPageModule,
-      AddCommentPageModule
+      AddCommentPageModule,
+      LoginModalPageModule,
+      SignUpModalPageModule,
+      OptionsPopoverPageModule,
+      ComponentsModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

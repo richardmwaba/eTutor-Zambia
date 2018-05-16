@@ -20,7 +20,7 @@ export class SubjectsProvider {
 
         return new Promise(resolve => {
 
-            this.http.get('http://localhost:5000/subjects/all')
+            this.http.get('https://zedtutor.herokuapp.com/subjects/all')
                 .subscribe(data => {
                     this.data = data;
                   SubjectsProvider.storeData(this.data);
@@ -30,7 +30,12 @@ export class SubjectsProvider {
         });
     }
 
-    static storeData(subjects) {
+  /**
+   *
+   * @param subjects
+   */
+  static storeData(subjects) {
+    localStorage.removeItem('subjects');
     localStorage.setItem('subjects', JSON.stringify(subjects));
   }
 

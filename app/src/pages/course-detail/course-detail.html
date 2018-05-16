@@ -20,7 +20,7 @@
       <button>
         <ion-icon name="md-share"></ion-icon>
       </button>
-      <button>
+      <button (click)="presentPopover($event)">
         <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -33,9 +33,9 @@
 
 
   <ion-tabs>
-    <ion-tab tabIcon="videocam" tabTitle="Videos" [root]="tab1" [rootParams]="subject" ></ion-tab>
-    <ion-tab tabIcon="chatboxes" tabTitle="Forum" [root]="tab2" [rootParams]="subject"></ion-tab>
-    <ion-tab tabIcon="information-circle" tabTitle="Summary" [root]="tab3" [rootParams]="subject"></ion-tab>
+    <ion-tab tabIcon="information-circle" tabTitle="Summary" [root]="tab1" [rootParams]="subject"></ion-tab>
+    <ion-tab tabIcon="videocam" tabTitle="Videos" [root]="tab2" [rootParams]="subject" ></ion-tab>
+    <ion-tab tabIcon="chatboxes" tabTitle="Forum" [root]="tab3" [rootParams]="subject"></ion-tab>
   </ion-tabs>`
 
 

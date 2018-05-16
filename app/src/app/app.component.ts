@@ -25,6 +25,9 @@ export class MyApp {
   rootPage: any = HomePage;
   activePage : any; // the currently active page
   public username:any;
+  showLevel1 = null;
+  showLevel2 = null;
+
 
   // leftIcon is the name of the button's icon
   pages: Array<{title: string, leftIcon: string,component: any}>;

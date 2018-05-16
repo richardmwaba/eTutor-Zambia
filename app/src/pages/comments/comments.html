@@ -27,6 +27,12 @@
 
 
 <ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
   <div class="body-content">
     <div class="section" *ngFor="let comment of comments">
       <ion-card class="message-card">

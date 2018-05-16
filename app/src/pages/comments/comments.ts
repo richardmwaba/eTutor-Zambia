@@ -55,6 +55,16 @@ export class CommentsPage {
     console.log('ionViewDidLoad CommentsPage');
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.initialise();
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 4000);
+  }
+
 
   /**
    * initialises this class with values from the db

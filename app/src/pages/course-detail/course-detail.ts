@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, PopoverController} from 'ionic-angular';
 import { LessonsPage } from '../lessons/lessons';
 import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 import {VideosPage} from "../videos/videos";
 import {StatusBar} from "@ionic-native/status-bar";
+import {OptionsPopoverPage} from "../options-popover/options-popover";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -25,13 +26,14 @@ export class CourseDetailPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public statusBar : StatusBar
+    public statusBar : StatusBar,
+    public popoverCtrl: PopoverController
   ) {
     this.subject = navParams.data;
 
-    this.tab1 = VideosPage;
-    this.tab2 = DiscussionForumPage;
-    this.tab3 = LessonsPage;
+    this.tab1 = LessonsPage;
+    this.tab2 = VideosPage;
+    this.tab3 = DiscussionForumPage;
 
   }
 
@@ -40,6 +42,13 @@ export class CourseDetailPage {
     // this.statusBar.backgroundColorByHexString('#ffffff');
     console.log('ionViewDidLoad CourseDetailPage');
     console.log(this.subject);
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(OptionsPopoverPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }

@@ -23,6 +23,10 @@ export class HomePage {
     public category : Category,
     public statusBar : StatusBar,
     public loadingCtrl: LoadingController) {
+    // this.subjectsService.getSubjects().then((data) => {
+    //   // console.log(data);
+    //   // this.subjects = data;
+    // });
     this.initializeSubjects();
 
   }
@@ -32,22 +36,31 @@ export class HomePage {
       // this.statusBar.backgroundColorByHexString('#ffffff');
     }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getSubjectsFromServer();
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 4000);
+  }
+
     initializeSubjects(){
-      // this.subjects = JSON.parse(localStorage.getItem('subjects'));
-      // console.log("current subjects are "+this.subjects);
-    if(this.subjects){
       this.subjects = JSON.parse(localStorage.getItem('subjects'));
+      console.log("current subjects are "+this.subjects);
+    if(this.subjects){
       console.log("Subjects on local storage are "+this.subjects);
     }else {
+      this.presentLoading();
       this.getSubjectsFromServer();
     }
     }
 
     getSubjectsFromServer(){
-      this.presentLoading();
       this.subjectsService.getSubjects().then((data) => {
         console.log(data);
-        this.subjects = data;
+        this.subjects = JSON.parse(localStorage.getItem('subjects'));
       });
     }
   presentLoading() {
