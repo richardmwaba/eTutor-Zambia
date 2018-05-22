@@ -33,7 +33,7 @@ export class ValidateService {
   }
 
   validateSubject(subject){
-    if(subject.name == undefined || subject.grade == undefined || subject.description == undefined || subject.category == undefined)
+    if(subject.subjectName == undefined || subject.subjectGrade == undefined || subject.subjectDescription == undefined || subject.subjectCategory == undefined)
     {
       return false;
     }

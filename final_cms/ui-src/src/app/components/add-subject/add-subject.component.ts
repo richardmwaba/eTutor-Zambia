@@ -12,97 +12,116 @@ import { Router } from '@angular/router';
 })
 export class AddSubjectComponent implements OnInit {
 
-    name: String;
-    grade: String;
-    instructors: String[];
-    description: String;
-    category: String;
-    icon: String;
-    topics: String[];
-    selectedGrade: any;
-    selectedCategory: any;
+  selectedGrade: any;
+  selectedCategory: any;
+  subjectName: String;
+  subjectDescription: String;
+  subjectGrade: String;
+  subjectCategory: String;
+  icon: String;
+  instructorsName: String;
+  instructorsTitle: String;
+  instructorsEmail: String;
+  instructorsPhone: String;
+  topicName: String;
+  topicDescription: String;
+  topicDuration: String;
+  sub_topicsName: String;
+  videoName: String;
+  videoUrl: String;
 
-    categories = [
-      {
-        "id": 1,
-        "name": "Exams & Revision"
-      },
-      {
-        "id": 2,
-        "name": "Lessons"
-      }
-    ];
+  categories = [
+    {
+      "id": 1,
+      "name": "Exams & Revision"
+    },
+    {
+      "id": 2,
+      "name": "Lessons"
+    }
+  ];
 
-    grades = [
-      {
-        "id": 1,
-        "name": "Grade 8"
-      },
-      {
-        "id": 2,
-        "name": "Grade 9"
-      },
-      {
-        "id": 3,
-        "name": "Grade 10"
-      },
-      {
-        "id": 4,
-        "name": "Grade 11"
-      },
-      {
-        "id": 5,
-        "name": "Grade 12"
-      }
-    ];
-  
-    constructor(
-      private validateService: ValidateService, 
-      private flashMessage: FlashMessagesService,
-      private settingsService: SettingsService,
-      private router: Router
-    ) { }
+  grades = [
+    {
+      "id": 1,
+      "name": "A-level"
+    },
+    {
+      "id": 2,
+      "name": "Grade 8"
+    },
+    {
+      "id": 3,
+      "name": "Grade 9"
+    },
+    {
+      "id": 4,
+      "name": "Grade 10"
+    },
+    {
+      "id": 5,
+      "name": "Grade 11"
+    },
+    {
+      "id": 6,
+      "name": "Grade 12"
+    }
+  ];
+
+  constructor(
+    private validateService: ValidateService,
+    private flashMessage: FlashMessagesService,
+    private settingsService: SettingsService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    
+
   }
 
-  onCreateSubmit(){
-    const subject = {
-      name: this.name,
-      grade: this.grade,
-      instructors: this.instructors,
-      description: this.description,
-      category: this.category,
-      icon: this.icon,
-      topics: this.topics
-    }
+  onCreateSubmit() {
 
-     //Validate required fields
-     if(!this.validateService.validateSubject(subject)){
+    this.selectGrade();
+    this.selectCategory();
+
+    const subject = {
+      subjectName: this.subjectName,
+      subjectDescription: this.subjectDescription,
+      subjectGrade: this.subjectGrade,
+      subjectCategory: this.subjectCategory,
+      icon: this.icon,
+      instructors: [],
+      topics: []
+    };
+
+    console.log(subject);
+
+    //Validate required fields
+    if (!this.validateService.validateSubject(subject)) {
       this.flashMessage.show('Please fill in all the required fields', { classes: ['alert-danger'], timeout: 3000 });
       return false;
     }
 
-    //Register Super User
+    //Add subject
     this.settingsService.createSubject(subject).subscribe(data => {
-      if(data.success){
-        this.flashMessage.show('You have successfully added a new subject', { classes: ['alert-success'], timeout: 3000 });
+      if (data['success']) {
+        this.flashMessage.show(data['msg'], { classes: ['alert-success'], timeout: 3000 });
         //this.router.navigate(['/']);
       }
-      else{
+      else (err) => {
         this.flashMessage.show('Oops! Something went wrong', { classes: ['alert-danger'], timeout: 3000 });
         //this.router.navigate(['/users']);
+        console.log(err);
       }
-  });
+    });
   }
 
-  selectGrade (){
-    this.grade = this.selectedGrade;
+  selectGrade() {
+    this.subjectGrade = this.selectedGrade;
   }
 
-  selectCategory (){
-    this.category = this.selectedCategory;
+  selectCategory() {
+    this.subjectCategory = this.selectedCategory;
   }
 
 }

@@ -39,10 +39,16 @@ module.exports.getSubjectByName = function(name, callback) {
 };
 
 // gets user by the email
-module.exports.getBySubjectByGrade = function(grade, callback) {
+module.exports.getSubjectByGrade = function(grade, callback) {
     const query = {grade: grade}; // query to equate name to db subject name
     Subject.findOne(query, callback);
 };
+
+//gets subject name by grade
+module.exports.getSubjectNameByGrade = function(grade, callback) {
+    const query = {grade: grade}; // query to equate name to db subject name
+    Subject.find(query, callback);
+}
 
 // gets user by username
 module.exports.getUserByInstructorId = function(instructor, callback) {

@@ -23,6 +23,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UsersComponent } from './pages/users/users.component';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { SubjectComponent } from './pages/subject/subject.component';
 
 const appRoutes: Routes = [
 
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
             { path:'profile', component: ProfileComponent },
             { path:'users', component: UsersComponent },
             { path:'clients', component: ClientsComponent },
-            { path:'settings', component: SettingsComponent }
+            { path:'settings', component: SettingsComponent },
+            { path:'settings/manage/subject', component: SubjectComponent }
         ]
     },
     

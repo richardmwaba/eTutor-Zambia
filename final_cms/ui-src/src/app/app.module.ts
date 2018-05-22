@@ -40,6 +40,7 @@ import { AddSeniorMaterialComponent } from './components/add-senior-material/add
 import { AddJuniorMaterialComponent } from './components/add-junior-material/add-junior-material.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AddSubjectComponent } from './components/add-subject/add-subject.component';
+import { SubjectComponent } from './pages/subject/subject.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { AddSubjectComponent } from './components/add-subject/add-subject.compon
     AddSeniorMaterialComponent,
     AddJuniorMaterialComponent,
     SettingsComponent,
-    AddSubjectComponent
+    AddSubjectComponent,
+    SubjectComponent
   ],
   imports: [
     BrowserModule,

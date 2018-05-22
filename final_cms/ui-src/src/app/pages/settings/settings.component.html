@@ -158,14 +158,87 @@
                   </div>
                   <div id="alevelBody" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="alevelHeading">
                     <div class="accordion-content accordion-desc">
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                        like Aldus PageMaker including versions of Lorem Ipsum.
-                      </p>
+                      <ul style="list-style-type:circle; padding-left: 30px">
+                        <li *ngFor="let alevelSubject of alevelSubjects">
+                          <button class="btn-link" data-toggle="modal" [attr.data-target]="'#alevelDetailsModal-' + alevelSubject._id">{{ alevelSubject.name }} </button>
+                          <br>
+                          <div class="modal fade" [attr.id]="'alevelDetailsModal-' + alevelSubject._id" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content panel-primary">
+                                <div class="modal-header panel-heading bg-primary">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">{{ alevelSubject.name }} Details</h4>
+                                </div>
+                                <div class="modal-body" style="margin-top: 30px">
+                                  <a class="btn-link btn-xs" href="">
+                                    <h5>Manage Subject
+                                      <span>
+                                        <i class="fa fa-external-link"></i>
+                                      </span>
+                                    </h5>
+                                  </a>
+                                  <br>
+                                  <h5>Topics</h5>
+                                  <ol style="padding-left: 30px">
+                                    <li *ngFor="let alevelTopic of alevelSubject.topics">
+                                      {{ alevelTopic.topic_name }}
+                                    </li>
+                                  </ol>
+                                  <br>
+                                  <div style="padding-left: 20px">
+                                    <button class="btn btn-xs btn-default" data-toggle="collapse" [attr.data-target]="'#addAlevelTopic-' + alevelSubject._id">+ Add Topic</button>
+                                  </div>
+                                  <div [attr.id]="'addAlevelTopic-' + alevelSubject._id" class="collapse" style="padding-left: 60px">
+                                    <br>
+                                    <div class="row">
+                                      <div class="col-sm-12">
+                                        <form class="md-float-material" (ngSubmit)="addTopicSubmit()">
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="text" class="md-form-control md-static" [(ngModel)]="alevelTopicName" name="alevelTopicName" id="alevelTopicName">
+                                              <label for="alevelTopicName">Name of Topic</label>
+                                            </div>
+                                          </div>
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="number" class="md-form-control md-static" [(ngModel)]="alevelTopicDuration" name="alevelTopicDuration" id="alevelTopicDuration">
+                                              <label for="alevelTopicDuration">Duration</label>
+                                            </div>
+                                          </div>
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="text" class="md-form-control md-static" [(ngModel)]="alevelTopicDescription" name="alevelTopicDescription" id="alevelTopicDescription">
+                                              <label for="alevelTopicDescription">Description</label>
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-2 col-lg-2 col-sm-3 col-xs-10 offset-xs-1 offset-md-10 offset-lg-10 offset-sm-9">
+                                            <button type="submit" class="btn btn-primary btn-xs btn-block waves-effect waves-light m-b-20" data-toggle="collapse" [attr.data-target]="'#addAlevelTopic-' + alevelSubject._id">
+                                              Add
+                                            </button>
+                                          </div>
+                                        </form>
+                                        <!-- end of form -->
+                                      </div>
+                                      <!-- end of col-sm-12 -->
+                                    </div>
+                                    <!-- end of row-->
+                                  </div>
+                                  <hr>
+                                  <h5>Instructors</h5>
+                                  <ol style="padding-left: 30px">
+                                    <li *ngFor="let alevelInstructor of alevelSubject.instructors">
+                                      {{ alevelInstructor.name }}
+                                    </li>
+                                  </ol>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -179,14 +252,87 @@
                   </div>
                   <div id="juniorBody" class="panel-collapse collapse" role="tabpanel" aria-labelledby="juniorHeading">
                     <div class="accordion-content accordion-desc">
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                        like Aldus PageMaker including versions of Lorem Ipsum.
-                      </p>
+                      <ul style="list-style-type:circle; padding-left: 30px">
+                        <li *ngFor="let juniorSubject of juniorSubjects">
+                          <button class="btn-link" data-toggle="modal" [attr.data-target]="'#SubjectDetailsModal-' + juniorSubject._id">{{ juniorSubject.name }} </button>
+                          <br>
+                          <div class="modal fade" [attr.id]="'SubjectDetailsModal-' + juniorSubject._id" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content panel-primary">
+                                <div class="modal-header panel-heading bg-primary">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">{{ juniorSubject.name }} Details</h4>
+                                </div>
+                                <div class="modal-body" style="margin-top: 30px">
+                                  <a class="btn-link btn-xs" href="">
+                                    <h5>Manage Subject
+                                      <span>
+                                        <i class="fa fa-external-link"></i>
+                                      </span>
+                                    </h5>
+                                  </a>
+                                  <br>
+                                  <h5>Topics</h5>
+                                  <ol style="padding-left: 30px">
+                                    <li *ngFor="let juniorTopic of juniorSubject.topics">
+                                      {{ juniorTopic.topic_name }}
+                                    </li>
+                                  </ol>
+                                  <br>
+                                  <div style="padding-left: 20px">
+                                    <button class="btn btn-xs btn-default" data-toggle="collapse" [attr.data-target]="'#addTopic-' + juniorSubject._id">+ Add Topic</button>
+                                  </div>
+                                  <div [attr.id]="'addTopic-' + juniorSubject._id" class="collapse" style="padding-left: 60px">
+                                    <br>
+                                    <div class="row">
+                                      <div class="col-sm-12">
+                                        <form class="md-float-material" (ngSubmit)="addJuniorTopicSubmit()">
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="text" class="md-form-control md-static" [(ngModel)]="juniorTopicName" name="juniorTopicName" id="juniorTopicName">
+                                              <label for="juniorTopicName">Name of Topic</label>
+                                            </div>
+                                          </div>
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="number" class="md-form-control md-static" [(ngModel)]="juniorTopicDuration" name="juniorTopicDuration" id="juniorTopicDuration">
+                                              <label for="juniorTopicDuration">Duration</label>
+                                            </div>
+                                          </div>
+                                          <div class="">
+                                            <div class="md-input-wrapper">
+                                              <input type="text" class="md-form-control md-static" [(ngModel)]="juniorTopicDescription" name="juniorTopicDescription" id="juniorTopicDescription">
+                                              <label for="juniorTopicDescription">Description</label>
+                                            </div>
+                                          </div>
+
+                                          <div class="col-md-2 col-lg-2 col-sm-3 col-xs-10 offset-xs-1 offset-md-10 offset-lg-10 offset-sm-9">
+                                            <button type="submit" class="btn btn-primary btn-xs btn-block waves-effect waves-light m-b-20" data-toggle="collapse" [attr.data-target]="'#addTopic-' + juniorSubject._id">
+                                              Add
+                                            </button>
+                                          </div>
+                                        </form>
+                                        <!-- end of form -->
+                                      </div>
+                                      <!-- end of col-sm-12 -->
+                                    </div>
+                                    <!-- end of row-->
+                                  </div>
+                                  <hr>
+                                  <h5>Instructors</h5>
+                                  <ol style="padding-left: 30px">
+                                    <li *ngFor="let juniorInstructor of juniorSubject.instructors">
+                                      {{ juniorInstructor.name }}
+                                    </li>
+                                  </ol>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -200,14 +346,87 @@
                   </div>
                   <div id="seniorBody" class="panel-collapse collapse" role="tabpanel" aria-labelledby="seniorHeading">
                     <div class="accordion-content accordion-desc">
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                        text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                        like Aldus PageMaker including versions of Lorem Ipsum.
-                      </p>
+                      <ul style="list-style-type:circle; padding-left: 30px">
+                        <li *ngFor="let seniorSubject of seniorSubjects">
+                          <button class="btn-link" data-toggle="modal" [attr.data-target]="'#seniorDetailsModal-' + seniorSubject._id">{{ seniorSubject.name }} </button>
+                          <br>
+                          <div class="modal fade" [attr.id]="'seniorDetailsModal-' + seniorSubject._id" role="dialog">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content panel-primary">
+                                  <div class="modal-header panel-heading bg-primary">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">{{ seniorSubject.name }} Details</h4>
+                                  </div>
+                                  <div class="modal-body" style="margin-top: 30px">
+                                    <a class="btn-link btn-xs" href="">
+                                      <h5>Manage Subject
+                                        <span>
+                                          <i class="fa fa-external-link"></i>
+                                        </span>
+                                      </h5>
+                                    </a>
+                                    <br>
+                                    <h5>Topics</h5>
+                                    <ol style="padding-left: 30px">
+                                      <li *ngFor="let seniorTopic of seniorSubject.topics">
+                                        {{ seniorTopic.topic_name }}
+                                      </li>
+                                    </ol>
+                                    <br>
+                                    <div style="padding-left: 20px">
+                                      <button class="btn btn-xs btn-default" data-toggle="collapse" [attr.data-target]="'#addSeniorTopic-' + seniorSubject._id">+ Add Topic</button>
+                                    </div>
+                                    <div [attr.id]="'addSeniorTopic-' + seniorSubject._id" class="collapse" style="padding-left: 60px">
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-sm-12">
+                                          <form class="md-float-material" (ngSubmit)="addSeniorTopicSubmit()">
+                                            <div class="">
+                                              <div class="md-input-wrapper">
+                                                <input type="text" class="md-form-control md-static" [(ngModel)]="seniorTopicName" name="seniorTopicName" id="seniorTopicName">
+                                                <label for="seniorTopicName">Name of Topic</label>
+                                              </div>
+                                            </div>
+                                            <div class="">
+                                              <div class="md-input-wrapper">
+                                                <input type="number" class="md-form-control md-static" [(ngModel)]="seniorTopicDuration" name="seniorTopicDuration" id="seniorTopicDuration">
+                                                <label for="seniorTopicDuration">Duration</label>
+                                              </div>
+                                            </div>
+                                            <div class="">
+                                              <div class="md-input-wrapper">
+                                                <input type="text" class="md-form-control md-static" [(ngModel)]="seniorTopicDescription" name="seniorTopicDescription" id="seniorTopicDescription">
+                                                <label for="seniorTopicDescription">Description</label>
+                                              </div>
+                                            </div>
+  
+                                            <div class="col-md-2 col-lg-2 col-sm-3 col-xs-10 offset-xs-1 offset-md-10 offset-lg-10 offset-sm-9">
+                                              <button type="submit" class="btn btn-primary btn-xs btn-block waves-effect waves-light m-b-20" data-toggle="collapse" [attr.data-target]="'#addSeniorTopic-' + seniorSubject._id">
+                                                Add
+                                              </button>
+                                            </div>
+                                          </form>
+                                          <!-- end of form -->
+                                        </div>
+                                        <!-- end of col-sm-12 -->
+                                      </div>
+                                      <!-- end of row-->
+                                    </div>
+                                    <hr>
+                                    <h5>Instructors</h5>
+                                    <ol style="padding-left: 30px">
+                                      <li *ngFor="let seniorInstructor of seniorSubject.instructors">
+                                        {{ seniorInstructor.name }}
+                                      </li>
+                                    </ol>
+                                  </div>
+                                  <div class="modal-footer">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -225,3 +444,4 @@
   </div>
   <!-- end of main tab content -->
 </div>
+

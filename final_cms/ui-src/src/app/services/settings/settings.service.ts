@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 export class SettingsService {
  
   subject: any;
+  grade: any;
+  headerValue: any;
 
   constructor(
     private http: Http
@@ -21,7 +23,21 @@ export class SettingsService {
   //Get: Get subject
   getAllSubject(){
     let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/subjects/all', { headers: headers })
     .map(res => res.json());
+  }
+
+  getSubjectByGrade(grade){
+    let headers = new Headers();
+    //this.loadToken();
+    //headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    const uri = 'http://localhost:3000/subjects/grade/find/name/' + grade;
+    console.log(uri);
+    return this
+            .http
+            .get(uri)
+            .map(res => res.json());
   }
 }

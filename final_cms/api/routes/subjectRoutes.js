@@ -31,13 +31,30 @@ router.get('/all', (req, res, next) => {
 //get all subjects
 router.get('/grade/find/:grade', (req, res, next) => {
 // add to db
-    Subject.getSubjectByGrade(req.params.grade, (err, subject) => {
+    Subject.getSubjectByGrade(req.params.grade, (err, subjects) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json(subject);
+            res.json(subjects);
+        }
+    });
+});
+
+//get names of subjects by grade
+router.get('/grade/find/name/:grade', (req, res, next) => {
+    Subject.getSubjectNameByGrade(req.params.grade, (err, subjects) => {
+        if (err) {
+            res.json({success: false, msg: 'Failed to get subject'});
+            console.log(err);
+        } else {
+            // if success
+            // let sub = {
+            //     id: subject._id,
+            //     subName: subject.name
+            // }
+            res.json(subjects);
         }
     });
 });
@@ -60,38 +77,13 @@ router.get('/find/:id', (req, res, next) => {
 router.post('/add', (req, res, next) => {
     let newSubject = new Subject({
         _id: mongoose.Types.ObjectId(),
-        name: req.body.name,
-        description: req.body.description,
-        grade: req.body.grade,
-        category: req.body.category,
+        name: req.body.subjectName,
+        description: req.body.subjectDescription,
+        grade: req.body.subjectGrade,
+        category: req.body.subjectCategory,
         icon: req.body.icon,
-        instructors: [{
-            name: req.body.instructors.name,
-            title: req.body.instructors.title,
-            username: req.body.instructors.username,
-            email: req.body.instructors.email,
-            password: req.body.instructors.password,
-            phone: req.body.instructors.phone,
-        }],
-        topics: [{
-            _id: mongoose.Types.ObjectId(),
-            topic_name: req.body.topics.topic_name,
-            description: req.body.topics.description,
-            duration: req.body.topics.duration,
-            sub_topics: [
-                {
-                _id: mongoose.Types.ObjectId(),
-                name: req.body.topics.sub_topics.name,
-                videos: [
-                    {
-                        name:req.body.topics.sub_topics.videos.name,
-                    _id: mongoose.Types.ObjectId(),
-                    url: req.body.topics.sub_topics.videos.url
-                }
-                ]
-            }
-            ]
-        }]
+        instructors: [],
+        topics: []
     });
 // add to db
 Subject.addSubject(newSubject, (err, subject) => {
@@ -102,7 +94,7 @@ Subject.addSubject(newSubject, (err, subject) => {
         console.log(err)
     } else {
         // if success
-        res.json(subject);
+        res.json({subject, success: true, msg: 'You have successfully added a new subject'});
 }
 });
 });
@@ -111,18 +103,18 @@ Subject.addSubject(newSubject, (err, subject) => {
 router.post('/add/topic/:subId', (req, res, next) =>{
     let newTopic = new Topic.getModel({
         _id: mongoose.Types.ObjectId(),
-        topic_name: req.body.topic_name,
-        duration: req.body.duration,
-        description: req.body.description,
+        topic_name: req.body.topicName,
+        duration: req.body.topicDuration,
+        description: req.body.TopicDescription,
         sub_topics:
             {
                 _id: mongoose.Types.ObjectId(),
-                name: req.body.sub_topics.name,
+                name: req.body.sub_topicsName,
                 videos:
                     {
                         _id: mongoose.Types.ObjectId(),
-                        name: req.body.sub_topics.videos.name,
-                        url: req.body.sub_topics.videos.url
+                        name: req.body.videosName,
+                        url: req.body.videosUrl
                     }
             }
     });
@@ -151,12 +143,12 @@ router.post('/add/topic/:subId', (req, res, next) =>{
 router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
     let newSubTopic = new SubTopic.getModel({
                 _id: mongoose.Types.ObjectId(),
-                name: req.body.name,
+                name: req.body.subTopicName,
                 videos:
                     {
                         _id: mongoose.Types.ObjectId(),
-                        name: req.body.videos.name,
-                        url: req.body.videos.url
+                        name: req.body.videosName,
+                        url: req.body.videosUrl
                     }
     });
 
@@ -190,8 +182,8 @@ router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
 router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
     let newVideo = new Video.getModel({
         _id: mongoose.Types.ObjectId(),
-        name: req.body.name,
-        url: req.body.url
+        name: req.body.newVideoName,
+        url: req.body.newVideoUrl
     });
 
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
