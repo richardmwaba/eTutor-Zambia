@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
+import {IonicPage, NavController,ViewController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 
 import {SignupPage} from '../signup/signup';
@@ -35,6 +35,7 @@ export class LoginModalPage {
     private auth: AuthProvider,
     public toastCtrl: ToastController,
     public events: Events,
+    public viwCtrl: ViewController,
     public formBuilder: FormBuilder,
     public loadingCtrl: LoadingController) {
 
@@ -56,7 +57,8 @@ export class LoginModalPage {
   }
 
   dismissModal() {
-    this.navCtrl.pop();
+    // dismiss the modal and pass the returned data
+    this.viwCtrl.dismiss({success:false});
   }
 
   /**
@@ -74,18 +76,15 @@ export class LoginModalPage {
         this.token = data['token'];
         this.user = data['user'];
         this.username = this.user.username;
-
         // store token and user dits in local storage
         //TODO: may need to user secure storage for this data
         this.auth.storeData(this.token, this.user);
-
         // show success toast
         this.presentToast();
-        // console.log('User authenticated! '+this.username);
+        // notify listening functions about the login event
         this.events.publish('user:authenticated', this.user, this.username, Date.now());
-
-        // redirect to home page
-        this.navCtrl.pop();
+        // dismiss the modal and pass the returned data
+        this.viwCtrl.dismiss(data);
 
       } else {
         // show error alert

@@ -21,7 +21,6 @@ export class SubscriptionsProvider {
   userEmail: any;
   found:any;
   public subscription:any;
-  public isAuthenticated: any;
   public subject: any;
 
   constructor(public http: HttpClient,
@@ -42,9 +41,9 @@ export class SubscriptionsProvider {
     this.user = user;
 
     // already loaded data
-    // if (this.data) {
-    //   return Promise.resolve(this.data);
-    // }
+    if (this.data) {
+      return Promise.resolve(this.data);
+    }
 
     // don't have the data yet
     return new Promise(resolve => {
@@ -52,7 +51,7 @@ export class SubscriptionsProvider {
         .subscribe(data => {
           this.data = data;
           //localStorage.setItem('subscription', JSON.stringify(this.data['subscription']));
-          this.subscription = this.data['subscription']
+          this.subscription = this.data['subscription'];
           resolve(this.data);
         });
     });

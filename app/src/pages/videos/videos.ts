@@ -5,6 +5,7 @@ import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 import {LoginModalPage} from "../login-modal/login-modal";
+import {DomSanitizer} from "@angular/platform-browser";
 
 /**
  * Generated class for the VideosPage page.
@@ -20,6 +21,7 @@ export class VideosPage {
     public subject: any;
   public video: any;
   public data: any;
+  public videoUrl:any;
 
   constructor(
     public navCtrl: NavController,
@@ -28,8 +30,10 @@ export class VideosPage {
     private subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public modalCtrl: ModalController,
+    private sanitizer: DomSanitizer,
     public viewCtrl: ViewController) {
     this.subject = navParams.get("subject");
+    this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/271342649");
   }
 
   ionViewDidLoad() {
@@ -38,36 +42,38 @@ export class VideosPage {
   }
 
   /**
-   * check if this user has an active subscription for this subject then play the video
-   * otherwise redirect to subscription page
+   *
    * @param video
    * @param subject
    */
-  checkSubscription(video, subject) {
+  checkAccessToVideo(video, subject) {
     //if this user has subscribed, go to the video else go to the subscription page
     if((AuthProvider.isAuthenticated())){
       console.log("You are signed in as "+localStorage.getItem('user'));
       this.subject = subject;
       this.video = video;
-
-      this.subscriptionService.verifySubscription(this.subject, localStorage.getItem('user')).then((data) => {
-        console.log(data);
-        this.data = data;
-        //if success store the record locally
-        if (this.data['success']) {
-          this.playVideo(this.video);
-
-        } else {
-          this.presentToast(this.data['msg']);
-          this.presentModal(video, subject, SubscriptionPage);
-        }
-      });
-
+      console.log(JSON.parse(localStorage.getItem('user')));
+    this.isSubscribed(video, subject);
     }else {
       // redirect to log in
       console.log("You are not signed in");
       this.presentModal(video, subject, LoginModalPage);
     }
+  }
+
+  isSubscribed(video, subject){
+    this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
+      console.log(data);
+      this.data = data;
+      //if success store the record locally
+      if (this.data['success']) {
+        this.playVideo(this.video);
+
+      } else {
+        this.presentToast(this.data['msg']);
+        this.presentModal(video, subject, SubscriptionPage);
+      }
+    });
   }
 
   /**
@@ -84,6 +90,14 @@ export class VideosPage {
     let modal = this.modalCtrl.create(page,
       {video, subject });
     modal.present();
+    modal.onDidDismiss(data=>{
+      console.log("before :"+data);
+      if(data['success']){
+        console.log("After :"+data);
+        //check if user has valid subscription to access course content
+        this.isSubscribed(video, subject);
+      }
+    })
   }
 
   dismiss(){

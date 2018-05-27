@@ -27,13 +27,13 @@ export class HomePage {
     //   // console.log(data);
     //   // this.subjects = data;
     // });
+
     this.initializeSubjects();
 
   }
 
     ionViewDidLoad(){
-      // this.statusBar.overlaysWebView(false);
-      // this.statusBar.backgroundColorByHexString('#ffffff');
+
     }
 
   doRefresh(refresher) {

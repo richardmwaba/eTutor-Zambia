@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, NavController,ViewController, NavParams, ToastController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SubscriptionsProvider } from '../../providers/subscriptions/subscriptions';
 import {AuthProvider} from '../../providers/auth/auth';
@@ -30,10 +30,11 @@ export class SubscriptionPage {
     public subscription: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public formBuilder: FormBuilder,
-    public authService: AuthProvider
+    public authService: AuthProvider,
+    public viwCtrl: ViewController,
   ) {
     //get the current user instance
-    this.user = this.authService.user;
+    this.user =JSON.parse(localStorage.getItem('user'));
     //get the subject and video to subscribe for
     this.video = navParams.get("video");
     this.subject = navParams.get("subject");
@@ -70,8 +71,8 @@ export class SubscriptionPage {
           // show success msg
           this.presentToast(data['msg']);
 
-          // redirect to the video player
-          this.playVideo(this.video);
+          // dismiss the modal and pass the returned data
+          this.viwCtrl.dismiss(data);
         }else{
           //if subscription failed
           // show fail message
@@ -87,7 +88,8 @@ export class SubscriptionPage {
    *
    */
   dismissModal(){
-    this.navCtrl.pop();
+    // dismiss the modal and pass the returned data
+    this.viwCtrl.dismiss({success:false});
   }
 
   /**

@@ -40,7 +40,7 @@ export class CommentsPage {
     this.hasDisliked = false;
     //get the topic selected form the discussions page
     this.topic = this.navParams.get('topic');
-    this.user = this.AuthService.user;
+    this.user = JSON.parse(localStorage.getItem('user'));
 
     //initialise this class with data from the database
 
@@ -214,7 +214,6 @@ export class CommentsPage {
       modal.present();
       modal.onDidDismiss(data=>{
         if(data){
-          // this.comments = data['comments'];
           this.comments = data;
         }
       })

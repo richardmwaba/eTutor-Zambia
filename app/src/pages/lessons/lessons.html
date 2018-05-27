@@ -1,46 +1,40 @@
 
 <ion-content>
 
-  <!--<ion-item-group>-->
-    <!--<ion-item>Contents</ion-item>-->
-  <!--</ion-item-group>-->
+  <!--<h1>CSS3 Accordion Test (No <code>height: auto</code> transition)</h1>-->
+  <!--<div class="accordion">-->
+    <!--<ion-list *ngFor="let topic of subject.topics">-->
+      <!--<div>-->
+        <!--<p href="#" class="acc-handle" tabindex="0">{{topic.topic_name}}</p>-->
+        <!--<div class="acc-panel" >-->
+          <!--&lt;!&ndash;<img src="http://placekitten.com/g/100/100" height="100px" width="100px">&ndash;&gt;-->
+          <!--<p>{{topic.description}}</p>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</ion-list>-->
+  <!--</div>-->
+  <!--<blockquote>one does not simply animate <code>height: auto</code></blockquote>-->
+
+    <ion-list class="accordion">
+      <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
+        <h4>
+          {{topic.topic_name}}
+          <ion-icon color="success" item-right [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+        </h4>
+        <ion-list *ngIf="isLevel1Shown('idx'+i)">
+          <ion-item text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}" class="acc-panel" >
+            <h4>
+              {{topic.description}}
+            </h4>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
 
   <ion-row>
-    <div class="overviewCards">
-
-      <ion-card class="description-card">
-        <ion-card-header>
-          <div class="title">Subject overview</div>
-        </ion-card-header>
-          <ion-card-content>
-
-            <ion-list>
-                <p>{{subject.description}}</p>
-              <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}">
-                  <h4>
-                  <ion-icon color="success" item-right [name]="isLevel1Shown('idx'+i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
-                  </h4>
-                <ion-list  *ngIf="isLevel1Shown('idx'+i)" class="inner-list">
-                  <div  style="background-color: white;">
-                    <ion-card-header>
-                      <div class="title">{{topic.duration}}: {{topic.topic_name}}</div>
-                    </ion-card-header>
-                    <p>{{topic.description}}</p>
-                    <ion-icon name="pricetags"></ion-icon>
-                    <div class="title">Subscription</div>
-                    <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
-                    <p>To view all subject material, kindly purchase a subscription
-                      bundle from your nearest Kazang seller and ask for etutor coupons</p>
-                  </div>
-                </ion-list>
-
-              </ion-item>
-            </ion-list>
-
-        </ion-card-content>
-      </ion-card>
 
 
+      <div class="instructor_container">
       <ion-item>
         <ion-icon name="contact"></ion-icon>
         Instructors
@@ -52,7 +46,7 @@
             <ion-col col-12>
 
               <ion-card class="instructors-card">
-                <img class="instructor-image" src="assets/img/martin.jpg"/>
+                <img class="instructor-image" src="assets/img/schambika.jpg"/>
 
                 <p>
                   {{instructor.title}} {{instructor.name}}
@@ -64,9 +58,9 @@
         </ion-row>
 
       </ion-scroll>
+      </div>
 
 
-    </div>
 
   </ion-row>
 

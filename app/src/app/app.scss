@@ -23,6 +23,7 @@ $SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
     color: white;
   }
   background: map-get($colors, appColor);
+  opacity: 0.7;
 }
 
 .side-menu-item {

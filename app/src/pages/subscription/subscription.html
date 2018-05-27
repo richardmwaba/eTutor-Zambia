@@ -33,11 +33,11 @@
     <ion-item>
       <ion-label style="color: #488aff" stacked>Subscription plan</ion-label>
       <ion-select type="text" formControlName="plan">
-        <!--<ion-option value="daily">Daily</ion-option>-->
-        <!--<ion-option value="weekly">Weekly</ion-option>-->
+        <ion-option value="daily">Daily</ion-option>
+        <ion-option value="weekly">Weekly</ion-option>
         <ion-option value="monthly">Monthly</ion-option>
         <!--<ion-option value="termly">Termly</ion-option>-->
-        <!--<ion-option value="yearly">yearly</ion-option>-->
+        <!--<ion-option value="yearly">Yearly</ion-option>-->
       </ion-select >
     </ion-item>
     <ion-item *ngIf="!theForm.controls.plan.valid && (theForm.controls.plan.dirty || submitAcepted)" >
