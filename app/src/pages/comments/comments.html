@@ -41,9 +41,13 @@
           {{comment.username}}
         </ion-card-header>
         <ion-card-content class="message">
+          <h5>{{comment.title}}</h5> <br>
           <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
           <p>{{comment.message}}</p>
         </ion-card-content>
+        <ion-note>
+          11hs ago
+        </ion-note>
         <div class="buttons">
 
           <ion-icon name="thumbs-up" style="margin: 0% 5% 0% 0%;" (click)="like(comment)"></ion-icon>{{comment.likes}}

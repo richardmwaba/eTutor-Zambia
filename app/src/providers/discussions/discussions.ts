@@ -71,7 +71,7 @@ export class DiscussionsProvider {
     return this.http.delete(this.baseURL+'comment/delete/'+comment._id);
   }
 
-  deleteDiscussion(comment){
-    return this.http.delete(this.baseURL+'delete/'+comment._id);
+  deleteDiscussion(topic){
+    return this.http.delete(this.baseURL+'delete/'+topic._id);
   }
 }

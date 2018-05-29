@@ -71,10 +71,8 @@ export class AddCommentPage {
 
         // show success toast
         this.presentToast(data['msg']);
-
         // dismiss the modal
         this.viwCtrl.dismiss(data['comments']);
-
       } else {
         // show error alert
         console.log(data['msg']);

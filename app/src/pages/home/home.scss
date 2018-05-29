@@ -25,9 +25,6 @@ page-home {
         position: relative;
         text-align: center;
         margin-left: 0px;
-        //width: 100%;
-        //margin-bottom: 10%;
-        //margin-top: -10px;
 
     .card-title {
       position: absolute;
@@ -44,15 +41,17 @@ page-home {
         position: absolute;
         top: 52%;
         width: 100%;
-        color: grey;
+        color: black;
       }
 
     img{
-    height: 150px;
-    width: 100%;
+      display: block;
+      max-width:100%;
+      max-height:300px;
+      width: 100%;
+      height: auto;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.11);
-    //  //size: 200px;
-    //  //position: relative;
+
     }
 
     }
@@ -85,7 +84,7 @@ page-home {
   }
 
     .category-title{
-      margin-top: -20px;
+      margin-top: 25px;
       margin-bottom: -20px;
       //color: #64b5f6;
       font-size: 14px;

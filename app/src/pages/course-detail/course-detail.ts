@@ -30,6 +30,7 @@ export class CourseDetailPage {
     public popoverCtrl: PopoverController
   ) {
     this.subject = navParams.data;
+    // this.statusBar.styleLightContent();
 
     this.tab1 = LessonsPage;
     this.tab2 = VideosPage;

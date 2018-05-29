@@ -6,8 +6,10 @@
 -->
 
 <ion-content padding>
-  <div class="body-content">
-  <ion-item-group *ngFor="let topic of subject.topics">
+    <div class="body-content">
+      <iframe [src]="videoUrl"  style="margin-left: -8%;" width="440" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+      <ion-item-group *ngFor="let topic of subject.topics">
     <ion-item-divider class="divider" color="light">{{topic.topic_name}}</ion-item-divider>
   <div *ngFor="let sub_topic of topic.sub_topics">
     <!--<ion-item-divider class="divider" color="light">{{sub_topic.name}}</ion-item-divider>-->
@@ -19,7 +21,7 @@
       <summary>
         {{sub_topic.name}}
       </summary>
-      <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkSubscription(video, subject)">
+      <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
         <ion-icon name="videocam"></ion-icon>
         {{video.name}}
       </ion-item>
