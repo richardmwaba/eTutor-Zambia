@@ -1,0 +1,60 @@
+page-home2 {
+    //css for the ads on top page
+    .ads {
+        height: 100%;
+        position: relative;
+        text-align: center;
+        margin-left: 0px;
+
+        .card-title {
+            position: absolute;
+            text-align: center;
+            top: 30%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #00a4d3;
+        }
+
+        .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: grey;
+        }
+
+        img{
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.11);
+        }
+
+    }
+
+    // main content area styling
+    ion-scroll{
+        height:250px;
+    }
+
+    .ion-scroll[scrollX] {
+        white-space: nowrap;
+        .scroll-item {
+            display: inline-list-item;
+        }
+    }
+
+    .card {
+        margin-right: 16px;
+        width: 200px;
+        height: 250px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        & img {
+            height: 200px;
+            width: 100%;
+        }
+    }
+
+    ion-card-title {
+        font-size: 1.5rem;
+    }
+
+}

@@ -36,6 +36,7 @@ import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
 import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
 import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
 import { ComponentsModule } from "../components/components.module";
+import { Home2PageModule } from '../pages/home2/home2.module';
 
 @NgModule({
     declarations: [
@@ -67,7 +68,9 @@ import { ComponentsModule } from "../components/components.module";
       LoginModalPageModule,
       SignUpModalPageModule,
       OptionsPopoverPageModule,
-      ComponentsModule
+      ComponentsModule,
+
+      Home2PageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

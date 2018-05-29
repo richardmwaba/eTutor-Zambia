@@ -7,6 +7,7 @@ import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {PopoverPage} from '../popover/popover'
 import { Category } from "../../pipes/Category";
 import { StatusBar } from '@ionic-native/status-bar';
+import { Home2Page } from '../home2/home2';
 
 @Component({
   selector: 'page-home',
@@ -34,6 +35,11 @@ export class HomePage {
     ionViewDidLoad(){
       // this.statusBar.overlaysWebView(false);
       // this.statusBar.backgroundColorByHexString('#ffffff');
+    }
+
+    // testing new home layout
+    openHome2() {
+      this.navCtrl.push(Home2Page);
     }
 
   doRefresh(refresher) {
@@ -91,5 +97,5 @@ export class HomePage {
     //navigate to the selected Grade
     this.navCtrl.push(PerGradePagesPage, {subjects, grade});
   }
-c
+
 }
