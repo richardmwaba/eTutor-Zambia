@@ -30,7 +30,7 @@ export class MyApp {
 
 
   // leftIcon is the name of the button's icon
-  pages: Array<{title: string, leftIcon: string,component: any}>;
+  pages: Array<{title: string, leftIcon: string, component: any}>;
 
   constructor(
     public platform: Platform,
@@ -38,7 +38,8 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public authService: AuthProvider,
     public events: Events,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController
+  ) {
     events.subscribe('user:authenticated', (user, username, time) => {
       // user and time are the same arguments passed in `events.publish(user, time)`
       this.pages = this.setSideMenuItems();
@@ -61,7 +62,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       // this.statusBar.overlaysWebView(false);
-      this.statusBar.backgroundColorByHexString('#ffffff');
+      this.statusBar.backgroundColorByHexString('#8d8d8d');
       this.splashScreen.hide();
     });
   }
@@ -82,8 +83,8 @@ export class MyApp {
       this.username =null;
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
-        { title: 'Sign In', leftIcon: 'signin', component: LoginPage },
-        { title: 'Sign Up', leftIcon: 'signup', component: SignupPage },
+        { title: 'Sign In', leftIcon: 'log-in', component: LoginPage },
+        { title: 'Sign Up', leftIcon: 'person-add', component: SignupPage },
       ];
     }
   }

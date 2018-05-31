@@ -30,8 +30,7 @@ export class CourseDetailPage {
     public popoverCtrl: PopoverController
   ) {
     this.subject = navParams.data;
-    // this.statusBar.styleLightContent();
-
+    // tabs list
     this.tab1 = LessonsPage;
     this.tab2 = VideosPage;
     this.tab3 = DiscussionForumPage;
@@ -39,8 +38,6 @@ export class CourseDetailPage {
   }
 
   ionViewDidLoad() {
-    // this.statusBar.overlaysWebView(false);
-    // this.statusBar.backgroundColorByHexString('#ffffff');
     console.log('ionViewDidLoad CourseDetailPage');
     console.log(this.subject);
   }

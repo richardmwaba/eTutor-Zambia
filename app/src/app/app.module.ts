@@ -7,7 +7,6 @@ import {MyApp} from './app.component';
 import { AddCommentPageModule } from '../pages/add-comment/add-comment.module';
 import {HomePage} from '../pages/home/home';
 import {Category} from '../pipes/Category';
-import {ListPage} from '../pages/list/list';
 import {LoginPageModule} from '../pages/login/login.module';
 import {MySubjectsPageModule} from '../pages/my-subjects/my-subjects.module';
 import {SignupPageModule} from '../pages/signup/signup.module';
@@ -40,12 +39,11 @@ import { Home2PageModule } from '../pages/home2/home2.module';
 
 @NgModule({
     declarations: [
-        MyApp,
-        HomePage,
-        ListPage,
+      MyApp,
+      HomePage,
       Grade,
-        Category,
-        EqualValidatorDirective,
+      Category,
+      EqualValidatorDirective,
     ],
     imports: [
       BrowserModule,
@@ -76,20 +74,18 @@ import { Home2PageModule } from '../pages/home2/home2.module';
     entryComponents: [
         MyApp,
         HomePage,
-        ListPage,
-        ListPage,
     ],
     providers: [
-        StatusBar,
+      StatusBar,
       AndroidFullScreen,
-        SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        AuthProvider,
-        SubjectsProvider,
-        HttpClientModule,
-    SubscriptionsProvider,
-    MySubjectsProvider,
-    DiscussionsProvider,
+      SplashScreen,
+      {provide: ErrorHandler, useClass: IonicErrorHandler},
+      AuthProvider,
+      SubjectsProvider,
+      HttpClientModule,
+      SubscriptionsProvider,
+      MySubjectsProvider,
+      DiscussionsProvider,
       Keyboard,
       Category
     ]

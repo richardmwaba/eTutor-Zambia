@@ -24,6 +24,11 @@ page-login-modal {
     font-size: 35px;
   }
 
+  // error message font
+  .error {
+    color: red;
+  }
+
   // warning toaster css
   .warning {
     background-color: orange;

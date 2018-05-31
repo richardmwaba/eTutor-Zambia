@@ -7,12 +7,16 @@
 
   <ion-content class="sideMenu">
 
-
     <ion-item class="profile-image">
-      <h1><ion-icon ios="ios-school" md="md-school"></ion-icon> e-tutor</h1><br>
+      <!-- shows if not logged in -->
+      <div *ngIf="!username">
+        <img src="../assets/img/logohdpi.png" alt="logo"/>
+        <p>etutor</p>
+      </div>
+      <!-- shows if logged in -->
       <div *ngIf="username">
-      <img src="assets/img/unza.jpg" alt="background image"/>
-      <p>{{username}}</p>
+        <img src="assets/img/unza.jpg" alt="background image"/>
+        <p>{{username}}</p>
       </div>
     </ion-item>
 
@@ -26,10 +30,10 @@
       <ion-item></ion-item>
       <!-- sign out button -->
       <div *ngIf="username">
-      <button (click)="logout()" menuClose ion-item icon-left [class.activeHighlight]="checkActive(p)">
-        <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
-        Sign out
-      </button>
+        <button (click)="logout()" menuClose ion-item icon-left [class.activeHighlight]="checkActive(p)">
+          <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+          Sign out
+        </button>
       </div>
     </ion-list>
 

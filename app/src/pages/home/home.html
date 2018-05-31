@@ -1,136 +1,81 @@
 <ion-header>
   <ion-navbar>
+
     <button ion-button menuToggle>
       <ion-icon color="primary" name="menu"></ion-icon>
     </button>
+
     <ion-title class="page-title">e-tutor</ion-title>
 
-    <ion-buttons id="searchToggle">
+    <ion-buttons id="searchToggle" end>
       <button (click)="presentModal()">
-        <ion-icon id="searchIcon" name="search"></ion-icon>
+        <ion-icon id="searchIcon" md="md-search" ios="ios-search"></ion-icon>
       </button>
     </ion-buttons>
 
-    <ion-buttons end>
-      <button (click)="openHome2()">
-        <ion-icon name="home"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content refreshingColor="appColor"></ion-refresher-content>
   </ion-refresher>
 
+  <!-- ./Ad scroll -->
   <ion-scroll scrollX style="height:200px;">
-  <div class="ads">
+    <div class="ads">
+    
+      <ion-slides autoplay="5000" loop="true" speed="400">
 
-    <ion-slides autoplay="3000" loop="true" speed="300">
-      <div class="scroll-item ad">
         <ion-slide>
-      <img src="assets/img/ads/zambia-breweries2.jpg">
-    <!--<div class="card-title">Win A Galaxy s8</div>-->
-    <!--<div class="card-subtitle">Participate and stand a chance to win one of our prizes</div>-->
-    </ion-slide>
-    </div>
+          <div class="scroll-item ad">          
+            <img src="assets/imgs/history.jpg">
+          </div>
+        </ion-slide>
 
-    <ion-slide>
-    <div class="scroll-item ad">
-        <img src="assets/img/ads/Eagles Nest - Child answering question.jpg">
-      <div class="card-title"></div>
-      <!--<div class="card-subtitle">Sponsored Meet up with fellow students</div>-->
-      </div>
-    </ion-slide>
-      <ion-slide>
-        <div class="scroll-item ad">
-          <img src="assets/img/ads/250px-Examinations_Council_of_Zambia_logo.png">
-          <div class="card-title"></div>
-          <!--<div class="card-subtitle">Certified</div>-->
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </div>
-
-</ion-scroll>
-
-<div class="categories">
-
-  <div class="category-title">
-    Exam Revisions <!-- <div class="category-subtitle">1 Category</div>-->
-  </div>
+        <ion-slide>
+          <div class="scroll-item ad">          
+            <img src="assets/imgs/chemist.jpg">
+          </div>
+        </ion-slide>
   
-  <ion-scroll class="ion-scroll" scrollX="true">
-      <ion-row nowrap align-items-baseline>
-        <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams'">
-          <ion-col col-12>
+        <ion-slide>
+          <div class="scroll-item ad">
+              <img src="assets/imgs/mathematics.jpg">
+          </div>
+        </ion-slide>
 
-            <!--<ion-card (click)="courseDetail(subject)">-->
-              <!--<img src="../../assets/../../assets/img/{{subject.icon}}"/>-->
-              <!--<ion-card-content>-->
-                <!--<ion-row>-->
-                  <!--<ion-col>-->
-                    <!--<button class="card-title" ion-button icon-left clear small>-->
-                      <!--<ion-icon name="open"></ion-icon>-->
-                      <!--<div>{{subject.grade}}</div>-->
-                    <!--</button>-->
-                  <!--</ion-col>-->
-                <!--</ion-row>-->
-              <!--</ion-card-content>-->
-            <!--</ion-card>-->
+      </ion-slides>
+    </div>
+      
+  </ion-scroll> <!-- ./ad scroll -->
 
+  <!-- New implementation uses a grig of 2 columns to display the content -->
+  <div class="main-content">
+    <h4 class="category-title">Exam Revision</h4>
+    <!-- grid -->
+    <ion-grid no-padding>
 
-            <ion-card class="categories-card" (click)="courseDetail(subject)">
+      <ion-row> <!-- row -->
+        <!-- column 1 --> 
+        <ion-col col-6 *ngFor="let subject of subjects | category :'category' : 'Tests & Exams'">
+          <ion-card class="card" (click)="courseDetail(subject)">
+  
+            <img src="assets/img/{{subject.icon}}"/>
+              
+            <ion-card-content no-padding>
+              <ion-card-title>
+                {{ subject.name }} <small>{{ subject.grade }}</small>
+              </ion-card-title>
+            </ion-card-content>
 
-              <ion-item class="card-title-row">
-                <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
-                <h2 class="card-title" style=" font-weight: bold;font-family: Roboto, 'Helvetica Neue', sans-serif;">{{subject.name}}</h2>
-                <!--<p>November 5, 1955</p>-->
-              </ion-item>
+          </ion-card><!-- ./card -->
+        </ion-col><!-- ./col -->
 
-              <img class="card-image" src="assets/img/{{subject.icon}}"/>
+      </ion-row><!-- ./row -->
 
-              <ion-row class="card-subtitle-row">
-                <ion-col>
-                <h2 class="card-subtitle-text" style=" font-weight: bold;font-family: Roboto, 'Helvetica Neue', sans-serif;">{{subject.grade}}</h2>
-                </ion-col>
-                <ion-col>
-                  <button class="card-subtitle-button" ion-button icon-left clear small>
-                    <ion-icon name="paper-plane"></ion-icon>
-                    <div>Open</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-
-            </ion-card>
-
-          </ion-col>
-        </div>
-      </ion-row>
-
-      <!--<div class="scroll-item">-->
-        <!--<ion-col col-12>-->
-          <!--<ion-card (click)="jnrSecExams()">-->
-            <!--<img src="../../assets/../../assets/img/shutterstock_127915121.jpg"/>-->
-            <!--<ion-card-content>-->
-              <!--<ion-row>-->
-                <!--<ion-col>-->
-                  <!--<button class="card-title" ion-button icon-left clear small>-->
-                    <!--<ion-icon name="open"></ion-icon>-->
-                    <!--<div>Junior/Senior Secondary</div>-->
-                  <!--</button>-->
-                <!--</ion-col>-->
-              <!--</ion-row>-->
-            <!--</ion-card-content>-->
-          <!--</ion-card>-->
-        <!--</ion-col>-->
-      <!--</div>-->
-
-    <!--</ion-row>-->
-  </ion-scroll>
-
-  </div>
+    </ion-grid> <!-- ./grid -->  
+  </div> <!-- ./main-content div -->
 
 </ion-content>

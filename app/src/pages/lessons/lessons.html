@@ -1,26 +1,42 @@
 
 <ion-content>
+  <!-- Image card with background -->
+  <div class="bg-card">
+    <ion-card>
+      <img src="assets/img/{{ subject.icon }}"/>
+      <button ion-button color="S-dark">Subscribe</button>
+    </ion-card>
+    <!-- header od some sort -->
+    <h3>
+      {{ subject.name }} <br> <small>{{ subject.grade }}</small>
+    </h3>
+    <hr>
+  </div><!-- end bg-card -->
 
-  <!--<h1>CSS3 Accordion Test (No <code>height: auto</code> transition)</h1>-->
-  <!--<div class="accordion">-->
-    <!--<ion-list *ngFor="let topic of subject.topics">-->
-      <!--<div>-->
-        <!--<p href="#" class="acc-handle" tabindex="0">{{topic.topic_name}}</p>-->
-        <!--<div class="acc-panel" >-->
-          <!--&lt;!&ndash;<img src="http://placekitten.com/g/100/100" height="100px" width="100px">&ndash;&gt;-->
-          <!--<p>{{topic.description}}</p>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</ion-list>-->
-  <!--</div>-->
-  <!--<blockquote>one does not simply animate <code>height: auto</code></blockquote>-->
+  <!-- Content after image-card -->
+  <div class="subject-details">
+    <!-- About section -->
+    <ion-row>
+      <ion-label>About</ion-label>
+      <ion-item text-wrap>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis voluptate recusandae,
+        perspiciatis optio, ipsa enim eveniet inventore autem ut, molestias dicta sed. Unde aliquam rerum modi perspiciatis illo quasi!
+      </ion-item>
+    </ion-row>
 
+    <!-- Accordion section -->
     <ion-list class="accordion">
-      <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
+      <ion-list-header>
+        Topics covered
+      </ion-list-header>
+      <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" 
+        [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
+
         <h4>
           {{topic.topic_name}}
-          <ion-icon color="success" item-right [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-up' : 'ios-arrow-down'"></ion-icon>
+          <ion-icon [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-up' : 'ios-arrow-down'" item-end></ion-icon>
         </h4>
+
         <ion-list *ngIf="isLevel1Shown('idx'+i)">
           <ion-item text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}" class="acc-panel" >
             <h4>
@@ -28,40 +44,39 @@
             </h4>
           </ion-item>
         </ion-list>
+
       </ion-item>
     </ion-list>
-
-  <ion-row>
-
-
+    
+    <!-- Instructor section -->
+    <ion-row>
       <div class="instructor_container">
-      <ion-item>
-        <ion-icon name="contact"></ion-icon>
-        Instructors
-      </ion-item>
+        <ion-item>
+          <ion-icon name="contact"></ion-icon>
+          Instructors
+        </ion-item>
+    
+        <ion-scroll class="ion-scroll" scrollX="true">
+          <ion-row nowrap align-items-baseline>
+            <div class="scroll-item" *ngFor="let instructor of subject.instructors">
+              <ion-col col-12>
+    
+                <ion-card class="instructors-card">
+                  <img class="instructor-image" src="assets/img/schambika.jpg"/>
+    
+                  <p>
+                    {{instructor.title}} {{instructor.name}}
+                  </p>
+                </ion-card>
 
-      <ion-scroll class="ion-scroll" scrollX="true">
-        <ion-row nowrap align-items-baseline>
-          <div class="scroll-item" *ngFor="let instructor of subject.instructors">
-            <ion-col col-12>
-
-              <ion-card class="instructors-card">
-                <img class="instructor-image" src="assets/img/schambika.jpg"/>
-
-                <p>
-                  {{instructor.title}} {{instructor.name}}
-                </p>
-
-              </ion-card>
-            </ion-col>
-          </div>
-        </ion-row>
-
-      </ion-scroll>
+              </ion-col>
+            </div>
+          </ion-row>
+        </ion-scroll>
+      
       </div>
-
-
-
-  </ion-row>
+    </ion-row>
+  
+  </div>
 
 </ion-content>

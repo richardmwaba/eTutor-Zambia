@@ -30,7 +30,16 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  appColor:   #00a4d3  // custom color for sidemenu
+  appColor:   #00a4d3,  // custom color for sidemenu
+  
+  //primary colors
+  prim1:      #bdbdbd,
+  P-light:    #efefef,
+  P-dark:       #8d8d8d,
+
+  //Secondary colors
+  S-light:  #80d6ff,
+  S-dark:   #00aefc
 );
 
 $toolbar-md-title-text-color: map-get($colors, primary);

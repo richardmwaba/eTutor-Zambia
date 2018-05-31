@@ -11,12 +11,6 @@ import {provideAuth} from "angular2-jwt";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 import {HomePage} from "../home/home";
 
-/**
- * Generated class for the LessonsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-lessons',
@@ -32,10 +26,11 @@ export class LessonsPage {
   public user: any;
   public data: any;
   public msg: any;
-  public expanded: boolean=false;
+  public expanded: boolean = false;
   public isAuthenticated: any;
   showLevel1 = null;
   showLevel2 = null;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,

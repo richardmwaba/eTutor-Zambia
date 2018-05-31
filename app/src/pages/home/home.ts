@@ -23,7 +23,8 @@ export class HomePage {
     public modalCtrl: ModalController,
     public category : Category,
     public statusBar : StatusBar,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController
+  ) {
     // this.subjectsService.getSubjects().then((data) => {
     //   // console.log(data);
     //   // this.subjects = data;
@@ -33,15 +34,10 @@ export class HomePage {
 
   }
 
-    ionViewDidLoad(){
-
-    }
-
-    // testing new home layout
-    openHome2() {
-      this.navCtrl.push(Home2Page);
-    }
-
+  /**
+   * Implements the pull-to-refresh feature
+   * @param refresher 
+   */
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
     this.getSubjectsFromServer();
@@ -52,23 +48,35 @@ export class HomePage {
     }, 4000);
   }
 
-    initializeSubjects(){
-      this.subjects = JSON.parse(localStorage.getItem('subjects'));
-      console.log("current subjects are "+this.subjects);
+  /**
+   * Initializes the subject from local storage
+   */
+  initializeSubjects(){
+    this.subjects = JSON.parse(localStorage.getItem('subjects'));
+    console.log("current subjects are "+this.subjects);
+
     if(this.subjects){
       console.log("Subjects on local storage are "+this.subjects);
     }else {
       this.presentLoading();
       this.getSubjectsFromServer();
     }
-    }
+  }
 
-    getSubjectsFromServer(){
-      this.subjectsService.getSubjects().then((data) => {
-        console.log(data);
-        this.subjects = JSON.parse(localStorage.getItem('subjects'));
-      });
-    }
+  /**
+   * Request subjects (data) from the online server and 
+   * stores them locally for faster retrieval
+   */
+  getSubjectsFromServer(){
+    this.subjectsService.getSubjects().then((data) => {
+      console.log(data);
+      this.subjects = JSON.parse(localStorage.getItem('subjects'));
+    });
+  }
+
+  /**
+   * This function presents the loading animation
+   */
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "Loading subjects...",
@@ -82,15 +90,18 @@ export class HomePage {
     modal.present();
   }
 
-
-    jnrSecExams() {
-    //navigate to the junior secondary page
-    this.navCtrl.push(JuniorSecondaryPage);
-  }
-
+  /**
+   * Navigates to the subject's detail page
+   * @param subject The subject clicked
+   */
   courseDetail(subject) {
     //navigate to the selected course detail page
     this.navCtrl.push(CourseDetailPage, {subject});
+  }
+
+  jnrSecExams() {
+    //navigate to the junior secondary page
+    this.navCtrl.push(JuniorSecondaryPage);
   }
 
   grade(subjects, grade){

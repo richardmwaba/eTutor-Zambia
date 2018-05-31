@@ -13,12 +13,9 @@
     <!--</button>-->
     <!--</ion-buttons>-->
     <ion-title>{{subject.subject.name}}</ion-title>
-    <ion-buttons id="searchToggle" end>
+    <ion-buttons end>
       <button>
-        <ion-icon name="md-heart"></ion-icon>
-      </button>
-      <button>
-        <ion-icon name="md-share"></ion-icon>
+        <ion-icon md="md-share" ios="ios-share"></ion-icon>
       </button>
       <button (click)="presentPopover($event)">
         <ion-icon name="more"></ion-icon>
@@ -28,16 +25,12 @@
 
 </ion-header>
 
-<ion-content padding>
-
-
+<ion-content no-padding>
 
   <ion-tabs>
-    <ion-tab tabIcon="information-circle" tabTitle="Summary" [root]="tab1" [rootParams]="subject"></ion-tab>
+    <ion-tab tabIcon="information-circle" tabTitle="Overview" [root]="tab1" [rootParams]="subject"></ion-tab>
     <ion-tab tabIcon="videocam" tabTitle="Videos" [root]="tab2" [rootParams]="subject" ></ion-tab>
     <ion-tab tabIcon="chatboxes" tabTitle="Forum" [root]="tab3" [rootParams]="subject"></ion-tab>
   </ion-tabs>`
-
-
 
 </ion-content>

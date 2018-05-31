@@ -9,7 +9,7 @@
   <ion-navbar [hideBackButton]="true">
     <ion-buttons left>
       <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
-        <ion-icon name="arrow-back"></ion-icon>
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Sign In</ion-title>
@@ -38,7 +38,7 @@
           </ion-item>
 
           <ion-item *ngIf="!logForm.controls.email.valid && (logForm.controls.email.dirty || submitAttempt)" >
-            <p class="error">Email is required and format should be <i>john@doe.com</i>.</p>
+            <p wrap class="error">Please enter valid email address.</p>
           </ion-item>
 
           <ion-item>
@@ -47,7 +47,7 @@
           </ion-item>
 
           <ion-item *ngIf="!logForm.controls.password.valid && (logForm.controls.password.dirty || submitAttempt)" >
-            <p class="error">Password must be 6 or more characters.</p>
+            <p wrap class="error">Password must be 6 or more characters.</p>
           </ion-item>
 
         </ion-list>

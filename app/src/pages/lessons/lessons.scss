@@ -23,9 +23,40 @@ page-lessons {
     margin: 0 0 1.5em 0;
   }
 
+  // CSS for background image-card
+  .bg-card {
+    ion-card {
+      position: relative;
+      align-content: center;
+      button {
+        position: absolute;
+        top: 68%;
+        left: 56%;
+        transform: translate(-68%, -56%);
+        opacity: 0.9;
+      }
+    }
+    h3 {
+      font-weight: 600;
+      line-height: 1.0;
+      padding-left: 16px;
+      padding-bottom: 4px;
+      small {
+        margin-left: 8px;
+        font-weight: 300;
+      }
+    }    
+  }
+  // End of background image-card
+
+  // Styling for .subject-details
+  .subject-details {
+    padding: 8px 16px 16px 16px;
+  }
+  // End of .subject-details
+
   .accordion {
     position: relative;
-
   }
 
   .acc-handle {
@@ -68,7 +99,7 @@ page-lessons {
       display: inline-list-item;
       height: 100%;
       position: relative;
-      margin-left: -6px;
+      margin-left: 16px;
     }
   }
 

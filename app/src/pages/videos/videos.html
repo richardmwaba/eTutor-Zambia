@@ -6,33 +6,31 @@
 -->
 
 <ion-content padding>
-    <div class="body-content">
-      <iframe [src]="videoUrl"  style="margin-left: -8%;" width="440" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <div class="body-content">
+    <iframe [src]="videoUrl"  style="margin-left: -8%;" width="440" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen></iframe>
 
-      <ion-item-group *ngFor="let topic of subject.topics">
-    <ion-item-divider class="divider" color="light">{{topic.topic_name}}</ion-item-divider>
-  <div *ngFor="let sub_topic of topic.sub_topics">
-    <!--<ion-item-divider class="divider" color="light">{{sub_topic.name}}</ion-item-divider>-->
-    <ion-list>
-      <ion-item>
-    <details>
+    <ion-item-group *ngFor="let topic of subject.topics">
+      <ion-item-divider class="divider" color="light">{{topic.topic_name}}</ion-item-divider>
 
+      <div *ngFor="let sub_topic of topic.sub_topics">
+      <!--<ion-item-divider class="divider" color="light">{{sub_topic.name}}</ion-item-divider>-->
+        <ion-list>
 
-      <summary>
-        {{sub_topic.name}}
-      </summary>
-      <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
-        <ion-icon name="videocam"></ion-icon>
-        {{video.name}}
-      </ion-item>
+          <ion-item>
+            <details>
+              <summary>
+                {{sub_topic.name}}
+              </summary>
+              <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
+                <ion-icon name="videocam-circle"></ion-icon>
+                {{video.name}}
+              </ion-item>
+            </details>
+          </ion-item>
 
+        </ion-list>
 
-    </details>
-      </ion-item>
-
-    </ion-list>
-
-  </div>
-  </ion-item-group>
+      </div>
+    </ion-item-group>
   </div>
 </ion-content>
