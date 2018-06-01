@@ -13,6 +13,7 @@ const Subject = require('../models/subject');
 const Topic = require('../models/topic');
 const SubTopic = require('../models/sub_topic');
 const Video = require('../models/video');
+const User = require('../models/user');
 
 //get all subjects
 router.get('/all', (req, res, next) => {
@@ -215,6 +216,46 @@ router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
                 });
 
             }
+        }
+    });
+});
+
+// Used to add a video to a sub topic of a subject
+router.post('/instructor/add/:subjectId', (req, res, next) =>{
+    let newInstructor = new User.getModel({
+            name: req.body.name,
+            title: req.body.title,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+            phone: req.body.phone,
+    });
+
+    Subject.getSubjectById(req.params.subjectId, (err, subject) =>{
+        // check for errors
+        if(err) {
+            res.json({success: false, msg: 'Failed to get subject'});
+        } else {
+           //if success, add the new instructor details
+            subject.instructors.push(newInstructor);
+            subject.save();
+            res.json({success:true, subject});
+        }
+    });
+});
+
+
+//remove an instructor from a subject
+router.delete('/instructor/delete/:subjectId/:instructorId', function(req, res) {
+    Subject.getSubjectById(req.params.subjectId, (err, subject) =>{
+        // check for errors
+        if(err) {
+            res.json({success: false, msg: 'Failed to get subject'});
+        } else {
+            //if success, add the new instructor details
+            let sub = subject.instructors.id(req.params.instructorId).remove;
+            subject.save();
+            res.json({success:true, subject});
         }
     });
 });

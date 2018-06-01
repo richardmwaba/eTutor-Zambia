@@ -23,7 +23,9 @@ export class AuthProvider {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.user = JSON.parse(localStorage.getItem('user'));
+  }
 
   /**
    * Checks whether the user is still logged in
@@ -70,12 +72,5 @@ export class AuthProvider {
     this.user = null;
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-  }
-
-  /**
-   * Checks whether the user is still logged in
-   */
-  isLoggedIn() {
-    return tokenNotExpired('token');
   }
 }

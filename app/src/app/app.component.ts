@@ -76,7 +76,7 @@ export class MyApp {
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-        { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
+        // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
       ];
     }else {
       this.username =null;

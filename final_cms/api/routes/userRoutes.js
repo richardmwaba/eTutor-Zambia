@@ -29,7 +29,7 @@ router.post('/register', (req, res, next) => {
             res.json({success: false, msg: err.message});
         } else {
             // if success
-            res.json({success: true, msg: 'User registered!'});
+            res.json({success: true, msg: 'Welcome '+user.username});
         }
     });
 });
@@ -42,7 +42,7 @@ router.post('/authenticate', (req, res, next) => {
     User.getUserByEmail(email, (err, user) => {
         if(err) throw err;
         if(!user) {
-            return res.json({success: false, msg: 'User does not exist, please sign up.'}); // use new status 
+            return res.json({success: false, msg: 'These credentials match our records, please sign up.'}); // use new status
         }
 
         User.comparePassword(password, user.password, (err, isMatch) => {
@@ -95,10 +95,13 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to enroll. Please make sure that you have signed it.'});
+            res.json({success: false, msg: 'Failed to enroll. Please make sure that you have signed in.'});
 
-            // if success, check if user has not already enrolled for this subject
-        } else if(user.mySubjects.id(req.body._id==null)) {
+        }
+        // if success, check if user has not already enrolled for this subject
+        let subject = user.mySubjects.id(req.body._id);
+
+        if(!subject) {
             user.mySubjects.push(req.body);
             //save the updated user
             User.addToMySubjects(user, (err,updatedUser)=>{
@@ -106,47 +109,52 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
                     res.json({success: false, msg: "Failed to enroll. Please try again."})
                 }else {
                     res.json({success: true,
-                        msg: "you have successfully enrolled for "+req.body.name,
+                        msg: "You added "+req.body.name+" to my subjects",
                         mySubjects: updatedUser.mySubjects});
                 }
             });
-            
+
         }else{
-            res.json({success: false, msg: "You have already enrolled for this subject!"});
+            res.json({success: false, msg: "You have already enrolled for "+req.body.name});
         }
     });
 });
 
-// add subject to my subjects subdocument
-router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
+// remove subject from my subjects sub document
+router.delete('/mySubjects/remove/:subId/:Email', (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to get your subjects'});
-        } else {
-            // if success
-            user.mySubjects.id(req.params.id).remove();
-            //save the updated user
-            User.removeFromMySubjects(user, (err,updatedUser)=>{
+            res.json({success: false, msg: 'Failed to remove this subject.'});
+        }
+        // if success, attempt to remove this subject from my subjects collection
+        let subject = user.mySubjects.id(req.params.subId);
+        if(subject) {
+
+            User.removeFromMySubjects(user,req.params.subId, (err,updatedUser)=>{
                 if(err){
-                    res.json({success: false, msg: "Failed to save"})
+                    res.json({success: false, msg: "Failed to remove "+subject.name});
                 }else {
-                    res.json({success: true, mySubjects: updatedUser.mySubjects});
+                    res.json({success: true,
+                        msg: "You removed "+subject.name+" from my subjects",
+                        mySubjects: updatedUser.mySubjects});
                 }
-            })
+            });
+        }else{
+            res.json({success: false, msg: "Failed to remove this subject."});
         }
     });
 });
 
 // retrieve given user and return only the subjects they have enrolled for
-router.get('/mySubjects/all/:email', (req, res, users) => {
+router.get('/mySubjects/:email', (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json(user.mySubjects);
+            res.json({success:true, mySubjects: user.mySubjects});
         }
     });
 });

@@ -7,7 +7,7 @@
 
 <ion-content padding>
     <div class="body-content">
-      <iframe [src]="videoUrl"  style="margin-left: -8%;" width="440" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <iframe [src]="videoUrl" autoplay=1 width="430" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
       <ion-item-group *ngFor="let topic of subject.topics">
     <ion-item-divider class="divider" color="light">{{topic.topic_name}}</ion-item-divider>

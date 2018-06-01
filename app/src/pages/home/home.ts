@@ -6,7 +6,6 @@ import {PerGradePagesPage} from "../per-grade-pages/per-grade-pages";
 import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {PopoverPage} from '../popover/popover'
 import { Category } from "../../pipes/Category";
-import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'page-home',
@@ -21,19 +20,13 @@ export class HomePage {
     public subjectsService: SubjectsProvider,
     public modalCtrl: ModalController,
     public category : Category,
-    public statusBar : StatusBar,
     public loadingCtrl: LoadingController) {
-    // this.subjectsService.getSubjects().then((data) => {
-    //   // console.log(data);
-    //   // this.subjects = data;
-    // });
 
     this.initializeSubjects();
 
   }
 
     ionViewDidLoad(){
-
     }
 
   doRefresh(refresher) {

@@ -33,12 +33,22 @@ export class VideosPage {
     private sanitizer: DomSanitizer,
     public viewCtrl: ViewController) {
     this.subject = navParams.get("subject");
-    this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/271342649");
+    this.initialize();
   }
 
   ionViewDidLoad() {
     this.viewCtrl.showBackButton(true);
     console.log(this.viewCtrl.enableBack());
+  }
+
+  initialize(){
+    let firstTopic = this.subject.topics[0];
+    console.log("First topics is "+firstTopic.topic_name);
+    let firstSubTopic = firstTopic.sub_topics[0];
+    console.log("First sub topic is "+firstSubTopic.name);
+    let firstVideo = firstSubTopic.videos[0];
+    console.log("First video is "+firstVideo.name);
+    this.playVideo(firstVideo);
   }
 
   /**
@@ -62,6 +72,7 @@ export class VideosPage {
   }
 
   isSubscribed(video, subject){
+    this.playVideo(video);
     this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
       console.log(data);
       this.data = data;
@@ -80,7 +91,8 @@ export class VideosPage {
    * @param video
    */
   playVideo(video){
-    this.presentModal(video, null, VideoPlayerPage);
+    // this.presentModal(video, null, VideoPlayerPage);
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(video.url);
   }
 
   /**

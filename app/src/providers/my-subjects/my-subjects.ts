@@ -20,20 +20,15 @@ export class MySubjectsProvider {
 
   constructor(public http: HttpClient, public authService: AuthProvider) {
     this.data = null;
-    //this.user = this.authService.user;
-    //this.mySubjects = this.getMySubjects();
+    this.user = this.authService.user;
     console.log('Hello MySubjectsProvider Provider');
   }
 
-getMySubjects(user){
-    this.user = user;
-  if (this.data) {
-    return Promise.resolve(this.data);
-}
+getMySubjects(){
 
 return new Promise(resolve => {
 
-    this.http.get(this.baseURL+'/mySubjects/all/'+this.user.email)
+    this.http.get(this.baseURL+'/mySubjects/'+this.user.email)
         .subscribe(data => {
             this.data = data;
             resolve(this.data);
@@ -43,13 +38,15 @@ return new Promise(resolve => {
 
 }
 
-enroll(subject, user){
-    this.user=user;
-  return this.http.post(this.baseURL+'/mySubjects/enroll/'+this.user.email, subject, { headers: this.contentHeader });
-}
+enroll(subject){
+    return this.http.post(this.baseURL+'/mySubjects/enroll/'+this.user.email, subject, { headers: this.contentHeader });
+  }
 
-isEnrolled(subjectId, user){
-  this.user = user;
+  remove(subject){
+    return this.http.delete(this.baseURL+'/mySubjects/remove/'+subject._id+"/"+this.user.email,{ headers: this.contentHeader });
+  }
+
+isEnrolled(subjectId){
 
 return new Promise(resolve => {
 

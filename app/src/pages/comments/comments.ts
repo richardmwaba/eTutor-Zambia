@@ -51,7 +51,6 @@ export class CommentsPage {
     this.presentLoading();
     this.initialise();
     // this.presentToast(this.data['msg']);
-
     console.log('ionViewDidLoad CommentsPage');
   }
 
@@ -209,8 +208,8 @@ export class CommentsPage {
    * @param topic
    */
   showAddCommentModal(topic) {
-    if (AuthProvider.isAuthenticated()) {
-      let modal = this.modalCtrl.create(AddCommentPage, {topic, hasDiscussion: this.data['success']});
+    if ((AuthProvider.isAuthenticated())) {
+      let modal = this.modalCtrl.create(AddCommentPage, {topic});
       modal.present();
       modal.onDidDismiss(data=>{
         if(data){
@@ -235,7 +234,6 @@ export class CommentsPage {
       duration: 3000,
       //position, cssCLass
     });
-
     toast.present(); // shows the toaster
   }
 

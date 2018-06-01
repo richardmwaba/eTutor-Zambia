@@ -11,19 +11,25 @@ page-videos {
     margin-right: 15px;
   }
 
-  details{
-    margin-left: 10px;
-    display: flow;
-    font-size: 16px;
-  }
-
-  details list{
-    background-color: blue;
-  }
 .body-content{
   position: relative;
   align-content: stretch;
   margin-top: -4%;
+}
+
+iframe{
+  margin-left: -8%;
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  //width: auto;
+  //height: auto;
+  //
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%,-50%);
 }
 
   ion-item-group{

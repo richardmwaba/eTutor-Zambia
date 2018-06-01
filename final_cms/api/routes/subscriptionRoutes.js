@@ -4,8 +4,8 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-var mongoose = require('mongoose');                     // mongoose for mongodb
-var coupon = require("coupon");
+let mongoose = require('mongoose');                     // mongoose for mongodb
+let coupon = require("coupon");
 
 const Subscription = require('../models/subscription');
 const Coupon = require('../models/coupon');
@@ -72,7 +72,7 @@ router.post('/subscribeUser', (req, res, next) => {
 router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
     Subscription.findMatch(req.params.subjectId, req.params.userEmail, (err, subscription)=>{
         //check for errors or if record has been found
-        if(subscription){
+        if(subscription!==[]){
             res.json({success: false, msg: 'No subscription found for this subject. Subscribe to access subject content.'})
         }else{
             res.json({success: true, subscription});

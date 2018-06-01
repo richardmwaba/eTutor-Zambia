@@ -16,18 +16,46 @@
 </ion-header>
 
 
-<ion-content class="card-background-page" *ngFor="let subject of mySubjects">
-  <ion-card (click)="courseDetail(subject)">
-    <img src="../../assets/img/{{subject.icon}}"/>
-    <ion-card-content>
-      <ion-row>
-        <ion-col>
-          <button class="card-title" ion-button icon-left clear small>
-            <ion-icon name="open"></ion-icon>
-            <div>{{subject.name}}</div>
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="card-background-page" >
+  <!--<ion-card (click)="courseDetail(subject)">-->
+    <!--<img src="../../assets/img/{{subject.icon}}"/>-->
+    <!--<ion-card-content>-->
+      <!--<ion-row>-->
+        <!--<ion-col>-->
+          <!--<button class="card-title" ion-button icon-left clear small>-->
+            <!--<ion-icon name="open"></ion-icon>-->
+            <!--<div>{{subject.name}}</div>-->
+          <!--</button>-->
+        <!--</ion-col>-->
+      <!--</ion-row>-->
+    <!--</ion-card-content>-->
+  <!--</ion-card>-->
+
+<div *ngFor="let subject of mySubjects">
+      <ion-card class="categories-card">
+
+        <ion-item class="card-title-row">
+          <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
+          <h2 class="card-title">{{subject.name}}</h2>
+          <!--<ion-icon class="card-remove-button" item-start name="md-trash"></ion-icon>-->
+          <!--<p>November 5, 1955</p>-->
+        </ion-item>
+
+        <img class="card-image" src="assets/img/{{subject.icon}}" (click)="courseDetail(subject)"  />
+
+        <ion-row class="card-subtitle-row">
+          <ion-col>
+            <h2 class="card-subtitle-text">{{subject.grade}}</h2>
+          </ion-col>
+          <ion-col>
+            <button (click)="remove(subject)" class="card-subtitle-button" ion-button icon-left clear small>
+              <ion-icon name="md-trash"></ion-icon>
+              <div>Remove</div>
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+</div>
+
 </ion-content>
