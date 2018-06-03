@@ -170,7 +170,7 @@
                                   <h4 class="modal-title">{{ alevelSubject.name }} Details</h4>
                                 </div>
                                 <div class="modal-body" style="margin-top: 30px">
-                                  <a class="btn-link btn-xs" href="">
+                                  <a class="btn-link btn-xs" [attr.routeLink]="'/settings/manage/subject/' + alevelSubject._id">
                                     <h5>Manage Subject
                                       <span>
                                         <i class="fa fa-external-link"></i>
@@ -264,7 +264,7 @@
                                   <h4 class="modal-title">{{ juniorSubject.name }} Details</h4>
                                 </div>
                                 <div class="modal-body" style="margin-top: 30px">
-                                  <a class="btn-link btn-xs" href="">
+                                  <a class="btn-link btn-xs" [attr.routeLink]="'/settings/manage/subject/' + juniorSubject._id">
                                     <h5>Manage Subject
                                       <span>
                                         <i class="fa fa-external-link"></i>
@@ -358,7 +358,7 @@
                                     <h4 class="modal-title">{{ seniorSubject.name }} Details</h4>
                                   </div>
                                   <div class="modal-body" style="margin-top: 30px">
-                                    <a class="btn-link btn-xs" href="">
+                                    <a class="btn-link btn-xs" [attr.routeLink]="'/settings/manage/subject/' + seniorSubject._id">
                                       <h5>Manage Subject
                                         <span>
                                           <i class="fa fa-external-link"></i>

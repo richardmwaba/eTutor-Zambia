@@ -56,7 +56,7 @@ const appRoutes: Routes = [
             { path:'users', component: UsersComponent },
             { path:'clients', component: ClientsComponent },
             { path:'settings', component: SettingsComponent },
-            { path:'settings/manage/subject', component: SubjectComponent }
+            { path:'settings/manage/subject/:subjectId', component: SubjectComponent }
         ]
     },
     
