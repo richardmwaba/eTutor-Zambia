@@ -49,7 +49,9 @@ $SIDEMENU_TRANSPARENCY: rgba(187, 184, 184, 0.582);
     }
   }
   button ion-icon {
+    line-height: .95;
     padding-right: 0.9em;
+    vertical-align: middle;
   }
 }
 // shows currently selected page
@@ -61,6 +63,7 @@ $SIDEMENU_TRANSPARENCY: rgba(187, 184, 184, 0.582);
 // styling for profile image
 .profile-image {
   background: none;
+  background-color: #e7e7e7;
   text-align: center;
   padding: 20px;
   img {

@@ -37,11 +37,24 @@ export class LessonsPage {
     public authService: AuthProvider,
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
-    public expandableComp: ExpandableComponent) {
+    public expandableComp: ExpandableComponent
+  ) {
 
     this.subject = navParams.get("subject");
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
+
+    this.topic = [
+      {
+        subs: [
+          {
+            title: "Topics covered",
+            topics: this.subject.topics,
+          }
+        ]
+      }
+    ] // end topic array
+
   }
 
   ionViewDidLoad() {

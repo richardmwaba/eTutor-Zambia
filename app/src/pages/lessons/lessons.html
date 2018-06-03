@@ -8,7 +8,7 @@
     </ion-card>
     <!-- header od some sort -->
     <h3>
-      {{ subject.name }} <br> <small>{{ subject.grade }}</small>
+      {{ subject.name }} <small>{{ subject.grade }}</small>
     </h3>
     <hr>
   </div><!-- end bg-card -->
@@ -24,11 +24,15 @@
       </ion-item>
     </ion-row>
 
-    <!-- Accordion section -->
+    <!-- <ion-list>
+      <ion-list-header>Topics</ion-list-header>
+      <ion-item *ngFor="let topic of subject.topics">
+        {{ topic.topic_name }}
+      </ion-item>
+    </ion-list> -->
+
     <ion-list class="accordion">
-      <ion-list-header>
-        Topics covered
-      </ion-list-header>
+      <ion-label>Topics Covered</ion-label>
       <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)" 
         [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
 
@@ -62,7 +66,7 @@
               <ion-col col-12>
     
                 <ion-card class="instructors-card">
-                  <img class="instructor-image" src="assets/img/schambika.jpg"/>
+                  <img class="instructor-image" src="assets/img/avatar04.png"/>
     
                   <p>
                     {{instructor.title}} {{instructor.name}}

@@ -30,19 +30,19 @@
 
         <ion-slide>
           <div class="scroll-item ad">          
-            <img src="assets/imgs/history.jpg">
+            <img src="assets/img/history.jpg">
           </div>
         </ion-slide>
 
         <ion-slide>
           <div class="scroll-item ad">          
-            <img src="assets/imgs/chemist.jpg">
+            <img src="assets/img/chemist.jpg">
           </div>
         </ion-slide>
   
         <ion-slide>
           <div class="scroll-item ad">
-              <img src="assets/imgs/mathematics.jpg">
+              <img src="assets/img/mathematics.jpg">
           </div>
         </ion-slide>
 
@@ -59,14 +59,14 @@
 
       <ion-row> <!-- row -->
         <!-- column 1 --> 
-        <ion-col col-6 *ngFor="let subject of subjects | category :'category' : 'Tests & Exams'">
+        <ion-col col-6 col-md-4 col-lg-4 *ngFor="let subject of subjects | category :'category' : 'Tests & Exams'">
           <ion-card class="card" (click)="courseDetail(subject)">
   
             <img src="assets/img/{{subject.icon}}"/>
               
             <ion-card-content no-padding>
               <ion-card-title>
-                {{ subject.name }} <small>{{ subject.grade }}</small>
+                {{ subject.name }}  <small>{{ subject.grade }}</small>
               </ion-card-title>
             </ion-card-content>
 
