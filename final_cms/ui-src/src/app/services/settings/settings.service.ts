@@ -40,4 +40,11 @@ export class SettingsService {
             .get(uri)
             .map(res => res.json());
   }
+
+  getSubjectById(id){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const uri = 'http://locahost:3000/subjects/find/' + id;
+    return this.http.get(uri).map(res => res.json());
+  }
 }
