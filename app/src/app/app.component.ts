@@ -15,6 +15,7 @@ import { SubscriptionPage } from '../pages/subscription/subscription';
 import { VideoPlayerPage } from '../pages/video-player/video-player';
 import {AuthProvider} from "../providers/auth/auth";
 import {SubjectsProvider} from "../providers/subjects/subjects";
+import { AboutPage } from '../pages/about/about';
 
 @Component({
   templateUrl: 'app.html'
@@ -78,6 +79,7 @@ export class MyApp {
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
         { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
+        { title: 'About', leftIcon: 'information-cicle-outline', component: AboutPage },
       ];
     }else {
       this.username =null;
@@ -85,6 +87,7 @@ export class MyApp {
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'Sign In', leftIcon: 'log-in', component: LoginPage },
         { title: 'Sign Up', leftIcon: 'person-add', component: SignupPage },
+        { title: 'About', leftIcon: 'information-cicle-outline', component: AboutPage },
       ];
     }
   }

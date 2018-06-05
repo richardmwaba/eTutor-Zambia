@@ -19,13 +19,14 @@
 
 
 <ion-content padding>
+  <!-- App logo setting -->
   <div class="card" style="text-align: center">
-    <!-- Advanced: explicity set the icon for each platform -->
-    <ion-icon class="grad-icon" ios="ios-school" md="md-school"></ion-icon>
+    <img src="assets/img/logohdpi.png" alt="logo"/>
     <div class="app-name">
-      <b>e-tutor</b>
+      <b>eTutor</b>
     </div>
   </div>
+
   <div class="list card">
     <div class="item item-body">
       <!--<ion-content>-->
@@ -34,7 +35,7 @@
 
           <ion-item>
             <ion-label style="color: #488aff" stacked>Email</ion-label>
-            <ion-input type="text" formControlName="email" required></ion-input>
+            <ion-input type="email" formControlName="email" required></ion-input>
           </ion-item>
 
           <ion-item *ngIf="!logForm.controls.email.valid && (logForm.controls.email.dirty || submitAttempt)" >
@@ -59,14 +60,14 @@
 
       <!--</ion-content>-->
     </div>
-    <div class="div-center">
+    <!-- <div class="div-center">
       <button ion-button clear>
         <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
       </button>
       <button ion-button clear>
         <ion-icon class="social-icon" color="danger" name="logo-google"></ion-icon>
       </button>
-    </div>
+    </div> -->
     <div class="card btn-down" >
       <button ion-button clear text-capitalize on-click="signUp()">Or Sign Up</button>
     </div>
