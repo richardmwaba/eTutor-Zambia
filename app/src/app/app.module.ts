@@ -35,7 +35,9 @@ import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
 import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
 import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
 import { ComponentsModule } from "../components/components.module";
+import { DirectivesModule} from "../directives/directives.module";
 import { Home2PageModule } from '../pages/home2/home2.module';
+import { ScrollHideConfig } from '../../directives/scroll-hide';
 
 @NgModule({
     declarations: [
@@ -67,6 +69,7 @@ import { Home2PageModule } from '../pages/home2/home2.module';
       SignUpModalPageModule,
       OptionsPopoverPageModule,
       ComponentsModule,
+      DirectivesModule,
 
       Home2PageModule
     ],

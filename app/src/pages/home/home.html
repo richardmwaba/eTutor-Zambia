@@ -25,21 +25,21 @@
   <!-- ./Ad scroll -->
   <ion-scroll scrollX style="height:200px;">
     <div class="ads">
-    
+
       <ion-slides autoplay="5000" loop="true" speed="400">
 
         <ion-slide>
-          <div class="scroll-item ad">          
+          <div class="scroll-item ad">
             <img src="assets/img/history.jpg">
           </div>
         </ion-slide>
 
         <ion-slide>
-          <div class="scroll-item ad">          
+          <div class="scroll-item ad">
             <img src="assets/img/chemist.jpg">
           </div>
         </ion-slide>
-  
+
         <ion-slide>
           <div class="scroll-item ad">
               <img src="assets/img/mathematics.jpg">
@@ -48,34 +48,35 @@
 
       </ion-slides>
     </div>
-      
+
   </ion-scroll> <!-- ./ad scroll -->
 
   <!-- New implementation uses a grig of 2 columns to display the content -->
   <div class="main-content">
     <h4 class="category-title">Exam Revision</h4>
     <!-- grid -->
-    <ion-grid no-padding>
+    <div *ngFor="let subject of subjects">
+      <ion-card class="categories-card">
 
-      <ion-row> <!-- row -->
-        <!-- column 1 --> 
-        <ion-col col-6 col-md-4 col-lg-4 *ngFor="let subject of subjects | category :'category' : 'Tests & Exams'">
-          <ion-card class="card" (click)="courseDetail(subject)">
-  
-            <img src="assets/img/{{subject.icon}}"/>
-              
-            <ion-card-content no-padding>
-              <ion-card-title>
-                {{ subject.name }}  <small>{{ subject.grade }}</small>
-              </ion-card-title>
-            </ion-card-content>
+        <!--<ion-item class="card-title-row">-->
+          <!--<ion-icon class="card-title-icon" item-start name="book"></ion-icon>-->
+          <!--<h2 class="card-title">{{subject.name}}</h2>-->
+        <!--</ion-item>-->
 
-          </ion-card><!-- ./card -->
-        </ion-col><!-- ./col -->
+        <img class="card-image" src="assets/img/{{subject.icon}}" (click)="courseDetail(subject)"  />
 
-      </ion-row><!-- ./row -->
+        <ion-row class="card-subtitle-row">
+            <h3>
+              {{ subject.name }} <small>{{ subject.grade }}</small>
+            </h3>
+            <hr>
+          <!--</ion-col>-->
+        </ion-row>
 
-    </ion-grid> <!-- ./grid -->  
+      </ion-card>
+    </div>
+
+
   </div> <!-- ./main-content div -->
 
 </ion-content>
