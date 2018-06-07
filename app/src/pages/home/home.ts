@@ -8,6 +8,7 @@ import {PopoverPage} from '../popover/popover'
 import { Category } from "../../pipes/Category";
 import { StatusBar } from '@ionic-native/status-bar';
 import { Home2Page } from '../home2/home2';
+import {ScrollHideConfig} from "../../directives/scroll-hide/scroll-hide";
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,8 @@ import { Home2Page } from '../home2/home2';
 export class HomePage {
 
     public subjects: Array<any>;
+  public footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  public headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 
   constructor(
     public navCtrl: NavController,
@@ -29,14 +32,12 @@ export class HomePage {
     //   // console.log(data);
     //   // this.subjects = data;
     // });
-
     this.initializeSubjects();
-
   }
 
   /**
    * Implements the pull-to-refresh feature
-   * @param refresher 
+   * @param refresher
    */
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -64,7 +65,7 @@ export class HomePage {
   }
 
   /**
-   * Request subjects (data) from the online server and 
+   * Request subjects (data) from the online server and
    * stores them locally for faster retrieval
    */
   getSubjectsFromServer(){

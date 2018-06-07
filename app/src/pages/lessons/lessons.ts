@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ExpandableComponent } from "../../components/expandable/expandable";
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 
 // page import
 import {VideoPlayerPage} from "../video-player/video-player";
@@ -37,6 +37,7 @@ export class LessonsPage {
     public authService: AuthProvider,
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
+    public modalCtrl: ModalController,
     public expandableComp: ExpandableComponent
   ) {
 
@@ -88,36 +89,19 @@ export class LessonsPage {
     return this.showLevel2 === idx;
   };
 
-  /**check if this user has an active subscription for this subject then play the video
-   * otherwise redirect to subscription page
-   * @param video
-   * @param subject
-   */
-  checkSubscription(video, subject) {
-    //if this user has subscribed, go to the video else go to the subscription page
-    if(this.isAuthenticated){
-      this.subject = subject;
-      this.video = video;
+  subscribe(){
+    this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
+      console.log(data);
+      this.data = data;
+      //if success store the record locally
+      if (this.data['success']) {
+        // this.playVideo(this.video);
 
-      this.subscriptionService.verifySubscription(this.subject, this.user).then((data) => {
-        console.log(data);
-        this.data = data;
-        //if success store the record locally
-        if (this.data['success']) {
-          this.playVideo(this.video);
-
-        } else {
-          this.presentToast(this.data['msg']);
-          this.navCtrl.push(SubscriptionPage, {
-            video, subject  // passing data to subscription page
-          });
-        }
-      });
-
-    }else {
-      // redirect to log in
-      this.navCtrl.push(LoginPage);
-    }
+      } else {
+        this.presentToast(this.data['msg']);
+        this.presentModal(this.subject.topics[0].sub_topics[0].videos[0], this.subject, SubscriptionPage);
+      }
+    });
   }
 
   dismissModal(){
@@ -132,6 +116,23 @@ export class LessonsPage {
     this.navCtrl.push(VideoPlayerPage, {
       video  // passing data to LessonContentPage
     });
+  }
+
+  /**
+   * presents a modal
+   */
+  presentModal(video, subject, page) {
+    let modal = this.modalCtrl.create(page,
+      {video, subject });
+    modal.present();
+    modal.onDidDismiss(data=>{
+      console.log("before :"+data);
+      if(data['success']){
+        console.log("After :"+data);
+        //check if user has valid subscription to access course content
+        // this.isSubscribed(video, subject);
+      }
+    })
   }
 
   /**

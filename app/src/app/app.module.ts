@@ -35,7 +35,13 @@ import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
 import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
 import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
 import { ComponentsModule } from "../components/components.module";
+<<<<<<< HEAD
 import { AboutPageModule } from '../pages/about/about.module';
+=======
+import { DirectivesModule} from "../directives/directives.module";
+import { Home2PageModule } from '../pages/home2/home2.module';
+import { ScrollHideConfig } from '../../directives/scroll-hide';
+>>>>>>> 8b9a9be2d8340637cee503041147d87c63ce1b10
 
 @NgModule({
   declarations: [
@@ -73,6 +79,7 @@ import { AboutPageModule } from '../pages/about/about.module';
   entryComponents: [
       MyApp,
       HomePage,
+<<<<<<< HEAD
   ],
   providers: [
     StatusBar,
@@ -88,6 +95,57 @@ import { AboutPageModule } from '../pages/about/about.module';
     Keyboard,
     Category
   ]
+=======
+      Grade,
+      Category,
+      EqualValidatorDirective,
+    ],
+    imports: [
+      BrowserModule,
+      HttpClientModule,
+      CourseDetailPageModule,
+      IonicModule.forRoot(MyApp),
+      MySubjectsPageModule,
+      LoginPageModule,
+      SignupPageModule,
+      JuniorSecondaryPageModule,
+      PerGradePagesPageModule,
+      LessonsPageModule,
+      SubscriptionPageModule,
+      VideoPlayerPageModule,
+      VideosPageModule,
+      DiscussionForumPageModule,
+      PopoverPageModule,
+      CommentsPageModule,
+      AddCommentPageModule,
+      LoginModalPageModule,
+      SignUpModalPageModule,
+      OptionsPopoverPageModule,
+      ComponentsModule,
+      DirectivesModule,
+
+      Home2PageModule
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+    ],
+    providers: [
+      StatusBar,
+      AndroidFullScreen,
+      SplashScreen,
+      {provide: ErrorHandler, useClass: IonicErrorHandler},
+      AuthProvider,
+      SubjectsProvider,
+      HttpClientModule,
+      SubscriptionsProvider,
+      MySubjectsProvider,
+      DiscussionsProvider,
+      Keyboard,
+      Category
+    ]
+>>>>>>> 8b9a9be2d8340637cee503041147d87c63ce1b10
 })
 export class AppModule {
 }

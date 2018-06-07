@@ -43,10 +43,13 @@ export class CourseDetailPage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(OptionsPopoverPage);
+    let subject = this.subject;
+    let popover = this.popoverCtrl.create(OptionsPopoverPage, {subject});
     popover.present({
       ev: myEvent
     });
   }
+
+
 
 }

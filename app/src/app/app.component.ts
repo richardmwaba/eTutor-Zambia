@@ -78,8 +78,12 @@ export class MyApp {
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
+<<<<<<< HEAD
         { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
         { title: 'About', leftIcon: 'information-cicle-outline', component: AboutPage },
+=======
+        // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
+>>>>>>> 8b9a9be2d8340637cee503041147d87c63ce1b10
       ];
     }else {
       this.username =null;
