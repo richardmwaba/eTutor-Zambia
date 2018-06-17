@@ -52,7 +52,7 @@ export class CourseDetailPage {
   addToMyFavorites(){
     console.log("Adding "+this.subject.subject.name);
     if((AuthProvider.isAuthenticated())){
-      this.mySubjectsService.enroll(this.subject).subscribe(data=>{
+      this.mySubjectsService.enroll(this.subject.subject).subscribe(data=>{
         this.presentToast(data['msg']);
       });
     }else{

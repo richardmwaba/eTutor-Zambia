@@ -71,7 +71,8 @@ export class MyApp {
 
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
-        { title: 'Favourite', leftIcon: 'list-box', component: FavouritesPage },
+        { title: 'Favourites', leftIcon: 'list-box', component: FavouritesPage },
+        { title: 'About', leftIcon: 'information-circle', component: AboutPage },
         // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
       ];
     }else {

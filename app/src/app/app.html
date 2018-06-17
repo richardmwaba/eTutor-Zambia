@@ -15,7 +15,7 @@
       </div>
       <!-- shows if logged in -->
       <div *ngIf="username">
-        <img src="assets/img/unza.jpg" alt="background image"/>
+        <img src="assets/img/avatar.png" alt="background image"/>
         <p>{{username}}</p>
       </div>
     </ion-item>
@@ -27,9 +27,10 @@
         {{p.title}}
       </button>
       <!-- used as a spacer -->
-      <ion-item></ion-item>
+
       <!-- sign out button -->
-      <div *ngIf="username">
+      <div class="logout-btn"  *ngIf="username">
+        <hr>
         <button (click)="logout()" menuClose ion-item icon-left [class.activeHighlight]="checkActive(p)">
           <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
           Sign out

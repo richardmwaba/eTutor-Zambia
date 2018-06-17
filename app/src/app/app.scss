@@ -27,6 +27,13 @@ $SIDEMENU_TRANSPARENCY: rgba(187, 184, 184, 0.582);
   opacity: 0.6;
 }
 
+.logout-btn{
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+  left: 0px;
+}
+
 .side-menu-item {
   font-family: roboto;
   font-weight: 600;

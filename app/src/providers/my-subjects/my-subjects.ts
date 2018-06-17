@@ -24,21 +24,21 @@ export class MySubjectsProvider {
     console.log('Hello MySubjectsProvider Provider');
   }
 
-getMySubjects(){
+  getMySubjects(){
 
-return new Promise(resolve => {
+    return new Promise(resolve => {
 
-    this.http.get(this.baseURL+'/mySubjects/'+this.user.email)
+      this.http.get(this.baseURL+'/mySubjects/'+this.user.email)
         .subscribe(data => {
-            this.data = data;
-            resolve(this.data);
-            console.log(this.data);
+          this.data = data;
+          resolve(this.data);
+          console.log(this.data);
         });
-});
+    });
 
-}
+  }
 
-enroll(subject){
+  enroll(subject){
     return this.http.post(this.baseURL+'/mySubjects/enroll/'+this.user.email, subject, { headers: this.contentHeader });
   }
 
@@ -46,17 +46,17 @@ enroll(subject){
     return this.http.delete(this.baseURL+'/mySubjects/remove/'+subject._id+"/"+this.user.email,{ headers: this.contentHeader });
   }
 
-isEnrolled(subjectId){
+  isEnrolled(subjectId){
 
-return new Promise(resolve => {
+    return new Promise(resolve => {
 
-    this.http.get(this.baseURL+'/mySubjects/isEnrolled/'+this.user.email+'/'+subjectId)
+      this.http.get(this.baseURL+'/mySubjects/isEnrolled/'+this.user.email+'/'+subjectId)
         .subscribe(data => {
-            this.data = data;
-            resolve(this.data);
-            console.log(this.data);
+          this.data = data;
+          resolve(this.data);
+          console.log(this.data);
         });
-});
-}
+    });
+  }
 
 }
