@@ -68,7 +68,7 @@
 
           <ion-item>
             <ion-label style="color: #488aff" stacked>Password</ion-label>
-            <ion-input type="password" formControlName="password" ></ion-input>
+            <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
 
           <ion-item *ngIf="!theForm.controls.password.valid && (theForm.controls.password.dirty || submitAcepted)" >
@@ -77,7 +77,11 @@
 
           <ion-item>
             <ion-label style="color: #488aff" stacked>Confirm Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="password" formControlName="confirmPswd"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!theForm.controls.confirmPswd.valid && (theForm.controls.confirmPswd.dirty || submitAcepted)" >
+            <p class="error">Password mismatch.</p>
           </ion-item>
 
         </ion-list>

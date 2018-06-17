@@ -1,13 +1,14 @@
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, AbstractControl, ValidatorFn } from '@angular/forms';
+import { EqualValidatorDirective } from '../../directives/equal-validator/equal-validator';
 
 
 @IonicPage()
 @Component({
   selector: 'page-signup',
-  templateUrl: 'signup.html',
+  templateUrl: 'signup.html'
 })
 export class SignupPage {
 
@@ -32,12 +33,24 @@ export class SignupPage {
       email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]*')]) ],
       phone: ['', Validators.compose( [Validators.required, Validators.pattern('^(?:\\(\\d{3}\\)|\\d{3})[- ]?\\d{3}[- ]?\\d{4}$')])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
+      confirmPswd: ['', Validators.compose([Validators.required, this.equalto('password')])],
       status: 'inactive'
     });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
+  /**
+   * Validator function for comparing password and comfirm_password fields
+   * @param field_name is the field being compared
+   */
+  equalto(field_name): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+        let input = control.value;
+        let isValid = control.root.value[field_name] === input;
+        if (!isValid)
+            return {'equalTo': {isValid}};
+        else
+            return null;
+    };
   }
 
   /**

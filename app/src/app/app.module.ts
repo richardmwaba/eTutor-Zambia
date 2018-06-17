@@ -29,7 +29,6 @@ import {PopoverPageModule} from "../pages/popover/popover.module"
 import { CommentsPageModule } from "../pages/comments/comments.module";
 import { DiscussionsProvider } from '../providers/discussions/discussions';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
-import { Grade } from '../app/pipes/grade';
 import { Keyboard } from '@ionic-native/keyboard';
 import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
 import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
@@ -42,7 +41,6 @@ import { DirectivesModule} from "../directives/directives.module";
   declarations: [
     MyApp,
     HomePage,
-    Grade,
     Category,
     EqualValidatorDirective,
   ],
