@@ -7,8 +7,14 @@ import { Events } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage} from '../pages/signup/signup';
+<<<<<<< HEAD
 import { FavouritesPage } from '../pages/favourites/favourites';
 import {AuthProvider} from "../providers/auth/auth";
+=======
+import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
+import {AuthProvider} from "../providers/auth/auth";
+import { AboutPage } from '../pages/about/about';
+>>>>>>> 1d3c0124e987eefee30ff5caf00c11b62206c280
 
 @Component({
   templateUrl: 'app.html'
@@ -79,6 +85,7 @@ export class MyApp {
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'Sign In', leftIcon: 'log-in', component: LoginPage },
         { title: 'Sign Up', leftIcon: 'person-add', component: SignupPage },
+        { title: 'About', leftIcon: 'information-circle', component: AboutPage },
       ];
     }
   }

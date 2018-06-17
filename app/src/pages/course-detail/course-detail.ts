@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, PopoverController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, PopoverController, ToastController} from 'ionic-angular';
 import { LessonsPage } from '../lessons/lessons';
 import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 import {VideosPage} from "../videos/videos";
 import {StatusBar} from "@ionic-native/status-bar";
 import {OptionsPopoverPage} from "../options-popover/options-popover";
+import { MySubjectsProvider } from '../../providers/my-subjects/my-subjects';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -27,7 +29,9 @@ export class CourseDetailPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public statusBar : StatusBar,
-    public popoverCtrl: PopoverController
+    public popoverCtrl: PopoverController,
+    private mySubjectsService: MySubjectsProvider,
+    private toastCtrl: ToastController
   ) {
     this.subject = navParams.data;
     // tabs list
@@ -42,14 +46,29 @@ export class CourseDetailPage {
     console.log(this.subject);
   }
 
-  presentPopover(myEvent) {
-    let subject = this.subject;
-    let popover = this.popoverCtrl.create(OptionsPopoverPage, {subject});
-    popover.present({
-      ev: myEvent
-    });
+   /**
+   * saves a subject to my subjects
+   */
+  addToMySubjects(){
+    console.log("Adding "+this.subject.subject.name);
+    if((AuthProvider.isAuthenticated())){
+      this.mySubjectsService.enroll(this.subject).subscribe(data=>{
+        this.presentToast(data['msg']);
+      });
+    }
   }
 
+  /**
+   * Presents a success toast on log in
+   */
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      //position, cssCLass
+    });
 
+    toast.present(); // shows the toaster
+  }
 
 }

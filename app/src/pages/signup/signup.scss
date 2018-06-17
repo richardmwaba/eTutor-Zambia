@@ -1,10 +1,19 @@
 page-signup {
-  .grad-icon{
-    font-size: 110px;
-    color: #0a9ec7;
+  
+  .card {
+    img {
+      width: 30%;
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid map-get($colors, S-light);
+      -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    }
   }
+
   .app-name{
-    color: #0a9ec7;
+    color: #488aff;
     padding-bottom: 20px;
     font-size: large;
   }
@@ -26,7 +35,7 @@ page-signup {
   }
 
   .error {
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: #f15645;
   }
 

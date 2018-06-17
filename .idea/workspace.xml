@@ -2,28 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f30e32c-ac61-47a3-affa-1bdf7873ca74" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/13.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/13.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/about/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/about/about.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home2/home2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home2/home2.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/about/about.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home2/home2.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home2/home2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/about/about.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/theme/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/signup/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/signup/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/signup/signup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/signup/signup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/signup/signup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/signup/signup.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/node_modules/" />
     <ignored path="$PROJECT_DIR$/final_cms/api/node_modules/" />
@@ -42,6 +53,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="e-tutor" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -75,13 +89,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subjects.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="subjects.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state relative-caret-position="261">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,18 +151,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
               <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="options-popover.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -189,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/final_cms/api/app.js" />
         <option value="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.ts" />
         <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.ts" />
         <option value="$PROJECT_DIR$/app/src/app/app.html" />
@@ -240,6 +253,7 @@
         <option value="$PROJECT_DIR$/app/src/pages/popover/popover.ts" />
         <option value="$PROJECT_DIR$/app/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/signup/signup.ts" />
       </list>
     </option>
   </component>
@@ -306,6 +320,14 @@
               <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -315,14 +337,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="providers" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="providers" type="462c0819:PsiDirectoryNode" />
-              <item name="my-subjects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -397,6 +411,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Martin\Desktop\e-tutor\app\src\providers\my-subjects" />
       <recent name="E:\Documents\Projects\e-tutor\final_cms\api" />
       <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img\ads" />
       <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img" />
@@ -485,26 +500,26 @@
       <workItem from="1527357418145" duration="51467000" />
       <workItem from="1528115345354" duration="12259000" />
       <workItem from="1528392862923" duration="19733000" />
-      <workItem from="1529229458535" duration="719000" />
+      <workItem from="1529229458535" duration="2010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303855000" />
+    <option name="totallyTimeSpent" value="305146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.3287483" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14937212" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49698794" visible="true" weight="0.14937212" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32876712" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36863825" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.54332876" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Structure" order="1" sideWeight="0.50301206" side_tool="true" weight="0.14937212" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.54332876" />
+      <window_info id="Favorites" order="2" sideWeight="0.50301206" side_tool="true" weight="0.14937212" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -719,11 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -884,10 +894,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state relative-caret-position="261">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -14,11 +14,8 @@
     <!--</ion-buttons>-->
     <ion-title>{{subject.subject.name}}</ion-title>
     <ion-buttons end>
-      <button>
-        <ion-icon md="md-share" ios="ios-share"></ion-icon>
-      </button>
-      <button (click)="presentPopover($event)">
-        <ion-icon name="more"></ion-icon>
+      <button (click)="addToMySubjects()">
+        <ion-icon ios="ios-bookmark" md="md-bookmark"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

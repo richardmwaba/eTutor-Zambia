@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ExpandableComponent } from "../../components/expandable/expandable";
-import {IonicPage, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 
 // page import
 import {VideoPlayerPage} from "../video-player/video-player";
@@ -38,6 +38,7 @@ export class LessonsPage {
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public modalCtrl: ModalController,
+    private loadingCtrl: LoadingController,
     public expandableComp: ExpandableComponent
   ) {
 
@@ -95,7 +96,7 @@ export class LessonsPage {
       this.data = data;
       //if success store the record locally
       if (this.data['success']) {
-        // this.playVideo(this.video);
+        this.presentLoading(); // displays the loader
 
       } else {
         this.presentToast(this.data['msg']);
@@ -133,6 +134,14 @@ export class LessonsPage {
         // this.isSubscribed(video, subject);
       }
     })
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Checking subscription, please wait...",
+      dismissOnPageChange: true
+    });
+    loader.present();
   }
 
   /**
