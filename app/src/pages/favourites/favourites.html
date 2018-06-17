@@ -1,0 +1,34 @@
+<!--
+  Generated template for the MySubjectsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favourites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="card-background-page" *ngFor="let subject of mySubjects">
+  <ion-card (click)="courseDetail(subject)">
+    <img src="../../assets/img/{{subject.icon}}"/>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button class="card-title" ion-button icon-left clear small>
+            <ion-icon name="open"></ion-icon>
+            <div>{{subject.name}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

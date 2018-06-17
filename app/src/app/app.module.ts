@@ -8,7 +8,7 @@ import { AddCommentPageModule } from '../pages/add-comment/add-comment.module';
 import {HomePage} from '../pages/home/home';
 import {Category} from '../pipes/Category';
 import {LoginPageModule} from '../pages/login/login.module';
-import {MySubjectsPageModule} from '../pages/my-subjects/my-subjects.module';
+import {FavouritesModule} from '../pages/favourites/favourites.module';
 import {SignupPageModule} from '../pages/signup/signup.module';
 import {SubscriptionPageModule} from '../pages/subscription/subscription.module';
 import {CourseDetailPageModule} from '../pages/course-detail/course-detail.module';
@@ -52,7 +52,7 @@ import { ScrollHideConfig } from '../../directives/scroll-hide';
       HttpClientModule,
       CourseDetailPageModule,
       IonicModule.forRoot(MyApp),
-      MySubjectsPageModule,
+      FavouritesModule,
       LoginPageModule,
       SignupPageModule,
       JuniorSecondaryPageModule,

@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController, ModalController} from 'ionic-angular';
 import { JuniorSecondaryPage } from '../junior-secondary/junior-secondary';
 import { CourseDetailPage } from '../course-detail/course-detail';
-import {PerGradePagesPage} from "../per-grade-pages/per-grade-pages";
 import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {PopoverPage} from '../popover/popover'
 import { Category } from "../../pipes/Category";
 import { StatusBar } from '@ionic-native/status-bar';
-import { Home2Page } from '../home2/home2';
 import {ScrollHideConfig} from "../../directives/scroll-hide/scroll-hide";
 
 @Component({
@@ -28,10 +26,6 @@ export class HomePage {
     public statusBar : StatusBar,
     public loadingCtrl: LoadingController
   ) {
-    // this.subjectsService.getSubjects().then((data) => {
-    //   // console.log(data);
-    //   // this.subjects = data;
-    // });
     this.initializeSubjects();
   }
 
@@ -72,6 +66,8 @@ export class HomePage {
     this.subjectsService.getSubjects().then((data) => {
       console.log(data);
       this.subjects = JSON.parse(localStorage.getItem('subjects'));
+    }).catch((data)=>{
+
     });
   }
 
@@ -93,7 +89,7 @@ export class HomePage {
 
   /**
    * Navigates to the subject's detail page
-   * @param subject The subject clicked
+   * @param subject The subject that's been clicked
    */
   courseDetail(subject) {
     //navigate to the selected course detail page
@@ -103,11 +99,6 @@ export class HomePage {
   jnrSecExams() {
     //navigate to the junior secondary page
     this.navCtrl.push(JuniorSecondaryPage);
-  }
-
-  grade(subjects, grade){
-    //navigate to the selected Grade
-    this.navCtrl.push(PerGradePagesPage, {subjects, grade});
   }
 
 }

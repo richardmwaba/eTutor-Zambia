@@ -3,42 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="5f30e32c-ac61-47a3-affa-1bdf7873ca74" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/4.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/4.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/6.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/6.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/7.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/13.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/13.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/comments/comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/comments/comments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/comments/comments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/comments/comments.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/lessons/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/lessons/lessons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/lessons/lessons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/lessons/lessons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/favourites/favourites.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/popover/popover.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/sign-up-modal/sign-up-modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/sign-up-modal/sign-up-modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/signup/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/signup/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/providers/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/auth/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/providers/subscriptions/subscriptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/subscriptions/subscriptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/theme/variables.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/node_modules/" />
     <ignored path="$PROJECT_DIR$/final_cms/api/node_modules/" />
@@ -60,23 +45,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lessons.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.html">
+      <file leaf-file-name="popover.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="600">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variables.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/theme/variables.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1575">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popover.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1900">
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#ion-list#0;n#ion-item#0;n#ion-list#0;n#ion-card-content#0;n#ion-card#0;n#div#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="e#0#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lessons.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.module.ts">
+      <file leaf-file-name="subjects.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="300">
+              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favourites.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -84,65 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lessons.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.ts">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1850">
-              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lessons.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="67" column="3" lean-forward="true" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expandable.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/expandable/expandable.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course-detail.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="1525">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -150,11 +111,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expandable.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/expandable/expandable.html">
+      <file leaf-file-name="favourites.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="25">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favourites.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="options-popover.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="videos.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2375">
+              <caret line="102" column="11" selection-start-line="102" selection-start-column="2" selection-end-line="102" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,7 +171,17 @@
       <find>angular</find>
       <find>streamingmedia</find>
       <find>how</find>
+      <find>ion-item</find>
+      <find>box</find>
+      <find>search</find>
+      <find>MySubjectsPageModule</find>
+      <find>MySubjectsPageModule</find>
+      <find>mySubj</find>
+      <find>mysubj</find>
     </findStrings>
+    <replaceStrings>
+      <replace>div</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -182,57 +189,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/pages/video-player/video-player.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/index.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.scss" />
-        <option value="$PROJECT_DIR$/app/src/service-worker.js" />
-        <option value="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" />
-        <option value="$PROJECT_DIR$/final_cms/api/models/user.js" />
-        <option value="$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/login/login.ts" />
-        <option value="$PROJECT_DIR$/final_cms/api/package.json" />
-        <option value="$PROJECT_DIR$/final_cms/api/config/database.js" />
         <option value="$PROJECT_DIR$/final_cms/api/app.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/signup/signup.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/login/login.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/sign-up-modal/sign-up-modal.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/signup/signup.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/login-modal/login-modal.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/app.html" />
         <option value="$PROJECT_DIR$/app/src/providers/subscriptions/subscriptions.ts" />
-        <option value="$PROJECT_DIR$/app/src/providers/auth/auth.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.html" />
-        <option value="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" />
+        <option value="$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js" />
+        <option value="$PROJECT_DIR$/app/src/app/app.scss" />
         <option value="$PROJECT_DIR$/app/src/pages/comments/comments.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/comments/comments.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" />
-        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/expandable/expandable.html" />
-        <option value="$PROJECT_DIR$/app/src/components/expandable/expandable.scss" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/components.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/expandable/expandable.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" />
-        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.html" />
         <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/subscription/subscription.html" />
+        <option value="$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js" />
+        <option value="$PROJECT_DIR$/app/src/providers/auth/auth.ts" />
+        <option value="$PROJECT_DIR$/final_cms/api/config/database.js" />
+        <option value="$PROJECT_DIR$/final_cms/api/.gitignore" />
+        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/videos/videos.ts" />
+        <option value="$PROJECT_DIR$/final_cms/api/models/user.js" />
+        <option value="$PROJECT_DIR$/app/src/pages/comments/comments.ts" />
+        <option value="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" />
+        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html" />
+        <option value="$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.html" />
+        <option value="$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.scss" />
+        <option value="$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.ts" />
+        <option value="$PROJECT_DIR$/app/src/directives/scroll-hide/scroll-hide.ts" />
+        <option value="$PROJECT_DIR$/app/src/directives/directives.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html" />
+        <option value="$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/lessons/lessons.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/home/home.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/home/home.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.html" />
+        <option value="$PROJECT_DIR$/app/config.xml" />
+        <option value="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.html" />
+        <option value="$PROJECT_DIR$/app/src/pages/favourites/favourites.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/favourites/favourites.scss" />
+        <option value="$PROJECT_DIR$/app/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/favourites/favourites.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.scss" />
+        <option value="$PROJECT_DIR$/app/src/theme/variables.scss" />
+        <option value="$PROJECT_DIR$/app/src/pages/popover/popover.ts" />
+        <option value="$PROJECT_DIR$/app/src/pages/home/home.ts" />
+        <option value="$PROJECT_DIR$/app/src/providers/subjects/subjects.ts" />
       </list>
     </option>
   </component>
@@ -250,9 +257,9 @@
     <handled-path value="$PROJECT_DIR$/test/etutor/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="965" />
-    <option name="width" value="640" />
-    <option name="height" value="910" />
+    <option name="x" value="616" />
+    <option name="width" value="410" />
+    <option name="height" value="584" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -262,7 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,22 +299,58 @@
               <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="expandable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="my-subjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="subjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -320,6 +362,13 @@
               <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
               <item name="final_cms" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="e-tutor" type="462c0819:PsiDirectoryNode" />
+              <item name="final_cms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="e-tutor" type="b2602c69:ProjectViewProjectNode" />
@@ -332,23 +381,25 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="finalH&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/final_cms/api/app.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/final_cms/ui-src/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img" />
       <recent name="E:\Documents\Projects\e-tutor\final_cms\api" />
+      <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img\ads" />
+      <recent name="E:\Documents\Projects\e-tutor\app\www\assets\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -375,10 +426,36 @@
       <option name="hasTarget" value="false" />
       <option name="target" value="" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/final_cms/api/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/final_cms/api/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
     <list>
       <item itemvalue="Node.js.server" />
       <item itemvalue="PhoneGap/Cordova.app" />
+      <item itemvalue="npm.test" />
+      <item itemvalue="npm.start" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -402,305 +479,393 @@
       <workItem from="1525288194023" duration="16010000" />
       <workItem from="1525427628894" duration="40217000" />
       <workItem from="1525684337875" duration="22059000" />
+      <workItem from="1526664641996" duration="2412000" />
+      <workItem from="1526829191418" duration="36138000" />
+      <workItem from="1527018189526" duration="20516000" />
+      <workItem from="1527357418145" duration="51467000" />
+      <workItem from="1528115345354" duration="12259000" />
+      <workItem from="1528392862923" duration="19733000" />
+      <workItem from="1529229458535" duration="719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159828000" />
+    <option name="totallyTimeSpent" value="303855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32876712" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18902843" />
+      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.3287483" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14937212" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28473178" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36863825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.7138927" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.54332876" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18902843" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28473178" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32975295" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.7138927" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3287483" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/app/src/app/app.module.js" />
-        <option value="$PROJECT_DIR$/app/src/app/app.module.js.map" />
-        <option value="$PROJECT_DIR$/app/src/app/main.js" />
-        <option value="$PROJECT_DIR$/app/src/app/main.js.map" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.js" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.js.map" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/home/home.js.map" />
-        <option value="$PROJECT_DIR$/app/src/pages/list/list.js" />
-        <option value="$PROJECT_DIR$/app/src/pages/list/list.js.map" />
-      </list>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="2" selection-end-line="90" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1186">
-          <caret line="105" column="3" selection-start-line="105" selection-start-column="3" selection-end-line="105" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/main.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-339">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1475">
-          <caret line="59" column="25" lean-forward="true" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/discussion-forum/discussion-forum.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="35" selection-start-line="32" selection-start-column="5" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pipes/Category.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/login-modal/login-modal.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/my-subjects/my-subjects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/login-modal/login-modal.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/sign-up-modal/sign-up-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/providers/discussions/discussions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/providers/subscriptions/subscriptions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/providers/auth/auth.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1025">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        <state relative-caret-position="400">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.html">
+    <entry file="file://$PROJECT_DIR$/app/src/pages/subscription/subscription.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="975">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/auth/auth.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5184">
+          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-316" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/config/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/final_cms/api/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="31" column="36" selection-start-line="26" selection-start-column="4" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1789" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/userRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="44" column="86" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/shrinking-segment-header/shrinking-segment-header.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/directives/scroll-hide/scroll-hide.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/components.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/directives/directives.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/comments/comments.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="5825">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2325">
+          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="8" selection-start-line="9" selection-start-column="4" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/signup/signup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="48" column="33" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/platforms/android/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/a-level-exams/a-level-exams.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="83" column="19" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="89" column="12" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/favourites/favourites.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/theme/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/pages/videos/videos.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2375">
+          <caret line="102" column="11" selection-start-line="102" selection-start-column="2" selection-end-line="102" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+        <state relative-caret-position="1900">
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
@@ -709,165 +874,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        <state relative-caret-position="1525">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/popover/popover.html">
+    <entry file="file://$PROJECT_DIR$/app/src/providers/subjects/subjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/options-popover/options-popover.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="309" column="35" selection-start-line="309" selection-start-column="19" selection-end-line="309" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/home/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="148" column="6" selection-start-line="145" selection-start-column="4" selection-end-line="151" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/routes/dicussionRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="110" column="59" lean-forward="true" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/course-detail/course-detail.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="300">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/expandable/expandable.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/expandable/expandable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/components.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="69" column="22" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1850">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/expandable/expandable.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#ion-list#0;n#ion-item#0;n#ion-list#0;n#ion-card-content#0;n#ion-card#0;n#div#0;n#ion-row#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/pages/lessons/lessons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="67" column="3" lean-forward="true" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
         </state>
       </provider>
     </entry>
