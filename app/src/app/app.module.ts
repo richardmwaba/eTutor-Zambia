@@ -29,7 +29,6 @@ import {PopoverPageModule} from "../pages/popover/popover.module"
 import { CommentsPageModule } from "../pages/comments/comments.module";
 import { DiscussionsProvider } from '../providers/discussions/discussions';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
-import { Grade } from '../app/pipes/grade';
 import { Keyboard } from '@ionic-native/keyboard';
 import {LoginModalPageModule} from "../pages/login-modal/login-modal.module";
 import {SignUpModalPageModule} from "../pages/sign-up-modal/sign-up-modal.module";
@@ -39,11 +38,9 @@ import { AboutPageModule } from '../pages/about/about.module';
 import { DirectivesModule} from "../directives/directives.module";
 
 @NgModule({
-<<<<<<< HEAD
     declarations: [
       MyApp,
       HomePage,
-      Grade,
       Category,
       EqualValidatorDirective,
     ],
@@ -70,8 +67,7 @@ import { DirectivesModule} from "../directives/directives.module";
       OptionsPopoverPageModule,
       ComponentsModule,
       DirectivesModule,
-
-      Home2PageModule
+      AboutPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -92,59 +88,7 @@ import { DirectivesModule} from "../directives/directives.module";
       Keyboard,
       Category
     ]
-=======
-  declarations: [
-    MyApp,
-    HomePage,
-    Grade,
-    Category,
-    EqualValidatorDirective,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CourseDetailPageModule,
-    IonicModule.forRoot(MyApp),
-    MySubjectsPageModule,
-    LoginPageModule,
-    SignupPageModule,
-    JuniorSecondaryPageModule,
-    PerGradePagesPageModule,
-    LessonsPageModule,
-    SubscriptionPageModule,
-    VideoPlayerPageModule,
-    VideosPageModule,
-    DiscussionForumPageModule,
-    PopoverPageModule,
-    CommentsPageModule,
-    AddCommentPageModule,
-    LoginModalPageModule,
-    SignUpModalPageModule,
-    OptionsPopoverPageModule,
-    ComponentsModule,
-    AboutPageModule,
-    DirectivesModule,
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage
-  ],
-  providers: [
-    StatusBar,
-    AndroidFullScreen,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider,
-    SubjectsProvider,
-    HttpClientModule,
-    SubscriptionsProvider,
-    MySubjectsProvider,
-    DiscussionsProvider,
-    Keyboard,
-    Category
-  ]
->>>>>>> 1d3c0124e987eefee30ff5caf00c11b62206c280
+
 })
 export class AppModule {
 }

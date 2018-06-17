@@ -49,15 +49,16 @@ export class CourseDetailPage {
    /**
    * saves a subject to my subjects
    */
-  addToMySubjects(){
+  addToMyFavorites(){
     console.log("Adding "+this.subject.subject.name);
     if((AuthProvider.isAuthenticated())){
       this.mySubjectsService.enroll(this.subject).subscribe(data=>{
         this.presentToast(data['msg']);
       });
+    }else{
+      this.presentToast('You are not signed in');
     }
   }
-
   /**
    * Presents a success toast on log in
    */
