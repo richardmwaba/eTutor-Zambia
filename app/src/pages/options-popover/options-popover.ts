@@ -31,30 +31,5 @@ export class OptionsPopoverPage {
     console.log('ionViewDidLoad OptionsPopoverPage');
   }
 
-  /**
-   * saves a subject to my subjects
-   */
-  addToMySubjects(){
-    console.log("Adding "+this.subject.subject.name);
-    if((AuthProvider.isAuthenticated())){
-      this.mySubjectsService.enroll(this.subject).subscribe(data=>{
-        this.presentToast(data['msg']);
-      });
-    }
-  }
-
-  /**
-   * Presents a success toast on log in
-   */
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 3000,
-      //position, cssCLass
-    });
-
-    toast.present(); // shows the toaster
-  }
-
 
 }

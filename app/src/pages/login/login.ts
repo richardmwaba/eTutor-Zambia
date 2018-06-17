@@ -100,7 +100,7 @@ export class LoginPage {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "We are signing you in...",
-      duration: 1000
+      duration: 3000
     });
     loader.present();
   }

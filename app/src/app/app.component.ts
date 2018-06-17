@@ -9,12 +9,8 @@ import { Events } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage} from '../pages/signup/signup';
-import { AllSubjectsPage } from '../pages/all-subjects/all-subjects';
 import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
-import { SubscriptionPage } from '../pages/subscription/subscription';
-import { VideoPlayerPage } from '../pages/video-player/video-player';
 import {AuthProvider} from "../providers/auth/auth";
-import {SubjectsProvider} from "../providers/subjects/subjects";
 import { AboutPage } from '../pages/about/about';
 
 @Component({
@@ -78,12 +74,7 @@ export class MyApp {
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
-<<<<<<< HEAD
-        { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
-        { title: 'About', leftIcon: 'information-cicle-outline', component: AboutPage },
-=======
         // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
->>>>>>> 8b9a9be2d8340637cee503041147d87c63ce1b10
       ];
     }else {
       this.username =null;
@@ -91,7 +82,7 @@ export class MyApp {
         { title: 'Home', leftIcon: 'home', component: HomePage },
         { title: 'Sign In', leftIcon: 'log-in', component: LoginPage },
         { title: 'Sign Up', leftIcon: 'person-add', component: SignupPage },
-        { title: 'About', leftIcon: 'information-cicle-outline', component: AboutPage },
+        { title: 'About', leftIcon: 'information-circle', component: AboutPage },
       ];
     }
   }
