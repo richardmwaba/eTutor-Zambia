@@ -9,6 +9,7 @@ import { SettingsService } from '../../services/settings/settings.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
+  subject: any;
   topics: any;
   constructor(
     private settings: SettingsService,
@@ -16,12 +17,15 @@ export class SubjectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+    this.getSubjectTopics("5ae92d6f295ac71744e3ee9b");
+    console.log(this.subject);
+    console.log(this.topics);
   }
 
   getSubjectTopics(id){
     this.settings.getSubjectById(id).subscribe(data => {
-      this.topics = data;
+      this.subject = data;
+      this.topics = this.subject.topics;
     });
   }
 
