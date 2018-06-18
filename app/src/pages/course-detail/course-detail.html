@@ -7,15 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <!--<ion-buttons left>-->
-    <!--<button ion-button icon-only (click)="dismiss()" class="my-style-for-modal">-->
-    <!--<ion-icon name="arrow-back"></ion-icon>-->
-    <!--</button>-->
-    <!--</ion-buttons>-->
     <ion-title>{{subject.subject.name}}</ion-title>
     <ion-buttons end>
-      <button (click)="addToMySubjects()">
-        <ion-icon ios="ios-bookmark" md="md-bookmark"></ion-icon>
+      <button (click)="addToMyFavorites()">
+        <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

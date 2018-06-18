@@ -66,12 +66,20 @@ export class PopoverPage {
     }
   }
 
+  /**
+   * go to selected subject
+   * @param subject
+   */
   courseDetail(subject) {
     //navigate to the selected course detail page
     this.keyboard.close();
     this.navCtrl.push(CourseDetailPage, {subject});
+    this.dismiss();
   }
 
+  /**
+   * dismiss the search modal
+   */
   dismiss(){
     this.keyboard.close();
     this.viewCtrl.dismiss();

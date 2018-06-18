@@ -24,7 +24,7 @@ export class SignupPage {
     public formBuilder: FormBuilder,
     public loadingCtrl: LoadingController
   ) {
-    // setting up form builber
+    // setting up form builder
     this.theForm = formBuilder.group({
       // name and username should ot exceed 30 characters and should only be letters
       name: ['', Validators.compose( [Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required] )],

@@ -29,9 +29,7 @@ export class SubjectsProvider {
                 });
         });
     }
-
   /**
-   *
    * @param subjects
    */
   static storeData(subjects) {

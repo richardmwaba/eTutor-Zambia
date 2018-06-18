@@ -24,7 +24,6 @@ export class OptionsPopoverPage {
     public navParams: NavParams,
     public toastCtrl: ToastController,
     public mySubjectsService: MySubjectsProvider) {
-    // this.subject = navParams.get("subject");
   }
 
   ionViewDidLoad() {

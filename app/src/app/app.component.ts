@@ -3,13 +3,11 @@ import {LoadingController, Nav, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
-
-
 // page imports
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage} from '../pages/signup/signup';
-import { MySubjectsPage } from '../pages/my-subjects/my-subjects';
+import { FavouritesPage } from '../pages/favourites/favourites';
 import {AuthProvider} from "../providers/auth/auth";
 import { AboutPage } from '../pages/about/about';
 
@@ -73,7 +71,7 @@ export class MyApp {
 
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
-        { title: 'My Subjects', leftIcon: 'list-box', component: MySubjectsPage },
+        { title: 'Favourite', leftIcon: 'list-box', component: FavouritesPage },
         // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
       ];
     }else {
