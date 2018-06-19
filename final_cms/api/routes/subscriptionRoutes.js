@@ -73,7 +73,7 @@ router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
     Subscription.findMatch(req.params.subjectId, req.params.userEmail, (err, subscription)=>{
         //check for errors or if record has been found
         if(subscription){
-            res.json({success: false, msg: 'No subscription found for this subject. Subscribe to access subject content.'})
+            res.json({success: false, msg: 'You have not subscribed for this subject. Subscribe now'})
         }else{
             res.json({success: true, subscription});
         }

@@ -3,25 +3,14 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-var mongoose = require('mongoose');                     // mongoose for mongodb
-var coupon = require("coupon");
+let mongoose = require('mongoose');                     // mongoose for mongodb
+let coupon = require('voucher-code-generator');
 
 const Coupon = require('../models/coupon');
 const Subscription = require('../models/subscription');
 
 //get all coupons
-router.get('/all', (req, res, next) => {
-// add to db
-    Coupon.getAllCoupons((err, coupons) => {
-        // check for errors
-        if (err) {
-            res.json({success: false, msg: 'Failed to get Coupon'});
-        } else {
-            // if success
-            res.json(coupons);
-        }
-    });
-});
+router.get('/all', getAllCoupons);
 
 //get all active coupons
 router.get('/active', (req, res, next) => {
@@ -52,26 +41,46 @@ router.get('/pending', (req, res, next) => {
 });
 
 //generates new coupon and saves it to the database
-router.get('/generate/:numberOfCoupons', (req, res, next) => {
-    let i = req.params.numberOfCoupons;
-    while(i>0) {
-        let newCoupon = new Coupon.getModel(
-            coupon("eTutor")
-            .give("free")
-            .limit(1)
-            .person("Cigret")
-            .only("Subjects")
-            .expire(new Date(2015, 0, 1))
-    );
+router.get('/generate/:numberOfCoupons', generateCoupons, saveCoupons, getAllCoupons);
+
+//generate specified coupons
+function generateCoupons(req, res, next) {
+    req.generated = coupon.generate({
+        length: 12,
+        count: req.params.numberOfCoupons,
+        pattern: "###-###-###-###",
+        charset: coupon.charset("numbers"),
+    });
+    next();
+}
+
+//ave the generated coupons to db
+ function saveCoupons(req, res, next) {
+    let i = (req.params.numberOfCoupons-1);
+     for(i; i>=0; i--) {
+         let newCoupon = new Coupon.getModel({
+             _id                     :   mongoose.Types.ObjectId(),
+             key                     :   req.generated[i],
+             name                    :   "eTutor",
+             service                   :   "Video access",
+             seller              :   "Kazang",
+             countMax             :   1,
+             discount                :   "free",
+             expirationDate                     :   new Date(2015, 0, 1),
+         });
 // add to db
-        Coupon.addCoupon(newCoupon, (err, coupon) => {
-            // check for errors
-            if (err) {
-                res.json({success: false, msg: err.stack});
-            }
-        });
-        i--;
-    }
+         Coupon.addCoupon(newCoupon, (err, coupon) => {
+             // check for errors
+             if (err) {
+                 res.json({success: false, msg: err.stack});
+             }
+         });
+     }
+     //got to next function
+     next();
+ }
+
+function getAllCoupons(req, res, next){
     //return all the coupons when completed
     Coupon.getAllCoupons((err, coupons) => {
         // check for errors
@@ -82,8 +91,7 @@ router.get('/generate/:numberOfCoupons', (req, res, next) => {
             res.json(coupons);
         }
     });
-
-});
+}
 
 // delete a Coupon
 router.delete('/delete/:couponId', function(req, res) {

@@ -16,7 +16,7 @@
     "body-parser": "*",
     "compression": "^1.7.2",
     "cors": "*",
-    "coupon": "^0.4.0",
+    "coupon": "file:custom_modules/coupon",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
@@ -24,7 +24,8 @@
     "passport": "*",
     "passport-jwt": "*",
     "validator": "^10.1.0",
-    "vimeo": "^2.0.1"
+    "vimeo": "^2.0.1",
+    "voucher-code-generator": "^1.1.1"
   },
   "author": "Richard Mwaba",
   "license": "ISC",

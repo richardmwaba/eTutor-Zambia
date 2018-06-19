@@ -7,9 +7,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const mongoose = require('mongoose');                     // mongoose for mongodb
-
 const User = require('../models/user');
-
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
     let newUser = new User.getModel({
