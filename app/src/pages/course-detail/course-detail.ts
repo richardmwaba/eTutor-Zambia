@@ -50,7 +50,7 @@ export class CourseDetailPage {
    * saves a subject to my subjects
    */
   addToMyFavorites(){
-    console.log("Adding "+this.subject.subject.name);
+     this.presentToast("Adding "+this.subject.subject.name+" to favorites");
     if((AuthProvider.isAuthenticated())){
       this.mySubjectsService.enroll(this.subject.subject).subscribe(data=>{
         this.presentToast(data['msg']);

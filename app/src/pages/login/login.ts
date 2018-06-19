@@ -17,6 +17,7 @@ export class LoginPage {
   // variable
   logForm: FormGroup;
   submitAttempt: boolean = false;
+  public loader:any;
 
   token: string;
   user: any;
@@ -57,52 +58,58 @@ export class LoginPage {
    * Logs a user into the app
    */
   login() {
-    this.submitAttempt = true;
+    if(this.logForm.valid) {
+      this.submitAttempt = true;
+      console.log('credentials: ' + this.logForm.value);
+      this.createLoader();
+      this.loader.present();
+      this.auth.authenticateUser(this.logForm.value).subscribe(data => {
 
-    console.log('credentials: ' + this.logForm.value);
-    this.presentLoading();
-    this.auth.authenticateUser(this.logForm.value).subscribe(data => {
+        if (this.loader) {
+          this.loader.dismiss();
+        }
+        if (data['success']) {
+          // get token and user from returned data
+          this.token = data['token'];
+          this.user = data['user'];
+          this.username = this.user.username;
 
-      if (data['success']) {
-        // get token and user from returned data
-        this.token = data['token'];
-        this.user = data['user'];
-        this.username = this.user.username;
+          // store token and user dits in local storage
+          //TODO: may need to user secure storage for this data
+          this.auth.storeData(this.token, this.user);
 
-        // store token and user dits in local storage
-        //TODO: may need to user secure storage for this data
-        this.auth.storeData(this.token, this.user);
+          // show success toast
+          this.presentToast();
+          // console.log('User authenticated! '+this.username);
+          this.events.publish('user:authenticated', this.user, this.username, Date.now());
 
-        // show success toast
-        this.presentToast();
-        // console.log('User authenticated! '+this.username);
-        this.events.publish('user:authenticated', this.user, this.username, Date.now());
+          // redirect to home page
+          this.navCtrl.setRoot(HomePage);
+          // this.navCtrl.pop();
 
-        // redirect to home page
-        this.navCtrl.setRoot(HomePage);
-        // this.navCtrl.pop();
+        } else {
+          // show error alert
+          let toastWarn = this.toastCtrl.create({
+            message: data['msg'],
+            duration: 3000,
+            position: 'top',
+            cssClass: 'warning'
+          });
 
-      } else {
-        // show error alert
-        let toastWarn = this.toastCtrl.create({
-          message: data['msg'],
-          duration: 3000,
-          position: 'top',
-          cssClass: 'warning'
-        });
+          toastWarn.present();
+        }
 
-        toastWarn.present();
-      }
-
-    });
+      });
+    }
   }
 
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "We are signing you in...",
-      duration: 3000
+  /**
+   *
+   */
+  createLoader() {
+    this.loader = this.loadingCtrl.create({
+      content: "We are signing you in..."
     });
-    loader.present();
   }
 
   /**

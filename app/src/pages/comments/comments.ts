@@ -27,6 +27,7 @@ export class CommentsPage {
   public data:any;
   public user: any;
   public didReact=0;
+  public loader:any;
 
   constructor(
     public navCtrl: NavController,
@@ -41,15 +42,21 @@ export class CommentsPage {
     //get the topic selected form the discussions page
     this.topic = this.navParams.get('topic');
     this.user = JSON.parse(localStorage.getItem('user'));
-
     //initialise this class with data from the database
 
 
   }
 
+  createLoader(){
+    this.loader = this.loader = this.loadingCtrl.create({
+      content: "Loading comments..."
+    });
+  }
+
   ionViewDidLoad() {
-    this.presentLoading();
-    this.initialise();
+    this.createLoader();
+    this.loader.present();
+    this.initialise(null);
     // this.presentToast(this.data['msg']);
 
     console.log('ionViewDidLoad CommentsPage');
@@ -57,20 +64,13 @@ export class CommentsPage {
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-    this.initialise();
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-    }, 4000);
+    this.initialise(refresher);
   }
-
-
   /**
    * initialises this class with values from the db
    * checking which comments the logged in user or has not liked
    */
-  initialise() {
+  initialise(refresher) {
     let user_id = null;
     if (this.user) {
       user_id = this.user.id;
@@ -78,6 +78,13 @@ export class CommentsPage {
     this.discussionsService.getDiscussion(this.topic._id, user_id).then(data => {
       this.data = data;
       this.comments = data['comments'];
+      if(this.loader) {
+        this.loader.dismiss();
+      }
+      if(refresher) {
+        refresher.complete();
+      }
+
     });
   }
 
@@ -96,6 +103,7 @@ export class CommentsPage {
    * @param comment,  a comment object representing the disliked comment
    */
   like(comment) {
+    this.presentToast("Saving...");
     if (AuthProvider.isAuthenticated()) {
       let reviewer = comment.reviewers.find(x => x._id === this.user.id);  // we check if this user reacted to this comment earlier.
       if(reviewer) {this.setHasLikedHasDisliked(reviewer);} //if this user did react earlier, set the hasLiked and disliked attributes accordingly else set the didReact to null or false
@@ -111,6 +119,7 @@ export class CommentsPage {
    * @param comment , a comment object representing the disliked comment
    */
   dislike(comment) {
+    this.presentToast("Saving...");
     if (AuthProvider.isAuthenticated()) {
       let reviewer = comment.reviewers.find(x => x._id === this.user.id);// we check if this user reacted to this comment earlier.
       if(reviewer){this.setHasLikedHasDisliked(reviewer);}//if this user reacted, set the hasLiked and disliked attributes accordingly
@@ -237,14 +246,6 @@ export class CommentsPage {
     });
 
     toast.present(); // shows the toaster
-  }
-
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Loading comments...",
-      duration: 4000
-    });
-    loader.present();
   }
 
 }

@@ -46,6 +46,7 @@ export class FavouritesPage {
   }
 
   remove(subject) {
+    this.presentToast("We are removing "+subject.name+" from your favorites");
     this.mySubjectsService.remove(subject).subscribe(data => {
       this.mySubjects = data['mySubjects'];
       console.log("New subjects " + data['mySubjects']);

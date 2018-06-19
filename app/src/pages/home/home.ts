@@ -15,6 +15,7 @@ import {ScrollHideConfig} from "../../directives/scroll-hide/scroll-hide";
 export class HomePage {
 
     public subjects: Array<any>;
+  public loader:any;
   public footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   public headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 
@@ -35,12 +36,7 @@ export class HomePage {
    */
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-    this.getSubjectsFromServer();
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-    }, 4000);
+    this.getSubjectsFromServer(refresher);
   }
 
   /**
@@ -49,12 +45,12 @@ export class HomePage {
   initializeSubjects(){
     this.subjects = JSON.parse(localStorage.getItem('subjects'));
     console.log("current subjects are "+this.subjects);
-
     if(this.subjects){
       console.log("Subjects on local storage are "+this.subjects);
     }else {
-      this.presentLoading();
-      this.getSubjectsFromServer();
+      this.createLoader();
+      this.loader.present();
+      this.getSubjectsFromServer(null);
     }
   }
 
@@ -62,9 +58,15 @@ export class HomePage {
    * Request subjects (data) from the online server and
    * stores them locally for faster retrieval
    */
-  getSubjectsFromServer(){
+  getSubjectsFromServer(refresher){
     this.subjectsService.getSubjects().then((data) => {
       console.log(data);
+      if(this.loader) {
+        this.loader.dismiss();
+      }
+      if(refresher){
+        refresher.complete();
+      }
       this.subjects = JSON.parse(localStorage.getItem('subjects'));
     }).catch((data)=>{
 
@@ -74,12 +76,10 @@ export class HomePage {
   /**
    * This function presents the loading animation
    */
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Loading subjects...",
-      duration: 6000
+  createLoader() {
+    this.loader = this.loadingCtrl.create({
+      content: "Loading subjects..."
     });
-    loader.present();
   }
 
   presentModal() {

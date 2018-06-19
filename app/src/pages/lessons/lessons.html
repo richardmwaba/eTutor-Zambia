@@ -17,22 +17,14 @@
   <div class="subject-details">
     <!-- About section -->
     <ion-row>
-      <ion-label>About</ion-label>
+      <ion-label style="font-weight: bolder;">About</ion-label>
       <ion-item text-wrap>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi omnis voluptate recusandae,
-        perspiciatis optio, ipsa enim eveniet inventore autem ut, molestias dicta sed. Unde aliquam rerum modi perspiciatis illo quasi!
+        {{subject.description}}
       </ion-item>
     </ion-row>
 
-    <!-- <ion-list>
-      <ion-list-header>Topics</ion-list-header>
-      <ion-item *ngFor="let topic of subject.topics">
-        {{ topic.topic_name }}
-      </ion-item>
-    </ion-list> -->
-
     <ion-list class="accordion">
-      <ion-label>Topics Covered</ion-label>
+      <ion-label style="font-weight: bolder;">Topics Covered</ion-label>
       <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)"
         [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
 

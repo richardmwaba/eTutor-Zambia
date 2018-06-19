@@ -10,6 +10,7 @@ import {LoginPage} from "../login/login";
 import {provideAuth} from "angular2-jwt";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 import {HomePage} from "../home/home";
+import {LoginModalPage} from "../login-modal/login-modal";
 
 @IonicPage()
 @Component({
@@ -28,6 +29,7 @@ export class LessonsPage {
   public msg: any;
   public expanded: boolean = false;
   public isAuthenticated: any;
+  public loader:any;
   showLevel1 = null;
   showLevel2 = null;
 
@@ -91,18 +93,25 @@ export class LessonsPage {
   };
 
   subscribe(){
+    if((AuthProvider.isAuthenticated())){
+    this.createLoader();
+    this.loader.present();
     this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
       console.log(data);
       this.data = data;
+      if(this.loader) {
+        this.loader.dismiss();
+      }
       //if success store the record locally
       if (this.data['success']) {
-        this.presentLoading(); // displays the loader
-
+        this.presentToast('You have already subscribed for this subject.');
       } else {
-        this.presentToast(this.data['msg']);
         this.presentModal(this.subject.topics[0].sub_topics[0].videos[0], this.subject, SubscriptionPage);
       }
     });
+    }else {
+      this.presentToast('You are not signed in');
+    }
   }
 
   dismissModal(){
@@ -136,12 +145,13 @@ export class LessonsPage {
     })
   }
 
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Checking subscription, please wait...",
-      dismissOnPageChange: true
+  /**
+   * create the loader control
+   */
+  createLoader() {
+    this.loader = this.loadingCtrl.create({
+      content: "We are checking your subscription..."
     });
-    loader.present();
   }
 
   /**

@@ -12,6 +12,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 export class SignupPage {
 
   theForm: FormGroup;
+  public loader:any;
 
   submitAcepted: boolean = false;
 
@@ -49,9 +50,11 @@ export class SignupPage {
 
     //console.log(this.theForm.value);
     if(this.theForm.valid){
-      this.presentLoading();
+      this.createLoader();
+      this.loader.present();
     this.auth.signup(this.theForm.value).subscribe(
       data => {
+        if(this.loader){this.loader.dismiss();}
         if (data['success']) {
           // show success msg
           this.presentToast(data['msg']);
@@ -88,12 +91,10 @@ export class SignupPage {
     toast.present(); // shows the toaster
   }
 
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
+  createLoader() {
+    this.loader = this.loadingCtrl.create({
+      content: "We are signing you up..."
     });
-    loader.present();
   }
 
 }

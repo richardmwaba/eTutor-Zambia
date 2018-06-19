@@ -103,7 +103,7 @@ export class MyApp {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "We are signing you out...",
-      duration: 1000
+      duration: 500
     });
     loader.present();
   }
