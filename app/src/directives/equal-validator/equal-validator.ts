@@ -23,7 +23,7 @@ export class EqualValidatorDirective implements Validator {
     // control value (e.g. password)
     let pswd = c.root.get(this.validateEqual);
 
-    // vlue not equal
+    // value not equal
     if (pswd && cnfrm !== pswd.value) return {
       validateEqual: false
     }
