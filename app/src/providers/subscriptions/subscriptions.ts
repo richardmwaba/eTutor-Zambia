@@ -39,12 +39,6 @@ export class SubscriptionsProvider {
   verifySubscription(subject, user){
     this.subject = subject;
     this.user = user;
-
-    // already loaded data
-    if (this.data) {
-      return Promise.resolve(this.data);
-    }
-
     // don't have the data yet
     return new Promise(resolve => {
       this.http.get(this.baseURL+'/verify/' + this.subject._id + '/' + this.user.email)

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController,ViewController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, NavController, ViewController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SubscriptionsProvider } from '../../providers/subscriptions/subscriptions';
 import {AuthProvider} from '../../providers/auth/auth';
@@ -23,10 +23,12 @@ export class SubscriptionPage {
   public subjectName: any;
   public user: any;
   submitAcepted: boolean = false;
+  public loader:any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    private loadingCtrl: LoadingController,
     public subscription: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public formBuilder: FormBuilder,
@@ -57,31 +59,47 @@ export class SubscriptionPage {
   }
 
   /**
+   * create the loader control
+   */
+  createLoader() {
+    this.loader = this.loadingCtrl.create({
+      content: "Please wait..."
+    });
+  }
+
+  /**
    * Subscribes a user to the given subject
    */
   subscribeUser() {
+    if(this.theForm.valid) {
+      this.submitAcepted = true;
 
-    this.submitAcepted = true;
+      //present loader
+      this.createLoader();
+      this.loader.present();
+      this.subscription.subscribeUser(this.theForm.value).subscribe(
+        data => {
+          if (data['success']) {
+            // show success msg
+            this.presentToast(data['msg']);
 
-    //console.log(this.theForm.value);
-
-    this.subscription.subscribeUser(this.theForm.value).subscribe(
-      data => {
-        if (data['success']) {
-          // show success msg
-          this.presentToast(data['msg']);
-
-          // dismiss the modal and pass the returned data
-          this.viwCtrl.dismiss(data);
-        }else{
-          //if subscription failed
-          // show fail message
-          this.presentToast(data['msg']);
+            // dismiss the modal and pass the returned data
+            this.viwCtrl.dismiss(data);
+          } else {
+            //if subscription failed
+            // show fail message
+            this.presentToast(data['msg']);
+          }
+        },
+        // error handling
+        err => {
+          console.log(err);
         }
-      },
-      // error handling
-      err => { console.log(err); }
-    );
+      );
+    }else {
+      // show fail message
+      this.presentToast("You have errors in your entries");
+    }
   }
 
   /**

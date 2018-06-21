@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 
@@ -24,6 +24,7 @@ export class VideoPlayerPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private sanitizer: DomSanitizer,
+    public viewCtrl: ViewController,
     private androidFullScreen: AndroidFullScreen) {
     this.video = navParams.get('video');
       this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
@@ -33,11 +34,10 @@ export class VideoPlayerPage {
     this.androidFullScreen.isImmersiveModeSupported()
       .then(() => console.log('Immersive mode supported'))
       .catch(err => console.log(err));
-
   }
 
   dismissModal(){
-    this.navCtrl.pop();
+    this.viewCtrl.dismiss({success:false});
   }
 
 }

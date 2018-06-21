@@ -10,7 +10,17 @@ const Coupon = require('../models/coupon');
 const Subscription = require('../models/subscription');
 
 //get all coupons
-router.get('/all', getAllCoupons);
+router.get('/all', (req, res, next) => {
+     Coupon.getAllCoupons((err, coupons) => {
+         // check for errors
+         if (err) {
+             res.json({success: false, msg: 'Failed to get Coupon'});
+         } else {
+             // if success
+             res.json(coupons);
+         }
+     });
+ });
 
 //get all active coupons
 router.get('/active', (req, res, next) => {
@@ -82,15 +92,8 @@ function generateCoupons(req, res, next) {
 
 function getAllCoupons(req, res, next){
     //return all the coupons when completed
-    Coupon.getAllCoupons((err, coupons) => {
-        // check for errors
-        if (err) {
-            res.json({success: false, msg: 'Failed to get Coupon'});
-        } else {
-            // if success
-            res.json(coupons);
-        }
-    });
+    res.send(req.generated)
+
 }
 
 // delete a Coupon

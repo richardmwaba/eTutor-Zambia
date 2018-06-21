@@ -43,7 +43,6 @@ export class HomePage {
    * Initializes the subject from local storage
    */
   initializeSubjects(){
-    this.subjects = JSON.parse(localStorage.getItem('subjects'));
     console.log("current subjects are "+this.subjects);
     if(this.subjects){
       console.log("Subjects on local storage are "+this.subjects);
