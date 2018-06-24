@@ -24,17 +24,6 @@ module.exports.getCoupons = (callback, limit) => {
     Coupon.find(callback).limit(limit);
 };
 
-// generate coupons
-module.exports.generateCoupons = (callback, limit) => {
-    let myCoupon = coupon("GREAT-30")
-        .give("free")
-        .limit(10)
-        .person("Mr. Fetus")
-        .only("Banana")
-        .expire(new Date(2015, 0, 1));
-    callback(myCoupon.json());
-};
-
 
 const model = mongoose.model('Coupon', CouponSchema);
 module.exports.getModel = model;

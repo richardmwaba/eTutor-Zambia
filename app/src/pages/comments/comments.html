@@ -46,11 +46,11 @@
           <p>{{comment.message}}</p>
         </ion-card-content>
         <div class="delete_button" *ngIf="comment.username==user.username">
-          <ion-icon name="md-trash" style="margin: 0% 5% 0% 0%;" (click)="deleteComment(comment)"></ion-icon>delete
+          <ion-icon name="md-trash" (click)="deleteComment(comment)"></ion-icon>
         </div>
           <div class="reaction_buttons">
-          <ion-icon name="thumbs-up" style="margin: 0% 5% 0% 0%;" (click)="like(comment)"></ion-icon>{{comment.likes}}
-           <ion-icon name="thumbs-down" style="margin: 0% 5% 0% 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
+          <ion-icon name="thumbs-up" style="margin: 0 5% 0 0;" (click)="like(comment)"></ion-icon>{{comment.likes}}
+           <ion-icon name="thumbs-down" style="margin: 0 5% 0 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
         </div>
       </ion-card>
     </div>

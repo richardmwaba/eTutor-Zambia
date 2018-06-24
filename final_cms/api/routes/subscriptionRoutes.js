@@ -4,8 +4,8 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-var mongoose = require('mongoose');                     // mongoose for mongodb
-var coupon = require("coupon");
+let mongoose = require('mongoose');                     // mongoose for mongodb
+let coupon = require("voucher-code-generator");
 
 const Subscription = require('../models/subscription');
 const Coupon = require('../models/coupon');

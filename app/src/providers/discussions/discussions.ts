@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DiscussionsProvider {
   private baseURL: string = "https://zedtutor.herokuapp.com/discussions/";
+  // private baseURL: string = "http://localhost:5000/discussions/"; //local
   private discussion:any;
 
   // content header for the server
@@ -68,7 +69,7 @@ export class DiscussionsProvider {
   }
 
   deleteComment(topic_id, comment_id){
-    return this.http.delete(this.baseURL+'comment/delete/'+topic_id+"/"+comment_id);
+    return this.http.delete(this.baseURL+'comments/delete/'+topic_id+"/"+comment_id);
   }
 
   deleteDiscussion(topic){

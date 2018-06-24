@@ -184,13 +184,16 @@ function updateReactions(req, res, next){
 }
 
 // delete a discussion
-router.delete('/comment/delete/topicId/:commentId', function (req, res) {
+router.delete('/comments/delete/:topic_id/:comment_id', function (req, res) {
     Discussion.findMatch(req.params.topic_id, (err, discussion) => {
         if (err) {
             res.json({success: null, msg: 'An error occurred'});
-        } else {
-            let cmnt = discussion.comments.id(req.params.commentId).remove;
+        } else if(discussion) {
+            let cmnt = discussion.comments.id(req.params.comment_id).remove;
+            discussion.save();
             res.json({success: true, msg: 'You comment has been deleted', comments:discussion.comments});
+        }else {
+            res.json({success: false, msg: 'You comment could not be deleted'});
         }
     });
 });

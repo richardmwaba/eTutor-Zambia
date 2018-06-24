@@ -233,10 +233,13 @@ export class CommentsPage {
 
 
   deleteComment(comment) {
-    if (AuthProvider.isAuthenticated()) {
+    if ((AuthProvider.isAuthenticated())) {
     this.presentToast("We are removing "+comment.title);
     this.discussionsService.deleteComment(this.topic._id, comment._id).subscribe(data => {
-      this.comments = data['comments'];
+      if(data['success'])
+      {
+        this.comments = data['comments'];
+      }
       this.presentToast(data['msg']);
     });
     } else {
