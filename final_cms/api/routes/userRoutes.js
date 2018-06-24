@@ -137,14 +137,14 @@ router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
 });
 
 // retrieve given user and return only the subjects they have enrolled for
-router.get('/mySubjects/all/:email', (req, res, users) => {
+router.get('/mySubjects/:email', (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json(user.mySubjects);
+            res.json({success:true, mySubjects:user.mySubjects});
         }
     });
 });

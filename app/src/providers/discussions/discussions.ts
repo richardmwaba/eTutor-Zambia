@@ -67,8 +67,8 @@ export class DiscussionsProvider {
     return this.http.patch(this.baseURL+'updateReactions/'+topic_id+'/'+comment_id+'/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+likes+'/'+dislikes+'/'+didReact, null, { headers: this.contentHeader });
   }
 
-  deleteComment(comment){
-    return this.http.delete(this.baseURL+'comment/delete/'+comment._id);
+  deleteComment(topic_id, comment_id){
+    return this.http.delete(this.baseURL+'comment/delete/'+topic_id+"/"+comment_id);
   }
 
   deleteDiscussion(topic){

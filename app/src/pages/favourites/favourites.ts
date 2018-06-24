@@ -3,7 +3,6 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
 import {MySubjectsProvider} from '../../providers/my-subjects/my-subjects'
 import {AuthProvider} from "../../providers/auth/auth";
 import {CourseDetailPage} from "../course-detail/course-detail";
-import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the MySubjectsPage page.
@@ -40,7 +39,7 @@ export class FavouritesPage {
       this.user = this.authService.user;
       this.mySubjectsService.getMySubjects().then(data => {
         this.mySubjects = data['mySubjects'];
-        console.log("Found " + data['subjects']);
+        console.log("Found " + data['mySubjects']);
       });
     }
   }

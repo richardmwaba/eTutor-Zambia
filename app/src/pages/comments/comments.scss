@@ -42,10 +42,16 @@ page-comments {
   .buttons{
     overflow: auto;
     //display: inline-block;
-    text-align: center;
-    //padding: 20%;
+    //text-align: center;
     text-decoration: none;
+    float: bottom;
+  }
+  .buttons>.reaction_buttons{
     margin-left: 60%;
+    overflow: auto;
+    //display: inline-block;
+    //text-align: center;
+    text-decoration: none;
   }
 
   .addComment{

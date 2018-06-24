@@ -4,7 +4,7 @@
 
 const mongoose = require('mongoose');
 const config = require('../config/database');
-var coupon = require("coupon");
+let coupon = require("voucher-code-generator");
 const topic_schema = require('../models/topic');
 
 // Coupon schema
@@ -26,8 +26,7 @@ module.exports.getCoupons = (callback, limit) => {
 
 // generate coupons
 module.exports.generateCoupons = (callback, limit) => {
-    var coupon = require("coupon");
-    var myCoupon = coupon("GREAT-30")
+    let myCoupon = coupon("GREAT-30")
         .give("free")
         .limit(10)
         .person("Mr. Fetus")
