@@ -79,7 +79,7 @@ export class LoginPage {
           this.auth.storeData(this.token, this.user);
 
           // show success toast
-          this.presentToast();
+          this.presentToast('You have successfully logged in...');
           // console.log('User authenticated! '+this.username);
           this.events.publish('user:authenticated', this.user, this.username, Date.now());
 
@@ -100,6 +100,8 @@ export class LoginPage {
         }
 
       });
+    }else{
+      this.presentToast("You still have errors");
     }
   }
 
@@ -115,9 +117,9 @@ export class LoginPage {
   /**
    * Presents a success toast on log in
    */
-  presentToast() {
+  presentToast(msg) {
     let toast = this.toastCtrl.create({
-      message: 'You have successfully logged in...',
+      message: msg,
       duration: 3000,
       //position, cssCLass
     });

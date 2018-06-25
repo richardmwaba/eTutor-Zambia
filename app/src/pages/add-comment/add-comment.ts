@@ -62,31 +62,35 @@ export class AddCommentPage {
    * submits a user comment
    */
   submit() {
-    this.submitAttempt = true;
+    if(this.commentForm.valid) {
+      this.submitAttempt = true;
 
 
-    this.discussionService.addComment(this.commentForm.value).subscribe(data => {
+      this.discussionService.addComment(this.commentForm.value).subscribe(data => {
 
-      if (data['success']) {
+        if (data['success']) {
 
-        // show success toast
-        this.presentToast(data['msg']);
-        // dismiss the modal
-        this.viwCtrl.dismiss(data['comments']);
-      } else {
-        // show error alert
-        console.log(data['msg']);
-        let toastWarn = this.toastCtrl.create({
-          message: data['msg'],
-          duration: 3000,
-          position: 'top',
-          cssClass: 'warning'
-        });
+          // show success toast
+          this.presentToast(data['msg']);
+          // dismiss the modal
+          this.viwCtrl.dismiss(data['comments']);
+        } else {
+          // show error alert
+          console.log(data['msg']);
+          let toastWarn = this.toastCtrl.create({
+            message: data['msg'],
+            duration: 3000,
+            position: 'top',
+            cssClass: 'warning'
+          });
 
-        toastWarn.present();
-      }
+          toastWarn.present();
+        }
 
-    });
+      });
+    }else {
+      this.presentToast("You still have errors");
+    }
   }
 
   /**
