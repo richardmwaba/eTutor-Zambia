@@ -189,9 +189,14 @@ router.delete('/comments/delete/:topic_id/:comment_id', function (req, res) {
         if (err) {
             res.json({success: null, msg: 'An error occurred'});
         } else if(discussion) {
-            let cmnt = discussion.comments.id(req.params.comment_id).remove;
-            discussion.save();
-            res.json({success: true, msg: 'You comment has been deleted', comments:discussion.comments});
+            let cmnt = discussion.comments.id(req.params.comment_id).remove();
+            discussion.save(function(err){
+                if(err) {
+                    res.json({success: null, msg: 'An error occurred'});
+                }else {
+                    res.json({success: true, msg: 'You comment has been deleted', comments:discussion.comments});
+                }
+            });
         }else {
             res.json({success: false, msg: 'You comment could not be deleted'});
         }
