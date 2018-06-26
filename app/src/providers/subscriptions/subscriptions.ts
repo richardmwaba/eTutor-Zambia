@@ -20,6 +20,7 @@ export class SubscriptionsProvider {
   subjectId: any;
   userEmail: any;
   found:any;
+  authToken: string;
   public subscription:any;
   public subject: any;
 
@@ -57,7 +58,23 @@ export class SubscriptionsProvider {
    * @returns {Observable<Object>}
    */
   subscribeUser(data){
+    this.appendToken();
     return this.http.post(this.baseURL+'/subscribeUser', data, { headers: this.contentHeader });
+  }
+
+   /*
+  *Loads token from local storage
+  * 
+  * */
+  //Get: Load Token From Local Storage
+  loadToken() {
+    const token = localStorage.getItem('token');
+    this.authToken = token;
+  }
+
+  appendToken(){
+    this.loadToken();
+    this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }
 
   /**

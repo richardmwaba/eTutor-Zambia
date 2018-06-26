@@ -1,38 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
   authToken: any;
   superUser: any;
+  private baseUrl: string = "http://localhost:3000/superusers/";
+  contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   //Post: Register User
   registerSuperUser(superUser){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/superusers/register', superUser, { headers: headers })
-    .map(res => res.json());
+    return this.http.post(this.baseUrl+'register', superUser, { headers: this.contentHeader });
+    //.map(res => res.json());
   }
 
   //Post: Authenticate User
   authenticateSuperUser(superUser){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/superusers/authenticate', superUser, { headers: headers })
-    .map(res => res.json());
+    return this.http.post(this.baseUrl+'authenticate', superUser, { headers: this.contentHeader });
+    //.map(res => res.json());
   }
 
   //Get: User Profile
   getProfile(){
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/superusers/profile', { headers: headers })
-    .map(res => res.json());
+    this.appendToken();
+    return this.http.get(this.baseUrl+'profile', { headers: this.contentHeader });
+    //.map(res => res.json());
   }
 
   //Post: Store User
@@ -45,22 +40,15 @@ export class AuthService {
 
   //Get: Super users
   getSuperUsers() {
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
-    const uri = 'http://localhost:3000/superusers/all';
-    return this
-            .http
-            .get(uri)
-            .map(res => res.json());
+    this.appendToken();
+    return this.http.get(this.baseUrl+'all', { headers: this.contentHeader});
+    //.map(res => res.json());
   }
 
   addSuperUser(superUser){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/superusers/add', superUser, { headers: headers })
-    .map(res => res.json());
+    this.appendToken();
+    return this.http.post(this.baseUrl+'add', superUser, { headers: this.contentHeader });
+    //.map(res => res.json());
   }
 
   //Logout User
@@ -74,6 +62,11 @@ export class AuthService {
   loadToken(){
     const token = localStorage.getItem('id_token');
     this.authToken = token;
+  }
+
+  appendToken(){
+    this.loadToken();
+    this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }
 
 }

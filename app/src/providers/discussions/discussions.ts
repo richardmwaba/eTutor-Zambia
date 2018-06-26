@@ -12,6 +12,7 @@ export class DiscussionsProvider {
   private baseURL: string = "https://zedtutor.herokuapp.com/discussions/";
   // private baseURL: string = "http://localhost:5000/discussions/"; //local
   private discussion:any;
+  authToken: string;
 
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
@@ -33,6 +34,7 @@ export class DiscussionsProvider {
   // }
 
     return new Promise(resolve => {
+      this.appendToken();
       this.http.get(this.baseURL+'find/'+topic_id+'/'+user_id, {headers: this.contentHeader}).subscribe(
         data=>{
           this.discussion = data;
@@ -48,6 +50,7 @@ export class DiscussionsProvider {
    * @returns {Observable<Object>}
    */
   addComment(data){
+    this.appendToken();
     return this.http.post(this.baseURL+'add/', data, { headers: this.contentHeader });
   }
 
@@ -65,14 +68,32 @@ export class DiscussionsProvider {
    * @returns {Observable<Object>}
    */
   updateReactions(topic_id, comment_id, hasLiked, hasDisliked, user_id, likes,dislikes, didReact){
+    this.appendToken();
     return this.http.patch(this.baseURL+'updateReactions/'+topic_id+'/'+comment_id+'/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+likes+'/'+dislikes+'/'+didReact, null, { headers: this.contentHeader });
   }
 
   deleteComment(topic_id, comment_id){
+    this.appendToken();
     return this.http.delete(this.baseURL+'comments/delete/'+topic_id+"/"+comment_id);
   }
 
   deleteDiscussion(topic){
-    return this.http.delete(this.baseURL+'delete/'+topic._id);
+    this.appendToken();
+    return this.http.delete(this.baseURL+'delete/'+topic._id, { headers: this.contentHeader});
+  }
+
+  /*
+  *Loads token from local storage
+  * 
+  * */
+  //Get: Load Token From Local Storage
+  loadToken() {
+    const token = localStorage.getItem('token');
+    this.authToken = token;
+  }
+
+  appendToken(){
+    this.loadToken();
+    this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }
 }

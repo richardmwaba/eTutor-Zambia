@@ -4,6 +4,8 @@
 const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 const Videos = require('../models/video');
 const Vimeos = require('../models/vimeoModel');
@@ -29,7 +31,7 @@ router.get('/albums', (req, res, next) => {
     })
 });
 
-router.post('/upload', (req,res, next) => {
+router.post('/upload', passport.authenticate('jwt', {session: false}), (req,res, next) => {
     const data = req.body; // data from 
 
     Vimeos.uploadVideo(data, (err, video, status_code, headers) => {
