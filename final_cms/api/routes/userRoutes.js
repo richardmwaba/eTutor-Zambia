@@ -7,7 +7,6 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const mongoose = require('mongoose');                     // mongoose for mongodb
-
 const User = require('../models/user');
 
 // register route (creates new user and store in db)
@@ -78,7 +77,7 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 // retrieve all users
-router.get('/all', (req, res, users) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, users) => {
     User.getAllUsers((err, users) => {
         // check for errors
         if (err) {
@@ -91,7 +90,7 @@ router.get('/all', (req, res, users) => {
 });
 
 // add subject to my subjects subdocument
-router.post('/mySubjects/enroll/:Email', (req, res, users) => {
+router.post('/mySubjects/enroll/:Email', passport.authenticate('jwt', {session: false}), (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
@@ -118,7 +117,7 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
 });
 
 // add subject to my subjects subdocument
-router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
+router.get('/mySubjects/withdraw/:Email/:id', passport.authenticate('jwt', {session: false}), (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
@@ -139,20 +138,20 @@ router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
 });
 
 // retrieve given user and return only the subjects they have enrolled for
-router.get('/mySubjects/all/:email', (req, res, users) => {
+router.get('/mySubjects/:email', passport.authenticate('jwt', {session: false}), (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json(user.mySubjects);
+            res.json({success:true, mySubjects:user.mySubjects});
         }
     });
 });
 
 // check if user has enrolled for this subject
-router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
+router.get('/mySubjects/isEnrolled/:email/:subjectId', passport.authenticate('jwt', {session: false}), (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
@@ -173,7 +172,7 @@ router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
 });
 
 // delete User
-router.delete('/delete/:id', function (req, res, next) {
+router.delete('/delete/:id', passport.authenticate('jwt', {session: false}), function (req, res, next) {
     User.remove(req.params.id, function (err, post) {
         if (err) {
             console.log(err);

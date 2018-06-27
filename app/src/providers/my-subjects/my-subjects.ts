@@ -15,6 +15,8 @@ export class MySubjectsProvider {
   data: any;
   public user: any;
   public  mySubjects: any;
+  authToken: string;
+  
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -27,8 +29,8 @@ export class MySubjectsProvider {
   getMySubjects(){
 
     return new Promise(resolve => {
-
-      this.http.get(this.baseURL+'/mySubjects/'+this.user.email)
+      this.appendToken();
+      this.http.get(this.baseURL+'/mySubjects/'+this.user.email, { headers: this.contentHeader })
         .subscribe(data => {
           this.data = data;
           resolve(this.data);
@@ -39,17 +41,19 @@ export class MySubjectsProvider {
   }
 
   enroll(subject){
+    this.appendToken();
     return this.http.post(this.baseURL+'/mySubjects/enroll/'+this.user.email, subject, { headers: this.contentHeader });
   }
 
   remove(subject){
+    this.appendToken();
     return this.http.delete(this.baseURL+'/mySubjects/remove/'+subject._id+"/"+this.user.email,{ headers: this.contentHeader });
   }
 
   isEnrolled(subjectId){
 
     return new Promise(resolve => {
-
+  
       this.http.get(this.baseURL+'/mySubjects/isEnrolled/'+this.user.email+'/'+subjectId)
         .subscribe(data => {
           this.data = data;
@@ -57,6 +61,21 @@ export class MySubjectsProvider {
           console.log(this.data);
         });
     });
+  }
+
+  /*
+  *Loads token from local storage
+  * 
+  * */
+  //Get: Load Token From Local Storage
+  loadToken() {
+    const token = localStorage.getItem('token');
+    this.authToken = token;
+  }
+
+  appendToken(){
+    this.loadToken();
+    this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }
 
 }

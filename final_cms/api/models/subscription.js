@@ -1,7 +1,7 @@
 // Defines the coupon model
 
 const mongoose = require('mongoose');
-var coupon = require("coupon");
+let coupon = require("voucher-code-generator");
 const config = require('../config/database');
 
 // Coupon schema

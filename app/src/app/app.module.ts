@@ -36,6 +36,8 @@ import { OptionsPopoverPageModule } from "../pages/options-popover/options-popov
 import { ComponentsModule } from "../components/components.module";
 import { AboutPageModule } from '../pages/about/about.module';
 import { DirectivesModule} from "../directives/directives.module";
+import { Network } from '@ionic-native/network';
+import { NetworkProvider } from '../providers/network/network';
 
 @NgModule({
   declarations: [
@@ -86,7 +88,9 @@ import { DirectivesModule} from "../directives/directives.module";
     MySubjectsProvider,
     DiscussionsProvider,
     Keyboard,
-    Category
+    Category,
+    Network,
+    NetworkProvider
   ]
 
 })

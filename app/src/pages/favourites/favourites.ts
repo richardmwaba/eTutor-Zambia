@@ -3,7 +3,6 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
 import {MySubjectsProvider} from '../../providers/my-subjects/my-subjects'
 import {AuthProvider} from "../../providers/auth/auth";
 import {CourseDetailPage} from "../course-detail/course-detail";
-import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the MySubjectsPage page.
@@ -18,6 +17,7 @@ import {LoginPage} from "../login/login";
 })
 export class FavouritesPage {
   public mySubjects: any;
+  public noFavs = true;
   public user: any;
 
   constructor(
@@ -40,7 +40,12 @@ export class FavouritesPage {
       this.user = this.authService.user;
       this.mySubjectsService.getMySubjects().then(data => {
         this.mySubjects = data['mySubjects'];
-        console.log("Found " + data['subjects']);
+
+        // if array is not empty, then favorites exist
+        if (this.mySubjects.lenght > 0) {
+          this.noFavs = false;
+        }
+        console.log("Found " + data['mySubjects']);
       });
     }
   }

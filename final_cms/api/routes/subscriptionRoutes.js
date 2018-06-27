@@ -4,14 +4,16 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-var mongoose = require('mongoose');                     // mongoose for mongodb
-var coupon = require("coupon");
+let mongoose = require('mongoose');                     // mongoose for mongodb
+let coupon = require("voucher-code-generator");
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 const Subscription = require('../models/subscription');
 const Coupon = require('../models/coupon');
 
 //get all coupons
-router.get('/all', (req, res, next) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // add to db
     Subscription.getAllSubscriptions((err, subscriptions) => {
         // check for errors
@@ -72,8 +74,11 @@ router.post('/subscribeUser', (req, res, next) => {
 router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
     Subscription.findMatch(req.params.subjectId, req.params.userEmail, (err, subscription)=>{
         //check for errors or if record has been found
-        if(subscription){
-            res.json({success: false, msg: 'No subscription found for this subject. Subscribe to access subject content.'})
+        if(err){
+            res.json({success: false, msg: 'An error occurred'})
+        }
+        if(subscription==null){
+            res.json({success: false, msg: 'Please subscribe now to access this content.'})
         }else{
             res.json({success: true, subscription});
         }
@@ -83,7 +88,7 @@ router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
 /**
  * param subscription id
  */
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // remove from db
     Subscription.remove(req.params.id, (err, subscriptions) => {
         // check for errors

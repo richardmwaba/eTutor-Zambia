@@ -74,7 +74,7 @@ router.get('/profile', passport.authenticate('jwt', { session: false }), (req, r
 });
 
 //All users
-router.get('/all', (req, res, next) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     SuperUser.find((err, superUsers) => {
         if (err) {
             console.log(err);
@@ -86,7 +86,7 @@ router.get('/all', (req, res, next) => {
 });
 
 //Get User by ID
-router.get('/:id', (req, res, next) => {
+router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     SuperUser.findById(req.params.id, (err, post) => {
         if (err) {
             console.log(err);
@@ -98,7 +98,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 //Add User
-router.post('/add', (req, res, next) => {
+router.post('/add', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     let newSuperUser = new SuperUser({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -120,7 +120,7 @@ router.post('/add', (req, res, next) => {
 });
 
 //Update User
-router.put('/:id', function (req, res, next) {
+router.put('/:id', passport.authenticate('jwt', {session: false}), function (req, res, next) {
     SuperUser.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
         if (err) {
             console.log(err);
@@ -132,7 +132,7 @@ router.put('/:id', function (req, res, next) {
 });
 
 //Delete User
-router.delete('/:id', function (req, res, next) {
+router.delete('/:id', passport.authenticate('jwt', {session: false}), function (req, res, next) {
     SuperUser.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err) {
             console.log(err);

@@ -32,7 +32,7 @@
 
     <ion-item>
       <ion-label style="color: #488aff" stacked>Subscription plan</ion-label>
-      <ion-select type="text" formControlName="plan">
+      <ion-select type="text" formControlName="plan" required>
         <ion-option value="daily">Daily</ion-option>
         <ion-option value="weekly">Weekly</ion-option>
         <ion-option value="monthly">Monthly</ion-option>
@@ -46,7 +46,7 @@
 
     <ion-item>
       <ion-label style="color: #488aff" stacked>Choose a payment method</ion-label>
-      <ion-select type="text" formControlName="method">
+      <ion-select type="text" formControlName="method" required>
         <!--<ion-option value="airtel">Airtel Money</ion-option>-->
         <ion-option value="broadpay">Broadpay</ion-option>
         <ion-option value="cigret">Cigret</ion-option>
@@ -61,12 +61,12 @@
 
     <ion-item>
       <ion-label style="color: #488aff" floating>Enter coupon code</ion-label>
-      <ion-input type="text" formControlName="couponKey"></ion-input>
+      <ion-input type="text" formControlName="couponKey" required></ion-input>
+      </ion-item>
       <ion-item *ngIf="!theForm.controls.couponKey.valid && (theForm.controls.couponKey.dirty || submitAcepted)" >
         <p class="error">Please enter the coupon code here.</p>
       </ion-item>
       <ion-input type="hidden" value="{{user.email}}" formControlName="userEmail" ngModal></ion-input>
-    </ion-item>
     <button ion-button block>Subscribe</button>
 
   </form>

@@ -45,15 +45,16 @@
           <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
           <p>{{comment.message}}</p>
         </ion-card-content>
-        <!--<ion-note>-->
-          <!--11hs ago-->
-        <!--</ion-note>-->
-        <div class="buttons">
 
-          <ion-icon name="thumbs-up" style="margin: 0% 5% 0% 0%;" (click)="like(comment)"></ion-icon>{{comment.likes}}
-           <ion-icon name="thumbs-down" style="margin: 0% 5% 0% 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
+        <div *ngIf="user">
+        <div class="delete_button" *ngIf="comment.username==user.username">
+          <ion-icon name="md-trash" (click)="deleteComment(comment)"></ion-icon>
+        </div>
+        </div>
 
-
+          <div class="reaction_buttons">
+          <ion-icon name="thumbs-up" style="margin: 0 5% 0 0;" (click)="like(comment)"></ion-icon>{{comment.likes}}
+           <ion-icon name="thumbs-down" style="margin: 0 5% 0 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
         </div>
       </ion-card>
     </div>
