@@ -25,6 +25,8 @@ export class CourseDetailPage {
   public tab2: any;
   public tab3: any;
 
+  public favActivated: string;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -50,15 +52,21 @@ export class CourseDetailPage {
    * saves a subject to my subjects
    */
   addToMyFavorites(){
-     this.presentToast("Adding "+this.subject.subject.name+" to favorites");
+    // check if user is logged in
     if((AuthProvider.isAuthenticated())){
+      // present toaster
+      this.presentToast("Adding "+this.subject.subject.name+" to favorites");
+
+      this.favActivated = '80d6ff';
+
       this.mySubjectsService.enroll(this.subject.subject).subscribe(data=>{
         this.presentToast(data['msg']);
       });
     }else{
-      this.presentToast('You are not signed in');
+      this.presentToast('You are not signed in.');
     }
   }
+
   /**
    * Presents a success toast on log in
    */

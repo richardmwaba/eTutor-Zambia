@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {LoadingController, Nav, Platform} from 'ionic-angular';
+import {LoadingController, Nav, Platform, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
@@ -12,8 +12,6 @@ import { FavouritesPage } from '../pages/favourites/favourites';
 import {AuthProvider} from "../providers/auth/auth";
 import { AboutPage } from '../pages/about/about';
 import { NetworkProvider } from '../providers/network/network';
-
-import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'
@@ -37,6 +35,7 @@ export class MyApp {
     public authService: AuthProvider,
     public events: Events,
     public loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
     public network: Network,
     public networkProvider: NetworkProvider
   ) {
@@ -68,23 +67,23 @@ export class MyApp {
       this.networkProvider.initializeNetworkEvents();
       // Offline event
       this.events.subscribe('network:offline', () => {
-          alert('network:offline ==> '+this.network.type);    
+        this.presentToast('You are offline');
+        // alert('You are offline '+this.network.type);    
       });
 
       // Online event
       this.events.subscribe('network:online', () => {
-          alert('network:online ==> '+this.network.type);        
+        this.presentToast('Back online via '+this.network.type);
+        // alert('network:online ==> '+this.network.type);        
       });
-
-      timer(3000).subscribe(() => this.showSplash = false);
     });
   }
 
    setSideMenuItems(){
 
     if((AuthProvider.isAuthenticated())){
-    let user  = JSON.parse(localStorage.getItem('user'));
-    console.log("Signed in user is "+ user.username);
+      let user  = JSON.parse(localStorage.getItem('user'));
+      console.log("Signed in user is "+ user.username);
       this.username = user.username;
 
       return [
@@ -93,7 +92,7 @@ export class MyApp {
         { title: 'About', leftIcon: 'information-circle', component: AboutPage },
         // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
       ];
-    }else {
+    } else {
       this.username =null;
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
@@ -111,6 +110,11 @@ export class MyApp {
     this.activePage = page; // sets the active page color
     // this.nav.push(page.component);
   }
+  
+  checkActive(page){
+    // checks if the page is active and returns that page
+    return page == this.activePage;
+  }
 
   logout(){
     this.presentLoading();
@@ -126,9 +130,15 @@ export class MyApp {
     loader.present();
   }
 
-  checkActive(page){
-    // checks if the page is active and returns that page
-    return page == this.activePage;
+   /**
+   * Presents a success toast on log in
+   */
+  presentToast(msg: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+    });
+    toast.present();
   }
 
 }

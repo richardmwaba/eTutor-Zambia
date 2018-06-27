@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SubjectsProvider {
     data: any;
+    error: any;
 
   constructor(public http: HttpClient) {
       this.data = null;
@@ -17,17 +18,19 @@ export class SubjectsProvider {
   }
 
     getSubjects(){
-
-        return new Promise(resolve => {
-
-            this.http.get('https://zedtutor.herokuapp.com/subjects/all')
-                .subscribe(data => {
-                    this.data = data;
-                  SubjectsProvider.storeData(this.data);
-                    resolve(this.data);
-                    console.log(this.data);
-                });
+      return new Promise(resolve => {
+        this.http.get('https://zedtutor.herokuapp.com/subjects/all')
+          .subscribe(data => {
+            this.data = data;
+            SubjectsProvider.storeData(this.data);
+              resolve(this.data);
+              console.log(this.data);
+          },
+        err => {
+          this.error - err;
+          resolve(this.error);
         });
+      });
     }
   /**
    * @param subjects

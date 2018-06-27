@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AlertController, Events } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
@@ -17,12 +16,11 @@ export class NetworkProvider {
   previousStatus;
 
   constructor(
-    public http: HttpClient,
     public alertCtrl: AlertController,
     public eventCtrl: Events,
     public network: Network
   ) {
-    console.log('Hello NetworkProvider Provider');
+    //console.log('Hello NetworkProvider Provider');
     // set default status
     this.previousStatus = ConnectionStatusEnum.Online;
   }
