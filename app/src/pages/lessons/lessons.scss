@@ -121,12 +121,16 @@ page-lessons {
   .instructors-card {
     position: relative;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: 4px;
     margin-top: -10%;
     width: 180px;
     height: 100%;
     text-align: center;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .tutor {
+    margin-left: 8px;
   }
 
   .instructor-image{
