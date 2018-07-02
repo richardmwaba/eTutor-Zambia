@@ -21,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 import { SubjectsProvider } from '../providers/subjects/subjects';
 import { VideosPageModule } from "../pages/videos/videos.module";
-import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
 import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 import { DiscussionForumPageModule } from "../pages/discussion-forum/discussion-forum.module";
@@ -42,8 +41,7 @@ import { NetworkProvider } from '../providers/network/network';
   declarations: [
     MyApp,
     HomePage,
-    Category,
-    EqualValidatorDirective,
+    Category
   ],
   imports: [
     BrowserModule,

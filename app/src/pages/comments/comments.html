@@ -58,5 +58,10 @@
         </div>
       </ion-card>
     </div>
+
+    <div *ngIf="!comments" class="centered">
+      <ion-icon md="md-chatbubbles" ios="ios-chatbubbles"></ion-icon>
+      <p text-wrap>There aren't any comments yet. Be the first to add by clicking the <b>pencil icon.</b></p>
+    </div>
   </div>
 </ion-content>

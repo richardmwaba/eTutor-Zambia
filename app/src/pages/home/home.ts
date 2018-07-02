@@ -68,12 +68,17 @@ export class HomePage {
         refresher.complete();
       }
       this.subjects = JSON.parse(localStorage.getItem('subjects'));
+    },
+    err => {
+      if (this.loader) this.loader.dismiss();
+      // display message
+      this.presentToast('Oops, you seem to be offline.');
     }).catch((error)=>{ // show error message when callback is rejected
       // dismiss loader
-      // console.log('promise failed' + error);
-      // if (this.loader) this.loader.dismiss();
-      // // display message
-      // this.presentToast('Oops, you seem to be offline.');
+      console.log('promise failed' + error);
+      if (this.loader) this.loader.dismiss();
+      // display message
+      this.presentToast('Oops, you seem to be offline.');
     });
   }
 

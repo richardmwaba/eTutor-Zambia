@@ -72,21 +72,21 @@ export class LessonsPage {
 
   subscribe(){
     if((AuthProvider.isAuthenticated())){
-    this.createLoader();
-    this.loader.present();
-    this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
-      console.log(data);
-      this.data = data;
-      if(this.loader) {
-        this.loader.dismiss();
-      }
-      //if success store the record locally
-      if (this.data['success']) {
-        this.presentToast('You have already subscribed for this subject.');
-      } else {
-        this.presentModal(this.subject.topics[0].sub_topics[0].videos[0], this.subject, SubscriptionPage);
-      }
-    });
+      this.createLoader();
+      this.loader.present();
+      this.subscriptionService.verifySubscription(this.subject, JSON.parse(localStorage.getItem('user'))).then((data) => {
+        console.log(data);
+        this.data = data;
+        if(this.loader) {
+          this.loader.dismiss();
+        }
+        //if success store the record locally
+        if (this.data['success']) {
+          this.presentToast('You have already subscribed for this subject.');
+        } else {
+          this.presentModal(this.subject.topics[0].sub_topics[0].videos[0], this.subject, SubscriptionPage);
+        }
+      });
     }else {
       this.presentToast('You are not signed in');
     }
