@@ -8,14 +8,16 @@ page-comments {
     box-shadow: none;
     margin-right: 15px;
   }
+
   .body-content{
+    padding: 8px;
     height: 100%;
     width: 100%;
   }
 
   .message-card{
-    margin-top: -1%;
-    margin-bottom: 10%;
+    //margin-top: -1%;
+    margin-bottom: 5%;
     padding: 2%;
     border-radius: 4% 4% 4% 4%;
     overflow: hidden;

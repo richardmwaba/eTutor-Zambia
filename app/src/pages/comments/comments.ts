@@ -44,7 +44,6 @@ export class CommentsPage {
     this.user = JSON.parse(localStorage.getItem('user'));
     //initialise this class with data from the database
 
-
   }
 
   createLoader(){

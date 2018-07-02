@@ -67,7 +67,7 @@ export class MyApp {
       this.networkProvider.initializeNetworkEvents();
       // Offline event
       this.events.subscribe('network:offline', () => {
-        this.presentToast('You are offline');
+        this.presentToast('You are offline :-(');
         // alert('You are offline '+this.network.type);    
       });
 

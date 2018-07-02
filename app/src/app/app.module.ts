@@ -33,7 +33,6 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { LoginModalPageModule } from "../pages/login-modal/login-modal.module";
 import { SignUpModalPageModule } from "../pages/sign-up-modal/sign-up-modal.module";
 import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
-import { ComponentsModule } from "../components/components.module";
 import { AboutPageModule } from '../pages/about/about.module';
 import { DirectivesModule} from "../directives/directives.module";
 import { Network } from '@ionic-native/network';
@@ -67,7 +66,6 @@ import { NetworkProvider } from '../providers/network/network';
     LoginModalPageModule,
     SignUpModalPageModule,
     OptionsPopoverPageModule,
-    ComponentsModule,
     DirectivesModule,
     AboutPageModule
   ],

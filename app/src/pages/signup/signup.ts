@@ -2,7 +2,6 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import { FormGroup, Validators, FormBuilder, AbstractControl, ValidatorFn } from '@angular/forms';
-import { EqualValidatorDirective } from '../../directives/equal-validator/equal-validator';
 
 
 @IonicPage()

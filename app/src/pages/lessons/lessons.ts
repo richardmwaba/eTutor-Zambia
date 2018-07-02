@@ -1,16 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { ExpandableComponent } from "../../components/expandable/expandable";
+import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 
 // page import
 import {VideoPlayerPage} from "../video-player/video-player";
 import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
-import {LoginPage} from "../login/login";
-import {provideAuth} from "angular2-jwt";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
 import {HomePage} from "../home/home";
-import {LoginModalPage} from "../login-modal/login-modal";
 
 @IonicPage()
 @Component({
@@ -40,30 +36,12 @@ export class LessonsPage {
     public subscriptionService: SubscriptionsProvider,
     private toastCtrl: ToastController,
     public modalCtrl: ModalController,
-    private loadingCtrl: LoadingController,
-    public expandableComp: ExpandableComponent
+    private loadingCtrl: LoadingController
   ) {
 
     this.subject = navParams.get("subject");
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
-
-    this.topic = [
-      {
-        subs: [
-          {
-            title: "Topics covered",
-            topics: this.subject.topics,
-          }
-        ]
-      }
-    ] // end topic array
-
-  }
-
-  ionViewDidLoad() {
-    this.expandableComp.ngAfterViewInit();
-    console.log('ionViewDidLoad LessonsPage');
   }
 
   toggleLevel1(idx) {
@@ -114,6 +92,9 @@ export class LessonsPage {
     }
   }
 
+  /**
+   * dismisses the modal
+   */
   dismissModal(){
     this.navCtrl.setRoot(HomePage);
   }
@@ -132,8 +113,7 @@ export class LessonsPage {
    * presents a modal
    */
   presentModal(video, subject, page) {
-    let modal = this.modalCtrl.create(page,
-      {video, subject });
+    let modal = this.modalCtrl.create(page, {video, subject });
     modal.present();
     modal.onDidDismiss(data=>{
       console.log("before :"+data);

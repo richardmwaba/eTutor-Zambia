@@ -49,7 +49,7 @@
         </ion-col>
         <ion-col>
           <button (click)="remove(subject)" class="card-subtitle-button" ion-button icon-left clear small>
-            <ion-icon name="md-trash"></ion-icon>
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
             <div>Remove</div>
           </button>
         </ion-col>
@@ -60,7 +60,7 @@
 
   <div class="centered" *ngIf="noFavs">
     <ion-icon name="add"></ion-icon>
-    <p text-wrap>You currently don't have any favorite subjects. Add some by clicking the favorites icon of the subject</p>
+    <p text-wrap>Oops! It seems you currently don't have any favorite subjects. Add some by clicking the <b>favourites icon</b> on a particular subject</p>
   </div>
 
 </ion-content>

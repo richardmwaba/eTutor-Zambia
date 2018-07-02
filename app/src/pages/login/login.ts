@@ -18,6 +18,7 @@ export class LoginPage {
   logForm: FormGroup;
   submitAttempt: boolean = false;
   public loader:any;
+  authSubscription: any;
 
   token: string;
   user: any;
@@ -63,7 +64,7 @@ export class LoginPage {
       console.log('credentials: ' + this.logForm.value);
       this.createLoader();
       this.loader.present();
-      this.auth.authenticateUser(this.logForm.value).subscribe(data => {
+      this.authSubscription = this.auth.authenticateUser(this.logForm.value).subscribe(data => {
 
         if (this.loader) {
           this.loader.dismiss();
@@ -106,7 +107,7 @@ export class LoginPage {
   }
 
   /**
-   *
+   * Creates a loader on sign in
    */
   createLoader() {
     this.loader = this.loadingCtrl.create({
@@ -125,6 +126,13 @@ export class LoginPage {
     });
 
     toast.present(); // shows the toaster
+  }
+
+  /**
+   * Unsubscribes from the services on view exit
+   */
+  onViewDidExit(){
+    this.authSubscription.unsubscribe();
   }
 
 }
