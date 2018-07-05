@@ -26,7 +26,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
@@ -41,22 +41,27 @@
           {{comment.username}}
         </ion-card-header>
         <ion-card-content class="message">
-          <h5>{{comment.title}}</h5> <br>
+          <h4>{{comment.title}}</h4> <br>
           <!--Chemistry is the study of matter, its properties, how and why substances combine or separate to form other substances, and how substances interact with energy-->
           <p>{{comment.message}}</p>
         </ion-card-content>
 
         <div *ngIf="user">
-        <div class="delete_button" *ngIf="comment.username==user.username">
-          <ion-icon name="md-trash" (click)="deleteComment(comment)"></ion-icon>
-        </div>
+          <div class="delete_button" *ngIf="comment.username==user.username">
+            <ion-icon md="md-trash" ios="ios-trash" (click)="deleteComment(comment)"></ion-icon>
+          </div>
         </div>
 
-          <div class="reaction_buttons">
+        <div class="reaction_buttons">
           <ion-icon name="thumbs-up" style="margin: 0 5% 0 0;" (click)="like(comment)"></ion-icon>{{comment.likes}}
-           <ion-icon name="thumbs-down" style="margin: 0 5% 0 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
+          <ion-icon name="thumbs-down" style="margin: 0 5% 0 20%;"  (click)="dislike(comment)"></ion-icon>{{comment.dislikes}}
         </div>
       </ion-card>
+    </div>
+
+    <div *ngIf="!comments" class="centered">
+      <ion-icon md="md-chatbubbles" ios="ios-chatbubbles"></ion-icon>
+      <p text-wrap>There aren't any comments yet. Be the first to add by clicking the <b>pencil icon.</b></p>
     </div>
   </div>
 </ion-content>

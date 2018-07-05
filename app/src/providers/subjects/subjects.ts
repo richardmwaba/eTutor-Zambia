@@ -11,7 +11,8 @@ import {ENV} from "@app/env";
 @Injectable()
 export class SubjectsProvider {
     data: any;
-  private baseURL: string = ENV.host_url+"subjects";
+    private baseURL: string = ENV.host_url+"subjects";
+    error: any;
 
   constructor(public http: HttpClient) {
       this.data = null;
@@ -19,17 +20,19 @@ export class SubjectsProvider {
   }
 
     getSubjects(){
-
-        return new Promise(resolve => {
-
-            this.http.get(this.baseURL+'/all')
-                .subscribe(data => {
-                    this.data = data;
-                  SubjectsProvider.storeData(this.data);
-                    resolve(this.data);
-                    console.log(this.data);
-                });
+      return new Promise(resolve => {
+        this.http.get(this.baseURL+'/all')
+          .subscribe(data => {
+            this.data = data;
+            SubjectsProvider.storeData(this.data);
+              resolve(this.data);
+              console.log(this.data);
+          },
+        err => {
+          this.error = err;
+          resolve(this.error);
         });
+      });
     }
   /**
    * @param subjects

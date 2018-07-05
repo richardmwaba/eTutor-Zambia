@@ -17,6 +17,7 @@ import {CourseDetailPage} from "../course-detail/course-detail";
 })
 export class FavouritesPage {
   public mySubjects: any;
+  public noFavs = true;
   public user: any;
 
   constructor(
@@ -39,6 +40,11 @@ export class FavouritesPage {
       this.user = this.authService.user;
       this.mySubjectsService.getMySubjects().then(data => {
         this.mySubjects = data['mySubjects'];
+
+        // if array is not empty, then favorites exist
+        if (this.mySubjects.length > 0) {
+          this.noFavs = false;
+        }
         console.log("Found " + data['mySubjects']);
       });
     }

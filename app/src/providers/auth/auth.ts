@@ -16,7 +16,7 @@ export class AuthProvider {
   private baseURL: string = ENV.host_url+"users";
 
   // content header for the server
-  contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
+  contentHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
   error: string;
   user: any;
   authToken: string;
@@ -30,7 +30,7 @@ export class AuthProvider {
   /**
    * Checks whether the user is still logged in
    */
-  static isAuthenticated(){
+  static isAuthenticated() {
 
     return tokenNotExpired('token');
   }
@@ -40,7 +40,7 @@ export class AuthProvider {
    * @param data useer's sign up data
    */
   signup(data) {
-    return this.http.post(this.baseURL+'/register', data, { headers: this.contentHeader });
+    return this.http.post(this.baseURL + '/register', data, { headers: this.contentHeader });
   }
 
   /**
@@ -48,7 +48,7 @@ export class AuthProvider {
    * @param data the user's log in credentials
    */
   authenticateUser(data) {
-    return this.http.post(this.baseURL+'/authenticate', data, {headers: this.contentHeader});
+    return this.http.post(this.baseURL + '/authenticate', data, { headers: this.contentHeader });
   }
 
   /**
@@ -62,6 +62,21 @@ export class AuthProvider {
 
     this.authToken = token;
     this.user = user;
+  }
+
+  /*
+  *Loads token from local storage
+  * 
+  * */
+  //Get: Load Token From Local Storage
+  loadToken() {
+    const token = localStorage.getItem('token');
+    this.authToken = token;
+  }
+
+  appendToken(){
+    this.loadToken();
+    this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }
 
   /**

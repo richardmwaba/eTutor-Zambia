@@ -5,9 +5,11 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding>
+<ion-content no-padding>
   <div class="body-content">
-    <iframe [src]="videoUrl"  style="margin-left: -8%;" width="440" height="260" frameborder="0" webkitallowfullscreen mozallowfullscreen></iframe>
+    <div class="video-container">
+      <iframe [src]="videoUrl" frameborder="0"></iframe>
+    </div>
 
     <ion-item-group *ngFor="let topic of subject.topics">
       <ion-item-divider class="divider" color="light">{{topic.topic_name}}</ion-item-divider>
@@ -22,7 +24,7 @@
                 {{sub_topic.name}}
               </summary>
               <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
-                <ion-icon name="videocam-circle"></ion-icon>
+                <ion-icon name="play-circle"></ion-icon>
                 {{video.name}}
               </ion-item>
             </details>

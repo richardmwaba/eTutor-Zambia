@@ -51,8 +51,8 @@ page-home {
 
   .categories-card {
     text-align: inherit;
-    margin-right: 35px;
-    margin-left: 5px;
+    margin-right: 16px;
+    margin-left: 8px;
     width: 200px;
     height: 180px;
     border-radius: 3% 3% 3% 3%;
@@ -69,13 +69,13 @@ page-home {
 
   .card-title {
     position: relative;
-    text-align: left;
+    text-align: center;
     font-size: 1.15em;
     text-transform: capitalize;
     font-weight: bold;
     width: 100%;
     left: -1px;
-    right: 10px;
+    // right: 10px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
   }
 

@@ -44,9 +44,7 @@ export class SubscriptionPage {
 
     // setting up form builber
     this.theForm = formBuilder.group({
-      plan: ['', Validators.compose( [Validators.required] )],
       subjectId: ['', Validators.compose( [Validators.required] )],
-      method: ['', Validators.compose([Validators.required] )],
       userEmail: ['', Validators.compose([Validators.required] )],
       // email is required and follows the pattern < john@doecom >
       couponKey: ['', Validators.compose([Validators.required]) ],
@@ -84,12 +82,12 @@ export class SubscriptionPage {
             this.presentToast(data['msg']);
 
             // dismiss the modal and pass the returned data
-            this.loader.diamiss();
+            this.loader.dismiss();
             this.viwCtrl.dismiss(data);
           } else {
             //if subscription failed
             // show fail message
-            this.loader.diamiss();
+            this.loader.dismiss();
             this.presentToast(data['msg']);
           }
         },
@@ -117,7 +115,7 @@ export class SubscriptionPage {
    */
   presentToast(msg) {
     let toast = this.toastCtrl.create({
-      message: msg+ this.subject.name,
+      message: msg,
       duration: 3000,
       //position, cssCLass
     });

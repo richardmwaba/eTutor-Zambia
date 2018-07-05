@@ -10,7 +10,7 @@ const Coupon = require('../models/coupon');
 const Subscription = require('../models/subscription');
 
 //get all coupons
-router.get('/all', (req, res, next) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
      Coupon.getAllCoupons((err, coupons) => {
          // check for errors
          if (err) {
@@ -23,7 +23,7 @@ router.get('/all', (req, res, next) => {
  });
 
 //get all active coupons
-router.get('/active', (req, res, next) => {
+router.get('/active', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // add to db
     Coupon.getCouponByKey(req.params.key, (err, coupon) => {
         // check for errors
@@ -37,7 +37,7 @@ router.get('/active', (req, res, next) => {
 });
 
 //get Coupon
-router.get('/pending', (req, res, next) => {
+router.get('/pending', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // add to db
     Coupon.getCouponById(req.params.id, (err, coupon) => {
         // check for errors
@@ -51,7 +51,7 @@ router.get('/pending', (req, res, next) => {
 });
 
 //generates new coupon and saves it to the database
-router.get('/generate/:numberOfCoupons', generateCoupons, saveCoupons, getAllCoupons);
+router.get('/generate/:numberOfCoupons', passport.authenticate('jwt', {session: false}), generateCoupons, saveCoupons, getAllCoupons);
 
 //generate specified coupons
 function generateCoupons(req, res, next) {
@@ -97,7 +97,7 @@ function getAllCoupons(req, res, next){
 }
 
 // delete a Coupon
-router.delete('/delete/:couponId', function(req, res) {
+router.delete('/delete/:couponId', passport.authenticate('jwt', {session: false}), function(req, res) {
     Coupon.remove({_id : req.params.couponId}, (err, coupon) =>{
         if(err) {
             res.json(err.message);

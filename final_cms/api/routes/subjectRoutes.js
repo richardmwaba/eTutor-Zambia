@@ -57,7 +57,7 @@ router.get('/find/:id', (req, res, next) => {
 });
 
 // register route (creates new user and store in db)
-router.post('/add', (req, res, next) => {
+router.post('/add', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     let newSubject = new Subject({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -106,7 +106,7 @@ Subject.addSubject(newSubject, (err, subject) => {
 });
 
 // Used to update subject fields
-router.post('/add/topic/:subId', (req, res, next) =>{
+router.post('/add/topic/:subId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
     let newTopic = new Topic.getModel({
         _id: mongoose.Types.ObjectId(),
         topic_name: req.body.topic_name,
@@ -146,7 +146,7 @@ router.post('/add/topic/:subId', (req, res, next) =>{
 
 
 // Used to add a sub topic to a topic of a subject
-router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
+router.post('/add/subTopic/:subId/:topicId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
     let newSubTopic = new SubTopic.getModel({
                 _id: mongoose.Types.ObjectId(),
                 name: req.body.name,
@@ -185,7 +185,7 @@ router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
 });
 
 // Used to add a video to a sub topic of a subject
-router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
+router.post('/add/video/:subId/:topicId/:subTopicId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
     let newVideo = new Video.getModel({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -220,7 +220,7 @@ router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
 });
 
 // delete a subject
-router.delete('/delete/:subId', function(req, res) {
+router.delete('/delete/:subId', passport.authenticate('jwt', {session: false}), function(req, res) {
     Subject.remove({_id : req.params.subId}, (err, subject) =>{
         if(err) {
             res.json(err.message);

@@ -21,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 import { SubjectsProvider } from '../providers/subjects/subjects';
 import { VideosPageModule } from "../pages/videos/videos.module";
-import { EqualValidatorDirective } from '../directives/equal-validator/equal-validator';
 import { SubscriptionsProvider } from '../providers/subscriptions/subscriptions';
 import { MySubjectsProvider } from '../providers/my-subjects/my-subjects';
 import { DiscussionForumPageModule } from "../pages/discussion-forum/discussion-forum.module";
@@ -33,16 +32,16 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { LoginModalPageModule } from "../pages/login-modal/login-modal.module";
 import { SignUpModalPageModule } from "../pages/sign-up-modal/sign-up-modal.module";
 import { OptionsPopoverPageModule } from "../pages/options-popover/options-popover.module";
-import { ComponentsModule } from "../components/components.module";
 import { AboutPageModule } from '../pages/about/about.module';
 import { DirectivesModule} from "../directives/directives.module";
+import { Network } from '@ionic-native/network';
+import { NetworkProvider } from '../providers/network/network';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    Category,
-    EqualValidatorDirective,
+    Category
   ],
   imports: [
     BrowserModule,
@@ -65,7 +64,6 @@ import { DirectivesModule} from "../directives/directives.module";
     LoginModalPageModule,
     SignUpModalPageModule,
     OptionsPopoverPageModule,
-    ComponentsModule,
     DirectivesModule,
     AboutPageModule
   ],
@@ -86,7 +84,9 @@ import { DirectivesModule} from "../directives/directives.module";
     MySubjectsProvider,
     DiscussionsProvider,
     Keyboard,
-    Category
+    Category,
+    Network,
+    NetworkProvider
   ]
 
 })

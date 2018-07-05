@@ -9,10 +9,10 @@
   <ion-navbar>
     <ion-buttons left>
       <button ion-button icon-only (click)="dismissModal()" class="my-style-for-modal">
-        <ion-icon name="arrow-back"></ion-icon>
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Subscription</ion-title>
+    <ion-title>Subscription for</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -28,35 +28,6 @@
     </ion-item>
     <ion-item *ngIf="!theForm.controls.subjectId.valid && (theForm.controls.subjectId.dirty || submitAcepted)" >
       <p class="error">Please select a subject.</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-label style="color: #488aff" stacked>Subscription plan</ion-label>
-      <ion-select type="text" formControlName="plan" required>
-        <ion-option value="daily">Daily</ion-option>
-        <ion-option value="weekly">Weekly</ion-option>
-        <ion-option value="monthly">Monthly</ion-option>
-        <!--<ion-option value="termly">Termly</ion-option>-->
-        <!--<ion-option value="yearly">Yearly</ion-option>-->
-      </ion-select >
-    </ion-item>
-    <ion-item *ngIf="!theForm.controls.plan.valid && (theForm.controls.plan.dirty || submitAcepted)" >
-      <p class="error">Please select a subscription plan.</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-label style="color: #488aff" stacked>Choose a payment method</ion-label>
-      <ion-select type="text" formControlName="method" required>
-        <!--<ion-option value="airtel">Airtel Money</ion-option>-->
-        <ion-option value="broadpay">Broadpay</ion-option>
-        <ion-option value="cigret">Cigret</ion-option>
-        <!--<ion-option value="mtn">MTN Money</ion-option>-->
-        <!--<ion-option value="zamttel">Zamtel Kwacha</ion-option>-->
-        <!--<ion-option value="zoona">Zoona</ion-option>-->
-      </ion-select>
-    </ion-item>
-    <ion-item *ngIf="!theForm.controls.method.valid && (theForm.controls.method.dirty || submitAcepted)" >
-      <p class="error">Please select a payment method.</p>
     </ion-item>
 
     <ion-item>

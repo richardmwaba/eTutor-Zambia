@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import {LoadingController, Nav, Platform} from 'ionic-angular';
+import {LoadingController, Nav, Platform, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
 // page imports
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -10,6 +11,7 @@ import { SignupPage} from '../pages/signup/signup';
 import { FavouritesPage } from '../pages/favourites/favourites';
 import {AuthProvider} from "../providers/auth/auth";
 import { AboutPage } from '../pages/about/about';
+import { NetworkProvider } from '../providers/network/network';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,9 +22,8 @@ export class MyApp {
   rootPage: any = HomePage;
   activePage : any; // the currently active page
   public username:any;
-  showLevel1 = null;
-  showLevel2 = null;
 
+  showSplash = true;
 
   // leftIcon is the name of the button's icon
   pages: Array<{title: string, leftIcon: string, component: any}>;
@@ -33,7 +34,10 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public authService: AuthProvider,
     public events: Events,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
+    public network: Network,
+    public networkProvider: NetworkProvider
   ) {
     events.subscribe('user:authenticated', (user, username, time) => {
       // user and time are the same arguments passed in `events.publish(user, time)`
@@ -59,14 +63,27 @@ export class MyApp {
       // this.statusBar.overlaysWebView(false);
       this.statusBar.backgroundColorByHexString('#d1d1d1');
       this.splashScreen.hide();
+
+      this.networkProvider.initializeNetworkEvents();
+      // Offline event
+      this.events.subscribe('network:offline', () => {
+        this.presentToast('You are offline :-(');
+        // alert('You are offline '+this.network.type);    
+      });
+
+      // Online event
+      this.events.subscribe('network:online', () => {
+        this.presentToast('Back online via '+this.network.type);
+        // alert('network:online ==> '+this.network.type);        
+      });
     });
   }
 
    setSideMenuItems(){
 
     if((AuthProvider.isAuthenticated())){
-    let user  = JSON.parse(localStorage.getItem('user'));
-    console.log("Signed in user is "+ user.username);
+      let user  = JSON.parse(localStorage.getItem('user'));
+      console.log("Signed in user is "+ user.username);
       this.username = user.username;
 
       return [
@@ -75,7 +92,7 @@ export class MyApp {
         { title: 'About', leftIcon: 'information-circle', component: AboutPage },
         // { title: 'Subscription', leftIcon: 'pricetags', component: MySubjectsPage },
       ];
-    }else {
+    } else {
       this.username =null;
       return [
         { title: 'Home', leftIcon: 'home', component: HomePage },
@@ -93,6 +110,11 @@ export class MyApp {
     this.activePage = page; // sets the active page color
     // this.nav.push(page.component);
   }
+  
+  checkActive(page){
+    // checks if the page is active and returns that page
+    return page == this.activePage;
+  }
 
   logout(){
     this.presentLoading();
@@ -108,9 +130,15 @@ export class MyApp {
     loader.present();
   }
 
-  checkActive(page){
-    // checks if the page is active and returns that page
-    return page == this.activePage;
+   /**
+   * Presents a success toast on log in
+   */
+  presentToast(msg: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+    });
+    toast.present();
   }
 
 }

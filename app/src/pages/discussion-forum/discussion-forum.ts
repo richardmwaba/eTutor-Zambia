@@ -30,14 +30,6 @@ public subject:Array<any>;
     console.log('ionViewDidLoad DiscussionForumPage');
   }
 
-  // dismissModal(){
-  //   this.navCtrl.setRoot(HomePage);
-  // }
-
-  // openComments(topic){
-  //   this.navCtrl.push(CommentsPage, {topic});
-  // }
-
   /**
    *
    * @param topic

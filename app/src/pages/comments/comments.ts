@@ -28,6 +28,7 @@ export class CommentsPage {
   public user: any;
   public didReact=0;
   public loader:any;
+  commentSub: any;
 
   constructor(
     public navCtrl: NavController,
@@ -43,7 +44,6 @@ export class CommentsPage {
     this.topic = this.navParams.get('topic');
     this.user = JSON.parse(localStorage.getItem('user'));
     //initialise this class with data from the database
-
 
   }
 
@@ -75,7 +75,7 @@ export class CommentsPage {
     if (this.user) {
       user_id = this.user.id;
     }
-    this.discussionsService.getDiscussion(this.topic._id, user_id).then(data => {
+    this.commentSub = this.discussionsService.getDiscussion(this.topic._id, user_id).then(data => {
       this.data = data;
       this.comments = data['comments'];
       if(this.loader) {
@@ -84,7 +84,10 @@ export class CommentsPage {
       if(refresher) {
         refresher.complete();
       }
-
+    },
+    err => {
+      this.loader.dismiss();
+      this.presentToast('Seems you\'re offline. Check connection.');
     });
   }
 
@@ -234,14 +237,17 @@ export class CommentsPage {
 
   deleteComment(comment) {
     if ((AuthProvider.isAuthenticated())) {
-    this.presentToast("We are removing "+comment.title);
-    this.discussionsService.deleteComment(this.topic._id, comment._id).subscribe(data => {
-      if(data['success'])
-      {
-        this.comments = data['comments'];
-      }
-      this.presentToast(data['msg']);
-    });
+      this.presentToast("We are removing "+comment.title);
+      this.discussionsService.deleteComment(this.topic._id, comment._id).subscribe(data => {
+        if(data['success'])
+        {
+          this.comments = data['comments'];
+        }
+        this.presentToast(data['msg']);
+      },
+      err => {
+        this.presentToast('Offline, check your connection.');
+      });
     } else {
       this.presentToast("Your are not signed in!");
     }
@@ -262,6 +268,10 @@ export class CommentsPage {
     });
 
     toast.present(); // shows the toaster
+  }
+
+  onViewDidExit() {
+    this.commentSub.unsubscribe();
   }
 
 }

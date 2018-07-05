@@ -6,12 +6,14 @@ const express = require('express');
 const router = express.Router();
 let mongoose = require('mongoose');                     // mongoose for mongodb
 let coupon = require("voucher-code-generator");
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 const Subscription = require('../models/subscription');
 const Coupon = require('../models/coupon');
 
 //get all coupons
-router.get('/all', (req, res, next) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // add to db
     Subscription.getAllSubscriptions((err, subscriptions) => {
         // check for errors
@@ -86,7 +88,7 @@ router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
 /**
  * param subscription id
  */
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // remove from db
     Subscription.remove(req.params.id, (err, subscriptions) => {
         // check for errors

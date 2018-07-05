@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ModalController} from 'ionic-angular';
+import { NavController, LoadingController, ModalController, ToastController} from 'ionic-angular';
 import { JuniorSecondaryPage } from '../junior-secondary/junior-secondary';
 import { CourseDetailPage } from '../course-detail/course-detail';
 import {SubjectsProvider} from "../../providers/subjects/subjects";
@@ -14,7 +14,7 @@ import {ScrollHideConfig} from "../../directives/scroll-hide/scroll-hide";
 })
 export class HomePage {
 
-    public subjects: Array<any>;
+  public subjects: Array<any>;
   public loader:any;
   public footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   public headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
@@ -24,7 +24,8 @@ export class HomePage {
     public subjectsService: SubjectsProvider,
     public modalCtrl: ModalController,
     public category : Category,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private toastCtrl: ToastController
   ) {
 
     this.initializeSubjects();
@@ -67,8 +68,17 @@ export class HomePage {
         refresher.complete();
       }
       this.subjects = JSON.parse(localStorage.getItem('subjects'));
-    }).catch((data)=>{
-
+    },
+    err => {
+      if (this.loader) this.loader.dismiss();
+      // display message
+      this.presentToast('Oops, you seem to be offline.');
+    }).catch((error)=>{ // show error message when callback is rejected
+      // dismiss loader
+      console.log('promise failed' + error);
+      if (this.loader) this.loader.dismiss();
+      // display message
+      this.presentToast('Oops, you seem to be offline.');
     });
   }
 
@@ -84,6 +94,17 @@ export class HomePage {
   presentModal() {
     let modal = this.modalCtrl.create(PopoverPage);
     modal.present();
+  }
+
+   /**
+   * Presents a success toast on log in
+   */
+  presentToast(msg: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+    });
+    toast.present();
   }
 
   /**

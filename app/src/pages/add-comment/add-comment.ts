@@ -26,6 +26,7 @@ export class AddCommentPage {
   public user: any;
   public hasDiscussion: boolean = false;
   public topic: any;
+  commentSub: any;
 
 
   constructor(
@@ -65,8 +66,7 @@ export class AddCommentPage {
     if(this.commentForm.valid) {
       this.submitAttempt = true;
 
-
-      this.discussionService.addComment(this.commentForm.value).subscribe(data => {
+      this.commentSub = this.discussionService.addComment(this.commentForm.value).subscribe(data => {
 
         if (data['success']) {
 
@@ -86,8 +86,10 @@ export class AddCommentPage {
 
           toastWarn.present();
         }
-
-      });
+      },
+    err => {
+      this.presentToast('Seems you\'re offline, try again.');
+    });
     }else {
       this.presentToast("You still have errors");
     }
@@ -104,6 +106,13 @@ export class AddCommentPage {
     });
 
     toast.present(); // shows the toaster
+  }
+
+  /**
+   * Unsubscribes from the service when we exit view
+   */
+  onViewDidExit() {
+    this.commentSub.unsubscribe();
   }
 
 }
