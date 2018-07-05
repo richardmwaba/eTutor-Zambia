@@ -28,6 +28,7 @@ export class CommentsPage {
   public user: any;
   public didReact=0;
   public loader:any;
+  public noFavs = true;
   commentSub: any;
 
   constructor(
@@ -54,8 +55,9 @@ export class CommentsPage {
   }
 
   ionViewDidLoad() {
-    this.createLoader();
-    this.loader.present();
+    // this.createLoader();
+    // this.loader.present();
+    this.noFavs = true;
     this.initialise(null);
     // this.presentToast(this.data['msg']);
 
@@ -78,6 +80,9 @@ export class CommentsPage {
     this.commentSub = this.discussionsService.getDiscussion(this.topic._id, user_id).then(data => {
       this.data = data;
       this.comments = data['comments'];
+        if (data['comments']) {
+          this.noFavs = false;
+        }
       if(this.loader) {
         this.loader.dismiss();
       }

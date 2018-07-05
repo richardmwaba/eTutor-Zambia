@@ -51,7 +51,7 @@ export class CourseDetailPage {
     // check if user is logged in
     if((AuthProvider.isAuthenticated())){
       // present toaster
-      this.presentToast("Adding "+this.subject.subject.name+" to favorites");
+      this.presentToast("Adding "+this.subject.subject.name+" to favourites");
 
       this.favActivated = '80d6ff';
 

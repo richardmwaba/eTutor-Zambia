@@ -7,6 +7,7 @@ let mongoose = require('mongoose');
 const Comment = require('../models/comment');// mongoose for mongodb
 const Discussion = require('../models/discussion');
 const Reviewer = require('../models/reviewers');
+const passport = require('passport');
 
 
 router.get('/all', (req, res, next) => {

@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 let mongoose = require('mongoose');                     // mongoose for mongodb
 let coupon = require('voucher-code-generator');
+ const passport = require('passport');
 
 const Coupon = require('../models/coupon');
 const Subscription = require('../models/subscription');

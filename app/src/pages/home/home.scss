@@ -110,4 +110,21 @@ page-home {
     font-weight: lighter;
   }
 
+  .centered {
+    margin: 30% auto;
+    width: 90%;
+    text-align: center;
+    color: map-get($colors, P-dark);
+    ion-icon {
+      font-size: 15rem;
+    }
+
+    ion-spinner * {
+      width: 400%;
+      height: 400%;
+      margin-left: -150%;
+    }
+
+  }
+
 }

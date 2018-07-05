@@ -73,12 +73,18 @@ page-comments {
   }
 
   .centered {
-    margin: 40% auto;
+    margin: 30% auto;
     width: 90%;
     text-align: center;
     color: map-get($colors, P-dark);
     ion-icon {
-      font-size: 9rem;
+      font-size: 15rem;
+    }
+
+    ion-spinner * {
+      width: 400%;
+      height: 400%;
+      margin-left: -150%;
     }
   }
 }

@@ -24,7 +24,7 @@ export class SubjectsProvider {
         this.http.get(this.baseURL+'/all')
           .subscribe(data => {
             this.data = data;
-            SubjectsProvider.storeData(this.data);
+            SubjectsProvider.storeData(this.data['subjects']);
               resolve(this.data);
               console.log(this.data);
           },

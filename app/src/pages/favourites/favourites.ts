@@ -17,6 +17,7 @@ import {CourseDetailPage} from "../course-detail/course-detail";
 })
 export class FavouritesPage {
   public mySubjects: any;
+  public data: any;
   public noFavs = true;
   public user: any;
 
@@ -27,6 +28,8 @@ export class FavouritesPage {
     public mySubjectsService: MySubjectsProvider,
     public authService: AuthProvider
   ) {
+
+    this.data=null;
     this.initialize();
   }
 
@@ -39,8 +42,8 @@ export class FavouritesPage {
       console.log('You are authenticated. We are getting your subjects')
       this.user = this.authService.user;
       this.mySubjectsService.getMySubjects().then(data => {
+        this.data = data;
         this.mySubjects = data['mySubjects'];
-
         // if array is not empty, then favorites exist
         if (this.mySubjects.length > 0) {
           this.noFavs = false;

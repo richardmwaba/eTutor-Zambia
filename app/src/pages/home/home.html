@@ -55,7 +55,14 @@
 
   </ion-scroll> <!-- ./ad scroll -->
 
-  <div class="categories">
+  <div class="centered" *ngIf="noFavs">
+
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Loading subjects...</p>
+
+  </div>
+
+  <div class="categories" *ngIf="!noFavs">
 
   <h4 class="category-title">Exam Revision</h4>
   <!-- grid -->

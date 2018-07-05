@@ -23,7 +23,7 @@ router.get('/all', (req, res, next) => {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json(subjects);
+            res.json({success: true, msg: 'Found', subjects:subjects});
         }
     });
 });

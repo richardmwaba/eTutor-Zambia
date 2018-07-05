@@ -16,6 +16,7 @@ export class HomePage {
 
   public subjects: Array<any>;
   public loader:any;
+  public noFavs = true;
   public footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   public headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
 
@@ -48,8 +49,8 @@ export class HomePage {
     if(this.subjects){
       console.log("Subjects loaded subjects are "+this.subjects);
     }else {
-      this.createLoader();
-      this.loader.present();
+      // this.createLoader();
+      // this.loader.present();
       this.getSubjectsFromServer(null);
     }
   }
@@ -62,12 +63,17 @@ export class HomePage {
     this.subjectsService.getSubjects().then((data) => {
       console.log(data);
       if(this.loader) {
-        this.loader.dismiss();
+        // this.loader.dismiss();
+        // if array is not empty, then favorites exist
+
       }
+        if (data['subjects']) {
+          this.noFavs = false;
+        }
       if(refresher){
         refresher.complete();
       }
-      this.subjects = JSON.parse(localStorage.getItem('subjects'));
+      this.subjects = data['subjects'];
     },
     err => {
       if (this.loader) this.loader.dismiss();
