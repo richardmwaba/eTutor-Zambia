@@ -1,0 +1,11 @@
+Beta release notes
+
+What's new?
+Well, this is a brand new app that has just come to market. As such, everything about it is new.
+It even has that new app smell. LOL.
+However, with this app comes;
+* A simple design of delivering revision videos to users.
+* A customised, clean vimeo integrated player
+* Discussion forum section to interact with instructors and other users
+* Find relevent subjects easily by searching
+* Provides an easy to use subscription scheme
