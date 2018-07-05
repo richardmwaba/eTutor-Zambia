@@ -1,0 +1,143 @@
+[
+  {
+    "instructors": [
+      {
+        "name": "Simeon Chambika",
+        "title": "Mr.",
+        "username": "schambika",
+        "email": "simeonchambika@etutor.edu.zm",
+        "password": "1234567890",
+        "phone": "+260950852256"
+      }
+    ],
+    "_id": "5b04793bc7514c00047484a4",
+    "topics": [
+      {
+        "sub_topics": [
+          {
+            "videos": [
+              {
+                "name": "Question 1.(a)",
+                "_id": "5b04793bc7514c00047484a7",
+                "url": "https://player.vimeo.com/video/271343130"
+              },
+              {
+                "_id": "5b0484a09b30950004e59b78",
+                "name": "Question 4.(a)",
+                "url": "https://player.vimeo.com/video/271341718"
+              },
+              {
+                "_id": "5b0484c49b30950004e59b79",
+                "name": "Question 5.(a)",
+                "url": "https://player.vimeo.com/video/271342649"
+              },
+              {
+                "_id": "5b389e222e5b820004490a87",
+                "name": "Question 5.(a)",
+                "url": "https://player.vimeo.com/video/271342649"
+              }
+            ],
+            "_id": "5b04793bc7514c00047484a6",
+            "name": "Paper 2"
+          }
+        ],
+        "_id": "5b04793bc7514c00047484a5",
+        "topic_name": "2013 ECZ Examinations",
+        "description": "In this section, we will cover the 2013 ECZ exam questions",
+        "duration": "1 Week(s)"
+      }
+    ],
+    "name": "Mathematics",
+    "description": "In this course, we will cover as many past examinations questions as possible stating from last year going back.",
+    "grade": "Grade 12",
+    "category": "Tests & Exams",
+    "icon": "math.jpg",
+    "__v": 3
+  },
+  {
+    "instructors": [
+      {
+        "name": "Simeon Chambika",
+        "title": "Mr.",
+        "username": "schambika",
+        "email": "simeonchambika@etutor.edu.zm",
+        "password": "1234567890",
+        "phone": "+260950852256"
+      },
+      {
+        "mySubjects": [],
+        "name": "Brian Kamoa",
+        "title": "Mr.",
+        "username": "bkaoma",
+        "email": "briankaoma@etutor.edu.zm",
+        "password": "1234567890",
+        "phone": "0971223456"
+      }
+    ],
+    "_id": "5b04892a9b30950004e59b7a",
+    "topics": [
+      {
+        "sub_topics": [
+          {
+            "videos": [
+              {
+                "_id": "5b04892a9b30950004e59b7d",
+                "url": "https://player.vimeo.com/video/271342649"
+              }
+            ],
+            "_id": "5b04892a9b30950004e59b7c",
+            "name": "Living things"
+          }
+        ],
+        "_id": "5b04892a9b30950004e59b7b",
+        "topic_name": "Organisms and life Processes",
+        "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",
+        "duration": "1 Week(s)"
+      },
+      {
+        "sub_topics": [
+          {
+            "videos": [
+              {
+                "_id": "5b05293c65947500044c274f",
+                "name": "intro",
+                "url": "https://player.vimeo.com/video/226009263"
+              }
+            ],
+            "_id": "5b05293c65947500044c274e",
+            "name": "Classes of amphibians"
+          }
+        ],
+        "_id": "5b05293c65947500044c274d",
+        "topic_name": "Amphibians",
+        "duration": "2 Week(s)",
+        "description": "In this topic, we will dicusss amphibians, how they began and their common characteristics"
+      },
+      {
+        "sub_topics": [
+          {
+            "videos": [
+              {
+                "_id": "5b05299265947500044c2752",
+                "name": "intro",
+                "url": "https://player.vimeo.com/video/226009263"
+              }
+            ],
+            "_id": "5b05299265947500044c2751",
+            "name": "Types of animals"
+          }
+        ],
+        "_id": "5b05299265947500044c2750",
+        "topic_name": "Animal Kingdom",
+        "duration": "1 Week(s)",
+        "description": "In this topic, we will dicusss all animal kingdoms and how they are classified."
+      }
+    ],
+    "name": "Biology",
+    "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",
+    "grade": "Grade 12",
+    "category": "Tests & Exams",
+    "icon": "1449041701-hd-biology-widescreen.jpg",
+    "__v": 3
+  }
+]

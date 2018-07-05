@@ -2,7 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {ToastController} from 'ionic-angular';
 import {AuthProvider} from "../auth/auth";
-
+import {ENV} from "@app/env";
 /*
   Generated class for the SubscriptionsProvider provider.
 
@@ -12,7 +12,7 @@ import {AuthProvider} from "../auth/auth";
 @Injectable()
 export class SubscriptionsProvider {
   data: any;
-  private baseURL: string = "https://zedtutor.herokuapp.com/subscriptions";
+  private baseURL: string = ENV.host_url+"subscriptions";
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
   error: string;

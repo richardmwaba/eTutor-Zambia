@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-
 import { tokenNotExpired } from 'angular2-jwt';
+import { ENV } from '@app/env'
 
 /*
   Generated class for the AuthProvider provider.
@@ -13,7 +13,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthProvider {
 
-  private baseURL: string = "https://zedtutor.herokuapp.com/users";
+  private baseURL: string = ENV.host_url+"users";
 
   // content header for the server
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});

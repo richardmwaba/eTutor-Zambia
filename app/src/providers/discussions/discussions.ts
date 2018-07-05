@@ -1,6 +1,6 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { ENV } from '@app/env'
 /*
   Generated class for the DiscussionsProvider provider.
 
@@ -9,8 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class DiscussionsProvider {
-  private baseURL: string = "https://zedtutor.herokuapp.com/discussions/";
-  // private baseURL: string = "http://localhost:5000/discussions/"; //local
+  private baseURL: string = ENV.host_url+"discussions/";
   private discussion:any;
 
   // content header for the server

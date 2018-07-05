@@ -93,10 +93,10 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
-            res.json({success: false, msg: 'Failed to enroll. Please make sure that you have signed it.'});
+            res.json({success: false, msg: 'Failed. Did you sign in?'});
 
             // if success, check if user has not already enrolled for this subject
-        } else if(user.mySubjects.id(req.body._id==null)) {
+        } else if((user.mySubjects.id(req.body._id)==null)) {
             user.mySubjects.push(req.body);
             //save the updated user
             User.addToMySubjects(user, (err,updatedUser)=>{
@@ -104,32 +104,37 @@ router.post('/mySubjects/enroll/:Email', (req, res, users) => {
                     res.json({success: false, msg: "Failed to enroll. Please try again."})
                 }else {
                     res.json({success: true,
-                        msg: "you have successfully enrolled for "+req.body.name,
+                        msg: req.body.name+" was added to favourites",
                         mySubjects: updatedUser.mySubjects});
                 }
             });
             
         }else{
-            res.json({success: false, msg: "You have already enrolled for this subject!"});
+            res.json({
+                success: false,
+                msg: "You have already added "+req.body.name+" to favourites"});
         }
     });
 });
 
-// add subject to my subjects subdocument
-router.get('/mySubjects/withdraw/:Email/:id', (req, res, users) => {
+// remove subject from my subjects subdocument
+router.delete('/mySubjects/remove/:id/:Email', (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get your subjects'});
         } else {
             // if success
-            user.mySubjects.id(req.params.id).remove();
+            let old = user.mySubjects.id(req.params.id).remove();
             //save the updated user
             User.removeFromMySubjects(user, (err,updatedUser)=>{
                 if(err){
                     res.json({success: false, msg: "Failed to save"})
                 }else {
-                    res.json({success: true, mySubjects: updatedUser.mySubjects});
+                    res.json({
+                        success: true,
+                        msg: 'You removed '+old.name+" from favourites",
+                        mySubjects: updatedUser.mySubjects});
                 }
             })
         }

@@ -84,10 +84,12 @@ export class SubscriptionPage {
             this.presentToast(data['msg']);
 
             // dismiss the modal and pass the returned data
+            this.loader.diamiss();
             this.viwCtrl.dismiss(data);
           } else {
             //if subscription failed
             // show fail message
+            this.loader.diamiss();
             this.presentToast(data['msg']);
           }
         },

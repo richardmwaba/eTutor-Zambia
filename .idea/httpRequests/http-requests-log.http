@@ -1,0 +1,62 @@
+GET http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-04T085522.200.json
+
+###
+
+GET http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-04T085315.404.html
+
+###
+
+DELETE http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-04T085131.404.html
+
+###
+
+GET http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-04T085122.404.html
+
+###
+
+GET http://etutorapi.example/subjects/all
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-03T051152.502.html
+
+###
+
+GET http://etutorapi.example/subjects/all
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-03T121741.200.json
+
+###
+
+GET http://etutorapi.example/subjects/all
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-07-03T121540.502.html
+
+###
+

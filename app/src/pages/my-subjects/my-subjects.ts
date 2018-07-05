@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
 import {MySubjectsProvider} from '../../providers/my-subjects/my-subjects'
 import {AuthProvider} from "../../providers/auth/auth";
 import {CourseDetailPage} from "../course-detail/course-detail";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the MySubjectsPage page.
@@ -13,10 +14,10 @@ import {CourseDetailPage} from "../course-detail/course-detail";
 @IonicPage()
 @Component({
   selector: 'page-my-subjects',
-  templateUrl: 'favourites.html',
+  templateUrl: 'my-subjects.html',
 })
-export class FavouritesPage {
-  public mySubjects: any;
+export class MySubjectsPage {
+  public mySubjects: any=null;
   public user: any;
 
   constructor(
@@ -39,18 +40,15 @@ export class FavouritesPage {
       this.user = this.authService.user;
       this.mySubjectsService.getMySubjects().then(data => {
         this.mySubjects = data['mySubjects'];
-        console.log("Found " + data['mySubjects']);
+        console.log("Found " + data['subjects']);
       });
     }
   }
 
   remove(subject) {
-    this.presentToast("We are removing "+subject.name+" from favourites");
     this.mySubjectsService.remove(subject).subscribe(data => {
-      if(data['success']) {
-        this.mySubjects = data['mySubjects'];
-        console.log("New subjects " + data['mySubjects']);
-      }
+      this.mySubjects = data['mySubjects'];
+      console.log("New subjects " + data['mySubjects']);
       this.presentToast(data['msg']);
     });
   }

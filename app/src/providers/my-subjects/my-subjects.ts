@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {AuthProvider} from "../auth/auth"
-
+import { ENV } from '@app/env'
 /*
   Generated class for the MySubjectsProvider provider.
 
@@ -11,7 +11,7 @@ import {AuthProvider} from "../auth/auth"
 @Injectable()
 export class MySubjectsProvider {
 
-  private baseURL: string = "https://zedtutor.herokuapp.com/users";
+  private baseURL: string = ENV.host_url+"users";
   data: any;
   public user: any;
   public  mySubjects: any;

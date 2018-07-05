@@ -96,10 +96,10 @@ module.exports.remove = function(_id, callback) {
     User.remove({ '_id': _id }, callback)
 };
 
-// module.exports.addToMySubjects = function (updatedUser, callback) {
-//     updatedUser.save(callback);
-// };
-//
-// module.exports.removeFromMySubjects = function (updatedUser, callback) {
-//     updatedUser.save(callback);
-// };
+module.exports.addToMySubjects = function (updatedUser, callback) {
+    updatedUser.save(callback);
+};
+
+module.exports.removeFromMySubjects = function (updatedUser, callback) {
+    updatedUser.save(callback);
+};

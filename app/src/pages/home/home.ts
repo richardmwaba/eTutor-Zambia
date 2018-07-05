@@ -24,9 +24,9 @@ export class HomePage {
     public subjectsService: SubjectsProvider,
     public modalCtrl: ModalController,
     public category : Category,
-    public statusBar : StatusBar,
     public loadingCtrl: LoadingController
   ) {
+
     this.initializeSubjects();
   }
 
@@ -45,7 +45,7 @@ export class HomePage {
   initializeSubjects(){
     console.log("current subjects are "+this.subjects);
     if(this.subjects){
-      console.log("Subjects on local storage are "+this.subjects);
+      console.log("Subjects loaded subjects are "+this.subjects);
     }else {
       this.createLoader();
       this.loader.present();

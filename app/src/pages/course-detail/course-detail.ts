@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, PopoverController, ToastController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams,ToastController} from 'ionic-angular';
 import { LessonsPage } from '../lessons/lessons';
 import {DiscussionForumPage } from "../discussion-forum/discussion-forum";
 import {VideosPage} from "../videos/videos";
-import {StatusBar} from "@ionic-native/status-bar";
-import {OptionsPopoverPage} from "../options-popover/options-popover";
 import { MySubjectsProvider } from '../../providers/my-subjects/my-subjects';
 import { AuthProvider } from '../../providers/auth/auth';
 
@@ -28,8 +26,6 @@ export class CourseDetailPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public statusBar : StatusBar,
-    public popoverCtrl: PopoverController,
     private mySubjectsService: MySubjectsProvider,
     private toastCtrl: ToastController
   ) {
@@ -50,7 +46,7 @@ export class CourseDetailPage {
    * saves a subject to my subjects
    */
   addToMyFavorites(){
-     this.presentToast("Adding "+this.subject.subject.name+" to favorites");
+     this.presentToast("Adding "+this.subject.subject.name+" to favourites");
     if((AuthProvider.isAuthenticated())){
       this.mySubjectsService.enroll(this.subject.subject).subscribe(data=>{
         this.presentToast(data['msg']);

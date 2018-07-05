@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MySubjectsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Subjects</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page" >
+
+<div *ngFor="let subject of mySubjects">
+      <ion-card class="categories-card">
+
+        <ion-item class="card-title-row">
+          <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
+          <h2 class="card-title">{{subject.name}}</h2>
+          <!--<ion-icon class="card-remove-button" item-start name="md-trash"></ion-icon>-->
+          <!--<p>November 5, 1955</p>-->
+        </ion-item>
+
+        <img class="card-image" src="assets/img/{{subject.icon}}" (click)="courseDetail(subject)"  />
+
+        <ion-row class="card-subtitle-row">
+          <ion-col>
+            <h2 class="card-subtitle-text">{{subject.grade}}</h2>
+          </ion-col>
+          <ion-col>
+            <button (click)="remove(subject)" class="card-subtitle-button" ion-button icon-left clear small>
+              <ion-icon name="md-trash"></ion-icon>
+              <div>Remove</div>
+            </button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+</div>
+
+</ion-content>

@@ -8,19 +8,15 @@ const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-// const compression = require('compression');
+const compression = require('compression');
 
 //Connect to MongoDB Database
 mongoose.connect(config.database);
 
-//Check connection
-mongoose.connection.on('connected', () => {
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
     console.log('Connected to database '+config.database);
-});
-
-//show error id present
-mongoose.connection.on('error', () => {
-    console.log('Database error: '+err);
 });
 
 //Initiate app variable with express
@@ -39,7 +35,7 @@ const discussions = require('./routes/dicussionRoutes');
 //Port Number
 const port = 5000;
 
-// app.use(compression()); //Compress all routes
+app.use(compression()); //Compress all routes
 
 //CORS Middleware
 app.use(cors());

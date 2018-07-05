@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {ENV} from "@app/env";
 
 /*
   Generated class for the SubjectsProvider provider.
@@ -10,6 +11,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SubjectsProvider {
     data: any;
+  private baseURL: string = ENV.host_url+"subjects";
 
   constructor(public http: HttpClient) {
       this.data = null;
@@ -20,7 +22,7 @@ export class SubjectsProvider {
 
         return new Promise(resolve => {
 
-            this.http.get('https://zedtutor.herokuapp.com/subjects/all')
+            this.http.get(this.baseURL+'/all')
                 .subscribe(data => {
                     this.data = data;
                   SubjectsProvider.storeData(this.data);
