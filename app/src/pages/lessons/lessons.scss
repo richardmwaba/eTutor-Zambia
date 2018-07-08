@@ -45,7 +45,7 @@ page-lessons {
         margin-left: 8px;
         font-weight: 300;
       }
-    }    
+    }
   }
   // End of background image-card
 
@@ -156,6 +156,62 @@ page-lessons {
     position: relative;
     font-weight: bold;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .accordion {
+    position: relative;
+    width: 100%;
+  }
+  input[type='checkbox'], input[type='radio'] {
+    display: none;
+  }
+  .element {
+    margin-bottom: 2px;
+  }
+  .header {
+    background: inherit;
+    padding: 10px;
+    border-bottom: 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .header:after {
+    border: 6px solid transparent;
+    position: absolute;
+    content: "";
+    border-top-color: #000;
+    right: 10px;
+    top: calc(50% - 3px);
+  }
+
+  input[type="checkbox"]:checked ~ .header, input[type="radio"]:checked ~ .header {
+    background: #bdbdbd;
+    color: #FFF;
+    border-color: #000;
+  }
+  input[type="checkbox"]:checked ~ .header:after,
+  input[type="radio"]:checked ~ .header:after {
+    border-top-color: transparent;
+    border-bottom-color: #FFF;
+    top: calc(50% - 8px);
+  }
+  input[type="checkbox"]:checked ~ .content, input[type="radio"]:checked ~ .content {
+    max-height: 200px;
+    margin-top: 0px;
+    opacity: 1;
+    padding: 10px;
+    transition: max-height 0.5s linear, opacity 1s  0.25s linear;
+    overflow-y: auto;
+  }
+
+  input[type="checkbox"] ~ .content, input[type="radio"] ~ .content {
+    max-height: 0px;
+    opacity: 0;
+    transition: max-height 0.5s linear;
+    overflow-y: auto;
+    border: 1px solid inherit;
   }
 
 }

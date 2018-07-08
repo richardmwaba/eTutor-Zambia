@@ -18,31 +18,46 @@
     <!-- About section -->
     <ion-row>
       <ion-label style="font-weight: bolder;">About</ion-label>
-      <ion-item text-wrap>
+      <div text-wrap>
         {{subject.description}}
-      </ion-item>
+      </div>
     </ion-row>
+    <hr>
 
-    <ion-list class="accordion">
-      <ion-label style="font-weight: bolder;">Topics Covered</ion-label>
-      <ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)"
-        [ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">
+    <!--<ion-list class="accordion">-->
+      <!--<ion-label style="font-weight: bolder;">Topics Covered</ion-label>-->
+      <!--<ion-item *ngFor="let topic of subject.topics; let i=index" text-wrap (click)="toggleLevel1('idx'+i)"-->
+        <!--[ngClass]="{active: isLevel1Shown('idx'+i)}" class="acc-handle">-->
 
-        <h4>
-          {{topic.topic_name}}
-          <ion-icon [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-up' : 'ios-arrow-down'" item-end></ion-icon>
-        </h4>
+        <!--<h4>-->
+          <!--{{topic.topic_name}}-->
+          <!--<ion-icon [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-up' : 'ios-arrow-down'" item-end></ion-icon>-->
+        <!--</h4>-->
 
-        <ion-list *ngIf="isLevel1Shown('idx'+i)">
-          <ion-item text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}" class="acc-panel" >
-            <h4>
-              {{topic.description}}
-            </h4>
-          </ion-item>
-        </ion-list>
+        <!--<ion-list *ngIf="isLevel1Shown('idx'+i)">-->
+          <!--<ion-item text-wrap (click)="toggleLevel2('idx'+i+'idx'+i2)" [ngClass]="{active: isLevel2Shown('idx'+i+'idx'+i2)}" class="acc-panel" >-->
+            <!--<h4>-->
+              <!--{{topic.description}}-->
+            <!--</h4>-->
+          <!--</ion-item>-->
+        <!--</ion-list>-->
 
-      </ion-item>
-    </ion-list>
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+
+
+    <ion-label style="font-weight: bolder;">Topics Covered</ion-label>
+    <div class='accordion'>
+      <div class='element' *ngFor="let topic of subject.topics; let i=index">
+        <input type="checkbox" id="{{'element'+i}}" />
+        <label for="{{'element'+i}}" class="header">{{topic.topic_name}}</label>
+        <section class='content'>
+          {{topic.description}}
+        </section>
+        <hr>
+      </div>
+
+    </div>
 
     <!-- Instructor section -->
     <ion-row>
