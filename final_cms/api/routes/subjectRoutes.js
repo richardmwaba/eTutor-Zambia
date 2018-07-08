@@ -85,9 +85,9 @@ router.post('/add', passport.authenticate('jwt', {session: false}), (req, res, n
                 videos: [
                     {
                         name:req.body.topics.sub_topics.videos.name,
-                    _id: mongoose.Types.ObjectId(),
-                    url: req.body.topics.sub_topics.videos.url
-                }
+                        _id: mongoose.Types.ObjectId(),
+                        url: req.body.topics.sub_topics.videos.url
+                    }
                 ]
             }
             ]

@@ -33,7 +33,8 @@ const subscriptions = require('./routes/subscriptionRoutes');
 const discussions = require('./routes/dicussionRoutes');
 
 //Port Number
-const port = 5000;
+// const port = 5000;
+const port = 3000;
 
 app.use(compression()); //Compress all routes
 
@@ -64,5 +65,5 @@ app.use('/superusers', superusers);
 
 //Start Server
 app.listen(process.env.PORT || port, () => {
-    console.log("Express server listening on port %d in %s mode", process.env.PORT, app.settings.env);
+    console.log("Express server listening on port %d in %s mode", process.env.PORT || port, app.settings.env);
 });
