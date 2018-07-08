@@ -18,6 +18,7 @@ import { LessonsPageModule } from '../pages/lessons/lessons.module';
 import { VideoPlayerPageModule } from '../pages/video-player/video-player.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AuthProvider } from '../providers/auth/auth';
 import { SubjectsProvider } from '../providers/subjects/subjects';
 import { VideosPageModule } from "../pages/videos/videos.module";
@@ -86,7 +87,8 @@ import { NetworkProvider } from '../providers/network/network';
     Keyboard,
     Category,
     Network,
-    NetworkProvider
+    NetworkProvider,
+    InAppBrowser
   ]
 
 })

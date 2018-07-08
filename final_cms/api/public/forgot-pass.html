@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="form-gap"></div>
+  <div class="container-fluid">
+    <div class="">
+      <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+        <div class="">
+          <div class="">
+            <div class="text-center">
+              <h3>
+                <i class="fa fa-lock fa-4x"></i>
+              </h3>
+              <h2 class="text-center">Forgot Password?</h2>
+              <p>You can reset your password here.</p>
+              <div class="panel-body">
+
+                <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope color-blue"></i>
+                      </span>
+                      <input id="email" name="email" placeholder="email address" class="form-control" type="email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input name="recover-submit" id="submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+      $(document).ready(function () {
+        $("#submit").click(function () {
+          var userEmail = $('#email').val();
+          var urlRoute = "http://localhost:5000/users/auth/forgot-password";
+          $.ajax({
+            type: "POST",
+            url: urlRoute,
+            data: JSON.stringify({
+              "email": userEmail
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+              console.log(data);
+              alert(data);
+              if(result === "no_errors") location.href = "http://localhost:5000/users/forgot-password";
+            },
+            error: function(xhr, status, error){
+              console.log("An error occured: " + xhr.status + " " + xhr.statusText + userEmail);
+              //alert("An error occured: " + xhr.status + " " + xhr.statusText + userEmail);
+            }
+          });
+        });
+      });
+    
+  </script>
+</body>
+
+</html>

@@ -27,10 +27,18 @@ const UserSchema = module.exports= mongoose.Schema({
         unique: true// may need to make this unique
     },
     password: {
-        type: String, required: true
+        type: String, 
+        required: true
     },
     phone: {
-        type: String, required: true
+        type: String, 
+        required: true
+    },
+    reset_password_token: {
+        type: String
+    },
+    reset_password_expires: {
+        type: Date
     },
     mySubjects: {
         type: [subject.getSchema] // e.g. student can have either an 'active' or 'inactive' status
@@ -103,3 +111,5 @@ module.exports.addToMySubjects = function (updatedUser, callback) {
 module.exports.removeFromMySubjects = function (updatedUser, callback) {
     updatedUser.save(callback);
 };
+
+mongoose.model('User', UserSchema);

@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 import {Validators, FormGroup, FormBuilder} from '@angular/forms';
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 import {SignupPage} from '../signup/signup';
 import {AuthProvider} from './../../providers/auth/auth';
 import {HomePage} from '../home/home';
 import {Events} from 'ionic-angular';
-
 
 @IonicPage()
 @Component({
@@ -24,6 +24,23 @@ export class LoginPage {
   user: any;
   username: string;
   public subject: any;
+  options : InAppBrowserOptions = {
+    location : 'yes',//Or 'no' 
+    hidden : 'no', //Or  'yes'
+    clearcache : 'yes',
+    clearsessioncache : 'yes',
+    zoom : 'yes',//Android only ,shows browser zoom controls 
+    hardwareback : 'yes',
+    mediaPlaybackRequiresUserAction : 'no',
+    shouldPauseOnSuspend : 'no', //Android only 
+    closebuttoncaption : 'Close', //iOS only
+    disallowoverscroll : 'no', //iOS only 
+    toolbar : 'yes', //iOS only 
+    enableViewportScale : 'no', //iOS only 
+    allowInlineMediaPlayback : 'no',//iOS only 
+    presentationstyle : 'pagesheet',//iOS only 
+    fullscreen : 'yes',//Windows only    
+};
 
   constructor(
     public navCtrl: NavController,
@@ -32,7 +49,8 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public events: Events,
     public formBuilder: FormBuilder,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private inAppBrowser: InAppBrowser
   ) {
 
     this.subject = navParams.get("subject");
@@ -49,6 +67,12 @@ export class LoginPage {
   signUp(params) {
     if (!params) params = {};
     this.navCtrl.push(SignupPage, {subject: this.subject});
+  }
+
+  forgotPassword() {
+    const url = this.auth.forgotPasswordUrl();
+    console.log(url);
+    const browser = this.inAppBrowser.create(url, '_self', this.options);
   }
 
   dismissModal() {

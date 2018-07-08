@@ -13,7 +13,7 @@ import { ENV } from '@app/env'
 @Injectable()
 export class AuthProvider {
 
-  private baseURL: string = ENV.host_url+"users";
+  private baseURL: string = ENV.host_url + "users";
 
   // content header for the server
   contentHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -52,6 +52,13 @@ export class AuthProvider {
   }
 
   /**
+   * Gets forgot password from api
+   */
+  forgotPasswordUrl() {
+    return this.baseURL + '/forgot-password';
+  }
+
+  /**
    * Stores the user's profile info on the app
    * @param token generated after log in process
    * @param user the user data that's returned to the app
@@ -74,7 +81,7 @@ export class AuthProvider {
     this.authToken = token;
   }
 
-  appendToken(){
+  appendToken() {
     this.loadToken();
     this.contentHeader = this.contentHeader.append('Authorization', this.authToken);
   }

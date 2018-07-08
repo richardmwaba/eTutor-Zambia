@@ -8,6 +8,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const mongoose = require('mongoose');                     // mongoose for mongodb
 const User = require('../models/user');
+const creds = require('../config/mail');
+const mailHandler = require('../controllers/mailController');
 
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
@@ -187,6 +189,18 @@ router.delete('/delete/:id', passport.authenticate('jwt', {session: false}), fun
         }
     });
 });
+
+// get forgot password
+router.get('/forgot-password', mailHandler.renderForgotPasswordPage);
+
+// post forgot password 
+router.post('/auth/forgot-password', mailHandler.forgotPassword);
+  
+// get reset password
+router.get('/reset-password', mailHandler.renderResetPasswordPage)
+
+//post reset password
+router.post('/auth/reset-password', mailHandler.resetPassword);
 
 module.exports = router;
 

@@ -20,6 +20,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "mongoose-unique-validator": "^2.0.1",
+    "nodemailer": "^4.6.7",
+    "nodemailer-express-handlebars": "^3.0.0",
     "passport": "*",
     "passport-jwt": "*",
     "validator": "^10.1.0",
