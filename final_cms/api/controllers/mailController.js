@@ -71,7 +71,7 @@ module.exports.forgotPassword = function(req, res) {
         template: 'forgot-password',
         subject: 'Forgot Password Email',
         context: {
-          url: 'http://localhost:5000/users/reset-password?token=' + token,
+          url: 'http://etutor.eu-central-1.elasticbeanstalk.com/users/reset-password?token=' + token,
           name: user.name.split(' ')[0]
         }
       };
