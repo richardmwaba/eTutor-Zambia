@@ -2,17 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f30e32c-ac61-47a3-affa-1bdf7873ca74" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/.sourcemaps/5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/scrowimage01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/scrowimage02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/scrowimage03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/assets/img/scrowimage04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artifacts/prod-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/11.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/12.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/13.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/14.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/15.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/15.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/16.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/16.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/4.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/4.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/6.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/6.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/7.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/9.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/10.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/environments/environment.dev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/environments/environment.dev.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/login/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/login/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/providers/discussions/discussions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/discussions/discussions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/pipes/grade.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/10.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/31de8db5ec318d940d895189111814e5_gr8-math-gp-guide-education-580x326_featuredImage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/3c765dad5f09c76451120f93d67756bd_gr7-science-gp-guide-education-580x326_featuredImage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/Biology+Header.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/Geography-Banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/HP-Spectre-x360-13-4005TU_2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/avatar04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/avatar3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/biology.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/chemist.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/chemistry.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/g8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/geography.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/h.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/h2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/history.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/hp-spectre-x360-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/hp-spectre-x360-photo-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/iphone 7 win.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/math-help.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/mathematics (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/mathematics.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/physics.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/programming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/shutterstock_127915121.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/stock-photo-retro-electronics-workshop-in-physics-lab-263458166.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/unza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/img/us-geography-globe-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/components.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/components.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/list/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/list/list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/list/list.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/list/list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/list/list.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/providers/my-subjects/my-subjects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/node_modules/" />
     <ignored path="$PROJECT_DIR$/final_cms/api/node_modules/" />
@@ -96,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+              <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -108,7 +182,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/providers/discussions/discussions.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="90" column="3" lean-forward="true" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
+              <caret line="90" column="3" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -226,7 +300,9 @@
     <handled-path value="$PROJECT_DIR$/final_cms/ui-src/node_modules" />
     <handled-path value="$PROJECT_DIR$/test/etutor/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="70" />
+    <option name="y" value="115" />
     <option name="width" value="1550" />
     <option name="height" value="880" />
   </component>
@@ -574,7 +650,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484404000" />
+    <option name="totallyTimeSpent" value="485648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
@@ -948,7 +1024,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/pages/login/login.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="104" column="31" lean-forward="true" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+          <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -958,7 +1034,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/providers/discussions/discussions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="90" column="3" lean-forward="true" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
+          <caret line="90" column="3" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>

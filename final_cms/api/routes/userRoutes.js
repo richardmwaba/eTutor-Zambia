@@ -79,7 +79,7 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 // retrieve all users
-router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     User.getAllUsers((err, users) => {
         // check for errors
         if (err) {
@@ -92,7 +92,7 @@ router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, us
 });
 
 // add subject to my subjects subdocument
-router.post('/mySubjects/enroll/:Email', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.post('/mySubjects/enroll/:Email', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
