@@ -37,18 +37,20 @@ export class AddCommentPage {
     public discussionService: DiscussionsProvider,
     public authService: AuthProvider,
     public viwCtrl: ViewController,
-    public formBuilder: FormBuilder) {
-    this.topic = navParams.get("topic");
-    this.hasDiscussion = navParams.get("hasDiscussion");
-    this.user = this.authService.user;
-    this.commentForm = formBuilder.group({
-      title: ['', Validators.compose( [Validators.required])],
-      message: ['', Validators.compose([Validators.required])],
-      topic_id: ['', Validators.compose([Validators.required])],
-      user_id: ['', Validators.compose([Validators.required])],
-      username: ['', Validators.compose([Validators.required])],
-      hasDiscussion: ['', Validators.compose([Validators.required])]
-    })
+    public formBuilder: FormBuilder
+  ) {
+      this.topic = navParams.get("topic");
+      this.hasDiscussion = navParams.get("hasDiscussion");
+      this.user = this.authService.user;
+      // form validation
+      this.commentForm = formBuilder.group({
+        title: ['', Validators.compose( [Validators.required])],
+        message: ['', Validators.compose([Validators.required])],
+        topic_id: ['', Validators.compose([Validators.required])],
+        user_id: ['', Validators.compose([Validators.required])],
+        username: ['', Validators.compose([Validators.required])],
+        hasDiscussion: ['', Validators.compose([Validators.required])]
+      });
   }
 
   ionViewDidLoad() {
@@ -87,9 +89,9 @@ export class AddCommentPage {
           toastWarn.present();
         }
       },
-    err => {
-      this.presentToast('Seems you\'re offline, try again.');
-    });
+      err => {
+        this.presentToast('Seems you\'re offline, try again.');
+      });
     }else {
       this.presentToast("You still have errors");
     }

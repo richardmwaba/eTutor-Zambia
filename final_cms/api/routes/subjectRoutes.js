@@ -166,20 +166,20 @@ router.post('/add/subTopic/:subId/:topicId', passport.authenticate('jwt', {sessi
             // if success get the topic
             let topic = subject.topics.id(req.params.topicId);
 
-                if (!topic) {
-                    res.json({success: false, msg: 'Failed to get the topic'});
-                } else {
-                    //add the sub topic to the topic found
-                    Topic.addSubTopic(subject, topic, newSubTopic, (err, subTopic) => {
-                        // check for errors
-                        if (err) {
-                            res.json({success: false, msg: 'Failed to add the subtopic'});
-                        } else {
-                            res.json(topic);
-                        }
-                    });
+            if (!topic) {
+                res.json({success: false, msg: 'Failed to get the topic'});
+            } else {
+                //add the sub topic to the topic found
+                Topic.addSubTopic(subject, topic, newSubTopic, (err, subTopic) => {
+                    // check for errors
+                    if (err) {
+                        res.json({success: false, msg: 'Failed to add the subtopic'});
+                    } else {
+                        res.json(topic);
+                    }
+                });
 
-                }
+            }
         }
     });
 });
