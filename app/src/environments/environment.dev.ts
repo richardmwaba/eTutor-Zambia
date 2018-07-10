@@ -1,4 +1,4 @@
 export const ENV = {
   mode: 'Development',
-  host_url: "http://etutor.eu-central-1.elasticbeanstalk.com/"
+  host_url: "http://localhost:5000/"
 };

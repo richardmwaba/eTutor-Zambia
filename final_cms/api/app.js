@@ -33,8 +33,7 @@ const subscriptions = require('./routes/subscriptionRoutes');
 const discussions = require('./routes/dicussionRoutes');
 
 //Port Number
-// const port = 5000;
-const port = 3000;
+const port = 5000;
 
 app.use(compression()); //Compress all routes
 

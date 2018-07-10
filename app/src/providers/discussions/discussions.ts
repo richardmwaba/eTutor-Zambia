@@ -83,12 +83,11 @@ export class DiscussionsProvider {
 
   /*
   *Loads token from local storage
-  * 
+  *
   * */
   //Get: Load Token From Local Storage
   loadToken() {
-    const token = localStorage.getItem('token');
-    this.authToken = token;
+    this.authToken = localStorage.getItem('token');
   }
 
   appendToken(){
