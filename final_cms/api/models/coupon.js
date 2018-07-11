@@ -11,12 +11,11 @@ const topic_schema = require('../models/topic');
 const CouponSchema =  mongoose.Schema({
     _id                     :   {type: mongoose.Schema.Types.ObjectId},
     key                     :   String,
-    name                    :   String,
-    service                   :   String,
+    type                   :   String,
     seller              :   String,
     countMax             :   Number,
-    discount                :   String,
-    expirationDate                     :   Date,
+    duration                     :   Number,
+    duration_unit                     :   String,
 });
 
  // gets all Coupons from the collection

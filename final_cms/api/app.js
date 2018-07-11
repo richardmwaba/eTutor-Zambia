@@ -8,10 +8,22 @@ const passport = require('passport');
 const passportJwt = require('passport-jwt');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const dateMath = require('date-arithmetic');
+const schedule = require("node-schedule");
 const compression = require('compression');
+const subscriptions_scheduler = require('./subscriptions_scheduler');
+require('dotenv').config();
 
 //Connect to MongoDB Database
 mongoose.connect(config.database);
+
+
+//get the time to run the scheduler
+let rule = new schedule.RecurrenceRule();
+rule.minute = process.env.SCHEDULED_TIME;
+//add jobs to the scheduler
+
+schedule.scheduleJob(rule,subscriptions_scheduler.checkSubscriptions);
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
