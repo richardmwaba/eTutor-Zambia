@@ -14,15 +14,14 @@ function getAllSubscriptions() {
     Subscription.getAllSubscriptions((err, subscriptions) => {
         // check for errors
         if (err) {
-            console.log("Nothing found");
+            console.log("An error occurred");
             return null;
-        } else {
+        } else{
             // if found
             let today = new Date;
-            console.log("Found  "+subscriptions[0].userEmail);
             subscriptions.forEach(function (subscription) {
                 if ((dateMath.lte(subscription.expirationDate, today))) {
-                    console.log(subscription.userEmail+ "'s subscription has expired");
+                    console.log(subscriptions[0].userEmail+"'s subscription has expired");
                     deleteSubscription(subscription);
                 }
             });
@@ -40,7 +39,7 @@ function deleteSubscription(subscription){
             return false;
         } else {
             // if success
-            console.log(subscriptions.userEmail+" has been deleted");
+            console.log(" has been deleted");
             return true;
         }
     });

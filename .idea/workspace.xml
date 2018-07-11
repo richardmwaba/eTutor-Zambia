@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f30e32c-ac61-47a3-affa-1bdf7873ca74" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/0.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/1.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/2.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/3.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/.sourcemaps/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/add-comment/add-comment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/comments/comments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/comments/comments.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/models/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/models/coupon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/couponRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/couponRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/dicussionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/dicussionRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/subjectRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_cms/api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js" beforeDir="false" afterPath="$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/app/node_modules/" />
     <ignored path="$PROJECT_DIR$/final_cms/api/node_modules/" />
@@ -64,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subscriptions_scheduler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="subscriptions_scheduler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="173">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -91,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final_cms/api/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="398">
               <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
@@ -113,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/final_cms/api/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" selection-end-column="14" />
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -185,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/tsconfig.json" />
         <option value="$PROJECT_DIR$/app/.env" />
         <option value="$PROJECT_DIR$/app/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/package.json" />
@@ -234,8 +216,9 @@
         <option value="$PROJECT_DIR$/final_cms/api/routes/subscriptionRoutes.js" />
         <option value="$PROJECT_DIR$/final_cms/api/scheduler.js" />
         <option value="$PROJECT_DIR$/final_cms/api/scheduler_function.js" />
-        <option value="$PROJECT_DIR$/final_cms/api/.env" />
         <option value="$PROJECT_DIR$/final_cms/api/app.js" />
+        <option value="$PROJECT_DIR$/final_cms/api/.env" />
+        <option value="$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js" />
       </list>
     </option>
   </component>
@@ -252,7 +235,7 @@
     <handled-path value="$PROJECT_DIR$/final_cms/ui-src/node_modules" />
     <handled-path value="$PROJECT_DIR$/test/etutor/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1939" />
@@ -511,15 +494,15 @@
       <workItem from="1530570761920" duration="40572000" />
       <workItem from="1530726822660" duration="32224000" />
       <workItem from="1530960156451" duration="5059000" />
-      <workItem from="1531337196602" duration="9217000" />
+      <workItem from="1531337196602" duration="9817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504880000" />
+    <option name="totallyTimeSpent" value="505480000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32749325" />
@@ -856,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final_cms/api/config/database.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -870,17 +846,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/.env">
+    <entry file="file://$PROJECT_DIR$/final_cms/api/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="398">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final_cms/api/app.js">
+    <entry file="file://$PROJECT_DIR$/final_cms/api/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final_cms/api/subscriptions_scheduler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
