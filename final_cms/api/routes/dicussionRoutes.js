@@ -185,7 +185,7 @@ function updateReactions(req, res, next){
 }
 
 // delete a discussion
-router.delete('/comments/delete/:topic_id/:comment_id', function (req, res) {
+router.delete('/comments/delete/:topic_id/:comment_id', (req, res)=> {
     Discussion.findMatch(req.params.topic_id, (err, discussion) => {
         if (err) {
             res.json({success: null, msg: 'An error occurred'});
@@ -205,7 +205,7 @@ router.delete('/comments/delete/:topic_id/:comment_id', function (req, res) {
 });
 
 // delete a discussion
-router.delete('/delete/:Id', function (req, res) {
+router.delete('/delete/:Id', (req, res)=> {
     Discussion.remove(req.params.Id, (err, discussions) => {
         if (err) {
             res.json(err.message);

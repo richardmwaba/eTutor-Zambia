@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app",
+    "tests":"node tests"
   },
   "dependencies": {
     "bcryptjs": "*",
@@ -22,6 +23,7 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "mongoose-unique-validator": "^2.0.1",
+    "newman": "^3.10.0",
     "node-schedule": "^1.3.0",
     "nodemailer": "^4.6.7",
     "nodemailer-express-handlebars": "^3.0.0",

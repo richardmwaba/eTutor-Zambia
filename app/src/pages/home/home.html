@@ -62,80 +62,62 @@
 
   </div>
 
+
   <div class="categories" *ngIf="!noFavs">
 
-  <h4 class="category-title">Exam Revision</h4>
-  <!-- grid -->
-  <ion-scroll class="ion-scroll" scrollX="true">
-    <ion-row nowrap align-items-baseline>
-      <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Tests & Exams'">
-        <ion-col col-12>
+    <div *ngFor="let category of categories">
+
+      <!-- ensure the category is not null-->
+      <div *ngIf="category">
+      <!--display the subjects based on categories found in the categories array-->
+      <div *ngFor="let subject of subjects  | category :'category' : category.name">
+
+        <!-- there are no subjects skip the next iteration -->
+        <div *ngIf="subject">
+
+          <h4 class="category-title">{{category.name}}</h4>
+          <!-- grid -->
+          <ion-scroll class="ion-scroll" scrollX="true">
+          <ion-row nowrap align-items-baseline>
+          <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'ECZ Exam Reviews'">
+          <ion-col col-12>
 
           <ion-card class="categories-card" (click)="courseDetail(subject)">
 
-            <ion-item class="card-title-row">
-              <!-- <ion-icon class="card-title-icon" item-start name="book"></ion-icon> -->
-              <div class="card-title">{{subject.name}}</div>
-              <!--<p>November 5, 1955</p>-->
-            </ion-item>
+          <ion-item class="card-title-row">
+          <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
+          <div class="card-title">{{subject.name}}</div>
+          </ion-item>
 
-            <img class="card-image" src="assets/img/{{subject.icon}}"/>
+          <img class="card-image" src="assets/img/{{subject.icon}}"/>
 
-            <ion-row class="card-subtitle-row">
-              <ion-col>
-                <h2 class="card-subtitle-text">{{subject.grade}}</h2>
-              </ion-col>
-              <ion-col>
-                <button class="card-subtitle-button" ion-button icon-left clear small>
-                  <ion-icon name="paper-plane"></ion-icon>
-                  <div>Open</div>
-                </button>
-              </ion-col>
-            </ion-row>
+          <ion-row class="card-subtitle-row">
+          <ion-col>
+          <h2 class="card-subtitle-text">{{subject.grade}}</h2>
+          </ion-col>
+          <ion-col>
+          <button class="card-subtitle-button" ion-button icon-left clear small>
+          <ion-icon name="paper-plane"></ion-icon>
+          <div>Open</div>
+          </button>
+          </ion-col>
+          </ion-row>
 
           </ion-card>
-        </ion-col>
-      </div>
-    </ion-row>
-
-  </ion-scroll>
-
-    <h4 class="category-title">Secondary Level</h4>
-    <!-- grid -->
-    <ion-scroll class="ion-scroll" scrollX="true">
-      <ion-row nowrap align-items-baseline>
-        <div class="scroll-item" *ngFor="let subject of subjects  | category :'category' : 'Secondary Level'">
-          <ion-col col-12>
-
-            <ion-card class="categories-card" (click)="courseDetail(subject)">
-
-              <ion-item class="card-title-row">
-                <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
-                <div class="card-title">{{subject.name}}</div>
-                <!--<p>November 5, 1955</p>-->
-              </ion-item>
-
-              <img class="card-image" src="assets/img/{{subject.icon}}"/>
-
-              <ion-row class="card-subtitle-row">
-                <ion-col>
-                  <h2 class="card-subtitle-text">{{subject.grade}}</h2>
-                </ion-col>
-                <ion-col>
-                  <button class="card-subtitle-button" ion-button icon-left clear small>
-                    <ion-icon name="paper-plane"></ion-icon>
-                    <div>Open</div>
-                  </button>
-                </ion-col>
-              </ion-row>
-
-            </ion-card>
           </ion-col>
-        </div>
-      </ion-row>
+          </div>
+          </ion-row>
 
-    </ion-scroll>
+          </ion-scroll>
+
+        </div>
+
+      </div>
 
   </div>
+    </div>
+
+    </div>
+
 
 </ion-content>

@@ -16,7 +16,6 @@ import { AndroidFullScreen } from '@ionic-native/android-full-screen';
   templateUrl: 'video-player.html',
 })
 export class VideoPlayerPage {
-  public subTopic;
   public videoUrl;
   public video : any;
 
@@ -27,7 +26,7 @@ export class VideoPlayerPage {
     public viewCtrl: ViewController,
     private androidFullScreen: AndroidFullScreen) {
     this.video = navParams.get('video');
-      this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
+      this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.video.url);
   }
 
   ionViewDidLoad() {

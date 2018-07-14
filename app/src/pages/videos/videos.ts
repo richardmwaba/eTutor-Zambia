@@ -42,7 +42,16 @@ export class VideosPage {
     private sanitizer: DomSanitizer,
     public viewCtrl: ViewController) {
     this.subject = navParams.get("subject");
-    this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/271342649");
+    this.videoUrl = this.buildFirstVideoUrl();
+  }
+
+
+  /**
+   * makes the url to use for the free video
+   * @returns {SafeResourceUrl}
+   */
+  buildFirstVideoUrl(){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.subject.thumbnail_video_url);
   }
 
   ionViewDidLoad() {

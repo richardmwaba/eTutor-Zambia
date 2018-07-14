@@ -1,46 +1,48 @@
 /**
  * This handles all the subject's routes
  */
+
 "use strict";
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const config = require('../config/database');
 let mongoose = require('mongoose');                     // mongoose for mongodb
 
 const Subject = require('../models/subject');
 const Topic = require('../models/topic');
 const SubTopic = require('../models/sub_topic');
+const Category = require('../models/subjectCategory');
 const Video = require('../models/video');
 
+
+router.get('/all', getAllSubjects, getAllCategories);
+
 //get all subjects
-router.get('/all', (req, res, next) => {
-// add to db
+function getAllSubjects(req, res, next) {
     Subject.getAllSubjects((err, subjects) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json({success: true, msg: 'Found', subjects:subjects});
+            req.subjects = subjects;
+            next();
         }
     });
-});
+}
 
-//get all subjects
-router.get('/grade/find/:grade', (req, res, next) => {
-// add to db
-    Subject.getSubjectByGrade(req.params.grade, (err, subject) => {
+function getAllCategories(req, res, next){
+    Category.getAllCategories((err, categories) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json(subject);
+            res.json({success: true,msg: 'Found', subjects: req.subjects, categories:categories});
         }
     });
-});
+}
 
 //get subject
 router.get('/find/:id', (req, res, next) => {
@@ -62,6 +64,7 @@ router.post('/add', (req, res, next) => {
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
         description: req.body.description,
+        thumbnail_video_url: req.body.thumbnail_video_url,
         grade: req.body.grade,
         category: req.body.category,
         icon: req.body.icon,
