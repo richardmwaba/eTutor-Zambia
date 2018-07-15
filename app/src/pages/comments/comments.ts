@@ -83,9 +83,6 @@ export class CommentsPage {
         if (data['comments']) {
           this.noFavs = false;
         }
-      // if(this.loader) {
-      //   this.loader.dismiss();
-      // }
       if(refresher) {
         refresher.complete();
       }

@@ -1,3 +1,53 @@
+GET http://localhost:5000/subjects/all?=
+Accept: */*
+Content-Type: application/json
+
+{     "instructors": [         {             "name": "Simeon Chambika",             "title": "Mr.",             "username": "schambika",             "email": "simeonchambika@etutor.edu.zm",             "password": "1234567890",             "phone": "+260950852256"         }     ],     "topics": [         {             "sub_topics": [                 {                     "videos": [                         {                             "_id": "5b04892a9b30950004e59b7d",                             "url": "https://player.vimeo.com/video/271342649"                         }                     ],                     "_id": "5b04892a9b30950004e59b7c",                     "name": "Living things"                 }             ],             "_id": "5b04892a9b30950004e59b7b",             "topic_name": "Organisms and life Processes",             "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",             "duration": "1 Week(s)"         }     ],     "_id": "5b04892a9b30950004e59b7a",     "name": "Biology",     "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",     "grade": "Grade 12",     "category": "Tests & Exams",     "icon": "1449041701-hd-biology-widescreen.jpg",     "__v": 0 }
+
+###
+
+GET http://localhost:5000/subjects/all?=
+Accept: */*
+Content-Type: application/json
+
+{     "instructors": [         {             "name": "Simeon Chambika",             "title": "Mr.",             "username": "schambika",             "email": "simeonchambika@etutor.edu.zm",             "password": "1234567890",             "phone": "+260950852256"         }     ],     "topics": [         {             "sub_topics": [                 {                     "videos": [                         {                             "_id": "5b04892a9b30950004e59b7d",                             "url": "https://player.vimeo.com/video/271342649"                         }                     ],                     "_id": "5b04892a9b30950004e59b7c",                     "name": "Living things"                 }             ],             "_id": "5b04892a9b30950004e59b7b",             "topic_name": "Organisms and life Processes",             "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",             "duration": "1 Week(s)"         }     ],     "_id": "5b04892a9b30950004e59b7a",     "name": "Biology",     "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",     "grade": "Grade 12",     "category": "Tests & Exams",     "icon": "1449041701-hd-biology-widescreen.jpg",     "__v": 0 }
+
+###
+
+GET http://localhost:5000/subjects/all?=
+Accept: */*
+Content-Type: application/json
+
+{     "instructors": [         {             "name": "Simeon Chambika",             "title": "Mr.",             "username": "schambika",             "email": "simeonchambika@etutor.edu.zm",             "password": "1234567890",             "phone": "+260950852256"         }     ],     "topics": [         {             "sub_topics": [                 {                     "videos": [                         {                             "_id": "5b04892a9b30950004e59b7d",                             "url": "https://player.vimeo.com/video/271342649"                         }                     ],                     "_id": "5b04892a9b30950004e59b7c",                     "name": "Living things"                 }             ],             "_id": "5b04892a9b30950004e59b7b",             "topic_name": "Organisms and life Processes",             "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",             "duration": "1 Week(s)"         }     ],     "_id": "5b04892a9b30950004e59b7a",     "name": "Biology",     "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",     "grade": "Grade 12",     "category": "Tests & Exams",     "icon": "1449041701-hd-biology-widescreen.jpg",     "__v": 0 }
+
+###
+
+POST http://localhost:5000/subjects/add?=
+Accept: */*
+Content-Type: application/json
+
+{     "instructors": [         {             "name": "Simeon Chambika",             "title": "Mr.",             "username": "schambika",             "email": "simeonchambika@etutor.edu.zm",             "password": "1234567890",             "phone": "+260950852256"         }     ],     "topics": [         {             "sub_topics": [                 {                     "videos": [                         {                             "_id": "5b04892a9b30950004e59b7d",                             "url": "https://player.vimeo.com/video/271342649"                         }                     ],                     "_id": "5b04892a9b30950004e59b7c",                     "name": "Living things"                 }             ],             "_id": "5b04892a9b30950004e59b7b",             "topic_name": "Organisms and life Processes",             "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",             "duration": "1 Week(s)"         }     ],     "_id": "5b04892a9b30950004e59b7a",     "name": "Biology",     "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",     "grade": "Grade 12",     "category": "Tests & Exams",     "icon": "1449041701-hd-biology-widescreen.jpg",     "__v": 0 }
+
+###
+
+POST http://localhost:5000/subjects/add?=
+Accept: */*
+Content-Type: application/json
+
+{     "instructors": [         {             "name": "Simeon Chambika",             "title": "Mr.",             "username": "schambika",             "email": "simeonchambika@etutor.edu.zm",             "password": "1234567890",             "phone": "+260950852256"         }     ],     "topics": [         {             "sub_topics": [                 {                     "videos": [                         {                             "_id": "5b04892a9b30950004e59b7d",                             "url": "https://player.vimeo.com/video/271342649"                         }                     ],                     "_id": "5b04892a9b30950004e59b7c",                     "name": "Living things"                 }             ],             "_id": "5b04892a9b30950004e59b7b",             "topic_name": "Organisms and life Processes",             "description": "In this topic, we will cover all known types of organisms and libing things together with how their life processes",             "duration": "1 Week(s)"         }     ],     "_id": "5b04892a9b30950004e59b7a",     "name": "Biology",     "description": "Science is the study of living organisms, diveded into many specialized fields that cover their  mophology, physiologu, anatomy, behaviour, origin and distribution.",     "grade": "Grade 12",     "category": "Tests & Exams",     "icon": "1449041701-hd-biology-widescreen.jpg",     "__v": 0 }
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+###
+
 GET http://localhost:5000/users/mySubjects/remove/5b04793bc7514c00047484a4/chileshemartin@gmail.com
 Accept: */*
 Cache-Control: no-cache

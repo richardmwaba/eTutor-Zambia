@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { CommentsPage} from "../comments/comments";
-import {HomePage} from "../home/home";
-import {AddCommentPage} from "../add-comment/add-comment";
-// $IMPORTSTATEMENT
 
 /**
  * Generated class for the DiscussionForumPage page.
@@ -11,7 +8,6 @@ import {AddCommentPage} from "../add-comment/add-comment";
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-// $IONICPAGE
 @IonicPage()
 @Component({
   selector: 'page-discussion-forum',

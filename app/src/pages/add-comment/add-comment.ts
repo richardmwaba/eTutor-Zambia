@@ -40,7 +40,6 @@ export class AddCommentPage {
     public formBuilder: FormBuilder
   ) {
       this.topic = navParams.get("topic");
-      this.hasDiscussion = navParams.get("hasDiscussion");
       this.user = this.authService.user;
       // form validation
       this.commentForm = formBuilder.group({
@@ -49,7 +48,6 @@ export class AddCommentPage {
         topic_id: ['', Validators.compose([Validators.required])],
         user_id: ['', Validators.compose([Validators.required])],
         username: ['', Validators.compose([Validators.required])],
-        hasDiscussion: ['', Validators.compose([Validators.required])]
       });
   }
 

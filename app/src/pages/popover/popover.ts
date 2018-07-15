@@ -1,9 +1,8 @@
 import { Component, Input , ViewChild} from '@angular/core';
-import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {SubjectsProvider} from "../../providers/subjects/subjects";
 import {CourseDetailPage} from "../course-detail/course-detail";
 import { Keyboard } from '@ionic-native/keyboard';
-// $IMPORTSTATEMENT
 
 /**
  * Generated class for the PopoverPage page.
@@ -11,7 +10,6 @@ import { Keyboard } from '@ionic-native/keyboard';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-// $IONICPAGE
 @Component({
   selector: 'page-popover',
   templateUrl: 'popover.html',

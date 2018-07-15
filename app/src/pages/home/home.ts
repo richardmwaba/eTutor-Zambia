@@ -3,9 +3,8 @@ import { NavController, LoadingController, ModalController, ToastController} fro
 import { JuniorSecondaryPage } from '../junior-secondary/junior-secondary';
 import { CourseDetailPage } from '../course-detail/course-detail';
 import {SubjectsProvider} from "../../providers/subjects/subjects";
-import {PopoverPage} from '../popover/popover'
+import {PopoverPage} from '../popover/popover';
 import { Category } from "../../pipes/Category";
-import { StatusBar } from '@ionic-native/status-bar';
 import {ScrollHideConfig} from "../../directives/scroll-hide/scroll-hide";
 
 @Component({
@@ -19,6 +18,7 @@ export class HomePage {
   public noFavs = true;
   public footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
   public headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
+  public categories:Array<any>;
 
   constructor(
     public navCtrl: NavController,
@@ -61,39 +61,25 @@ export class HomePage {
    */
   getSubjectsFromServer(refresher){
     this.subjectsService.getSubjects().then((data) => {
-      console.log(data);
-      if(this.loader) {
-        // this.loader.dismiss();
-        // if array is not empty, then favorites exist
-
-      }
+        console.log(data);
         if (data['subjects']) {
           this.noFavs = false;
         }
-      if(refresher){
-        refresher.complete();
-      }
-      this.subjects = data['subjects'];
-    },
-    err => {
-      if (this.loader) this.loader.dismiss();
-      // display message
-      this.presentToast('Oops, you seem to be offline.');
-    }).catch((error)=>{ // show error message when callback is rejected
+        if(refresher){
+          refresher.complete();
+        }
+        this.subjects = data['subjects'];
+        this.categories = data['categories'];
+        console.log("categories are: "+this.categories);
+      },
+      err => {
+        // display message
+        this.presentToast('Oops, an error occured. Try again.');
+      }).catch((error)=>{ // show error message when callback is rejected
       // dismiss loader
-      console.log('promise failed' + error);
       if (this.loader) this.loader.dismiss();
       // display message
       this.presentToast('Oops, you seem to be offline.');
-    });
-  }
-
-  /**
-   * This function presents the loading animation
-   */
-  createLoader() {
-    this.loader = this.loadingCtrl.create({
-      content: "Loading subjects..."
     });
   }
 
@@ -102,7 +88,7 @@ export class HomePage {
     modal.present();
   }
 
-   /**
+  /**
    * Presents a success toast on log in
    */
   presentToast(msg: string) {

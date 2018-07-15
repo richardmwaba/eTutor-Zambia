@@ -55,34 +55,6 @@ page-lessons {
   }
   // End of .subject-details
 
-  .accordion {
-    position: relative;
-  }
-
-  .acc-handle {
-    transition: all .1s ease;
-    text-align: left;
-  }
-
-  .acc-handle:hover {
-    color: #64b5f6;
-    background: #fafafa;
-  }
-
-
-  .acc-handle:focus {
-    color:#64b5f6;
-  }
-
-  .acc-panel * {
-    transition: all 0.6s linear;
-    background-color: #fafafa;
-  }
-
-  .inner-list{
-    margin-left: -10%;
-  }
-
   .instructor_container{
     position: relative;
     height: 220px;

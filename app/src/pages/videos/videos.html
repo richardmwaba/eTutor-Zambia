@@ -23,10 +23,11 @@
               <summary>
                 {{sub_topic.name}}
               </summary>
-              <ion-item *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
-                <ion-icon name="play-circle"></ion-icon>
+              <ion-list *ngFor="let video of sub_topic.videos" ion-item (click)="checkAccessToVideo(video, subject)">
+                <ion-icon name="md-videocam"></ion-icon>
                 {{video.name}}
-              </ion-item>
+                <hr>
+              </ion-list>
             </details>
           </ion-item>
 
