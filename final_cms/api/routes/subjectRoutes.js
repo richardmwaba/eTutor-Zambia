@@ -15,7 +15,7 @@ const SubTopic = require('../models/sub_topic');
 const Video = require('../models/video');
 
 //get all subjects
-router.get('/all', (req, res, next) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
 // add to db
     Subject.getAllSubjects((err, subjects) => {
         // check for errors

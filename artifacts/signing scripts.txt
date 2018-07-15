@@ -1,0 +1,12 @@
+D:\Projects\Android\e-tutor\app\eTutor.keystore
+
+ D:\Projects\Android\e-tutor\app\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore D:\Projects\Android\e-tutor\app\eTutor.keystore D:\Projects\Android\e-tutor\app\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk eTutor
+
+
+zipalign -v 4 D:\Projects\Android\e-tutor\app\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk prod-release.apk
+
+
+apksigner verify prod-release.apk

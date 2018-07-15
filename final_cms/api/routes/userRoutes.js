@@ -152,7 +152,7 @@ router.get('/mySubjects/:email', passport.authenticate('jwt', {session: false}),
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json({success:true, mySubjects:user.mySubjects});
+            res.json({success:true, mySubjects:user});
         }
     });
 });
