@@ -74,7 +74,7 @@ export class HomePage {
       },
       err => {
         // display message
-        this.presentToast('Oops, you seem to be offline.');
+        this.presentToast('Oops, an error occured. Try again.');
       }).catch((error)=>{ // show error message when callback is rejected
       // dismiss loader
       if (this.loader) this.loader.dismiss();

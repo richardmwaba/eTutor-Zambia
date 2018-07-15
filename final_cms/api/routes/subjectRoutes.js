@@ -96,16 +96,16 @@ router.post('/add', (req, res, next) => {
             ]
         }]
     });
-// add to db
-Subject.addSubject(newSubject, (err, subject) => {
-    // check for errors
-    if (err) {
-        res.json({success: false, msg: err.stack});
-    } else {
-        // if success
-        res.json(subject);
-}
-});
+    // add to db
+    Subject.addSubject(newSubject, (err, subject) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: err.stack});
+        } else {
+            // if success
+            res.json(subject);
+        }
+    });
 });
 
 // Used to update subject fields
@@ -142,7 +142,6 @@ router.post('/add/topic/:subId', (req, res, next) =>{
                     res.json(topic);
                 }
             });
-                // res.json(subject);
         }
     });
 });
@@ -151,14 +150,14 @@ router.post('/add/topic/:subId', (req, res, next) =>{
 // Used to add a sub topic to a topic of a subject
 router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
     let newSubTopic = new SubTopic.getModel({
+        _id: mongoose.Types.ObjectId(),
+        name: req.body.name,
+        videos:
+            {
                 _id: mongoose.Types.ObjectId(),
-                name: req.body.name,
-                videos:
-                    {
-                        _id: mongoose.Types.ObjectId(),
-                        name: req.body.videos.name,
-                        url: req.body.videos.url
-                    }
+                name: req.body.videos.name,
+                url: req.body.videos.url
+            }
     });
 
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
@@ -235,4 +234,3 @@ router.delete('/delete/:subId', function(req, res) {
 });
 
 module.exports = router;
-

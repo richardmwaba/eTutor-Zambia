@@ -152,7 +152,7 @@ router.get('/mySubjects/:email', (req, res, users) => {
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json({success:true, mySubjects:user.mySubjects});
+            res.json({success:true, mySubjects:user});
         }
     });
 });

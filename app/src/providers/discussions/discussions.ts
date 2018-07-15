@@ -17,7 +17,6 @@ export class DiscussionsProvider {
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(public http: HttpClient) {
     this.discussion = null;
-    console.log('Hello DiscussionsProvider Provider');
   }
 
 
