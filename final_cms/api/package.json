@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
-    "tests":"node tests"
+    "tests": "node tests"
   },
   "dependencies": {
     "bcryptjs": "*",
@@ -37,6 +37,9 @@
   "license": "ISC",
   "devDependencies": {
     "@angular/cli": "^1.7.3",
-    "@angular/core": "*"
+    "@angular/core": "*",
+    "jasmine": "^3.1.0",
+    "karma": "^2.0.4",
+    "karma-jasmine": "^1.1.2"
   }
 }

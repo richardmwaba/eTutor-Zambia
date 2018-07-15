@@ -37,66 +37,6 @@ router.get('/active', passport.authenticate('jwt', {session: false}), (req, res,
     });
 });
 
-// //get Coupon
-// router.get('/pending', passport.authenticate('jwt', {session: false}), (req, res, next) => {
-// // add to db
-//     Coupon.getCouponById(req.params.id, (err, coupon) => {
-//         // check for errors
-//         if (err) {
-//             res.json({success: false, msg: 'Failed to get Coupon'});
-//         } else {
-//             // if success
-//             res.json(coupon);
-//         }
-//     });
-// });
-//
-// //generates new coupon and saves it to the database
-// router.get('/generate/:numberOfCoupons', passport.authenticate('jwt', {session: false}), generateCoupons, saveCoupons, getAllCoupons);
-//
-// //generate specified coupons
-// function generateCoupons(req, res, next) {
-//     req.generated = coupon.generate({
-//         length: 12,
-//         count: req.params.numberOfCoupons,
-//         pattern: "###-###-###-###",
-//         charset: coupon.charset("numbers"),
-//     });
-//     next();
-// }
-//
-// //ave the generated coupons to db
-//  function saveCoupons(req, res, next) {
-//     let i = (req.params.numberOfCoupons-1);
-//      for(i; i>=0; i--) {
-//          let newCoupon = new Coupon.getModel({
-//              _id                     :   mongoose.Types.ObjectId(),
-//              key                     :   req.generated[i],
-//              name                    :   "eTutor",
-//              service                   :   "Video access",
-//              seller              :   "Kazang",
-//              countMax             :   1,
-//              discount                :   "free",
-//              expirationDate                     :   new Date(2015, 0, 1),
-//          });
-// // add to db
-//          Coupon.addCoupon(newCoupon, (err, coupon) => {
-//              // check for errors
-//              if (err) {
-//                  res.json({success: false, msg: err.stack});
-//              }
-//          });
-//      }
-//      //got to next function
-//      next();
-//  }
-//
-// function getAllCoupons(req, res, next){
-//     //return all the coupons when completed
-//     res.send(req.generated)
-//
-// }
-
 router.post('/generate/', generate, save, getAll);
 
  //generate specified coupons
@@ -143,7 +83,7 @@ router.post('/generate/', generate, save, getAll);
 
 
 // delete a Coupon
-router.delete('/delete/:couponId', passport.authenticate('jwt', {session: false}), function(req, res) {
+router.delete('/delete/:couponId', function(req, res) {
     Coupon.remove({_id : req.params.couponId}, (err, coupon) =>{
         if(err) {
             res.json(err.message);
