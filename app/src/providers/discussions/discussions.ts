@@ -17,7 +17,6 @@ export class DiscussionsProvider {
   contentHeader = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(public http: HttpClient) {
     this.discussion = null;
-    console.log('Hello DiscussionsProvider Provider');
   }
 
 
@@ -83,12 +82,11 @@ export class DiscussionsProvider {
 
   /*
   *Loads token from local storage
-  * 
+  *
   * */
   //Get: Load Token From Local Storage
   loadToken() {
-    const token = localStorage.getItem('token');
-    this.authToken = token;
+    this.authToken = localStorage.getItem('token');
   }
 
   appendToken(){

@@ -10,6 +10,7 @@ const SubjectSchema =  mongoose.Schema({
     _id                     :   {type: mongoose.Schema.Types.ObjectId},
     name                    :   String,
     grade                   :   String,
+    thumbnail_video_url     : String,
     instructors              :   [UserSchema],
     description             :   String,
     category                :   String,

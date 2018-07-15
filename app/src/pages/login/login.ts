@@ -25,21 +25,21 @@ export class LoginPage {
   username: string;
   public subject: any;
   options : InAppBrowserOptions = {
-    location : 'yes',//Or 'no' 
+    location : 'yes',//Or 'no'
     hidden : 'no', //Or  'yes'
     clearcache : 'yes',
     clearsessioncache : 'yes',
-    zoom : 'yes',//Android only ,shows browser zoom controls 
+    zoom : 'yes',//Android only ,shows browser zoom controls
     hardwareback : 'yes',
     mediaPlaybackRequiresUserAction : 'no',
-    shouldPauseOnSuspend : 'no', //Android only 
+    shouldPauseOnSuspend : 'no', //Android only
     closebuttoncaption : 'Close', //iOS only
-    disallowoverscroll : 'no', //iOS only 
-    toolbar : 'yes', //iOS only 
-    enableViewportScale : 'no', //iOS only 
-    allowInlineMediaPlayback : 'no',//iOS only 
-    presentationstyle : 'pagesheet',//iOS only 
-    fullscreen : 'yes',//Windows only    
+    disallowoverscroll : 'no', //iOS only
+    toolbar : 'yes', //iOS only
+    enableViewportScale : 'no', //iOS only
+    allowInlineMediaPlayback : 'no',//iOS only
+    presentationstyle : 'pagesheet',//iOS only
+    fullscreen : 'yes',//Windows only
 };
 
   constructor(
@@ -102,7 +102,6 @@ export class LoginPage {
           // store token and user dits in local storage
           //TODO: may need to user secure storage for this data
           this.auth.storeData(this.token, this.user);
-
           // show success toast
           this.presentToast('You have successfully logged in...');
           // console.log('User authenticated! '+this.username);

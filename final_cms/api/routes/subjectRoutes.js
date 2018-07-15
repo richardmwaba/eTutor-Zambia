@@ -1,46 +1,48 @@
 /**
  * This handles all the subject's routes
  */
+
 "use strict";
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const config = require('../config/database');
 let mongoose = require('mongoose');                     // mongoose for mongodb
 
 const Subject = require('../models/subject');
 const Topic = require('../models/topic');
 const SubTopic = require('../models/sub_topic');
+const Category = require('../models/subjectCategory');
 const Video = require('../models/video');
 
+
+router.get('/all', getAllSubjects, getAllCategories);
+
 //get all subjects
-router.get('/all', (req, res, next) => {
-// add to db
+function getAllSubjects(req, res, next) {
     Subject.getAllSubjects((err, subjects) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json({success: true, msg: 'Found', subjects:subjects});
+            req.subjects = subjects;
+            next();
         }
     });
-});
+}
 
-//get all subjects
-router.get('/grade/find/:grade', (req, res, next) => {
-// add to db
-    Subject.getSubjectByGrade(req.params.grade, (err, subject) => {
+function getAllCategories(req, res, next){
+    Category.getAllCategories((err, categories) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to get subject'});
         } else {
             // if success
-            res.json(subject);
+            res.json({success: true,msg: 'Found', subjects: req.subjects, categories:categories});
         }
     });
-});
+}
 
 //get subject
 router.get('/find/:id', (req, res, next) => {
@@ -57,11 +59,12 @@ router.get('/find/:id', (req, res, next) => {
 });
 
 // register route (creates new user and store in db)
-router.post('/add', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.post('/add', (req, res, next) => {
     let newSubject = new Subject({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
         description: req.body.description,
+        thumbnail_video_url: req.body.thumbnail_video_url,
         grade: req.body.grade,
         category: req.body.category,
         icon: req.body.icon,
@@ -93,20 +96,20 @@ router.post('/add', passport.authenticate('jwt', {session: false}), (req, res, n
             ]
         }]
     });
-// add to db
-Subject.addSubject(newSubject, (err, subject) => {
-    // check for errors
-    if (err) {
-        res.json({success: false, msg: err.stack});
-    } else {
-        // if success
-        res.json(subject);
-}
-});
+    // add to db
+    Subject.addSubject(newSubject, (err, subject) => {
+        // check for errors
+        if (err) {
+            res.json({success: false, msg: err.stack});
+        } else {
+            // if success
+            res.json(subject);
+        }
+    });
 });
 
 // Used to update subject fields
-router.post('/add/topic/:subId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
+router.post('/add/topic/:subId', (req, res, next) =>{
     let newTopic = new Topic.getModel({
         _id: mongoose.Types.ObjectId(),
         topic_name: req.body.topic_name,
@@ -139,23 +142,22 @@ router.post('/add/topic/:subId', passport.authenticate('jwt', {session: false}),
                     res.json(topic);
                 }
             });
-                // res.json(subject);
         }
     });
 });
 
 
 // Used to add a sub topic to a topic of a subject
-router.post('/add/subTopic/:subId/:topicId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
+router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
     let newSubTopic = new SubTopic.getModel({
+        _id: mongoose.Types.ObjectId(),
+        name: req.body.name,
+        videos:
+            {
                 _id: mongoose.Types.ObjectId(),
-                name: req.body.name,
-                videos:
-                    {
-                        _id: mongoose.Types.ObjectId(),
-                        name: req.body.videos.name,
-                        url: req.body.videos.url
-                    }
+                name: req.body.videos.name,
+                url: req.body.videos.url
+            }
     });
 
     Subject.getSubjectById(req.params.subId, (err, subject) =>{
@@ -166,26 +168,26 @@ router.post('/add/subTopic/:subId/:topicId', passport.authenticate('jwt', {sessi
             // if success get the topic
             let topic = subject.topics.id(req.params.topicId);
 
-                if (!topic) {
-                    res.json({success: false, msg: 'Failed to get the topic'});
-                } else {
-                    //add the sub topic to the topic found
-                    Topic.addSubTopic(subject, topic, newSubTopic, (err, subTopic) => {
-                        // check for errors
-                        if (err) {
-                            res.json({success: false, msg: 'Failed to add the subtopic'});
-                        } else {
-                            res.json(topic);
-                        }
-                    });
+            if (!topic) {
+                res.json({success: false, msg: 'Failed to get the topic'});
+            } else {
+                //add the sub topic to the topic found
+                Topic.addSubTopic(subject, topic, newSubTopic, (err, subTopic) => {
+                    // check for errors
+                    if (err) {
+                        res.json({success: false, msg: 'Failed to add the subtopic'});
+                    } else {
+                        res.json(topic);
+                    }
+                });
 
-                }
+            }
         }
     });
 });
 
 // Used to add a video to a sub topic of a subject
-router.post('/add/video/:subId/:topicId/:subTopicId', passport.authenticate('jwt', {session: false}), (req, res, next) =>{
+router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
     let newVideo = new Video.getModel({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -220,7 +222,7 @@ router.post('/add/video/:subId/:topicId/:subTopicId', passport.authenticate('jwt
 });
 
 // delete a subject
-router.delete('/delete/:subId', passport.authenticate('jwt', {session: false}), function(req, res) {
+router.delete('/delete/:subId', function(req, res) {
     Subject.remove({_id : req.params.subId}, (err, subject) =>{
         if(err) {
             res.json(err.message);
@@ -232,4 +234,3 @@ router.delete('/delete/:subId', passport.authenticate('jwt', {session: false}), 
 });
 
 module.exports = router;
-

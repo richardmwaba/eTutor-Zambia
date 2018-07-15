@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams, ToastController, LoadingController} from 'ionic-angular';
 
 // page import
-import {VideoPlayerPage} from "../video-player/video-player";
 import {SubscriptionPage} from "../subscription/subscription";
 import {AuthProvider} from "../../providers/auth/auth";
 import {SubscriptionsProvider} from "../../providers/subscriptions/subscriptions";
@@ -16,7 +15,6 @@ import {HomePage} from "../home/home";
 export class LessonsPage {
 
   // lessons array
-  // lessons: Array<{title: string, subTopic: string, topic: string}>;
   public topic: any;
   public video: any;
   public subject: any;
@@ -26,8 +24,6 @@ export class LessonsPage {
   public expanded: boolean = false;
   public isAuthenticated: any;
   public loader:any;
-  showLevel1 = null;
-  showLevel2 = null;
 
   constructor(
     public navCtrl: NavController,
@@ -43,32 +39,6 @@ export class LessonsPage {
     this.user = this.authService.user;
     this.isAuthenticated = ( this.user !=  null); //returns true if user has been authenticated
   }
-
-  toggleLevel1(idx) {
-    if (this.isLevel1Shown(idx)) {
-      this.showLevel1 = null;
-    } else {
-      this.showLevel1 = idx;
-    }
-  }
-
-  toggleLevel2(idx) {
-    if (this.isLevel2Shown(idx)) {
-      this.showLevel1 = null;
-      this.showLevel2 = null;
-    } else {
-      this.showLevel1 = idx;
-      this.showLevel2 = idx;
-    }
-  };
-
-  isLevel1Shown(idx) {
-    return this.showLevel1 === idx;
-  };
-
-  isLevel2Shown(idx) {
-    return this.showLevel2 === idx;
-  };
 
   subscribe(){
     if((AuthProvider.isAuthenticated())){
@@ -99,15 +69,6 @@ export class LessonsPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  /**
-   * @param video
-   */
-  playVideo(video){
-    this.video = video;
-    this.navCtrl.push(VideoPlayerPage, {
-      video  // passing data to LessonContentPage
-    });
-  }
 
   /**
    * presents a modal
@@ -119,8 +80,6 @@ export class LessonsPage {
       console.log("before :"+data);
       if(data['success']){
         console.log("After :"+data);
-        //check if user has valid subscription to access course content
-        // this.isSubscribed(video, subject);
       }
     })
   }

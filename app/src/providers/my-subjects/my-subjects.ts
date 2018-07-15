@@ -23,13 +23,13 @@ export class MySubjectsProvider {
   constructor(public http: HttpClient, public authService: AuthProvider) {
     this.data = null;
     this.user = this.authService.user;
-    console.log('Hello MySubjectsProvider Provider');
   }
 
   getMySubjects(){
 
     return new Promise(resolve => {
       this.appendToken();
+
       this.http.get(this.baseURL+'/mySubjects/'+this.user.email, { headers: this.contentHeader })
         .subscribe(data => {
           this.data = data;

@@ -9,17 +9,22 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app",
+    "tests": "node tests"
   },
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
     "compression": "^1.7.2",
     "cors": "*",
+    "date-arithmetic": "^3.1.0",
+    "dotenv": "^6.0.0",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
     "mongoose-unique-validator": "^2.0.1",
+    "newman": "^3.10.0",
+    "node-schedule": "^1.3.0",
     "nodemailer": "^4.6.7",
     "nodemailer-express-handlebars": "^3.0.0",
     "passport": "*",
@@ -32,6 +37,9 @@
   "license": "ISC",
   "devDependencies": {
     "@angular/cli": "^1.7.3",
-    "@angular/core": "*"
+    "@angular/core": "*",
+    "jasmine": "^3.1.0",
+    "karma": "^2.0.4",
+    "karma-jasmine": "^1.1.2"
   }
 }

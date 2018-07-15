@@ -39,9 +39,3 @@ module.exports.addComment = function(discussion, newComment, callback) {
     discussion.comments.push(newComment);
     discussion.save(callback); // saves to the db
 };
-
-//removes a subscription
-module.exports.remove = function(_id, callback) {
-
-    Discussion.remove({ '_id': _id }, callback)
-};

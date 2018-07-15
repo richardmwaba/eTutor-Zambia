@@ -79,7 +79,7 @@ router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res
 });
 
 // retrieve all users
-router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     User.getAllUsers((err, users) => {
         // check for errors
         if (err) {
@@ -92,7 +92,7 @@ router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, us
 });
 
 // add subject to my subjects subdocument
-router.post('/mySubjects/enroll/:Email', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.post('/mySubjects/enroll/:Email', (req, res, next) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
@@ -145,20 +145,20 @@ router.delete('/mySubjects/remove/:id/:Email', (req, res, users) => {
 });
 
 // retrieve given user and return only the subjects they have enrolled for
-router.get('/mySubjects/:email', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.get('/mySubjects/:email', (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
             res.json({success: false, msg: 'Failed to find user'});
         } else {
             // if success
-            res.json({success:true, mySubjects:user.mySubjects});
+            res.json({success:true, mySubjects:user});
         }
     });
 });
 
 // check if user has enrolled for this subject
-router.get('/mySubjects/isEnrolled/:email/:subjectId', passport.authenticate('jwt', {session: false}), (req, res, users) => {
+router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
@@ -179,7 +179,7 @@ router.get('/mySubjects/isEnrolled/:email/:subjectId', passport.authenticate('jw
 });
 
 // delete User
-router.delete('/delete/:id', passport.authenticate('jwt', {session: false}), function (req, res, next) {
+router.delete('/delete/:id', function (req, res, next) {
     User.remove(req.params.id, function (err, post) {
         if (err) {
             console.log(err);

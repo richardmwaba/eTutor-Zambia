@@ -4,16 +4,63 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-let mongoose = require('mongoose');                     // mongoose for mongodb
-let coupon = require("voucher-code-generator");
+const mongoose = require('mongoose');                     // mongoose for mongodb
+const coupon = require("voucher-code-generator");
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const dateMath = require('date-arithmetic');
+const schedule = require("node-schedule");
 
 const Subscription = require('../models/subscription');
 const Coupon = require('../models/coupon');
 
+
+//remove all subscription entries that have expired
+let j = schedule.scheduleJob({hour: 23, minute: 16, dayOfWeek: 3},checkSubscriptions);
+function checkSubscriptions(){
+    let subscriptions = getAllSubscriptions();
+    let today = new Date;
+
+    //check all subscriptions if there are any
+    if(subscriptions) {
+        subscriptions.forEach(function (subscription) {
+            if ((dateMath.lte(subscription.expirationDate, today))) {
+                deleteSubscription(subscription);
+            }
+        });
+    }
+
+    }
+    //get all subscriptions for processing
+function getAllSubscriptions() {
+    Subscription.getAllSubscriptions((err, subscriptions) => {
+        // check for errors
+        if (err) {
+            return null;
+        } else {
+            // if success
+            return subscriptions;
+        }
+    });
+}
+
+    //delete subscription
+function deleteSubscription(subscription){
+    // remove from db
+    Subscription.remove(subscription._id, (err, subscriptions) => {
+        // check for errors
+        if (err) {
+            return false;
+        } else {
+            // if success
+           return true;
+        }
+    });
+
+}
+
 //get all coupons
-router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.get('/all', (req, res, next) => {
 // add to db
     Subscription.getAllSubscriptions((err, subscriptions) => {
         // check for errors
@@ -39,11 +86,11 @@ router.post('/subscribeUser', (req, res, next) => {
             //if success
             let newSubscription = new Subscription.getModel({
                 _id: mongoose.Types.ObjectId(),
-                expirationDate: coupon.expirationDate,
+                expirationDate: dateMath.add( new Date, coupon.duration, coupon.duration_unit),
                 couponKey: coupon.key,
                 subjectId: req.body.subjectId,
                 userEmail:   req.body.userEmail,
-                plan: req.body.plan
+                plan: coupon.duration_unit
             });
             //create subscription entry
             Subscription.addSubscription(newSubscription, (err, subscription) => {
@@ -100,6 +147,7 @@ router.get('/delete/:id', passport.authenticate('jwt', {session: false}), (req, 
         }
     });
 });
+
 
 
 module.exports = router;
