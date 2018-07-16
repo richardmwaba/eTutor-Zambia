@@ -45,7 +45,8 @@ const discussions = require('./routes/dicussionRoutes');
 const categories = require('./routes/subjectCategoryRoutes');
 
 //Port Number
-const port = 5000;
+// const port = 5000;
+const port = 3000;
 
 app.use(compression()); //Compress all routes
 

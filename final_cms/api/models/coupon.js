@@ -3,6 +3,7 @@
  */
 
 const mongoose = require('mongoose');
+const path = require('path');
 const config = require('../config/database');
 let coupon = require("voucher-code-generator");
 const topic_schema = require('../models/topic');
@@ -46,4 +47,9 @@ module.exports.getCouponByKey = function(key, callback) {
 module.exports.addCoupon = function(newCoupon, callback) {
 
     newCoupon.save(callback); // saves to the db
+};
+
+// Renders the coupon form
+module.exports.renderCouponForm = function(req, res) {
+    return res.sendFile(path.join(__dirname, '../public/coupon-form.html'));
 };
