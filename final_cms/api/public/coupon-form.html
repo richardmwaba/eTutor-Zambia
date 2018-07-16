@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+  <link href="coupons.css" rel="stylesheet" id="custom-css" type="stylesheet">
+  <title>eTutor | Coupon generation</title>
+</head>
+
+<body style="margin-top: 48px">
+    <div class="container">
+        <div class="mx-auto card login-card" style="width: 750px; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);">
+            <div class="card-body">
+                <form class="form-signin">
+                    <img class="mb-4 mx-auto d-block" src="/img/logohdpi.png" alt="Logo" width="100" height="100">
+
+                    <h5 id="mid" class="mb-3 font-weight-normal">Fill in the form to generate coupons </h5>
+
+                    <div class="form-group">
+                        <label for="noc">Number of Coupons:</label>
+                        <input type="number" class="form-control" id="noc">
+                    </div>
+                    <div class="form-group">
+                        <label for="seller">Seller:</label>
+                        <select class="form-control" name="seller" id="seller">
+                            <option>eTutorSales</option>
+                            <option>Cgret</option>
+                            <option>Kazang</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="typ">Type:</label>
+                        <select class="form-control" name="type" id="typ">
+                            <option>One Subject</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="countMax" value="1" hidden>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration:</label>
+                        <input type="number" class="form-control" name="duration" id="duration">
+                    </div>
+                    <div class="form-group">
+                        <label for="unit">Duration Unit:</label>
+                        <select class="form-control" name="duration_unit" id="unit">
+                            <option>Hours</option>
+                            <option>Days</option>
+                            <option>Weeks</option>
+                            <option>Months</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

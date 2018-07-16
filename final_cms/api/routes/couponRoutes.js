@@ -81,7 +81,6 @@ router.post('/generate/', generate, save, getAll);
 
  }
 
-
 // delete a Coupon
 router.delete('/delete/:couponId', function(req, res) {
     Coupon.remove({_id : req.params.couponId}, (err, coupon) =>{
@@ -93,5 +92,8 @@ router.delete('/delete/:couponId', function(req, res) {
 
     });
 });
+
+// get forgot password
+router.get('/generate-coupons', Coupon.renderCouponForm);
 
  module.exports = router;
