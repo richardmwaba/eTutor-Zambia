@@ -5,6 +5,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
+    <!-- toastr css -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -17,52 +20,129 @@
 
 <body style="margin-top: 48px">
     <div class="container">
-        <div class="mx-auto card login-card" style="width: 750px; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);">
-            <div class="card-body">
-                <form class="form-signin">
+        <div class="row">
+            <div id="form" class="card login-card col-md-5 col-lg-5" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);">
+                <div class="card-body">
+                    <form class="form-signin">
+                        <img class="mb-4 mx-auto d-block" src="/img/logohdpi.png" alt="Logo" width="100" height="100">
+
+                        <h5 id="mid" class="mb-3 font-weight-normal">Fill in the form to generate coupons </h5>
+
+                        <div class="form-group">
+                            <label for="noc">Number of Coupons:</label>
+                            <input type="number" class="form-control" id="noc">
+                        </div>
+                        <div class="form-group">
+                            <label for="seller">Seller:</label>
+                            <select class="form-control" name="seller" id="seller">
+                                <option>eTutorSales</option>
+                                <option>Cgret</option>
+                                <option>Kazang</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="typ">Type:</label>
+                            <select class="form-control" name="type" id="typ">
+                                <option>One Subject</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="countMax" id="countMax" value="1" hidden>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration:</label>
+                            <input type="number" class="form-control" name="duration" id="duration">
+                        </div>
+                        <div class="form-group">
+                            <label for="unit">Duration Unit:</label>
+                            <select class="form-control" name="duration_unit" id="unit">
+                                <option value="hours">Hours</option>
+                                <option value="day">Days</option>
+                                <option value="week">Weeks</option>
+                                <option value="month">Months</option>
+                            </select>
+                        </div>
+                        <input name="recover-submit" id="genCoupons" class="btn btn-lg btn-primary btn-block" value="Generate Coupons" type="submit">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-md-1 col-lg-1"></div>
+
+            <div class="col-md-5 col-lg-5 card" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);">
+                <div class="card-body">
                     <img class="mb-4 mx-auto d-block" src="/img/logohdpi.png" alt="Logo" width="100" height="100">
-
-                    <h5 id="mid" class="mb-3 font-weight-normal">Fill in the form to generate coupons </h5>
-
-                    <div class="form-group">
-                        <label for="noc">Number of Coupons:</label>
-                        <input type="number" class="form-control" id="noc">
-                    </div>
-                    <div class="form-group">
-                        <label for="seller">Seller:</label>
-                        <select class="form-control" name="seller" id="seller">
-                            <option>eTutorSales</option>
-                            <option>Cgret</option>
-                            <option>Kazang</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="typ">Type:</label>
-                        <select class="form-control" name="type" id="typ">
-                            <option>One Subject</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="countMax" value="1" hidden>
-                    </div>
-                    <div class="form-group">
-                        <label for="duration">Duration:</label>
-                        <input type="number" class="form-control" name="duration" id="duration">
-                    </div>
-                    <div class="form-group">
-                        <label for="unit">Duration Unit:</label>
-                        <select class="form-control" name="duration_unit" id="unit">
-                            <option>Hours</option>
-                            <option>Days</option>
-                            <option>Weeks</option>
-                            <option>Months</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <h5>View your generated coupons below.</h5>
+                    <p id="demo"></p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+		var generateCoupons = document.getElementById('genCoupons');
+
+		generateCoupons.addEventListener('click', geneCupons);
+
+		function geneCupons(event) {
+			event.preventDefault();
+            var noCoupons = document.getElementById('noc').value;
+            var seller = document.getElementById('seller').value;
+            var Typ = document.getElementById('typ').value;
+            var cMax = document.getElementById('countMax').value;
+            var dura = document.getElementById('duration').value;
+            var dura_unit = document.getElementById('unit').value;
+			var data = {
+                "numberOfCoupons": noCoupons,
+                "seller": seller,
+                "type": Typ,
+                "countMax": cMax,
+                "duration": dura,
+                "duration_unit": dura_unit
+            };
+
+            // var URL = "http://localhost:3000/coupons/generate";
+            // "http://etutor.eu-central-1.elasticbeanstalk.com/coupons/generate"
+            
+            console.log(data);
+			ajaxCall(data, "http://etutor.eu-central-1.elasticbeanstalk.com/coupons/generate", function (status, response) {
+				if (status == 200) {
+                    // console.log(response);
+                    displayCoupons(response);
+					toastr.success('Coupons has been successfully created.');
+				} else {
+					toastr.error('Error', status);
+				}
+			});
+		}
+
+		function ajaxCall(data, url, callback) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", url, true);
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4) {
+					return callback(this.status, JSON.parse(xhttp.response));
+				}
+			}
+			xhttp.setRequestHeader("Content-type", "application/json");
+			xhttp.send(JSON.stringify(data));
+        }
+        
+        // displays the server response (generated coupons)
+        function displayCoupons(data) {
+            // document.getElementById("form").style.visibility = "hidden"; // hides the form
+            var temp, dataLength, i;
+
+            dataLength = data.length;
+            temp = "<ul>";
+            for (i = 0; i < dataLength; i++) {
+                temp += "<li>" + data[i] + "</li>";
+            }
+            temp += "</ul>";
+            document.getElementById("demo").innerHTML = temp;
+        }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 
 </html>
