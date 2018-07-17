@@ -79,6 +79,7 @@ function checkWhatToUpdate(req, res, next){
  * @param next
  */
 function addNewComment(req, res, next){
+    console.log(req.get('Authorization'));
     Discussion.findMatch(req.body.topic_id, (err, discussion) => {
         if (err) {
             res.json('An error occurred. This discussion may have been closed.');
@@ -144,7 +145,7 @@ function addNewDiscussion(req, res, next){
 }
 
 //update reactions like or dislikes on comments
-router.patch('/updateReactions/:topic_id/:comment_id/:hasLiked/:hasDisliked/:user_id/:likes/:dislikes/:didReact*?', updateReactions);
+router.patch('/updateReactions/:topic_id/:comment_id/:hasLiked/:hasDisliked/:user_id/:likes/:dislikes', updateReactions);
 
 //the function to perform the actual attribute updates
 function updateReactions(req, res, next){

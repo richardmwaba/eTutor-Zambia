@@ -178,6 +178,16 @@ router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
     });
 });
 
+router.get('/find/:id', (req, res, next)=>{
+    User.getUserById(req.params.id, (err, user)=>{
+        if(err){
+            res.send(err.stack);
+        }else{
+            res.send(user);
+        }
+    })
+});
+
 // delete User
 router.delete('/delete/:id', function (req, res, next) {
     User.remove(req.params.id, function (err, post) {

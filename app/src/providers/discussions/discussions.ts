@@ -67,7 +67,7 @@ export class DiscussionsProvider {
    */
   updateReactions(topic_id, comment_id, hasLiked, hasDisliked, user_id, likes,dislikes, didReact){
     this.appendToken();
-    return this.http.patch(this.baseURL+'updateReactions/'+topic_id+'/'+comment_id+'/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+likes+'/'+dislikes+'/'+didReact, null, { headers: this.contentHeader });
+    return this.http.patch(this.baseURL+'updateReactions/'+topic_id+'/'+comment_id+'/'+hasLiked+'/'+hasDisliked+'/'+user_id+'/'+likes+'/'+dislikes, null, { headers: this.contentHeader });
   }
 
   deleteComment(topic_id, comment_id){

@@ -224,7 +224,7 @@ export class CommentsPage {
    */
   showAddCommentModal(topic) {
     if (AuthProvider.isAuthenticated()) {
-      let modal = this.modalCtrl.create(AddCommentPage, {topic, hasDiscussion: this.data['success']});
+      let modal = this.modalCtrl.create(AddCommentPage, {topic});
       modal.present();
       modal.onDidDismiss(data=>{
         if(data){

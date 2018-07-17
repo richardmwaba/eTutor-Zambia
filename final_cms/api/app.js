@@ -50,7 +50,9 @@ const port = 5000;
 app.use(compression()); //Compress all routes
 
 //CORS Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
 
 //Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));

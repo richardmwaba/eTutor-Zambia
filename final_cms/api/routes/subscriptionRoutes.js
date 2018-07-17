@@ -99,7 +99,7 @@ router.post('/subscribeUser', (req, res, next) => {
                     res.json({success: false, msg: 'Failed to subscribe for '});
                 } else {
                     // if success delete the used coupon from database
-                    Coupon.remove(req.body.couponKey, (err, coupon) => {
+                    Coupon.getModel.remove({key:req.body.couponKey}, (err, coupon) => {
                         //check for errors
                         if(err){
                             res.json({success: false, msg: 'Failed to subscribe for '});
@@ -135,7 +135,7 @@ router.get('/verify/:subjectId/:userEmail', (req, res, next) => {
 /**
  * param subscription id
  */
-router.get('/delete/:id', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.get('/delete/:id', (req, res, next) => {
 // remove from db
     Subscription.remove(req.params.id, (err, subscriptions) => {
         // check for errors
