@@ -1,8 +1,8 @@
 const dateMath = require('date-arithmetic');
 const schedule = require("node-schedule");
 
-const Subscription = require('../models/subscription');
-const Coupon = require('../models/coupon');
+const Subscription = require('./models/subscription');
+const Coupon = require('./models/coupon');
 
 
 //remove all subscription entries that have expired

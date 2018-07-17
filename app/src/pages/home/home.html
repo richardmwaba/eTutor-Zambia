@@ -67,7 +67,7 @@
 
     <div *ngFor="let category of categories">
 
-      <!-- ensure the category is not null-->
+      <!-- ensure the category is not null -->
       <div *ngIf="category">
 
         <!-- there are no subjects in this category skip to the next iteration -->
@@ -84,7 +84,7 @@
           <ion-card class="categories-card" (click)="courseDetail(subject)">
 
           <ion-item class="card-title-row">
-          <ion-icon class="card-title-icon" item-start name="book"></ion-icon>
+          <!-- <ion-icon class="card-title-icon" item-start name="book"></ion-icon> -->
           <div class="card-title">{{subject.name}}</div>
           </ion-item>
 
