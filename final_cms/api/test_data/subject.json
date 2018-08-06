@@ -1,0 +1,33 @@
+{
+    "instructors":
+        {
+            "name": "Simeon Chambika",
+            "title": "Mr.",
+            "username": "Simeon",
+            "email": "semeon@gmail.com",
+            "password": "1234567890",
+            "phone": "0971223456"
+        },
+    "name": "Mathematics",
+    "description": "These video tutorials provide in depth and concise explanations of mathematical concepts that will guide learners on how to effectively tackle exam questions and are also a useful tool in aiding those that may be unfamiliar with Mathematics O-Level topics",
+    "thumbnail_video_url": "https://player.vimeo.com/video/279521884",
+    "grade": "Grade 12",
+    "category": "ECZ Exam Reviews",
+    "icon": "math.jpg",
+    "topics":
+        {
+            "sub_topics":
+                {
+                    "videos":
+                        {
+                            "name": "Question 1. A and B",
+                            "url": "https://vimeo.com/album/5287993/embed"
+                        },
+                    "name": "Paper 2"
+                },
+            
+            "topic_name": "2014",
+            "duration": "1 Week(s)",
+            "description": "Grade 12 Math Syllabus-D Past Exam Reviews"
+        }
+}

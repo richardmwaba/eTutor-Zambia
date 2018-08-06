@@ -8,14 +8,15 @@
     "npm": "6.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app",
-    "tests": "node tests"
+    "start": "export NODE_ENV=test && node app.js",
+    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000"
   },
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
     "compression": "^1.7.2",
+    "config": "^2.0.0",
+    "cookie-parser": "^1.4.3",
     "cors": "*",
     "date-arithmetic": "^3.1.0",
     "dotenv": "^6.0.0",
@@ -29,6 +30,7 @@
     "nodemailer-express-handlebars": "^3.0.0",
     "passport": "*",
     "passport-jwt": "*",
+    "passport-local": "^1.0.0",
     "validator": "^10.1.0",
     "vimeo": "^2.0.1",
     "voucher-code-generator": "^1.1.1"
@@ -38,8 +40,9 @@
   "devDependencies": {
     "@angular/cli": "^1.7.3",
     "@angular/core": "*",
-    "jasmine": "^3.1.0",
-    "karma": "^2.0.4",
-    "karma-jasmine": "^1.1.2"
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
   }
 }

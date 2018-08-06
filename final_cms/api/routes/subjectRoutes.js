@@ -5,7 +5,6 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const jwt = require('jsonwebtoken');
 let mongoose = require('mongoose');                     // mongoose for mongodb
 
@@ -14,6 +13,7 @@ const Topic = require('../models/topic');
 const SubTopic = require('../models/sub_topic');
 const Category = require('../models/subjectCategory');
 const Video = require('../models/video');
+const verifyToken = require('../routes/auth/verifyToken');
 
 
 router.get('/all', getAllSubjects, getAllCategories);
@@ -59,7 +59,7 @@ router.get('/find/:id', (req, res, next) => {
 });
 
 // register route (creates new user and store in db)
-router.post('/add', (req, res, next) => {
+router.post('/add',verifyToken, (req, res, next) => {
     let newSubject = new Subject({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -103,13 +103,13 @@ router.post('/add', (req, res, next) => {
             res.json({success: false, msg: err.stack});
         } else {
             // if success
-            res.json(subject);
+            res.json({subject:subject ,msg: "Successfully added a new subject"});
         }
     });
 });
 
 // Used to update subject fields
-router.post('/add/topic/:subId', (req, res, next) =>{
+router.post('/add/topic/:subId',verifyToken, (req, res, next) =>{
     let newTopic = new Topic.getModel({
         _id: mongoose.Types.ObjectId(),
         topic_name: req.body.topic_name,
@@ -148,7 +148,7 @@ router.post('/add/topic/:subId', (req, res, next) =>{
 
 
 // Used to add a sub topic to a topic of a subject
-router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
+router.post('/add/subTopic/:subId/:topicId',verifyToken, (req, res, next) =>{
     let newSubTopic = new SubTopic.getModel({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -187,7 +187,7 @@ router.post('/add/subTopic/:subId/:topicId', (req, res, next) =>{
 });
 
 // Used to add a video to a sub topic of a subject
-router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
+router.post('/add/video/:subId/:topicId/:subTopicId',verifyToken, (req, res, next) =>{
     let newVideo = new Video.getModel({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -222,7 +222,7 @@ router.post('/add/video/:subId/:topicId/:subTopicId', (req, res, next) =>{
 });
 
 // delete a subject
-router.delete('/delete/:subId', function(req, res) {
+router.delete('/delete/:subId',verifyToken, function(req, res) {
     Subject.remove({_id : req.params.subId}, (err, subject) =>{
         if(err) {
             res.json(err.message);

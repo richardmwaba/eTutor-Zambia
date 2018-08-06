@@ -1,0 +1,11 @@
+{
+    "database" : {
+    "host": "mongodb://localhost:27017/etutorTESTDB",
+    "dbName": "etutorTESTDB"
+},
+
+    "server":
+    {
+        "port" : 3000
+    }
+}

@@ -4,31 +4,36 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const passport = require('passport');
-const passportJwt = require('passport-jwt');
 const mongoose = require('mongoose');
-const config = require('./config/database');
-const dateMath = require('date-arithmetic');
 const schedule = require("node-schedule");
 const compression = require('compression');
 const subscriptions_scheduler = require('./subscriptions_scheduler');
-require('dotenv').config();
+const config = require('config');
+const verifyToken = require('./routes/auth/verifyToken');
+
 
 //Connect to MongoDB Database
-mongoose.connect(config.database);
+if(config.has('database.host')){
+mongoose.connect(config.get('database.host'));
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('Connected to database '+config.get('database.host'));
+});
+}
 
 
 //get the time to run the scheduler
-let rule = new schedule.RecurrenceRule();
-rule.hour = process.env.SCHEDULED_TIME;
+const rule = new schedule.RecurrenceRule();
+if(config.has('server.SECHEDULED_TIME')){
+rule.hour = config.has('SCHEDULED_TIME');
 //add jobs to the scheduler
 schedule.scheduleJob(rule,subscriptions_scheduler.checkSubscriptions);
+}
 
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log('Connected to database '+config.database);
-});
+//Port Number
+const port = 3000;
 
 //Initiate app variable with express
 const app = express();
@@ -44,10 +49,6 @@ const subscriptions = require('./routes/subscriptionRoutes');
 const discussions = require('./routes/dicussionRoutes');
 const categories = require('./routes/subjectCategoryRoutes');
 
-//Port Number
-// const port = 5000;
-const port = 3000;
-
 app.use(compression()); //Compress all routes
 
 //CORS Middleware
@@ -61,24 +62,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Body Parser Middleware
 app.use(bodyParser.json());
 
-//Passport Middelware
-app.use(passport.initialize());
-app.use(passport.session());
-
-require('./config/passport')(passport);
-
-
 app.use('/users', users);
 app.use('/videos', videos);
-app.use('/coupons', coupons);
-app.use('/subscriptions', subscriptions);
-app.use('/discussions', discussions);
+app.use('/coupons',verifyToken, coupons);
+app.use('/subscriptions',verifyToken, subscriptions);
+app.use('/discussions',verifyToken, discussions);
 app.use('/subjects', subjects);
 app.use('/superusers', superusers);
 app.use('/categories', categories);
-// app.get('/cool', (req, res) => res.send(cool()));
 
 //Start Server
-app.listen(process.env.PORT || port, () => {
-    console.log("Express server listening on port %d in %s mode and schedule at %d", process.env.PORT || port, app.settings.env, process.env.SCHEDULED_TIME);
+app.listen(config.get('server.port') || port, () => {
+    console.log("Express server listening on port %d in %s mode and schedule at %d", config.get('server.port') || port, app.settings.env, config.get('server.SCHEDULED_TIME'));
 });
+
+module.exports = app; // for testing

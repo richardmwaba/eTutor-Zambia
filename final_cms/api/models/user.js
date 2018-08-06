@@ -1,5 +1,4 @@
 // Defines the users model
-
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const subject = require('../models/subject');

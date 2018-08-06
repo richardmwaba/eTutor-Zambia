@@ -81,7 +81,8 @@ export class VideosPage {
       this.video = video;
       console.log(JSON.parse(localStorage.getItem('user')));
       //check user subscription
-    this.isSubscribed(video, subject);
+    // this.isSubscribed(video, subject); //uncomment this line to anbel subscription checks
+    this.playVideo(video); //remove this line to prevent acces to video without subscribing first
     }else {
       // redirect to log in
       console.log("You are not signed in");
@@ -98,7 +99,7 @@ export class VideosPage {
       }
       console.log(data);
       this.data = data;
-      //if success store the record locally
+
       if (this.data['success']) {
         this.playVideo(this.video);
       } else {

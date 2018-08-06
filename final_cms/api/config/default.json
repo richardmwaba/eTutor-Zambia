@@ -1,0 +1,25 @@
+{
+    "database" : {
+    "host": "mongodb://localhost:27017/etutorCMS",
+    "port": 27017,
+    "dbName": "etutorCMS"
+},
+
+    "server":
+    {
+        "port" : 3000,
+        "SCHEDULED_TIME": 23,
+        "secret": "we tutor with code4cus"
+    },
+
+    "mail": {
+        "user": "code4cus@gmail.com",
+        "pass": "c0d34Cu$"
+    },
+
+    "vimeo": {
+        "id": "9aaf3538ad4a292939f7b00bf1aceb81a84c36b7",
+        "secret": "uHzw9GAlu5ryFTV656QNFYIZXUmuIuPskb2Assr/+yTmX/ByOmi4ZrEBtERQgYmGyaWEW5YuWe1amXOSljhJaQ4Pj7dZbMm17Y7XO7jdfyi0DszND8sDKmNFcF78DpRC",
+        "token": "d812957215ab5642278bf491e176fab3"
+    }
+}

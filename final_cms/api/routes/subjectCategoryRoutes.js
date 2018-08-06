@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 const Category = require('../models/subjectCategory');
 const mongoose = require('mongoose');
+const verifyToken = require('../routes/auth/verifyToken');
 
 /**
  * get all coupons
@@ -25,7 +26,7 @@ router.get('/all', (req, res, next) => {
 /**
  * make the schema for the new category
  */
-router.post('/add', prepareSchema, saveCategory);
+router.post('/add',verifyToken, prepareSchema, saveCategory);
 
 
 /**
@@ -62,7 +63,7 @@ function saveCategory(req, res, next){
 /**
  * delete a category
  */
-router.delete('/delete/:categoryId', function(req, res) {
+router.delete('/delete/:categoryId',verifyToken, function(req, res) {
     Category.remove({_id:req.params.categoryId}, (err, category) =>{
         if(err) {
             res.json({success:false, msg:err.message});

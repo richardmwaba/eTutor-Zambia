@@ -38,6 +38,7 @@ export class LoginModalPage {
     public toastCtrl: ToastController,
     public events: Events,
     public formBuilder: FormBuilder,
+    public viwCtrl: ViewController,
     public loadingCtrl: LoadingController
   ) {
 
@@ -57,8 +58,8 @@ export class LoginModalPage {
     this.navCtrl.push(SignupPage, {subject: this.subject});
   }
 
-  dismissModal() {
-    this.navCtrl.pop();
+  dismissModal(data) {
+    this.viwCtrl.dismiss({data:data});
   }
 
   /**
@@ -91,8 +92,9 @@ export class LoginModalPage {
           this.events.publish('user:authenticated', this.user, this.username, Date.now());
 
           // redirect to home page
-          this.navCtrl.setRoot(HomePage);
+          // this.navCtrl.setRoot(HomePage);
           // this.navCtrl.pop();
+          this.dismissModal(data);
 
         } else {
           // show error alert

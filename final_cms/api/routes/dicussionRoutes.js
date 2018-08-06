@@ -145,7 +145,7 @@ function addNewDiscussion(req, res, next){
 }
 
 //update reactions like or dislikes on comments
-router.patch('/updateReactions/:topic_id/:comment_id/:hasLiked/:hasDisliked/:user_id/:likes/:dislikes', updateReactions);
+router.patch('/updateReactions/:topic_id/:comment_id/:hasLiked/:hasDisliked/:user_id/:likes/:dislikes/:didReact*?', updateReactions);
 
 //the function to perform the actual attribute updates
 function updateReactions(req, res, next){

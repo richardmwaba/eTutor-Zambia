@@ -3,13 +3,13 @@
  */
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const mongoose = require('mongoose');                     // mongoose for mongodb
 const User = require('../models/user');
 const creds = require('../config/mail');
 const mailHandler = require('../controllers/mailController');
+const verifyToken = require('../routes/auth/verifyToken');
 
 // register route (creates new user and store in db)
 router.post('/register', (req, res, next) => {
@@ -22,7 +22,7 @@ router.post('/register', (req, res, next) => {
         password: req.body.password,
         phone: req.body.phone,
         mySubjects: []
-    }); 
+    });
     // add to db
     User.addUser(newUser, (err, user) => {
         // check for errors
@@ -43,20 +43,28 @@ router.post('/authenticate', (req, res, next) => {
     User.getUserByEmail(email, (err, user) => {
         if(err) throw err;
         if(!user) {
-            return res.json({success: false, msg: 'User does not exist, please sign up.'}); // use new status 
+            return res.json({success: false, msg: 'User does not exist, please sign up.'}); // use new status
         }
 
         User.comparePassword(password, user.password, (err, isMatch) => {
             if(err) throw err;
             if(isMatch) {
-                const token = jwt.sign(user.toJSON(), config.secret, {
+
+                let payload = {
+                    id:user._id,
+                    username:user.username,
+                    email:user.email,
+                    password:user.password
+                };
+
+                const token = jwt.sign(payload, config.secret, {
                     expiresIn: 604800  // 1 week(604800 sec) before token expires
                 });
 
                 // values to be returned to frontend app
                 res.json({
                     success: true,
-                    token: "JWT "+token,
+                    token: token,
                     user: {
                         id: user._id,
                         name: user.name,
@@ -74,12 +82,12 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 // protect user profile route
-router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.get('/profile', verifyToken, (req, res, next) => {
     res.json({user: req.user});
 });
 
 // retrieve all users
-router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+router.get('/all', verifyToken, (req, res, next) => {
     User.getAllUsers((err, users) => {
         // check for errors
         if (err) {
@@ -91,8 +99,8 @@ router.get('/all', passport.authenticate('jwt', {session: false}), (req, res, ne
     });
 });
 
-// add subject to my subjects subdocument
-router.post('/mySubjects/enroll/:Email', (req, res, next) => {
+// add subject to my subjects sub-document
+router.post('/mySubjects/enroll/:Email',verifyToken, (req, res, next) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
@@ -121,7 +129,7 @@ router.post('/mySubjects/enroll/:Email', (req, res, next) => {
 });
 
 // remove subject from my subjects subdocument
-router.delete('/mySubjects/remove/:id/:Email', (req, res, users) => {
+router.delete('/mySubjects/remove/:id/:Email',verifyToken, (req, res, users) => {
     User.getUserByEmail(req.params.Email, (err, user) => {
         // check for errors
         if (err) {
@@ -145,7 +153,7 @@ router.delete('/mySubjects/remove/:id/:Email', (req, res, users) => {
 });
 
 // retrieve given user and return only the subjects they have enrolled for
-router.get('/mySubjects/:email', (req, res, users) => {
+router.get('/mySubjects/:email',verifyToken, (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
@@ -158,7 +166,7 @@ router.get('/mySubjects/:email', (req, res, users) => {
 });
 
 // check if user has enrolled for this subject
-router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
+router.get('/mySubjects/isEnrolled/:email/:subjectId',verifyToken, (req, res, users) => {
     User.getUserByEmail(req.params.email, (err, user) => {
         // check for errors
         if (err) {
@@ -178,7 +186,7 @@ router.get('/mySubjects/isEnrolled/:email/:subjectId', (req, res, users) => {
     });
 });
 
-router.get('/find/:id', (req, res, next)=>{
+router.get('/find/:id',verifyToken, (req, res, next)=>{
     User.getUserById(req.params.id, (err, user)=>{
         if(err){
             res.send(err.stack);
@@ -189,7 +197,7 @@ router.get('/find/:id', (req, res, next)=>{
 });
 
 // delete User
-router.delete('/delete/:id', function (req, res, next) {
+router.delete('/delete/:id',verifyToken, function (req, res, next) {
     User.remove(req.params.id, function (err, post) {
         if (err) {
             console.log(err);
@@ -203,11 +211,11 @@ router.delete('/delete/:id', function (req, res, next) {
 // get forgot password
 router.get('/forgot-password', mailHandler.renderForgotPasswordPage);
 
-// post forgot password 
+// post forgot password
 router.post('/auth/forgot-password', mailHandler.forgotPassword);
-  
+
 // get reset password
-router.get('/reset-password', mailHandler.renderResetPasswordPage)
+router.get('/reset-password', mailHandler.renderResetPasswordPage);
 
 //post reset password
 router.post('/auth/reset-password', mailHandler.resetPassword);
